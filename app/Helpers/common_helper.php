@@ -695,12 +695,12 @@ function getDateFormat()
         if(!is_null($payload)){
             if(!empty($payload->profile_pic)){
                 if($payload->profile_pic === 'default.png'){
-                    $payload->user_profile_pic = base_url('public/assets/images/users/').$payload->profile_pic;
+                    $payload->user_profile_pic = base_url('back/images/').$payload->profile_pic;
                 }else{
                     $payload->user_profile_pic = getFileURL().$payload->profile_pic;
                 }
             }else{
-                $payload->user_profile_pic = base_url('public/assets/images/users/default.png');
+                $payload->user_profile_pic = base_url('back/images/default.png');
             }
         }
     }

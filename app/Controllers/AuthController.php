@@ -10,6 +10,9 @@ class AuthController extends BaseController
 {
     public function Auth()
     {
+        if(session()->get('isLoggedIn')){
+            return redirect()->to('back-panel/dashboard');
+        }
         if($this->request->getVar()){
             $session = session();
             $model = new AuthModel();

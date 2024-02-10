@@ -27,6 +27,7 @@
                     <?=view('component/back/breadcrumb')?>
                     <!-- end page breadcrumb -->
                     <div class="row">
+                        <?php if(1==2){ ?>
                         <div class="col-xl-12">
                             <div class="row">
                                 <div class="col-md-4">
@@ -93,6 +94,7 @@
                             <!-- end row -->
 
                         </div>
+                        <?php } ?>
                     </div>
                     <!-- end row -->
                 </div>

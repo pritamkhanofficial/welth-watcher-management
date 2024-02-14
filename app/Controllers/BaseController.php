@@ -63,28 +63,10 @@ abstract class BaseController extends Controller
     */
    
    
-   public function generateFlash($alert = array())
-   {
-       if(array_key_exists('type',$alert)){
-         session()->setFlashdata('type', $alert['type']);
-       }else{
-         session()->setFlashdata('type', "success");
-       }
    
-       if(array_key_exists('title',$alert)){
-         session()->setFlashdata('title', $alert['title']);
-       }else{
-         session()->setFlashdata('title', "Success");
-       }
-       if(array_key_exists('message',$alert)){
-         session()->setFlashdata('message', $alert['message']);
-       }else{
-         session()->setFlashdata('message', NULL);
-       }
-   }
 
 
-   public function fileHandle($crud = NULL, $field = NULL, $file_type = NULL){
+   public function fileUpload($crud = NULL, $field = NULL, $file_type = NULL){
       if(!is_null($crud)){
           switch ($file_type) {
             case 'image':
@@ -159,6 +141,78 @@ abstract class BaseController extends Controller
 
       return $crud;
    }
+
+   public function fileUploadMultiField($crud = NULL, $fields = array()){
+    if(!is_null($crud)){
+      foreach ($fields as $field => $file_type) {
+        switch ($file_type) {
+          case 'image':
+            $accept = ".jpg, .jpeg, .png";
+            break;
+          case 'document':
+            $accept = ".pdf, .doc, .docx";
+            break;
+          case 'video':
+            $accept = ".mp4";
+            break;
+          
+          default:
+            $accept = NULL;
+            break;
+        }
+        $crud->callbackColumn($field, array($this, 'showFile'));
+        $crud->callbackAddField(
+          $field,
+          function () use ($accept,$field) {
+              return  '<input id="field-' .$field. '" type="file" class="form-control  " accept="' . $accept . '" name="' .$field. '" value="">';
+          }
+        );
+
+        $crud->callbackEditField(
+          $field,
+          function ($data)  use ($accept,$field) {
+              $path = base_url() . 'uploads/' . $data;
+  
+              $html = $this->showFile($data);
+              $html .= '<input id="field-'.$field.'" type="file" class="form-control mt-2" accept="' . $accept . '" name="' . $field . '" value="">';
+  
+              $html .= '<input id="file_hidden_'.$field.'" type="hidden" class="form-control" name="file_hidden_'.$field.'" value="' . $data . '">';
+              return $html;
+          }
+        );
+      }
+
+      $crud->callbackBeforeInsert(
+        function ($cbData) use ($fields) {
+          foreach ($fields as $field => $file_type) {
+            $file = $this->request->getFile($field);
+            if (isset($file)) {
+                $file_name = UploadFile($file);
+                $cbData->data[$field] = $file_name;
+            }
+          }
+          return $cbData;
+        }
+      );
+      $crud->callbackBeforeUpdate(
+        function ($cbData)  use ($fields) {
+          foreach ($fields as $field => $file_type) {
+            $file = $this->request->getFile($field);
+            $file_hidden = $this->request->getVar('file_hidden_' . $field);
+            if (isset($file)) {
+                $file_name = UploadFile($file, null, $file_hidden);
+                $cbData->data[$field] = $file_name;
+            } else {
+                $cbData->data[$field] = $file_hidden;
+            }
+          }
+          return $cbData;
+        }
+      );
+      return $crud;
+    }
+    return null;
+ }
 
    public function showFile($value)
     {

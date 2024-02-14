@@ -27,6 +27,11 @@ class AuthFilter implements FilterInterface
     {
         if (!session()->get('isLoggedIn'))
         {
+            generateFlash([
+                'type'=>'error',
+                'title'=>'Error',
+                'message'=>'First login then access the admin panel',
+            ]);
             return redirect()
                 ->to('/back-panel');
         }

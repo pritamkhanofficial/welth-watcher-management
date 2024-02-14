@@ -51,6 +51,25 @@ function UploadFile(\CodeIgniter\HTTP\Files\UploadedFile $imageFile, $folder=NUL
     }
 }
 
+function generateFlash($alert = array())
+   {
+       if(array_key_exists('type',$alert)){
+         session()->setFlashdata('type', $alert['type']);
+       }else{
+         session()->setFlashdata('type', "success");
+       }
+   
+       if(array_key_exists('title',$alert)){
+         session()->setFlashdata('title', $alert['title']);
+       }else{
+         session()->setFlashdata('title', "Success");
+       }
+       if(array_key_exists('message',$alert)){
+         session()->setFlashdata('message', $alert['message']);
+       }else{
+         session()->setFlashdata('message', NULL);
+       }
+   }
 
 
  /**
@@ -695,12 +714,12 @@ function getDateFormat()
         if(!is_null($payload)){
             if(!empty($payload->profile_pic)){
                 if($payload->profile_pic === 'default.png'){
-                    $payload->user_profile_pic = base_url('public/assets/images/users/').$payload->profile_pic;
+                    $payload->user_profile_pic = base_url('back/images/').$payload->profile_pic;
                 }else{
                     $payload->user_profile_pic = getFileURL().$payload->profile_pic;
                 }
             }else{
-                $payload->user_profile_pic = base_url('public/assets/images/users/default.png');
+                $payload->user_profile_pic = base_url('back/images/default.png');
             }
         }
     }

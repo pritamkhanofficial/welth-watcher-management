@@ -17,9 +17,14 @@ class HomeController extends BaseController
         $crud->displayAs('image','Slider');
         $crud->displayAs('is_active','Status');
         $crud->where("deleted_at", NULL);
-        $crud->columns(['image', 'is_active']);
-        $crud->fields(['image', 'is_active','created_by','updated_at','updated_by']);
-        $this->fileHandle($crud, 'image','image');
+        $crud->columns(['image','image_2','content', 'is_active']);
+        $crud->fields(['image','image_2','content', 'is_active','created_by','updated_at','updated_by']);
+        // $this->fileUpload($crud, 'image','image');
+        $crud->setTexteditor(['content']);
+        $this->fileUploadMultiField($crud, [
+            'image'=>'image',
+            'image_2'=>'document',
+        ]);
         // $crud->unsetDelete();
         // $crud->unsetAdd();
         if ($crud->getState() === 'delete') {

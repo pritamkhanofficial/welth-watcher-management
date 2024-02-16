@@ -13,6 +13,20 @@ class HomeController extends BaseController
     }
     
     public function Slider(){
+        $array = [
+            'image',
+            'image_2'=>'document',
+        ];
+        getPrint($array);
+        foreach ($array as $field => $file_type) {
+            if(is_array($file_type)){
+                echo 'true';
+            }else{
+                echo 'false';
+            }
+            echo  '<br>';
+        }
+        die;
         $crud = new GroceryCrud();
         $crud->displayAs('image','Slider');
         $crud->displayAs('is_active','Status');
@@ -156,4 +170,30 @@ class HomeController extends BaseController
         $output = $crud->render();
         return view('common', (array)$output);
     }
+
+
+    public function cryptocurrencyTrading(){
+        
+        $crud = new GroceryCrud();
+        $crud->displayAs('icon_text','Set Font Icon');
+        $crud->displayAs('description','Content');
+        $crud->displayAs('is_active','Status');
+        $crud->where("deleted_at", NULL);
+        $crud->columns(['title','icon_text', 'is_active']);
+        $crud->fields(['title','icon_text', 'description', 'is_active']);
+        $crud->setTexteditor(['description']);
+
+
+        $crud->unsetDelete();
+        
+        $crud->unsetPrint();
+        $crud->unsetExport();
+
+        $crud->setTable('cryptocurrency_trading');
+        $crud->setSubject('Cryptocurrency Trading');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
+
+
 }

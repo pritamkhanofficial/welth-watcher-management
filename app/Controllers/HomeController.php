@@ -196,4 +196,28 @@ class HomeController extends BaseController
     }
 
 
+    public function coreNeed(){
+        
+        $crud = new GroceryCrud();
+        $crud->displayAs('icon_text','Set Font Icon');
+        $crud->displayAs('description','Content');
+        $crud->displayAs('is_active','Status');
+        $crud->where("deleted_at", NULL);
+        $crud->columns(['title','icon_text', 'is_active']);
+        $crud->fields(['title','icon_text', 'description', 'is_active']);
+        $crud->setTexteditor(['description']);
+
+
+        $crud->unsetDelete();
+        
+        $crud->unsetPrint();
+        $crud->unsetExport();
+
+        $crud->setTable('core_need');
+        $crud->setSubject('Core Need');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
+
+
 }

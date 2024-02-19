@@ -28,7 +28,6 @@ abstract class BaseController extends Controller
      * @var CLIRequest|IncomingRequest
      */
     protected $request;
-
     /**
      * An array of helpers to be loaded automatically upon
      * class instantiation. These helpers will be available
@@ -65,75 +64,18 @@ abstract class BaseController extends Controller
     * 
     */
    
-   
-   
-
-
-  public function fileUpload($crud = NULL, $field = NULL, $file_type = NULL){
-    if(!is_null($crud)){
-      $accept = $this->getFileType($file_type);
-      $crud->callbackColumn($field, array($this, 'showFile'));
-      $crud->callbackAddField(
-        $field,
-        function () use ($accept,$field) {
-            return  '<input id="field-' .$field. '" type="file" class="form-control  " accept="' . $accept . '" name="' .$field. '" value="">';
-        }
-    );
-
-    $crud->callbackEditField(
-      $field,
-      function ($data)  use ($accept,$field) {
-          $path = base_url() . 'uploads/' . $data;
-
-          $html = $this->showFile($data);
-          $html .= '<input id="field-image" type="file" class="form-control mt-2" accept="' . $accept . '" name="' . $field . '" value="">';
-
-          $html .= '<input id="field-image" type="hidden" class="form-control" name="file_hidden" value="' . $data . '">';
-          return $html;
-      }
-    );
-
-    $crud->callbackBeforeInsert(
-      function ($cbData) use ($field) {
-          $toUpload = $this->request->getFile($field);
-          if (isset($toUpload)) {
-              $image = UploadFile($toUpload);
-              $cbData->data[$field] = $image;
-
-              return $cbData;
-          }
-      }
-    );
-
-    $crud->callbackBeforeUpdate(
-      function ($cbData)  use ($field) {
-          $toUpload = $this->request->getFile($field);
-
-          $file_hidden = $this->request->getVar('file_hidden');
-
-          if (isset($toUpload)) {
-              $image = UploadFile($toUpload, null, $file_hidden);
-              $cbData->data[$field] = $image;
-          } else {
-              $cbData->data[$field] = $file_hidden;
-          }
-          $cbData->data['updated_by'] = getUserData()->id;
-          $cbData->data['updated_at'] = \getCurrentDate();
-          return $cbData;
-      }
-    );
-    $crud->fieldType('created_by', 'hidden', getUserData()->id);
-    $crud->fieldType('updated_at', 'hidden', null);
-    $crud->fieldType('updated_by', 'hidden', null);
-    return $crud;
-    }
-
-    return $crud;
-  }
-
-  public function fileUploadMultiField($crud = NULL, $fields = array()){
+  /**
+   * Main File Work
+   *
+   * @param array $crud
+   * @param array $fields
+   * @return array $crud
+   */
+  public function setFieldUpload($crud = NULL, $fields = array()){
+    // getPrint($this->uploadsFields);
     if(!is_null($crud)){
       foreach ($fields as $field => $file_type) {
+        getPrint($file_type);
         $accept = $this->getFileType($file_type);
         $crud->callbackColumn($field, array($this, 'showFile'));
         $crud->callbackAddField(
@@ -189,24 +131,7 @@ abstract class BaseController extends Controller
     return null;
   }
 
-  public function getFileType($file_type){
-    switch ($file_type) {
-      case 'image':
-        $accept = ".jpg, .jpeg, .png";
-        break;
-      case 'document':
-        $accept = ".pdf, .doc, .docx";
-        break;
-      case 'video':
-        $accept = ".mp4";
-        break;
-      
-      default:
-        $accept = NULL;
-        break;
-    }
-    return $accept;
-  }
+  
 
 
   public function showFile($value){

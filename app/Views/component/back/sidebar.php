@@ -15,6 +15,18 @@
                 </a>
             </li>
             <li>
+                <a href="<?=base_url('back-panel/cryptocurrency-trading')?>" class="waves-effect">
+                <i class="bx bx-home-circle"></i>
+                    <span >Cryptocurrency Trading</span>
+                </a>
+            </li>
+            <li>
+                <a href="<?=base_url('back-panel/core-need')?>" class="waves-effect">
+                <i class="bx bx-home-circle"></i>
+                    <span >Core Need</span>
+                </a>
+            </li>
+            <li>
                 <a href="<?=base_url('back-panel/logout')?>" class="waves-effect">
                 <i class="bx bx-power-off"></i>
                     <span >Logout</span>

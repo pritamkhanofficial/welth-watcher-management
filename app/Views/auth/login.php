@@ -16,7 +16,7 @@
                                 <div class="col-7">
                                     <div class="text-primary p-4">
                                         <h5 class="text-primary">Welcome Back !</h5>
-                                        <p>Login to continue to JGMCH Back Panel .</p>
+                                        <p>Login to continue Back Panel .</p>
                                     </div>
                                 </div>
                                 
@@ -28,7 +28,7 @@
                                 <a href="<?=base_url()?>" class="auth-logo-dark">
                                     <div class="avatar-md profile-user-wid mb-4">
                                         <span class="avatar-title rounded-circle bg-light">
-                                            <img src="<?=base_url()?>logo.png" alt="" class="rounded-circle" height="100">
+                                            <img src="<?=base_url()?>back/images/logo.png" alt="" class="rounded-circle" height="90">
                                         </span>
                                     </div>
                                 </a>

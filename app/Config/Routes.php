@@ -44,9 +44,9 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'cryptocurrency-trading/(:segment)/(:segment)', 'HomeController::cryptocurrencyTrading/$1/$2');
 
 
-        $routes->match(['get', 'post'],'core_need/', 'HomeController::coreNeed');
-        $routes->match(['get', 'post'],'core_need/(:segment)', 'HomeController::coreNeed/$1');
-        $routes->match(['get', 'post'],'core_need/(:segment)/(:segment)', 'HomeController::coreNeed/$1/$2');
+        $routes->match(['get', 'post'],'core-need/', 'HomeController::coreNeed');
+        $routes->match(['get', 'post'],'core-need/(:segment)', 'HomeController::coreNeed/$1');
+        $routes->match(['get', 'post'],'core-need/(:segment)/(:segment)', 'HomeController::coreNeed/$1/$2');
        
     });
 });

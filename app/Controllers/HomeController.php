@@ -13,7 +13,7 @@ class HomeController extends BaseController
     }
     
     public function Slider(){
-        $array = [
+        /* $array = [
             'image',
             'image_2'=>'document',
         ];
@@ -26,19 +26,28 @@ class HomeController extends BaseController
             }
             echo  '<br>';
         }
-        die;
+        die; */
         $crud = new GroceryCrud();
-        $crud->displayAs('image','Slider');
+        // $crud->displayAs('file_1','Slider');
         $crud->displayAs('is_active','Status');
         $crud->where("deleted_at", NULL);
-        $crud->columns(['image','image_2','content', 'is_active']);
-        $crud->fields(['image','image_2','content', 'is_active','created_by','updated_at','updated_by']);
+        $crud->columns(['file_1','file_2','content', 'is_active']);
+        $crud->fields(['file_1','file_2','content', 'is_active','created_by','updated_at','updated_by']);
         // $this->fileUpload($crud, 'image','image');
-        $crud->setTexteditor(['content']);
-        $this->fileUploadMultiField($crud, [
+        
+        // $this->setFieldImage(['image']);
+        $this->setFieldUpload($crud, [
+            'file_1'=>[
+                'file_type'=>'image'
+            ],
+            'file_2'=>[
+                'file_type'=>'document'
+            ],
+        ]);
+        /* $this->fileUploadMultiField($crud, [
             'image'=>'image',
             'image_2'=>'document',
-        ]);
+        ]); */
         // $crud->unsetDelete();
         // $crud->unsetAdd();
         if ($crud->getState() === 'delete') {

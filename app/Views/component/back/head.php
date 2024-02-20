@@ -4,7 +4,7 @@
 <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
 <meta content="Themesbrand" name="author" />
 <!-- App favicon -->
-<link rel="shortcut icon" href="<?=base_url('')?>logofav.ico">
+<link rel="shortcut icon" href="<?=base_url('')?>fav.png">
 
 <!-- Bootstrap Css -->
 <link href="<?=base_url('')?>back/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />

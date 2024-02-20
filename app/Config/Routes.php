@@ -52,6 +52,11 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'global-setting/', 'GlobalSetting::mannageGlobalSetting');
         $routes->match(['get', 'post'],'global-setting/(:segment)', 'GlobalSetting::mannageGlobalSetting/$1');
         $routes->match(['get', 'post'],'global-setting/(:segment)/(:segment)', 'GlobalSetting::mannageGlobalSetting/$1/$2');
+
+
+        $routes->match(['get', 'post'],'blog-category/', 'BlogCategory::category');
+        $routes->match(['get', 'post'],'blog-category/(:segment)', 'BlogCategory::category/$1');
+        $routes->match(['get', 'post'],'blog-category/(:segment)/(:segment)', 'BlogCategory::category/$1/$2');
        
     });
 });

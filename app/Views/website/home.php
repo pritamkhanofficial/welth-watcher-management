@@ -287,7 +287,7 @@
         </div>
       </div> -->
 
-        <div class="service-style-five mt-100">
+        <!-- <div class="service-style-five mt-100">
             <div class="container">
                 <div class="heading3 text-center">Services that Empower Your <br>Cryptocurrency Trading</div>
                 <div class="body3 text-secondary text-center mt-20">We offer free research recommendations across mutual
@@ -353,7 +353,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- <div class="testimonials-block style-two mt-100">
         <div class="container">
           <div class="list-comment bg-surface bora-40 pt-80 pb-80 text-center">

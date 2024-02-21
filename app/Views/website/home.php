@@ -38,8 +38,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <img class="box-shadow" src="assets/images/slider/subslider2-1.png" alt="" />
-                            <img class="box-shadow" src="assets/images/slider/subslider2-2.png" alt="" />
+                            <img class="box-shadow" src="<?=base_url()?>front/images/slider/subslider2-1.png" alt="" />
+                            <img class="box-shadow" src="<?=base_url()?>front/images/slider/subslider2-2.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -81,18 +81,18 @@
         <!--       <div class="style-two">
         <div class="partner-five-col style-one mt-100 bg-blue">
           <div class="list pt-32 pb-32">
-            <div class="bg-img flex-center"><img class="w-100" src="assets/images/partner/Logo.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="assets/images/partner/Logo-1.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="assets/images/partner/Logo-2.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="assets/images/partner/Logo-3.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="assets/images/partner/Logo-4.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="assets/images/partner/Logo-5.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="assets/images/partner/Logo.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="assets/images/partner/Logo-1.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="assets/images/partner/Logo-2.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="assets/images/partner/Logo-3.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="assets/images/partner/Logo-4.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="assets/images/partner/Logo-5.png" alt=""/></div>
+            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo.png" alt=""/></div>
+            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-1.png" alt=""/></div>
+            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-2.png" alt=""/></div>
+            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-3.png" alt=""/></div>
+            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-4.png" alt=""/></div>
+            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-5.png" alt=""/></div>
+            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo.png" alt=""/></div>
+            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-1.png" alt=""/></div>
+            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-2.png" alt=""/></div>
+            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-3.png" alt=""/></div>
+            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-4.png" alt=""/></div>
+            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-5.png" alt=""/></div>
           </div>
         </div>
       </div> -->
@@ -121,10 +121,10 @@
                         </div>
                     </div>
                     <div class="col-12 col-lg-5 col-md-8 col-sm-8">
-                        <div class="bg-img w-100"><img class="w-100" src="assets/images/component/about-home5.png"
+                        <div class="bg-img w-100"><img class="w-100" src="<?=base_url()?>front/images/component/about-home5.png"
                                 alt="" /></div>
-                        <div class="sub-img"> <img src="assets/images/component/sub-about5-left.png" alt="" /><img
-                                src="assets/images/component/sub-about5.png" alt="" /></div>
+                        <div class="sub-img"> <img src="<?=base_url()?>front/images/component/sub-about5-left.png" alt="" /><img
+                                src="<?=base_url()?>front/images/component/sub-about5.png" alt="" /></div>
                     </div>
                 </div>
             </div>
@@ -170,35 +170,35 @@
           <div class="row"> 
             <div class="col-12 col-xl-3 col-md-4 col-sm-6"> 
               <div class="item">
-                <div class="bg-img overflow-hidden"><img class="w-100 h-100" src="assets/images/component/Project.png" alt=""/></div><a class="text" href="case-studies-detail.html"> 
+                <div class="bg-img overflow-hidden"><img class="w-100 h-100" src="<?=base_url()?>front/images/component/Project.png" alt=""/></div><a class="text" href="case-studies-detail.html"> 
                   <div class="heading5 text-white">Financial assessment</div>
                   <div class="body3 text-white mt-4">Budget Planning</div></a><a class="arrow bg-white bora-50" href="case-studies-detail.html"><i class="ph ph-arrow-right fs-28 p-12"></i></a>
               </div>
             </div>
             <div class="col-12 col-xl-3 col-md-4 col-sm-6"> 
               <div class="item">
-                <div class="bg-img overflow-hidden"><img class="w-100 h-100" src="assets/images/component/Project-1.png" alt=""/></div><a class="text" href="case-studies-detail.html">
+                <div class="bg-img overflow-hidden"><img class="w-100 h-100" src="<?=base_url()?>front/images/component/Project-1.png" alt=""/></div><a class="text" href="case-studies-detail.html">
                   <div class="heading5 text-white">Budget Planning</div>
                   <div class="body3 text-white mt-4">Financial Advice</div></a><a class="arrow bg-white bora-50" href="case-studies-detail.html"><i class="ph ph-arrow-right fs-28 p-12"></i></a>
               </div>
             </div>
             <div class="col-12 col-xl-3 col-md-4 col-sm-6"> 
               <div class="item">
-                <div class="bg-img overflow-hidden"><img class="w-100 h-100" src="assets/images/component/Project-2.png" alt=""/></div><a class="text" href="case-studies-detail.html">
+                <div class="bg-img overflow-hidden"><img class="w-100 h-100" src="<?=base_url()?>front/images/component/Project-2.png" alt=""/></div><a class="text" href="case-studies-detail.html">
                   <div class="heading5 text-white">Insurance advice</div>
                   <div class="body3 text-white mt-4">Financial Planning</div></a><a class="arrow bg-white bora-50" href="case-studies-detail.html"><i class="ph ph-arrow-right fs-28 p-12"></i></a>
               </div>
             </div>
             <div class="col-12 col-xl-3 col-md-4 col-sm-6"> 
               <div class="item">
-                <div class="bg-img overflow-hidden"><img class="w-100 h-100" src="assets/images/component/Project-3.png" alt=""/></div><a class="text" href="case-studies-detail.html">
+                <div class="bg-img overflow-hidden"><img class="w-100 h-100" src="<?=base_url()?>front/images/component/Project-3.png" alt=""/></div><a class="text" href="case-studies-detail.html">
                   <div class="heading5 text-white">Savings advice</div>
                   <div class="body3 text-white mt-4">Business Planning</div></a><a class="arrow bg-white bora-50" href="case-studies-detail.html"><i class="ph ph-arrow-right fs-28 p-12"></i></a>
               </div>
             </div>
             <div class="col-12 col-xl-3 col-md-4 col-sm-6"> 
               <div class="item">
-                <div class="bg-img overflow-hidden"><img class="w-100 h-100" src="assets/images/component/Project-4.png" alt=""/></div><a class="text" href="case-studies-detail.html">
+                <div class="bg-img overflow-hidden"><img class="w-100 h-100" src="<?=base_url()?>front/images/component/Project-4.png" alt=""/></div><a class="text" href="case-studies-detail.html">
                   <div class="heading5 text-white">Portfolio Management</div>
                   <div class="body3 text-white mt-4">Manage Account Infor</div></a><a class="arrow bg-white bora-50" href="case-studies-detail.html"><i class="ph ph-arrow-right fs-28 p-12"></i></a>
               </div>
@@ -210,7 +210,7 @@
             <div class="container">
                 <div class="row row-gap-32">
                     <div class="col-12 col-xl-4 flex-column gap-16">
-                        <div class="bg-img w-100"><img class="w-100" src="assets/images/component/gateway2-bg.png"
+                        <div class="bg-img w-100"><img class="w-100" src="<?=base_url()?>front/images/component/gateway2-bg.png"
                                 alt="" /></div>
                     </div>
                     <div class="col12 col-xl-8">
@@ -281,7 +281,7 @@
               </div>
             </div>
             <div class="col-12 col-lg-5 col-md-8 col-sm-8">
-              <div class="bg-img w-100"><img class="w-100" src="assets/images/banner/project-below-home5.png" alt=""/></div>
+              <div class="bg-img w-100"><img class="w-100" src="<?=base_url()?>front/images/banner/project-below-home5.png" alt=""/></div>
             </div>
           </div>
         </div>
@@ -376,7 +376,7 @@
         </div>
       </div> -->
         <!--  <div class="form-cta-block benefit-two mt-100">
-        <div class="bg-img"> <img src="assets/images/banner/form-benefit-two.png" alt=""/></div>
+        <div class="bg-img"> <img src="<?=base_url()?>front/images/banner/form-benefit-two.png" alt=""/></div>
         <div class="container h-100">
           <div class="row flex-between h-100 row-gap-20">
             <div class="col-12 col-xl-5 col-lg-6">
@@ -500,7 +500,7 @@
                     <div class="blog-item col-12 col-xl-4 col-sm-6" data-name=""><a class="blog-item-main"
                             href="blog-detail-two.html">
                             <div class="bg-img w-100 overflow-hidden mb-minus-1"><img class="w-100 h-100 display-block"
-                                    src="assets/images/blog/item11.png"
+                                    src="<?=base_url()?>front/images/blog/item11.png"
                                     alt="CI Financial sells RIA stake in new expansion strategy" /></div>
                             <div class="infor bg-white p-24">
                                 <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
@@ -518,7 +518,7 @@
                     <div class="blog-item col-12 col-xl-4 col-sm-6" data-name=""><a class="blog-item-main"
                             href="blog-detail-two.html">
                             <div class="bg-img w-100 overflow-hidden mb-minus-1"><img class="w-100 h-100 display-block"
-                                    src="assets/images/blog/item13.png"
+                                    src="<?=base_url()?>front/images/blog/item13.png"
                                     alt="Barred financial advisors charged in $72 million criminal" /></div>
                             <div class="infor bg-white p-24">
                                 <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
@@ -537,7 +537,7 @@
                     <div class="blog-item col-12 col-xl-4 col-sm-6" data-name=""><a class="blog-item-main"
                             href="blog-detail-two.html">
                             <div class="bg-img w-100 overflow-hidden mb-minus-1"><img class="w-100 h-100 display-block"
-                                    src="assets/images/blog/item12.png" alt="Retirement Planning Strategies" /></div>
+                                    src="<?=base_url()?>front/images/blog/item12.png" alt="Retirement Planning Strategies" /></div>
                             <div class="infor bg-white p-24">
                                 <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
                                     Design</div>
@@ -554,7 +554,7 @@
                     <div class="blog-item col-12 col-xl-4 col-sm-6 display-none col-lg-show" data-name=""><a
                             class="blog-item-main" href="blog-detail-two.html">
                             <div class="bg-img w-100 overflow-hidden mb-minus-1"><img class="w-100 h-100 display-block"
-                                    src="assets/images/blog/item10.png" alt="Helping a local business" /></div>
+                                    src="<?=base_url()?>front/images/blog/item10.png" alt="Helping a local business" /></div>
                             <div class="infor bg-white p-24">
                                 <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
                                     Makerting</div>

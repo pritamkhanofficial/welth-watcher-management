@@ -14,6 +14,8 @@ class WebsiteController extends BaseController
     public function home()
     {
         $result = $this->model->home();
-        return view('website/home');
+        $data = $this->model->findAll();
+        // echo "<pre>"; print_r($data); die;
+        return view('website/home', ['data' => $data]);
     }
 }

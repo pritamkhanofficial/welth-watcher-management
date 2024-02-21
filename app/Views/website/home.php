@@ -423,13 +423,17 @@
             <div class="service-block mt-80">
                 <div class="container">
                     <div class="list-service row mt-32 row-gap-32">
-                      <?php foreach($data as $data):?>
+                      <?php
+                      $i=0; 
+                        foreach($data as $data):
+                          $i++
+                      ?>
                         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6">
                             <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px"><a
                                     class="service-item-main flex-column gap-16"
                                     href="service-cryptocurrency-trading.html">
                                     <div class="heading flex-between"><i class="<?= $data['icon_text']?>"></i>
-                                        <div class="number heading3 text-placehover">01</div>
+                                        <div class="number heading3 text-placehover">0<?= $i ?></div>
                                     </div>
                                     <div class="desc">
                                         <div class="heading7 hover-text-blue"><?= $data['title']?></div>

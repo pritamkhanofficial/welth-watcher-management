@@ -5,7 +5,8 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+// $routes->get('/', 'Home::index');
+$routes->get('/', 'WebsiteController::home');
 
 
 $routes->group('back-panel', static function ($routes) {

@@ -1,6 +1,6 @@
 <div id="footer">
         <div class="cta-block style-two">
-            <div class="bg-cta w-100"><img class="w-100 h-100" src="assets/images/cta/bg-cta1.png" alt="" /></div>
+            <div class="bg-cta w-100"><img class="w-100 h-100" src="<?=base_url()?>front/images/cta/bg-cta1.png" alt="" /></div>
             <div class="container flex-between h-100">
                 <div class="heading5 text-white">Looking for a first-class business consultant?</div><a
                     class="button-share hover-button-black bg-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
@@ -13,7 +13,7 @@
                     <div class="row flex-between pb-40">
                         <div class="col-3">
                             <div class="footer-company-infor flex-columns-between gap-20"><img class="footer-logo"
-                                    src="assets/images/Logo-footer.png" alt="Logo" />
+                                    src="<?=base_url()?>front/images/Logo-footer.png" alt="Logo" />
                                 <div class="text caption1 text-white">We are a diversified company specialized in
                                     providing comprehensive financial solutions for individuals and businesses.</div>
                                 <div class="list-social flex-item-center gap-10 style-one"><a

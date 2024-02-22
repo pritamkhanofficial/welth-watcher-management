@@ -423,16 +423,21 @@
             <div class="service-block mt-80">
                 <div class="container">
                     <div class="list-service row mt-32 row-gap-32">
+                      <?php
+                      $i=0; 
+                        foreach($data as $data):
+                          $i++
+                      ?>
                         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6">
                             <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px"><a
                                     class="service-item-main flex-column gap-16"
                                     href="service-cryptocurrency-trading.html">
-                                    <div class="heading flex-between"><i class="icon-coin-chair text-blue fs-60"></i>
-                                        <div class="number heading3 text-placehover">01</div>
+                                    <div class="heading flex-between"><i class="<?= $data['icon_text']?>"></i>
+                                        <div class="number heading3 text-placehover">0<?= $i ?></div>
                                     </div>
                                     <div class="desc">
-                                        <div class="heading7 hover-text-blue">3R Research Philosophy</div>
-                                        <div class="body3 text-secondary mt-4">Long term investing</div>
+                                        <div class="heading7 hover-text-blue"><?= $data['title']?></div>
+                                        <div class="body3 text-secondary mt-4"><?= $data['description']?></div>
                                     </div>
                                     <div class="read-block flex-item-center gap-4 hover-text-blue"><span
                                             class="fs-14 fw-700 text-blue">Read More</span><i
@@ -440,7 +445,8 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                        <?php endforeach; ?>
+                        <!-- <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6">
                             <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px"><a
                                     class="service-item-main flex-column gap-16"
                                     href="service-portfolio-management.html">
@@ -488,7 +494,7 @@
                                             class="ph-bold ph-caret-double-right fs-12 text-blue"></i></div>
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

@@ -20,7 +20,7 @@
                          <span key="t-master">Master</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
-                         <li><a href="<?=base_url('back-panel/blog-category')?>" key="t-default">Blog Category</a></li>
+                         <li><a href="<?=base_url('back-panel/blog-category')?>" key="t-default">News Category</a></li>
                      </ul>
                  </li>
                  <!-- <li>

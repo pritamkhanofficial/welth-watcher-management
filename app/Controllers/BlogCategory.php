@@ -27,7 +27,7 @@ class BlogCategory extends BaseController
         $crud->unsetExport();
 
         $crud->setTable('blog_category');
-        $crud->setSubject('Blog Category');
+        $crud->setSubject('News Category');
         $output = $crud->render();
         return view('common', (array)$output);
     }

@@ -8,7 +8,7 @@
                         <img src="<?=base_url()?>back/images/logo.png" alt="" height="35">
                     </span>
                     <span class="logo-lg">
-                        <img src="<?=base_url()?>back/images/logo-long.png" alt="" height="60">
+                        <img src="<?=base_url()?>back/images/logo-long-back.png" alt="" height="60">
                     </span>
                 </a>
             </div>

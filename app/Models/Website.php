@@ -6,10 +6,9 @@ use CodeIgniter\Model;
 
 class Website extends Model
 {
-    protected $table = 'core_need';
-    protected $primaryKey = 'id';
-    protected $allowedFields = ['title', 'icon_text', 'description'];
     public function home(){
-        
+        $data = [];
+        $data['core_need'] =  $this->db->table('core_need')->where(['deleted_at'=>NULL,'is_active'=>1])->orderBy('created_at','DESC')->limit(4)->get()->getResult();
+        return $data;
     }
 }

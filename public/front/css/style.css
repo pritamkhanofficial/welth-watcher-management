@@ -3001,9 +3001,13 @@ Section Slider Subpage Main: Start
     height: 300px;
   }
   .slider-sub .container .text-nav {
-    margin-top: 50px;
-    width: 75%;
+    margin-top: 6px;
+    width: 100%;
   }
+  .sub-heading.mt-8.text-white.fw-400 {
+    font-size: 10px;
+    line-height: 1;
+}
 }
 
 /*
@@ -3197,6 +3201,9 @@ Change icon color section Services Home3: End
   .service-style-five .heading3 br {
     display: none;
   }
+  .list-social.flex-item-center.gap-10.style-two {
+    display: none;
+}
 }
 
 /*
@@ -3245,6 +3252,10 @@ Change icon color section Services Home3: End
 @media (max-width: 1023.99px) {
   .service-block.style-six .list-service .main-item:hover {
     margin-top: 0;
+  }
+  .form-block.form-stock.bora-16.bg-white.p-28.flex-columns-between.gap-20{
+    width: 100% !important;
+    margin-left: 23px !important;
   }
 }
 @media (max-width: 767.99px) {
@@ -3930,6 +3941,7 @@ Section Testimonial Home6: Start
   .testimonials-six .container > .row .slick-list .slick-slide {
     padding: 0 32px;
   }
+
   .testimonials-six .container > .row .slick-list .slick-slide .row {
     flex-direction: column-reverse;
   }
@@ -6961,8 +6973,8 @@ Reduce font and spacing: Start
     line-height: 36px;
   }
   .heading3 {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 30px;
   }
   .heading4 {
     font-size: 22px;
@@ -6981,7 +6993,7 @@ Reduce font and spacing: Start
     line-height: 20px;
   }
   .text-button {
-    font-size: 10px;
+    font-size: 9px;
     line-height: 20px;
   }
   .text-button-small {
@@ -7005,8 +7017,8 @@ Reduce font and spacing: Start
     line-height: 16px;
   }
   .button-share {
-    padding: 6px 9px;
-    border:none;
+    padding: 4px 7px;
+    border: none;
   }
   .mt-100 {
     margin-top: 60px;

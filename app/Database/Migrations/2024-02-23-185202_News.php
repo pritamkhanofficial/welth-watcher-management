@@ -10,24 +10,28 @@ class News extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type'           => 'BIGINT ',
+                'type'           => 'BIGINT',
                 'constraint'     => 20,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
-            'featured_image ' => [
+            'title' => [
                 'type'       => 'VARCHAR',
-                'constraint' => '100',
+                'constraint' => '255',
+            ],
+            'news_category_id' => [
+                'type'           => 'BIGINT',
+                'constraint'     => 30,
+                'unsigned'       => true
             ],
             'slug' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '100',
                 'null'       =>true
             ],
-            'news_category_id' => [
-                'type'           => 'BIGINT',
-                'constraint'     => 30,
-                'unsigned'       => true
+            'featured_image' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '100',
             ],
             'content' => [
                 'type'       => 'LONGTEXT',
@@ -37,21 +41,21 @@ class News extends Migration
                 'constraint' => ['draft', 'published'],
                 'default'    => 'draft'
             ],
-            'published_at datetime default null on published current_timestamp',
+            'published_at datetime default null',
             'published_by' => [
                 'type'           => 'BIGINT',
                 'constraint'     => 20,
                 'unsigned'       => true,
                 'null'           =>true
             ],
-            'created_at datetime on created current_timestamp',
+            'created_at datetime default current_timestamp',
             'created_by' => [
                 'type'           => 'BIGINT',
                 'constraint'     => 20,
                 'unsigned'       => true,
                 'null'           =>true
             ],
-            'updated_at datetime on update current_timestamp',
+            'updated_at datetime default null',
             'updated_by' => [
                 'type'           => 'BIGINT',
                 'constraint'     => 20,

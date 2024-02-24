@@ -48,6 +48,12 @@ class News extends Migration
                 'unsigned'       => true,
                 'null'           =>true
             ],
+            'is_active' => [
+                'type' => 'TINYINT',
+                'default'    => 1,
+                'constraint' => 1,
+                'comment'    => '0 for no 1 for yes'
+            ],
             'created_at datetime default current_timestamp',
             'created_by' => [
                 'type'           => 'BIGINT',

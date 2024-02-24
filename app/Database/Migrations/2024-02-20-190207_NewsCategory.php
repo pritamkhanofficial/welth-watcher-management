@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class BolgCategory extends Migration
+class NewsCategory extends Migration
 {
     public function up()
     {
@@ -41,11 +41,11 @@ class BolgCategory extends Migration
             'deleted_at datetime default null',
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('blog_category', true);
+        $this->forge->createTable('news_category', true);
     }
 
     public function down()
     {
-        $this->forge->dropTable('blog_category', true);
+        $this->forge->dropTable('news_category', true);
     }
 }

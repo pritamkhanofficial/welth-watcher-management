@@ -20,7 +20,7 @@
                          <span key="t-master">Master</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
-                         <li><a href="<?=base_url('back-panel/blog-category')?>" key="t-default">News Category</a></li>
+                         <li><a href="<?=base_url('back-panel/news-category')?>" key="t-default">News Category</a></li>
                      </ul>
                  </li>
                  <!-- <li>
@@ -33,6 +33,12 @@
                      <a href="<?=base_url('back-panel/core-need')?>" class="waves-effect">
                          <i class="bx bx-home-circle"></i>
                          <span>Core Need</span>
+                     </a>
+                 </li>
+                 <li>
+                     <a href="<?=base_url('back-panel/news')?>" class="waves-effect">
+                         <i class="bx bx-home-circle"></i>
+                         <span>News</span>
                      </a>
                  </li>
                  <li>

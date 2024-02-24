@@ -55,9 +55,14 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'global-setting/(:segment)/(:segment)', 'GlobalSetting::mannageGlobalSetting/$1/$2');
 
 
-        $routes->match(['get', 'post'],'blog-category/', 'BlogCategory::category');
-        $routes->match(['get', 'post'],'blog-category/(:segment)', 'BlogCategory::category/$1');
-        $routes->match(['get', 'post'],'blog-category/(:segment)/(:segment)', 'BlogCategory::category/$1/$2');
+        $routes->match(['get', 'post'],'news-category/', 'HomeController::newsCategory');
+        $routes->match(['get', 'post'],'news-category/(:segment)', 'HomeController::newsCategory/$1');
+        $routes->match(['get', 'post'],'news-category/(:segment)/(:segment)', 'HomeController::newsCategory/$1/$2');
+
+
+        $routes->match(['get', 'post'],'news/', 'HomeController::news');
+        $routes->match(['get', 'post'],'news/(:segment)', 'HomeController::news/$1');
+        $routes->match(['get', 'post'],'news/(:segment)/(:segment)', 'HomeController::news/$1/$2');
        
     });
 });

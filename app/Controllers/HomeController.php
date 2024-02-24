@@ -227,6 +227,55 @@ class HomeController extends BaseController
         $output = $crud->render();
         return view('common', (array)$output);
     }
+    public function newsCategory()
+    {
+        $crud = new GroceryCrud();
+        // $crud->displayAs('facebook_url','twitter_url','linkedin_url','youtube_url','mobile_no','address');
+        // $crud->displayAs('description','Content');
+        $crud->displayAs('is_active','Status');
+        // $crud->where("deleted_at", NULL);
+        $crud->columns(['label','is_active']);
+        $crud->fields(['label','is_active']);
+        // $crud->setTexteditor(['address']);
+        // $crud->unsetAdd();
+
+
+        $crud->unsetDelete();
+        
+        $crud->unsetPrint();
+        $crud->unsetExport();
+
+        $crud->setTable('news_category');
+        $crud->setSubject('News Category');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
+    public function news(){
+        
+        $crud = new GroceryCrud();
+        $crud->displayAs('news_category_id','News Category');
+        $crud->displayAs('content','Content');
+        $crud->displayAs('is_active','Status');
+        $crud->where("news.deleted_at", NULL);
+        $crud->setRelation('news_category_id', 'news_category', 'label', ['is_active' => 1,'deleted_at'=>NULL]);
+
+        $crud->columns(['title','news_category_id', 'published_status','is_active']);
+        $crud->fields(['title','news_category_id', 'content', 'published_status', 'is_active']);
+
+
+        $crud->setTexteditor(['content']);
+
+
+        $crud->unsetDelete();
+        
+        $crud->unsetPrint();
+        $crud->unsetExport();
+
+        $crud->setTable('news');
+        $crud->setSubject('News');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
 
 
 }

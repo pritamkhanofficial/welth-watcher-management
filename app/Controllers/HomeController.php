@@ -277,5 +277,27 @@ class HomeController extends BaseController
         return view('common', (array)$output);
     }
 
+    public function state(){
+        
+        $crud = new GroceryCrud();
+        
+        $crud->displayAs('is_active','Status');
+        
+        $crud->columns(['label','is_active']);
+        $crud->fields(['label','is_active']);
+
+
+        $crud->unsetDelete();
+        
+        $crud->unsetPrint();
+        $crud->unsetExport();
+
+
+        $crud->setTable('state');
+        $crud->setSubject('State');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
+
 
 }

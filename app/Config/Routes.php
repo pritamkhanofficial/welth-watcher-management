@@ -63,6 +63,11 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'news/', 'HomeController::news');
         $routes->match(['get', 'post'],'news/(:segment)', 'HomeController::news/$1');
         $routes->match(['get', 'post'],'news/(:segment)/(:segment)', 'HomeController::news/$1/$2');
+
+
+        $routes->match(['get', 'post'],'state/', 'HomeController::state');
+        $routes->match(['get', 'post'],'state/(:segment)', 'HomeController::state/$1');
+        $routes->match(['get', 'post'],'state/(:segment)/(:segment)', 'HomeController::state/$1/$2');
        
     });
 });

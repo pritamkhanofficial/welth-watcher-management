@@ -5,7 +5,7 @@ use App\Libraries\GroceryCrud;
 use App\Models\WebsiteModel;
 
 
-class HomeController extends BaseController
+class BackPanelController extends BaseController
 {
     public $websiteModel = NULL;
     public function __construct(Type $var = null) {

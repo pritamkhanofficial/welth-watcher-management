@@ -34,11 +34,11 @@ foreach($css_files as $file): ?>
                     <div class="row">
 
                         <div class="col-md-12">
-                            <?php 
-                            /* if(isset($output['page'])){
-                                die;
-                            } */
-                            ?>
+                            <div class="gc-toolbar">
+                                <div class="btn-group">
+                                    <a class="btn btn-primary" href="<?= site_url('back-panel/add-news'); ?>">Add News</a>
+                                </div>
+                            </div>
                             <?php echo $output; ?>
 
                         </div>

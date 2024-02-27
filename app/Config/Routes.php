@@ -68,6 +68,10 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'state/', 'BackPanelController::state');
         $routes->match(['get', 'post'],'state/(:segment)', 'BackPanelController::state/$1');
         $routes->match(['get', 'post'],'state/(:segment)/(:segment)', 'BackPanelController::state/$1/$2');
+
+
+        $routes->match(['get', 'post'],'add-news', 'BackPanelController::addNews');
+        $routes->match(['get', 'post'],'edit-news/(:num)', 'BackPanelController::editNews/$1');
        
     });
 });

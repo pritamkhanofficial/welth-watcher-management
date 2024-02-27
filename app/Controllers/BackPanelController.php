@@ -258,15 +258,32 @@ class BackPanelController extends BaseController
         $crud->displayAs('is_active','Status');
         $crud->where("news.deleted_at", NULL);
         $crud->setRelation('news_category_id', 'news_category', 'label', ['is_active' => 1,'deleted_at'=>NULL]);
+        // $crud->callbackColumn('featured_image', array($this, 'showFile'));
+       /*  $crud->callbackColumn('actions', function ($value, $row) {
+            return "<a href='" . site_url('menu/' . $row->id) . "'>$value</a>";
+        }); */
 
+        // $crud->setApiUrlPath('https://demo.grocerycrud.com/set-api-url-path');
         $crud->columns(['title','news_category_id', 'published_status','is_active']);
         $crud->fields(['title','news_category_id', 'content', 'published_status', 'is_active']);
 
 
         $crud->setTexteditor(['content']);
+        $crud->setActionButton('Edit', 'fa fa-edit', function ($value,$row) {
+            return site_url('back-panel/edit-news/' . $value);
+        });
+        // $crud->addButton('Custom Add', base_url('your_custom_add_url'));
+        // $crud->addAction('Custom Add', 'fa fa-plus', 'your_custom_add_url');
+       /*  $crud->setActionButton('Custom Add', 'fa fa-plus', function ($primaryKey) {
+            return site_url('your_custom_add_url/' . $primaryKey);
+        }); */
+
+       
 
 
         $crud->unsetDelete();
+        $crud->unsetAdd();
+        $crud->unsetEdit();
         
         $crud->unsetPrint();
         $crud->unsetExport();
@@ -274,7 +291,9 @@ class BackPanelController extends BaseController
         $crud->setTable('news');
         $crud->setSubject('News');
         $output = $crud->render();
-        return view('common', (array)$output);
+        // $output->page = 'news';
+        // getPrint($output);
+        return view('news/news-list', (array)$output);
     }
 
     public function state(){
@@ -297,6 +316,15 @@ class BackPanelController extends BaseController
         $crud->setSubject('State');
         $output = $crud->render();
         return view('common', (array)$output);
+    }
+
+    public function addNews(){
+        return view('news/add');
+    }
+    public function editNews($id){
+
+        // echo $id; die;
+        return view('news/edit');
     }
 
 

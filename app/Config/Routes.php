@@ -72,6 +72,11 @@ $routes->group('back-panel', static function ($routes) {
 
         $routes->match(['get', 'post'],'add-news', 'BackPanelController::addNews');
         $routes->match(['get', 'post'],'edit-news/(:num)', 'BackPanelController::editNews/$1');
+
+
+        $routes->match(['get', 'post'],'contact-list/', 'BackPanelController::contact_list');
+        $routes->match(['get', 'post'],'contact-list/(:segment)', 'BackPanelController::contact_list/$1');
+        $routes->match(['get', 'post'],'contact-list/(:segment)/(:segment)', 'BackPanelController::contact_list/$1/$2');
        
     });
 });

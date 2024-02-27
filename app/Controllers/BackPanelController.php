@@ -327,5 +327,30 @@ class BackPanelController extends BaseController
         return view('news/edit');
     }
 
+    public function contact_list(){
+        $crud = new GroceryCrud();
+        // $crud->displayAs('facebook_url','twitter_url','linkedin_url','youtube_url','mobile_no','address');
+        // $crud->displayAs('description','Content');
+        $crud->displayAs('is_active','Status');
+        // $crud->where("deleted_at", NULL);
+        $crud->columns(['name','email','phone_no','state_id','city','zip_code','message','is_active']);
+        $crud->fields(['name','email','phone_no','state_id','city','zip_code','message','is_active']);
+        // $crud->setTexteditor(['address']);
+        // $crud->unsetAdd();
+
+
+        $crud->unsetAdd();
+        $crud->unsetEdit();
+        $crud->unsetDelete();
+        
+        $crud->unsetPrint();
+        $crud->unsetExport();
+
+        $crud->setTable('contact');
+        $crud->setSubject('Contact List');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
+
 
 }

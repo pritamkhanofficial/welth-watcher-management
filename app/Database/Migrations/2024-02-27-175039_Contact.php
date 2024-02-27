@@ -30,8 +30,7 @@ class Contact extends Migration
             'state_id' => [
                 'type'           => 'BIGINT',
                 'constraint'     => 20,
-                'unsigned'       => true,
-                'auto_increment' => true
+                'unsigned'       => true
             ],
             'city' => [
                 'type'       => 'VARCHAR',

@@ -4,8 +4,8 @@
 <head>
 
     <?=view('component/back/head')?>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 
-   
 </head>
 
 <body data-sidebar="dark" data-layout-mode="light">
@@ -28,12 +28,72 @@
                     <?=view('component/back/breadcrumb')?>
                     <!-- end page breadcrumb -->
                     <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title mb-4">Add News</h4>
 
-                        <div class="col-md-12">
-                           
-                           
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <div class="mb-3">
+                                                    <label for="tltle" class="form-label">Title</label>
+                                                    <input type="text" class="form-control" id="tltle" name="tltle"
+                                                        placeholder="Enter News Title">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="news_category" class="form-label">News Category</label>
+                                                    <select class="form-select" id="news_category" name="news_category">
+                                                        <option value="">-- Select --</option>
 
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <label for="featured_image" class="form-label">Featured Image</label>
+                                                <input type="file" class="form-control" id="featured_image"
+                                                    name="featured_image" placeholder="Enter News Title">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="published_status" class="form-label">Published
+                                                        Status</label>
+                                                    <select class="form-select" id="published_status"
+                                                        name="published_status">
+                                                        <option value="draft" selected>Draft</option>
+                                                        <option value="published">Published</option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <textarea name="content" id="content" class="form-control" cols="30"
+                                                rows="10" placeholder="Content"></textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" checked name="is_active" id="is_active">
+                                                <label class="form-check-label" for="is_active">
+                                                    Active ?
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary w-md">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- end card body -->
+                            </div>
+                            <!-- end card -->
                         </div>
+                        <!-- end col -->
                     </div>
                     <!-- end row -->
                 </div>
@@ -56,50 +116,23 @@
 
 
     <?=view('component/back/script')?>
-
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 
     <script>
-    /* $("#changePassword").validate({
-        rules: {
-            password: {
-                required: true
-            },
-            new_password: {
-                required: true
-            },
-            confirm_password: {
-                required: true,
-                equalTo: "#new_password"
-            }
-        },
-        messages: {
-            confirm_password: {
-                equalTo: "The Confirm Password field does not match the New Password field."
-            }
-        }
-
+    $('#content').summernote({
+        placeholder: 'Content',
+        tabsize: 2,
+        height: 200,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ]
     });
-    $("#changePassword").ajaxForm({
-        contentType: 'application/json',
-        beforeSubmit: function() {
-            var valid = $('#changePassword').valid();
-            if (valid) {
-                $("#submit").html("Loading...")
-                return valid;
-            }
-        },
-        success: function(response) {
-            $("#submit").html("Change")
-            if (response?.success) {
-                notification();
-                // window.location.reload(true);
-            }
-
-            $(".password").html(response.message?.password ?? '');
-            $(".new_password").html(response.message?.new_password ?? '');
-            $(".confirm_password").html(response.message?.confirm_password ?? '');
-        }
-    }); */
     </script>
 
 </body>

@@ -33,20 +33,23 @@
                                 <div class="card-body">
                                     <h4 class="card-title mb-4">Add News</h4>
 
-                                    <form>
+                                    <form action="" method="post" enctype='multipart/form-data'>
                                         <div class="row">
                                             <div class="col-md-8">
                                                 <div class="mb-3">
-                                                    <label for="tltle" class="form-label">Title</label>
-                                                    <input type="text" class="form-control" id="tltle" name="tltle"
+                                                    <label for="title" class="form-label">Title</label>
+                                                    <input type="text" class="form-control" required id="title" name="title"
                                                         placeholder="Enter News Title">
                                                 </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="mb-3">
-                                                    <label for="news_category" class="form-label">News Category</label>
-                                                    <select class="form-select" id="news_category" name="news_category">
-                                                        <option value="">-- Select --</option>
+                                                    <label for="news_category_id" class="form-label">News Category</label>
+                                                    <select class="form-select" id="news_category_id" name="news_category_id">
+                                                        <option value=""> -- Select -- </option>
+                                                        <?php foreach($news_cat as $row){ ?>
+                                                            <option value="<?=$row->id?>"><?=$row->label?></option>
+                                                        <?php } ?>
 
                                                     </select>
                                                 </div>
@@ -56,7 +59,7 @@
                                             <div class="col-md-8">
                                                 <label for="featured_image" class="form-label">Featured Image</label>
                                                 <input type="file" class="form-control" id="featured_image"
-                                                    name="featured_image" placeholder="Enter News Title">
+                                                    name="featured_image">
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="mb-3">
@@ -85,7 +88,7 @@
                                             </div>
                                         </div>
                                         <div class="text-center">
-                                            <button type="submit" class="btn btn-primary w-md">Save</button>
+                                            <input type="submit" class="btn btn-primary w-md" name="submit" value="Save">
                                         </div>
                                     </form>
                                 </div>

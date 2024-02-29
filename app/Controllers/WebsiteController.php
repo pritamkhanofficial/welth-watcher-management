@@ -18,7 +18,7 @@ class WebsiteController extends BaseController
     }
     public function contact()
     {
-        //$result = $this->model->home();
-        return view('website/contact');
+        $result = $this->model->contact();
+        return view('website/contact', ['data' => $result]);
     }
 }

@@ -1,3 +1,6 @@
+<?php 
+// getPrint($data['state']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,46 +82,52 @@
                                     us everyday
                                 </div>
                             </div>
+                            <from class="cmxform" id="commentForm" method="get" action="">
                             <div class="row row-gap-20">
-                                <div class="col-12 col-sm-6">
-                                    <input
-                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        type="text" placeholder="Name" />
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input
-                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        type="text" placeholder="Email" />
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input
-                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        type="text" placeholder="Phone no" />
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input
-                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        type="text" placeholder="City" />
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <select class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
-                                        name="categories">
-                                        <option value="Financial Planning">Financial Planning</option>
-                                        <option value="Business Planning">Business Planning</option>
-                                        <option value="Development Planning">Development Planning</option>
-                                    </select><i class="ph ph-caret-down"></i>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input
-                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        type="text" placeholder="Zip Code" />
-                                </div>
-                                <div class="col-12">
-                                    <textarea
-                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        name="message" cols="10" rows="4" placeholder="Your Message"></textarea>
-                                </div>
+                                    <div class="col-12 col-sm-6">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="text" id="name" name="name" placeholder="Name" />
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="text" id="email" name="email" placeholder="Email" />
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="text" id="phone_no" name="phone_no" placeholder="Phone no" />
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <select class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                            name="state" id="state">
+                                            <option value="" disabled selected>Select State</option>
+                                            <?php if(!empty($data['state'])){ 
+                                                foreach($data['state'] as $key=>$val){
+                                                ?>
+                                            <option value="<?= $val->id ?>"><?= $val->label ?></option>
+                                            <?php } } ?>              
+                                        </select><i class="ph ph-caret-down"></i>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="text" id="city" name="city" placeholder="City" />
+                                    </div>
+                                    
+                                    <div class="col-12 col-sm-6">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="text" id="zip_code" name="zip_code" placeholder="Zip Code" />
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            name="message" id="message" cols="10" rows="4" placeholder="Your Message"></textarea>
+                                    </div>   
                             </div>
+                            </from>
                             <div class="button-block">
                                 <button
                                     class="button-share hover-border-blue bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Submit
@@ -136,5 +145,55 @@
     <?php echo view('component/front/script'); ?>
     <!--endbuild-->
 </body>
+<script>
+$("#commentForm").validate();
+</script>
+<script>
+    jQuery('#commentForm').validate({
+        rules:{
+            name:"required",
+            email:{
+                required:true,
+                email:true
+            },
+            phone_no:{
+                required:true,
+                numeric:true,
+                minlength:10,
+                maxlength:10
+            },
+            state:"required",
+            city:"required",
+            zip_code:{
+                required:true,
+                numeric:true,
+                minlength:6,
+                maxlength:6
+            },
+            message:"required",
+        },messages:{
+            name:"Please enter your name",
+            email:{
+                required:"Please enter your email",
+                email:"Please enter a valid email"
+            },
+            phone_no:{
+                required:"Please enter your phone number",
+                numeric:"Phone number must be numeric",
+                minlength:"Phone number must be 10 digit",
+                maxlength:"Phone number must be 10 digit"
+            },
+            state:"Please select your state",
+            city:"Please select your state",
+            zip_code:{
+                required:"Please enter your zip code",
+                numeric:"Please enter a valid zip code",
+                minlength:"Please enter a valid zip code",
+                maxlength:"Please enter a valid zip code"
+            },
+            message:"Please leave some message for us"
+        }
+    });
+</script>
 
 </html>

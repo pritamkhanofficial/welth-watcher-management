@@ -2,6 +2,14 @@
 use CodeIgniter\HTTP\RequestInterface;
 use \Config\Database;
 
+use Cocur\Slugify\Slugify;
+
+
+function slug($data){
+    $slugify = new Slugify();
+    return $slugify->slugify($data);
+}
+
 function getGender(){
     return [
         '0' => 'Male',

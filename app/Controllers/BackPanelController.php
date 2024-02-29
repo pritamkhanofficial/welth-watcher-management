@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Libraries\GroceryCrud;
 use App\Models\WebsiteModel;
+use App\Models\BackPanelModel;
 
 
 class BackPanelController extends BaseController
@@ -319,7 +320,43 @@ class BackPanelController extends BaseController
     }
 
     public function addNews(){
-        return view('news/add');
+        $model = new BackPanelModel();
+        $news_cat = $model->getNewsCategory();
+        if($this->request->getVar('submit')){
+            $postData = $this->request->getVar();
+            $postData['is_active'] = 0;
+            if($this->request->getVar('is_active')){
+                $postData['is_active'] = 1;
+            }
+            unset($postData['submit']);
+            $file = $this->request->getFile('featured_image');
+            if(isset($file)){
+                $file = \UploadFile($file);
+                $postData['featured_image'] = $file;
+            }
+            if(isset($postData['files'])){
+                unset($postData['files']);
+            }
+            // getPrint($postData);
+            if($model->addNews($postData)){
+                generateFlash([
+                    'type'=>'success',
+                    'title'=>'Success',
+                    'message'=>'News Added Successfully',
+                ]);
+                return redirect()->to('back-panel/news');
+            }else{
+                generateFlash([
+                    'type'=>'error',
+                    'title'=>'Error',
+                    'message'=>'!Oops something went wrong. Please try again.',
+                ]);
+                return redirect()->to('back-panel/add-news');
+            }
+
+            
+        }
+        return view('news/add',['news_cat'=>$news_cat]);
     }
     public function editNews($id){
 

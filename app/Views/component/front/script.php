@@ -9,3 +9,4 @@
     <script src="<?=base_url()?>front/js/bootstrap-drawer.min.js"></script>
     <script src="<?=base_url()?>front/js/drawer.min.js"></script>
     <script src="<?=base_url()?>front/js/main.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>

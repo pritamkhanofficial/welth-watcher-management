@@ -45,6 +45,12 @@
                      </a>
                  </li>
                  <li>
+                     <a href="<?=base_url('back-panel/contact-list')?>" class="waves-effect">
+                         <i class="bx bx-home-circle"></i>
+                         <span>Contact List</span>
+                     </a>
+                 </li>
+                 <li>
                      <a href="<?=base_url('back-panel/logout')?>" class="waves-effect">
                          <i class="bx bx-power-off"></i>
                          <span>Logout</span>

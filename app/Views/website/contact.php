@@ -6,6 +6,13 @@
 
 <head>
     <?php echo view('component/front/head'); ?>
+
+    <style>
+        .spinner-border{
+            width: 1rem;
+            height: 1rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -82,17 +89,17 @@
                                     us everyday
                                 </div>
                             </div>
-                            <from class="cmxform" id="commentForm" method="get" action="">
+                            <form class="contactForm" id="contactForm" method="post" action="<?=base_url('/contact')?>">
                             <div class="row row-gap-20">
                                     <div class="col-12 col-sm-6">
                                         <input
                                             class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                            type="text" id="name" name="name" placeholder="Name" />
+                                            type="text" id="name" required name="name" placeholder="Name" />
                                     </div>
                                     <div class="col-12 col-sm-6">
                                         <input
                                             class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                            type="text" id="email" name="email" placeholder="Email" />
+                                            type="email" id="email" name="email" placeholder="Email" />
                                     </div>
                                     <div class="col-12 col-sm-6">
                                         <input
@@ -100,15 +107,15 @@
                                             type="text" id="phone_no" name="phone_no" placeholder="Phone no" />
                                     </div>
                                     <div class="col-12 col-sm-6">
-                                        <select class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                        <select class="form-select w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                             name="state" id="state">
-                                            <option value="" disabled selected>Select State</option>
+                                            <option value="" selected>Select State</option>
                                             <?php if(!empty($data['state'])){ 
                                                 foreach($data['state'] as $key=>$val){
                                                 ?>
                                             <option value="<?= $val->id ?>"><?= $val->label ?></option>
                                             <?php } } ?>              
-                                        </select><i class="ph ph-caret-down"></i>
+                                        </select>
                                     </div>
                                     <div class="col-12 col-sm-6">
                                         <input
@@ -127,12 +134,12 @@
                                             name="message" id="message" cols="10" rows="4" placeholder="Your Message"></textarea>
                                     </div>   
                             </div>
-                            </from>
                             <div class="button-block">
-                                <button
-                                    class="button-share hover-border-blue bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Submit
-                                    request</button>
+                                <button type="submit" name="submit" value="submit" class="button-share hover-border-blue bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Submit request <div class="spinner-border d-none" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                              </div></button>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -144,12 +151,8 @@
     <!--build:js assets/js/main.min.js-->
     <?php echo view('component/front/script'); ?>
     <!--endbuild-->
-</body>
 <script>
-$("#commentForm").validate();
-</script>
-<script>
-    jQuery('#commentForm').validate({
+    $('#contactForm').validate({
         rules:{
             name:"required",
             email:{
@@ -158,7 +161,7 @@ $("#commentForm").validate();
             },
             phone_no:{
                 required:true,
-                numeric:true,
+                number: true,
                 minlength:10,
                 maxlength:10
             },
@@ -166,7 +169,7 @@ $("#commentForm").validate();
             city:"required",
             zip_code:{
                 required:true,
-                numeric:true,
+                number:true,
                 minlength:6,
                 maxlength:6
             },
@@ -179,7 +182,7 @@ $("#commentForm").validate();
             },
             phone_no:{
                 required:"Please enter your phone number",
-                numeric:"Phone number must be numeric",
+                number:"Phone number must be numeric",
                 minlength:"Phone number must be 10 digit",
                 maxlength:"Phone number must be 10 digit"
             },
@@ -187,13 +190,73 @@ $("#commentForm").validate();
             city:"Please select your state",
             zip_code:{
                 required:"Please enter your zip code",
-                numeric:"Please enter a valid zip code",
+                number:"Please enter a valid zip code",
                 minlength:"Please enter a valid zip code",
                 maxlength:"Please enter a valid zip code"
             },
             message:"Please leave some message for us"
         }
     });
-</script>
 
+
+    $("#contactForm").ajaxForm({
+        // contentType: 'application/json',
+        beforeSubmit: function() {
+            var valid = $('#contactForm').valid();
+            if (valid) {
+                /* $("#send_otp").html("Loading...")
+                $("#submit_otp").html("Loading...") */
+                
+                $(".spinner-border").removeClass("d-none") 
+                return valid;
+            }
+        },
+        success: function(response) {
+            // console.log(response.email);
+            /* $(".institute_id").html(response.message.institute_id ?? '');
+            $(".course_id").html(response.message.course_id ?? '');
+            $(".quota").html(response.message.quota ?? '');
+            $(".mobile").html(response.message.mobile ?? '');
+            $(".email").html(response.message.email ?? '');
+            $(".otp").html(response.message.otp ?? '');
+           
+            if (response.success) {
+
+                
+
+                if (response.data.url || response.message === "verified") {
+                    window.location.href = response.data.url;
+                }else if (response.message == "Form Fillup Done for this email and mobile number") {
+                    alert(response.message);
+                }else {
+                    var time = 60;
+                    timer(time);
+                    var counter = setInterval(function() {
+                        if (!timerOn) {
+                            clearInterval(counter);
+                             //alert(timerOn)
+                            $("#send_otp_div").removeClass("d-none");
+                            $("#otp").attr("required", false);
+                            $(".submit_otp_div").addClass("d-none");
+                        }
+
+                    }, time);
+                     //alert(timerOn);
+                    $("#send_otp_div").addClass("d-none");
+                    $("#otp").attr("required", true);
+                    $(".submit_otp_div").removeClass("d-none");
+                }
+
+
+            }
+            $("#send_otp").html("Send OTP");
+            $("#submit_otp").html("Submit OTP"); */
+
+            alert(response.message);
+            $('#contactForm')[0].reset();
+            $(".spinner-border").addClass("d-none") 
+        }
+    });
+</script>
+</body>
 </html>

@@ -18,6 +18,34 @@ class WebsiteController extends BaseController
     }
     public function contact()
     {
+
+        if($this->request->getVar('submit')){
+            $data = [
+                'name' =>$this->request->getVar('name'),
+                'email' =>$this->request->getVar('email'),
+                'phone_no' =>$this->request->getVar('phone_no'),
+                'state_id' =>$this->request->getVar('state'),
+                'city' =>$this->request->getVar('city'),
+                'zip_code' =>$this->request->getVar('zip_code'),
+                'message' =>$this->request->getVar('message'),
+                'created_at' =>\getCurrentDate(),
+            ];
+
+            
+            $result = $this->model->submitContact($data);
+            if($result){
+                return $this->response->setJSON([
+                    'success'=>true,
+                    'message'=>'Thank You for Contacting Us!',
+                ]);
+            }else{
+                return $this->response->setJSON([
+                    'success'=>false,
+                    'message'=>'!Oops something went wrong. Please try again.',
+                ]);
+            }
+
+        }
         $result = $this->model->contact();
         return view('website/contact', ['data' => $result]);
     }

@@ -231,19 +231,20 @@
             </div>
         </div>
         <?php } ?>
+        <?php if(!empty($data['news'])){ ?>
         <div class="blog-list style-one mt-100">
             <div class="container">
                 <div class="heading3 text-center">Latest News</div>
                 <div class="row row-gap-32 mt-40">
+                    <?php foreach($data['news'] as $key=>$row){?>
                     <div class="blog-item col-12 col-xl-4 col-sm-6" data-name=""><a class="blog-item-main"
-                            href="blog-detail-two.html">
+                            href="#">
                             <div class="bg-img w-100 overflow-hidden mb-minus-1"><img class="w-100 h-100 display-block"
-                                    src="<?=base_url()?>front/images/blog/item11.png"
+                                    src="<?=base_url('get-file/' . $row->featured_image)?>"
                                     alt="CI Financial sells RIA stake in new expansion strategy" /></div>
                             <div class="infor bg-white p-24">
-                                <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
-                                    Makerting</div>
-                                <div class="heading6 mt-8">CI Financial sells RIA stake in new expansion strategy</div>
+                                <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block"><?= $row->label ?></div>
+                                <div class="heading6 mt-8"><?= $row->title ?></div>
                                 <div class="date flex-item-center gap-16 mt-8">
                                     <div class="author caption2 text-secondary">by <span
                                             class="text-on-surface">Avitex</span></div>
@@ -252,8 +253,10 @@
                                             ago</span></div>
                                 </div>
                             </div>
-                        </a></div>
-                    <div class="blog-item col-12 col-xl-4 col-sm-6" data-name=""><a class="blog-item-main"
+                        </a>
+                    </div>
+                    <?php }?>
+                   <!--  <div class="blog-item col-12 col-xl-4 col-sm-6" data-name=""><a class="blog-item-main"
                             href="blog-detail-two.html">
                             <div class="bg-img w-100 overflow-hidden mb-minus-1"><img class="w-100 h-100 display-block"
                                     src="<?=base_url()?>front/images/blog/item13.png"
@@ -271,7 +274,8 @@
                                             ago</span></div>
                                 </div>
                             </div>
-                        </a></div>
+                        </a>
+                    </div>
                     <div class="blog-item col-12 col-xl-4 col-sm-6" data-name=""><a class="blog-item-main"
                             href="blog-detail-two.html">
                             <div class="bg-img w-100 overflow-hidden mb-minus-1"><img class="w-100 h-100 display-block"
@@ -289,7 +293,8 @@
                                             ago</span></div>
                                 </div>
                             </div>
-                        </a></div>
+                        </a>
+                    </div>
                     <div class="blog-item col-12 col-xl-4 col-sm-6 display-none col-lg-show" data-name=""><a
                             class="blog-item-main" href="blog-detail-two.html">
                             <div class="bg-img w-100 overflow-hidden mb-minus-1"><img class="w-100 h-100 display-block"
@@ -307,10 +312,13 @@
                                             ago</span></div>
                                 </div>
                             </div>
-                        </a></div>
+                        </a>
+                    </div> -->
                 </div>
             </div>
-        </div><a class="scroll-to-top-btn" href="#header"><i class="ph-bold ph-caret-up"></i></a>
+        </div>
+        <?php } ?>
+        <a class="scroll-to-top-btn" href="#header"><i class="ph-bold ph-caret-up"></i></a>
         <div class="pb-100"></div>
     </div>
     <?php echo view('component/front/footer'); ?>

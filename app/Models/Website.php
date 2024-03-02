@@ -18,4 +18,7 @@ class Website extends Model
         // getPrint($data['state']);
         return $data;
     }
+    public function submitContact($data){
+        return $this->db->table('contact')->insert($data);
+    }
 }

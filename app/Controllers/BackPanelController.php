@@ -4,7 +4,7 @@ namespace App\Controllers;
 use App\Libraries\GroceryCrud;
 use App\Models\WebsiteModel;
 use App\Models\BackPanelModel;
-
+use Cocur\Slugify\Slugify;
 
 class BackPanelController extends BaseController
 {
@@ -263,28 +263,116 @@ class BackPanelController extends BaseController
        /*  $crud->callbackColumn('actions', function ($value, $row) {
             return "<a href='" . site_url('menu/' . $row->id) . "'>$value</a>";
         }); */
+        
 
         // $crud->setApiUrlPath('https://demo.grocerycrud.com/set-api-url-path');
-        $crud->columns(['title','news_category_id', 'published_status','is_active']);
-        $crud->fields(['title','news_category_id', 'content', 'published_status', 'is_active']);
+        $crud->columns(['title','news_category_id','featured_image', 'published_status','is_active']);
+        $crud->fields(['title','news_category_id', 'featured_image', 'content', 'published_status', 'is_active','created_by','updated_at','updated_by','published_at','published_by','slug']);
 
+        $crud->fieldType('created_by', 'hidden', getUserData()->id);
+        $crud->fieldType('updated_at', 'hidden', NULL);
+        $crud->fieldType('updated_by', 'hidden', NULL);
+        $crud->fieldType('published_at', 'hidden', NULL);
+        $crud->fieldType('published_by', 'hidden', NULL);
+        $crud->fieldType('slug', 'hidden', NULL);
+
+        if ($crud->getState() === 'delete') {
+            
+            $result = $this->websiteModel->softDelete('news', $crud->getStateInfo()->primary_key);
+            if($result){
+                return $this->response->setJSON([
+                    'success'=>true,
+                    'success_message'=>"<p>Your data has been successfully deleted from the database.</p>",
+                ]);
+            }
+            
+        }
 
         $crud->setTexteditor(['content']);
-        $crud->setActionButton('Edit', 'fa fa-edit', function ($value,$row) {
-            return site_url('back-panel/edit-news/' . $value);
-        });
+        // $crud->setActionButton('Edit', 'fa fa-edit', function ($value,$row) {
+        //     return site_url('back-panel/edit-news/' . $value);
+        // });
         // $crud->addButton('Custom Add', base_url('your_custom_add_url'));
         // $crud->addAction('Custom Add', 'fa fa-plus', 'your_custom_add_url');
        /*  $crud->setActionButton('Custom Add', 'fa fa-plus', function ($primaryKey) {
             return site_url('your_custom_add_url/' . $primaryKey);
         }); */
+        $crud->requiredFields(['title', 'news_category_id']);
+        /* Set File Upload */
+            // getPrint($file_type);
+        $accept = $this->getFileType('image');
+        $crud->callbackColumn('featured_image', array($this, 'showFile'));
+        $crud->callbackAddField(
+            'featured_image',
+            function () use ($accept) {
+                return  '<input id="field-featured_image" type="file" class="form-control  " accept="' . $accept . '" name="featured_image" value="">';
+            }
+        );
 
-       
+        $crud->callbackEditField(
+            'featured_image',
+            function ($data)  use ($accept) {
+                $path = base_url() . 'uploads/' . $data;
 
+                $html = $this->showFile($data);
+                $html .= '<input id="field-featured_image" type="file" class="form-control mt-2" accept="' . $accept . '" name="featured_image" value="">';
 
-        $crud->unsetDelete();
-        $crud->unsetAdd();
-        $crud->unsetEdit();
+                $html .= '<input id="file_hidden_featured_image" type="hidden" class="form-control" name="file_hidden_featured_image" value="' . $data . '">';
+                return $html;
+            }
+        );
+        $crud->callbackBeforeInsert(
+            function ($cbData){
+                $file = $this->request->getFile('featured_image');
+                if (isset($file)) {
+                    $file_name = UploadFile($file);
+                    $cbData->data['featured_image'] = $file_name;
+                }
+                $cbData->data['slug'] = slug($cbData->data['title']);
+                if(empty($cbData->data['published_status'])){
+                    $cbData->data['published_status'] = 'draft';
+                }
+                if($cbData->data['published_status'] == 'published'){
+                    $cbData->data['published_at'] = \getCurrentDate();
+                    $cbData->data['published_by'] = \getUserData()->id;
+                }else{
+                    $cbData->data['published_at'] = NULL;
+                    $cbData->data['published_by'] = NULL;
+                }
+            return $cbData;
+            }
+        );
+        $crud->callbackBeforeUpdate(
+            function ($cbData) {
+                $file = $this->request->getFile('featured_image');
+                $file_hidden = $this->request->getVar('file_hidden_featured_image');
+                if (isset($file)) {
+                    $file_name = UploadFile($file, null, $file_hidden);
+                    $cbData->data['featured_image'] = $file_name;
+                } else {
+                    $cbData->data['featured_image'] = $file_hidden;
+                }
+                if(empty($cbData->data['published_status'])){
+                    $cbData->data['published_status'] = 'draft';
+                }
+                $cbData->data['slug'] = slug($cbData->data['title']);
+                $cbData->data['updated_at'] = getCurrentDate();
+                $cbData->data['updated_by'] = getUserData()->id;
+                if($cbData->data['published_status'] == 'published'){
+                    $cbData->data['published_at'] = \getCurrentDate();
+                    $cbData->data['published_by'] = \getUserData()->id;
+                }else{
+                    $cbData->data['published_at'] = NULL;
+                    $cbData->data['published_by'] = NULL;
+                }
+            return $cbData;
+            }
+        );
+        /* --------------- */
+
+        // $crud->unsetDelete();
+        // $crud->unsetAdd();
+        // $crud->unsetEdit();
         
         $crud->unsetPrint();
         $crud->unsetExport();
@@ -294,7 +382,7 @@ class BackPanelController extends BaseController
         $output = $crud->render();
         // $output->page = 'news';
         // getPrint($output);
-        return view('news/news-list', (array)$output);
+        return view('common', (array)$output);
     }
 
     public function state(){

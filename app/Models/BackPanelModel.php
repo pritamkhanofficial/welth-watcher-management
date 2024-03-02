@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
-use Cocur\Slugify\Slugify;
 class BackPanelModel extends Model
 {
     public function getNewsCategory(){

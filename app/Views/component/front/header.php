@@ -16,18 +16,20 @@
         <div class="header-menu style-one bg-white">
             <div class="container flex-between h-80"><a class="menu-left-block" href="#">
                     <img class="menu-logo" src="<?=base_url()?>front/images/Logo.png" alt="logo" />
-                    <!-- <img class="menu-logo display-none" src="assets/images/Logo.png" alt="logo"/></a> -->
+                    <!-- <img class="menu-logo display-none" src="assets/images/Logo.png" alt="logo"/> -->
+                    </a>
                     <div class="menu-center-block h-100">
                         <ul class="menu-nav flex-item-center h-100">
                             <li class="nav-item h-100 flex-center home active"><a class="nav-link"
-                                    href="<?=base_url()?>">Home</a></li>
+                                    href="<?=base_url('/')?>">Home</a></li>
                             <li class="nav-item h-100 flex-center home "><a class="nav-link" href="about.html">About
                                     Us</a></li>
                             <li class="nav-item h-100 flex-center home "><a class="nav-link"
                                     href="report-analysis.html">Report Analysis</a></li>
                             <li class="nav-item h-100 flex-center home "><a class="nav-link"
                                     href="Carrier.html">Carrier</a></li>
-                            <li class="nav-item h-100 flex-center home "><a class="nav-link" href="<?=base_url('/contact')?>">Contact
+                            <li class="nav-item h-100 flex-center home "><a class="nav-link"
+                                    href="<?=base_url('/contact')?>">Contact
                                     Us</a></li>
                         </ul>
                     </div>

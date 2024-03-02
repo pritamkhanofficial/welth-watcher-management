@@ -137,32 +137,49 @@ abstract class BaseController extends Controller
   public function showFile($value){
     $path = "No File";
       if(!empty($value)){
-        $url = base_url('uploads/');
-      $type = pathinfo($value)['extension'];
-      // die($type);
-      $icon = '';
-      if($type === 'pdf'){
-          $icon = '<i class=" fas fa-file-pdf text-danger  fs-1  "></i>';
-      }elseif($type === 'xls' || $type === 'xlsx'){
-          $icon = '<i class="fas fa-file-excel text-success  fs-1  "></i>';
-      }elseif($type === 'doc' || $type === 'docx'){
-          $icon = '<i class=" fas fa-file-word  text-primary   fs-1  "></i>';
-      }elseif($type === 'txt'){
-              $icon = '<i class="fas fa-images fs-1"></i>';
-      }else{
-          $icon = '<i class="fas fa-images"></i>';
-      }
-      
-      // $icon = $type;
-      if($type == 'pdf' or $type == 'xls' or $type == 'xlsx' or $type == 'doc' or $type == 'docx' or $type == 'txt'){
+        $url = base_url('get-file/'.$value);
+        $type = pathinfo($value)['extension'];
+        // die($type);
+        $icon = '';
+        if($type === 'pdf'){
+            $icon = '<i class=" fas fa-file-pdf text-danger  fs-1  "></i>';
+        }elseif($type === 'xls' || $type === 'xlsx'){
+            $icon = '<i class="fas fa-file-excel text-success  fs-1  "></i>';
+        }elseif($type === 'doc' || $type === 'docx'){
+            $icon = '<i class=" fas fa-file-word  text-primary   fs-1  "></i>';
+        }elseif($type === 'txt'){
+                $icon = '<i class="fas fa-images fs-1"></i>';
+        }else{
+            $icon = '<i class="fas fa-images"></i>';
+        }
+        
+        // $icon = $type;
+        if($type == 'pdf' or $type == 'xls' or $type == 'xlsx' or $type == 'doc' or $type == 'docx' or $type == 'txt'){
 
-          $path = '<a target="_new" href="'.$url . $value.'"> '. $icon .' </a>';
-      }elseif($type == 'png' or $type == 'jpg' or $type == 'jpeg' or $type == 'bmp' or $type == 'webp' or $type == 'gif'){
-          $path = '<img src=' . $url . $value . ' height="100" width="100">'; 
+            $path = '<a target="_new" href="'.$url .'"> '. $icon .' </a>';
+        }elseif($type == 'png' or $type == 'jpg' or $type == 'jpeg' or $type == 'bmp' or $type == 'webp' or $type == 'gif'){
+            $path = '<img src=' . $url . ' height="100" width="100">'; 
+        }
       }
-      }
+      return $path;
+  }
+
+  public function getFileType($file_type){
+    switch ($file_type) {
+      case 'image':
+        $accept = ".jpg, .jpeg, .png";
+        break;
+      case 'document':
+        $accept = ".pdf, .doc, .docx";
+        break;
+      case 'video':
+        $accept = ".mp4";
+        break;
       
-      
-        return $path;
+      default:
+        $accept = NULL;
+        break;
+    }
+    return $accept;
   }
 }

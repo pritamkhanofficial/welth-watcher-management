@@ -9,6 +9,8 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'WebsiteController::home');
 $routes->get('/contact', 'WebsiteController::contact');
 
+$routes->get('get-file/(:any)', 'FileController::getFile/$1');
+
 
 $routes->group('back-panel', static function ($routes) {
 

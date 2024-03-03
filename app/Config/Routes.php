@@ -80,6 +80,11 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'contact-list/', 'BackPanelController::contact_list');
         $routes->match(['get', 'post'],'contact-list/(:segment)', 'BackPanelController::contact_list/$1');
         $routes->match(['get', 'post'],'contact-list/(:segment)/(:segment)', 'BackPanelController::contact_list/$1/$2');
+
+        
+        $routes->match(['get', 'post'],'partner/', 'BackPanelController::partner');
+        $routes->match(['get', 'post'],'partner/(:segment)', 'BackPanelController::partner/$1');
+        $routes->match(['get', 'post'],'partner/(:segment)/(:segment)', 'BackPanelController::partner/$1/$2');
        
     });
 });

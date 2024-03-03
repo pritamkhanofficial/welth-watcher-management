@@ -407,51 +407,6 @@ class BackPanelController extends BaseController
         return view('common', (array)$output);
     }
 
-    public function addNews(){
-        $model = new BackPanelModel();
-        $news_cat = $model->getNewsCategory();
-        if($this->request->getVar('submit')){
-            $postData = $this->request->getVar();
-            $postData['is_active'] = 0;
-            if($this->request->getVar('is_active')){
-                $postData['is_active'] = 1;
-            }
-            unset($postData['submit']);
-            $file = $this->request->getFile('featured_image');
-            if(isset($file)){
-                $file = \UploadFile($file);
-                $postData['featured_image'] = $file;
-            }
-            if(isset($postData['files'])){
-                unset($postData['files']);
-            }
-            // getPrint($postData);
-            if($model->addNews($postData)){
-                generateFlash([
-                    'type'=>'success',
-                    'title'=>'Success',
-                    'message'=>'News Added Successfully',
-                ]);
-                return redirect()->to('back-panel/news');
-            }else{
-                generateFlash([
-                    'type'=>'error',
-                    'title'=>'Error',
-                    'message'=>'!Oops something went wrong. Please try again.',
-                ]);
-                return redirect()->to('back-panel/add-news');
-            }
-
-            
-        }
-        return view('news/add',['news_cat'=>$news_cat]);
-    }
-    public function editNews($id){
-
-        // echo $id; die;
-        return view('news/edit');
-    }
-
     public function contact_list(){
         $crud = new GroceryCrud();
         // $crud->displayAs('facebook_url','twitter_url','linkedin_url','youtube_url','mobile_no','address');
@@ -473,6 +428,47 @@ class BackPanelController extends BaseController
 
         $crud->setTable('contact');
         $crud->setSubject('Contact List');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
+
+
+
+    public function partner(){
+        
+        $crud = new GroceryCrud();
+        
+        $crud->displayAs('is_active','Status');
+        
+        $crud->columns(['label','image','is_active']);
+        $crud->fields(['label','image','is_active','created_by','updated_at','updated_by']);
+        $crud->where("deleted_at", NULL);
+
+        // $crud->unsetDelete();
+        $crud->unsetPrint();
+        $crud->unsetExport();
+        $crud->fieldType('created_by', 'hidden', getUserData()->id);
+        $crud->fieldType('updated_at', 'hidden', NULL);
+        $crud->fieldType('updated_by', 'hidden', NULL);
+
+        if ($crud->getState() === 'delete') {
+            
+            $result = $this->websiteModel->softDelete('partners', $crud->getStateInfo()->primary_key);
+            if($result){
+                return $this->response->setJSON([
+                    'success'=>true,
+                    'success_message'=>"<p>Your data has been successfully deleted from the database.</p>",
+                ]);
+            }
+            
+        }
+
+
+        $this->setFieldUpload($crud, [
+            'image'=>'image'
+        ]);
+        $crud->setTable('partners');
+        $crud->setSubject('partners');
         $output = $crud->render();
         return view('common', (array)$output);
     }

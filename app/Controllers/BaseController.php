@@ -75,7 +75,7 @@ abstract class BaseController extends Controller
     // getPrint($this->uploadsFields);
     if(!is_null($crud)){
       foreach ($fields as $field => $file_type) {
-        getPrint($file_type);
+        // getPrint($file_type);
         $accept = $this->getFileType($file_type);
         $crud->callbackColumn($field, array($this, 'showFile'));
         $crud->callbackAddField(
@@ -123,6 +123,9 @@ abstract class BaseController extends Controller
                 $cbData->data[$field] = $file_hidden;
             }
           }
+
+          $cbData->data['updated_at'] = getCurrentDate();
+          $cbData->data['updated_by'] = getUserData()->id;
           return $cbData;
         }
       );

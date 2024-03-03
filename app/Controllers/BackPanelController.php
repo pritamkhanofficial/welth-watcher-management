@@ -432,6 +432,29 @@ class BackPanelController extends BaseController
         return view('common', (array)$output);
     }
 
+    public function services(){
+        
+        $crud = new GroceryCrud();
+        $crud->displayAs('icon_text','Set Font Icon');
+        $crud->displayAs('short_description','Description');
+        $crud->displayAs('is_active','Status');
+        $crud->where("deleted_at", NULL);
+        $crud->columns(['title','short_description', 'is_active']);
+        $crud->fields(['title','icon_text', 'short_description','containt', 'is_active']);
+        $crud->setTexteditor(['containt']);
+
+
+        $crud->unsetDelete();
+        
+        $crud->unsetPrint();
+        $crud->unsetExport();
+
+        $crud->setTable('services');
+        $crud->setSubject('Services');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
+
 
 
     public function partner(){

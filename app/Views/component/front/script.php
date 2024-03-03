@@ -9,6 +9,7 @@
 <script src="<?=base_url()?>front/js/bootstrap-drawer.min.js"></script>
 <script src="<?=base_url()?>front/js/drawer.min.js"></script>
 <script src="<?=base_url()?>front/js/main.min.js"></script>
+<script src="<?=base_url()?>front/js/jquery.steps.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 <!-- Ajax Form -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>

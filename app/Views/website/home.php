@@ -32,9 +32,8 @@
                                     </div>
 
                                     <div class="button-block">
-                                        <button
-                                            class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
-                                            data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</button>
+                                        <a href="<?=base_url('register')?>"><button
+                                                class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Register</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +72,7 @@
                     </div>
                     <div class="modal-footer row">
                         <div class="col-lg-12 text-center ">
-                        <button type="button" class="btn btn-success">Submit</button>
+                            <button type="button" class="btn btn-success">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -211,7 +210,8 @@
                             <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px"><a
                                     class="service-item-main flex-column gap-16"
                                     href="service-cryptocurrency-trading.html">
-                                    <div class="heading flex-between"><i class="<?= $row->icon_text?> text-blue fs-60"></i>
+                                    <div class="heading flex-between"><i
+                                            class="<?= $row->icon_text?> text-blue fs-60"></i>
                                         <div class="number heading3 text-placehover"><?= $placehover ?></div>
                                     </div>
                                     <div class="desc">
@@ -237,13 +237,13 @@
                 <div class="heading3 text-center">Latest News</div>
                 <div class="row row-gap-32 mt-40">
                     <?php foreach($data['news'] as $key=>$row){?>
-                    <div class="blog-item col-12 col-xl-4 col-sm-6" data-name=""><a class="blog-item-main"
-                            href="#">
+                    <div class="blog-item col-12 col-xl-4 col-sm-6" data-name=""><a class="blog-item-main" href="#">
                             <div class="bg-img w-100 overflow-hidden mb-minus-1"><img class="w-100 h-100 display-block"
                                     src="<?=base_url('get-file/' . $row->featured_image)?>"
                                     alt="CI Financial sells RIA stake in new expansion strategy" /></div>
                             <div class="infor bg-white p-24">
-                                <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block"><?= $row->label ?></div>
+                                <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
+                                    <?= $row->label ?></div>
                                 <div class="heading6 mt-8"><?= $row->title ?></div>
                                 <div class="date flex-item-center gap-16 mt-8">
                                     <div class="author caption2 text-secondary">by <span
@@ -256,7 +256,7 @@
                         </a>
                     </div>
                     <?php }?>
-                   <!--  <div class="blog-item col-12 col-xl-4 col-sm-6" data-name=""><a class="blog-item-main"
+                    <!--  <div class="blog-item col-12 col-xl-4 col-sm-6" data-name=""><a class="blog-item-main"
                             href="blog-detail-two.html">
                             <div class="bg-img w-100 overflow-hidden mb-minus-1"><img class="w-100 h-100 display-block"
                                     src="<?=base_url()?>front/images/blog/item13.png"
@@ -318,7 +318,6 @@
             </div>
         </div>
         <?php } ?>
-        <a class="scroll-to-top-btn" href="#header"><i class="ph-bold ph-caret-up"></i></a>
         <div class="pb-100"></div>
     </div>
     <?php echo view('component/front/footer'); ?>

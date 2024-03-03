@@ -28,6 +28,11 @@ class Website extends Model
     public function submitContact($data){
         return $this->db->table('contact')->insert($data);
     }
+    public function register($data){
+        return $this->db->table('register')->insert($data);
+    }
+
+    
 }
 
 

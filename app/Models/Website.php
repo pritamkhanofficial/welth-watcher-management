@@ -12,6 +12,12 @@ class Website extends Model
         $data['news'] = $this->db->table('news')->join('news_category', 'news_category.id = news.news_category_id', 'left')->where(['news.deleted_at'=>NULL,'news.is_active'=>1])->orderBy('news.created_at','DESC')->limit(3)->get()->getResult();
         return $data;
     }
+    public function about(){
+        $data = [];
+        $data['services'] =  $this->db->table('services')->where(['deleted_at'=>NULL,'is_active'=>1])->orderBy('created_at','DESC')->limit(4)->get()->getResult();
+        $data['partner'] =  $this->db->table('partners')->where(['deleted_at'=>NULL,'is_active'=>1])->orderBy('created_at','DESC')->limit(4)->get()->getResult();
+        return $data;
+    }
 
     public function contact(){
         $data = [];

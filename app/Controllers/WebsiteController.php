@@ -49,4 +49,10 @@ class WebsiteController extends BaseController
         $result = $this->model->contact();
         return view('website/contact', ['data' => $result]);
     }
+
+    public function about()
+    {
+        $result = $this->model->about();
+        return view('website/about', ['data' => $result]);
+    }
 }

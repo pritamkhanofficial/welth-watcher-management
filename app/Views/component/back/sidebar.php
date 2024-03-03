@@ -34,25 +34,25 @@
             </li> -->
                  <li>
                      <a href="<?=base_url('back-panel/core-need')?>" class="waves-effect">
-                         <i class="bx bx-home-circle"></i>
+                     <i class="fas fa-search-plus"></i>
                          <span>Core Need</span>
                      </a>
                  </li>
                  <li>
                      <a href="<?=base_url('back-panel/news')?>" class="waves-effect">
-                         <i class="bx bx-home-circle"></i>
+                         <i class="fa fa-newspaper"></i>
                          <span>News</span>
                      </a>
                  </li>
                  <li>
                      <a href="<?=base_url('back-panel/contact-list')?>" class="waves-effect">
-                         <i class="bx bx-home-circle"></i>
+                         <i class="fa fa-address-book"></i>
                          <span>Contact List</span>
                      </a>
                  </li>
                  <li>
                      <a href="<?=base_url('back-panel/our-services')?>" class="waves-effect">
-                         <i class="bx bx-home-circle"></i>
+                         <i class="fas fa-cogs"></i>
                          <span>Our Services</span>
                      </a>
                  </li>

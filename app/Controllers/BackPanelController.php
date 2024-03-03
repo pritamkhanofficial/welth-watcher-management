@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Libraries\GroceryCrud;
 use App\Models\WebsiteModel;
 use App\Models\BackPanelModel;
@@ -9,11 +10,13 @@ use Cocur\Slugify\Slugify;
 class BackPanelController extends BaseController
 {
     public $websiteModel = NULL;
-    public function __construct(Type $var = null) {
+    public function __construct(Type $var = null)
+    {
         $this->websiteModel = new WebsiteModel();
     }
-    
-    public function Slider(){
+
+    public function Slider()
+    {
         /* $array = [
             'image',
             'image_2'=>'document',
@@ -30,19 +33,19 @@ class BackPanelController extends BaseController
         die; */
         $crud = new GroceryCrud();
         // $crud->displayAs('file_1','Slider');
-        $crud->displayAs('is_active','Status');
+        $crud->displayAs('is_active', 'Status');
         $crud->where("deleted_at", NULL);
-        $crud->columns(['file_1','file_2','content', 'is_active']);
-        $crud->fields(['file_1','file_2','content', 'is_active','created_by','updated_at','updated_by']);
+        $crud->columns(['file_1', 'file_2', 'content', 'is_active']);
+        $crud->fields(['file_1', 'file_2', 'content', 'is_active', 'created_by', 'updated_at', 'updated_by']);
         // $this->fileUpload($crud, 'image','image');
-        
+
         // $this->setFieldImage(['image']);
         $this->setFieldUpload($crud, [
-            'file_1'=>[
-                'file_type'=>'image'
+            'file_1' => [
+                'file_type' => 'image'
             ],
-            'file_2'=>[
-                'file_type'=>'document'
+            'file_2' => [
+                'file_type' => 'document'
             ],
         ]);
         /* $this->fileUploadMultiField($crud, [
@@ -52,16 +55,15 @@ class BackPanelController extends BaseController
         // $crud->unsetDelete();
         // $crud->unsetAdd();
         if ($crud->getState() === 'delete') {
-            
+
             $result = $this->websiteModel->softDelete('sliders', $crud->getStateInfo()->primary_key);
             // getPrint($result);
-            if($result){
+            if ($result) {
                 return $this->response->setJSON([
-                    'success'=>true,
-                    'success_message'=>"<p>Your data has been successfully deleted from the database.</p>",
+                    'success' => true,
+                    'success_message' => "<p>Your data has been successfully deleted from the database.</p>",
                 ]);
             }
-            
         }
         $crud->unsetPrint();
         $crud->unsetExport();
@@ -73,14 +75,15 @@ class BackPanelController extends BaseController
         $output = $crud->render();
         return view('common', (array)$output);
     }
-    public function Documents(){
+    public function Documents()
+    {
         $crud = new GroceryCrud();
-        $crud->displayAs('file','Document File');
-        $crud->displayAs('doc_type','Document Type');
-        $crud->displayAs('is_active','Status');
+        $crud->displayAs('file', 'Document File');
+        $crud->displayAs('doc_type', 'Document Type');
+        $crud->displayAs('is_active', 'Status');
         $crud->where("deleted_at", NULL);
-        $crud->columns(['title','file', 'doc_type', 'is_active']);
-        $crud->fields(['title','file', 'doc_type', 'is_active','created_by','updated_at','updated_by']);
+        $crud->columns(['title', 'file', 'doc_type', 'is_active']);
+        $crud->fields(['title', 'file', 'doc_type', 'is_active', 'created_by', 'updated_at', 'updated_by']);
         $crud->fieldType('doc_type', 'dropdown', [
             'NOTICE' => 'Notice',
             'TENDER' => 'Tender',
@@ -88,18 +91,17 @@ class BackPanelController extends BaseController
             'ARS' => 'Anti Ragging Section',
             'MENU' => 'Nav Menu'
         ]);
-        $this->fileHandle($crud, 'file','document');
+        $this->fileHandle($crud, 'file', 'document');
 
         if ($crud->getState() === 'delete') {
-            
+
             $result = $this->websiteModel->softDelete('documents', $crud->getStateInfo()->primary_key);
-            if($result){
+            if ($result) {
                 return $this->response->setJSON([
-                    'success'=>true,
-                    'success_message'=>"<p>Your data has been successfully deleted from the database.</p>",
+                    'success' => true,
+                    'success_message' => "<p>Your data has been successfully deleted from the database.</p>",
                 ]);
             }
-            
         }
         $crud->unsetPrint();
         $crud->unsetExport();
@@ -109,25 +111,25 @@ class BackPanelController extends BaseController
         return view('common', (array)$output);
     }
 
-    public function Gallery(){
+    public function Gallery()
+    {
         $crud = new GroceryCrud();
-        $crud->displayAs('image','Gallery Image');
-        $crud->displayAs('is_active','Status');
+        $crud->displayAs('image', 'Gallery Image');
+        $crud->displayAs('is_active', 'Status');
         $crud->where("deleted_at", NULL);
-        $crud->columns(['title','image', 'is_active']);
-        $crud->fields(['title','image', 'is_active','created_by','updated_at','updated_by']);
-        $this->fileHandle($crud, 'image','image');
+        $crud->columns(['title', 'image', 'is_active']);
+        $crud->fields(['title', 'image', 'is_active', 'created_by', 'updated_at', 'updated_by']);
+        $this->fileHandle($crud, 'image', 'image');
 
         if ($crud->getState() === 'delete') {
-            
+
             $result = $this->websiteModel->softDelete('gallery', $crud->getStateInfo()->primary_key);
-            if($result){
+            if ($result) {
                 return $this->response->setJSON([
-                    'success'=>true,
-                    'success_message'=>"<p>Your data has been successfully deleted from the database.</p>",
+                    'success' => true,
+                    'success_message' => "<p>Your data has been successfully deleted from the database.</p>",
                 ]);
             }
-            
         }
         $crud->unsetPrint();
         $crud->unsetExport();
@@ -137,17 +139,18 @@ class BackPanelController extends BaseController
         return view('common', (array)$output);
     }
 
-    public function aboutHospital(){
-        
+    public function aboutHospital()
+    {
+
         $webModel = new WebsiteModel();
         $crud = new GroceryCrud();
-        $crud->displayAs('history_and_heritage','History and Heritage');
-        $crud->displayAs('description','About');
-        $crud->displayAs('is_active','Status');
+        $crud->displayAs('history_and_heritage', 'History and Heritage');
+        $crud->displayAs('description', 'About');
+        $crud->displayAs('is_active', 'Status');
         // $crud->where("deleted_at", NULL);
-        $crud->columns(['affiliated_to','vice_chancellor', 'registrar', 'year_of_affiliation']);
-        $crud->fields(['affiliated_to','vice_chancellor', 'registrar', 'year_of_affiliation','description', 'history_and_heritage', 'map', 'address', 'created_by','updated_by']);
-        $crud->setTexteditor(['description', 'history_and_heritage','address']);
+        $crud->columns(['affiliated_to', 'vice_chancellor', 'registrar', 'year_of_affiliation']);
+        $crud->fields(['affiliated_to', 'vice_chancellor', 'registrar', 'year_of_affiliation', 'description', 'history_and_heritage', 'map', 'address', 'created_by', 'updated_by']);
+        $crud->setTexteditor(['description', 'history_and_heritage', 'address']);
         // $crud->setFieldUpload(['file', 'is_active','created_by']);
         $crud->callbackColumn('file', array($this, 'showFile'));
         $crud->fieldType('created_by', 'hidden', getUserData()->id);
@@ -155,18 +158,18 @@ class BackPanelController extends BaseController
         /* $crud->callbackAfterInsert(function ($stateParameters) {
             return $this->saveLogData('add','state',$stateParameters->data);
         }); */
-        
+
         $crud->callbackBeforeUpdate(
-            function ($cbData) {    
+            function ($cbData) {
                 $cbData->data['updated_by'] = \getUserData()->id;
- 
+
                 return $cbData;
             }
         );
 
 
         $crud->unsetDelete();
-        if($webModel->getCountAboutHospital() >= 1){
+        if ($webModel->getCountAboutHospital() >= 1) {
 
             $crud->unsetAdd();
         }
@@ -182,20 +185,21 @@ class BackPanelController extends BaseController
     }
 
 
-    public function cryptocurrencyTrading(){
-        
+    public function cryptocurrencyTrading()
+    {
+
         $crud = new GroceryCrud();
-        $crud->displayAs('icon_text','Set Font Icon');
-        $crud->displayAs('description','Content');
-        $crud->displayAs('is_active','Status');
+        $crud->displayAs('icon_text', 'Set Font Icon');
+        $crud->displayAs('description', 'Content');
+        $crud->displayAs('is_active', 'Status');
         $crud->where("deleted_at", NULL);
-        $crud->columns(['title','icon_text', 'is_active']);
-        $crud->fields(['title','icon_text', 'description', 'is_active']);
+        $crud->columns(['title', 'icon_text', 'is_active']);
+        $crud->fields(['title', 'icon_text', 'description', 'is_active']);
         $crud->setTexteditor(['description']);
 
 
         $crud->unsetDelete();
-        
+
         $crud->unsetPrint();
         $crud->unsetExport();
 
@@ -206,20 +210,21 @@ class BackPanelController extends BaseController
     }
 
 
-    public function coreNeed(){
-        
+    public function coreNeed()
+    {
+
         $crud = new GroceryCrud();
-        $crud->displayAs('icon_text','Set Font Icon');
-        $crud->displayAs('description','Content');
-        $crud->displayAs('is_active','Status');
+        $crud->displayAs('icon_text', 'Set Font Icon');
+        $crud->displayAs('description', 'Content');
+        $crud->displayAs('is_active', 'Status');
         $crud->where("deleted_at", NULL);
-        $crud->columns(['title','icon_text', 'is_active']);
-        $crud->fields(['title','icon_text', 'description', 'is_active']);
+        $crud->columns(['title', 'icon_text', 'is_active']);
+        $crud->fields(['title', 'icon_text', 'description', 'is_active']);
         $crud->setTexteditor(['description']);
 
 
         $crud->unsetDelete();
-        
+
         $crud->unsetPrint();
         $crud->unsetExport();
 
@@ -233,16 +238,16 @@ class BackPanelController extends BaseController
         $crud = new GroceryCrud();
         // $crud->displayAs('facebook_url','twitter_url','linkedin_url','youtube_url','mobile_no','address');
         // $crud->displayAs('description','Content');
-        $crud->displayAs('is_active','Status');
+        $crud->displayAs('is_active', 'Status');
         // $crud->where("deleted_at", NULL);
-        $crud->columns(['label','is_active']);
-        $crud->fields(['label','is_active']);
+        $crud->columns(['label', 'is_active']);
+        $crud->fields(['label', 'is_active']);
         // $crud->setTexteditor(['address']);
         // $crud->unsetAdd();
 
 
         $crud->unsetDelete();
-        
+
         $crud->unsetPrint();
         $crud->unsetExport();
 
@@ -251,23 +256,24 @@ class BackPanelController extends BaseController
         $output = $crud->render();
         return view('common', (array)$output);
     }
-    public function news(){
-        
+    public function news()
+    {
+
         $crud = new GroceryCrud();
-        $crud->displayAs('news_category_id','News Category');
-        $crud->displayAs('content','Content');
-        $crud->displayAs('is_active','Status');
+        $crud->displayAs('news_category_id', 'News Category');
+        $crud->displayAs('content', 'Content');
+        $crud->displayAs('is_active', 'Status');
         $crud->where("news.deleted_at", NULL);
-        $crud->setRelation('news_category_id', 'news_category', 'label', ['is_active' => 1,'deleted_at'=>NULL]);
+        $crud->setRelation('news_category_id', 'news_category', 'label', ['is_active' => 1, 'deleted_at' => NULL]);
         // $crud->callbackColumn('featured_image', array($this, 'showFile'));
-       /*  $crud->callbackColumn('actions', function ($value, $row) {
+        /*  $crud->callbackColumn('actions', function ($value, $row) {
             return "<a href='" . site_url('menu/' . $row->id) . "'>$value</a>";
         }); */
-        
+
 
         // $crud->setApiUrlPath('https://demo.grocerycrud.com/set-api-url-path');
-        $crud->columns(['title','news_category_id','featured_image', 'published_status','is_active']);
-        $crud->fields(['title','news_category_id', 'featured_image', 'content', 'published_status', 'is_active','created_by','updated_at','updated_by','published_at','published_by','slug']);
+        $crud->columns(['title', 'news_category_id', 'featured_image', 'published_status', 'is_active']);
+        $crud->fields(['title', 'news_category_id', 'featured_image', 'content', 'published_status', 'is_active', 'created_by', 'updated_at', 'updated_by', 'published_at', 'published_by', 'slug']);
 
         $crud->fieldType('created_by', 'hidden', getUserData()->id);
         $crud->fieldType('updated_at', 'hidden', NULL);
@@ -277,15 +283,14 @@ class BackPanelController extends BaseController
         $crud->fieldType('slug', 'hidden', NULL);
 
         if ($crud->getState() === 'delete') {
-            
+
             $result = $this->websiteModel->softDelete('news', $crud->getStateInfo()->primary_key);
-            if($result){
+            if ($result) {
                 return $this->response->setJSON([
-                    'success'=>true,
-                    'success_message'=>"<p>Your data has been successfully deleted from the database.</p>",
+                    'success' => true,
+                    'success_message' => "<p>Your data has been successfully deleted from the database.</p>",
                 ]);
             }
-            
         }
 
         $crud->setTexteditor(['content']);
@@ -294,12 +299,12 @@ class BackPanelController extends BaseController
         // });
         // $crud->addButton('Custom Add', base_url('your_custom_add_url'));
         // $crud->addAction('Custom Add', 'fa fa-plus', 'your_custom_add_url');
-       /*  $crud->setActionButton('Custom Add', 'fa fa-plus', function ($primaryKey) {
+        /*  $crud->setActionButton('Custom Add', 'fa fa-plus', function ($primaryKey) {
             return site_url('your_custom_add_url/' . $primaryKey);
         }); */
         $crud->requiredFields(['title', 'news_category_id']);
         /* Set File Upload */
-            // getPrint($file_type);
+        // getPrint($file_type);
         $accept = $this->getFileType('image');
         $crud->callbackColumn('featured_image', array($this, 'showFile'));
         $crud->callbackAddField(
@@ -322,24 +327,24 @@ class BackPanelController extends BaseController
             }
         );
         $crud->callbackBeforeInsert(
-            function ($cbData){
+            function ($cbData) {
                 $file = $this->request->getFile('featured_image');
                 if (isset($file)) {
                     $file_name = UploadFile($file);
                     $cbData->data['featured_image'] = $file_name;
                 }
                 $cbData->data['slug'] = slug($cbData->data['title']);
-                if(empty($cbData->data['published_status'])){
+                if (empty($cbData->data['published_status'])) {
                     $cbData->data['published_status'] = 'draft';
                 }
-                if($cbData->data['published_status'] == 'published'){
+                if ($cbData->data['published_status'] == 'published') {
                     $cbData->data['published_at'] = \getCurrentDate();
                     $cbData->data['published_by'] = \getUserData()->id;
-                }else{
+                } else {
                     $cbData->data['published_at'] = NULL;
                     $cbData->data['published_by'] = NULL;
                 }
-            return $cbData;
+                return $cbData;
             }
         );
         $crud->callbackBeforeUpdate(
@@ -352,20 +357,20 @@ class BackPanelController extends BaseController
                 } else {
                     $cbData->data['featured_image'] = $file_hidden;
                 }
-                if(empty($cbData->data['published_status'])){
+                if (empty($cbData->data['published_status'])) {
                     $cbData->data['published_status'] = 'draft';
                 }
                 $cbData->data['slug'] = slug($cbData->data['title']);
                 $cbData->data['updated_at'] = getCurrentDate();
                 $cbData->data['updated_by'] = getUserData()->id;
-                if($cbData->data['published_status'] == 'published'){
+                if ($cbData->data['published_status'] == 'published') {
                     $cbData->data['published_at'] = \getCurrentDate();
                     $cbData->data['published_by'] = \getUserData()->id;
-                }else{
+                } else {
                     $cbData->data['published_at'] = NULL;
                     $cbData->data['published_by'] = NULL;
                 }
-            return $cbData;
+                return $cbData;
             }
         );
         /* --------------- */
@@ -373,7 +378,7 @@ class BackPanelController extends BaseController
         // $crud->unsetDelete();
         // $crud->unsetAdd();
         // $crud->unsetEdit();
-        
+
         $crud->unsetPrint();
         $crud->unsetExport();
 
@@ -385,18 +390,19 @@ class BackPanelController extends BaseController
         return view('common', (array)$output);
     }
 
-    public function state(){
-        
+    public function state()
+    {
+
         $crud = new GroceryCrud();
-        
-        $crud->displayAs('is_active','Status');
-        
-        $crud->columns(['label','is_active']);
-        $crud->fields(['label','is_active']);
+
+        $crud->displayAs('is_active', 'Status');
+
+        $crud->columns(['label', 'is_active']);
+        $crud->fields(['label', 'is_active']);
 
 
         $crud->unsetDelete();
-        
+
         $crud->unsetPrint();
         $crud->unsetExport();
 
@@ -407,14 +413,15 @@ class BackPanelController extends BaseController
         return view('common', (array)$output);
     }
 
-    public function contact_list(){
+    public function contact_list()
+    {
         $crud = new GroceryCrud();
         // $crud->displayAs('facebook_url','twitter_url','linkedin_url','youtube_url','mobile_no','address');
         // $crud->displayAs('description','Content');
-        $crud->displayAs('is_active','Status');
+        $crud->displayAs('is_active', 'Status');
         // $crud->where("deleted_at", NULL);
-        $crud->columns(['name','email','phone_no','state_id','city','zip_code','message','is_active']);
-        $crud->fields(['name','email','phone_no','state_id','city','zip_code','message','is_active']);
+        $crud->columns(['name', 'email', 'phone_no', 'state_id', 'city', 'zip_code', 'message', 'is_active']);
+        $crud->fields(['name', 'email', 'phone_no', 'state_id', 'city', 'zip_code', 'message', 'is_active']);
         // $crud->setTexteditor(['address']);
         // $crud->unsetAdd();
 
@@ -422,7 +429,7 @@ class BackPanelController extends BaseController
         $crud->unsetAdd();
         $crud->unsetEdit();
         $crud->unsetDelete();
-        
+
         $crud->unsetPrint();
         $crud->unsetExport();
 
@@ -432,20 +439,21 @@ class BackPanelController extends BaseController
         return view('common', (array)$output);
     }
 
-    public function services(){
-        
+    public function services()
+    {
+
         $crud = new GroceryCrud();
-        $crud->displayAs('icon_text','Set Font Icon');
-        $crud->displayAs('short_description','Description');
-        $crud->displayAs('is_active','Status');
+        $crud->displayAs('icon_text', 'Set Font Icon');
+        $crud->displayAs('short_description', 'Description');
+        $crud->displayAs('is_active', 'Status');
         $crud->where("deleted_at", NULL);
-        $crud->columns(['title','short_description', 'is_active']);
-        $crud->fields(['title','icon_text', 'short_description','containt', 'is_active']);
+        $crud->columns(['title', 'short_description', 'is_active']);
+        $crud->fields(['title', 'icon_text', 'short_description', 'containt', 'is_active']);
         $crud->setTexteditor(['containt']);
 
 
         $crud->unsetDelete();
-        
+
         $crud->unsetPrint();
         $crud->unsetExport();
 
@@ -457,14 +465,15 @@ class BackPanelController extends BaseController
 
 
 
-    public function partner(){
-        
+    public function partner()
+    {
+
         $crud = new GroceryCrud();
-        
-        $crud->displayAs('is_active','Status');
-        
-        $crud->columns(['label','image','is_active']);
-        $crud->fields(['label','image','is_active','created_by','updated_at','updated_by']);
+
+        $crud->displayAs('is_active', 'Status');
+
+        $crud->columns(['label', 'image', 'is_active']);
+        $crud->fields(['label', 'image', 'is_active', 'created_by', 'updated_at', 'updated_by']);
         $crud->where("deleted_at", NULL);
 
         // $crud->unsetDelete();
@@ -475,20 +484,19 @@ class BackPanelController extends BaseController
         $crud->fieldType('updated_by', 'hidden', NULL);
 
         if ($crud->getState() === 'delete') {
-            
+
             $result = $this->websiteModel->softDelete('partners', $crud->getStateInfo()->primary_key);
-            if($result){
+            if ($result) {
                 return $this->response->setJSON([
-                    'success'=>true,
-                    'success_message'=>"<p>Your data has been successfully deleted from the database.</p>",
+                    'success' => true,
+                    'success_message' => "<p>Your data has been successfully deleted from the database.</p>",
                 ]);
             }
-            
         }
 
 
         $this->setFieldUpload($crud, [
-            'image'=>'image'
+            'image' => 'image'
         ]);
         $crud->setTable('partners');
         $crud->setSubject('partners');
@@ -496,5 +504,29 @@ class BackPanelController extends BaseController
         return view('common', (array)$output);
     }
 
+    public function register()
+    {
+        $crud = new GroceryCrud();
+        // $crud->displayAs('facebook_url','twitter_url','linkedin_url','youtube_url','mobile_no','address');
+        // $crud->displayAs('description','Content');
+        $crud->displayAs('is_active', 'Status');
+        // $crud->where("deleted_at", NULL);
+        $crud->columns(['budget_planning', 'household_size', 'age', 'income', 'income_frequency']);
+        $crud->fields(['budget_planning', 'household_size', 'age', 'income', 'income_frequency']);
+        // $crud->setTexteditor(['address']);
+        // $crud->unsetAdd();
 
+
+        $crud->unsetAdd();
+        $crud->unsetEdit();
+        $crud->unsetDelete();
+
+        $crud->unsetPrint();
+        $crud->unsetExport();
+
+        $crud->setTable('register');
+        $crud->setSubject('Registration List');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
 }

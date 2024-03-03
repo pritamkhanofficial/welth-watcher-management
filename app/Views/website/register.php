@@ -123,9 +123,9 @@
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="income_frequency">
-                                                    <option value="Financial Planning">Per Year</option>
-                                                    <option value="Business Planning">Per Month</option>
-                                                    <option value="Development Planning">Per Week</option>
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Annualize a paycheck’s gross or use W-2
@@ -146,9 +146,9 @@
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="income_after_taxes_frequency">
-                                                    <option value="Financial Planning">Per Year</option>
-                                                    <option value="Business Planning">Per Month</option>
-                                                    <option value="Development Planning">Per Week</option>
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Subtract all federal, state and local
@@ -166,9 +166,9 @@
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="social_security_taxes_frequency">
-                                                    <option value="Financial Planning">Per Year</option>
-                                                    <option value="Business Planning">Per Month</option>
-                                                    <option value="Development Planning">Per Week</option>
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>The current rate is 6.2% for corporate
@@ -726,9 +726,9 @@
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="debt_payment_frequency">
-                                                    <option value="Financial Planning">Per Year</option>
-                                                    <option value="Business Planning">Per Month</option>
-                                                    <option value="Development Planning">Per Week</option>
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>For credit cards, only include sums

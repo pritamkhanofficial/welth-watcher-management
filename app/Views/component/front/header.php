@@ -22,7 +22,7 @@
                         <ul class="menu-nav flex-item-center h-100">
                             <li class="nav-item h-100 flex-center home active"><a class="nav-link"
                                     href="<?=base_url('/')?>">Home</a></li>
-                            <li class="nav-item h-100 flex-center home "><a class="nav-link" href="about.html">About
+                            <li class="nav-item h-100 flex-center home "><a class="nav-link" href="<?=base_url('/about')?>">About
                                     Us</a></li>
                             <li class="nav-item h-100 flex-center home "><a class="nav-link"
                                     href="report-analysis.html">Report Analysis</a></li>
@@ -60,10 +60,10 @@
                         <ul class="menu-nav-mobile h-100 pt-4 pb-4">
                             <li
                                 class="nav-item-mobile h-100 flex-column gap-8 pt-8 pb-8 pl-12 pr-12 pointer home active">
-                                <a class="fs-14 nav-link-mobile" href="#!">Home </a>
+                                <a class="fs-14 nav-link-mobile" href="<?=base_url('/')?>">Home </a>
                             <li
                                 class="nav-item-mobile h-100 flex-column gap-8 pt-8 pb-8 pl-12 pr-12 pointer home active">
-                                <a class="fs-14 nav-link-mobile" href="about.html">About Us </a>
+                                <a class="fs-14 nav-link-mobile" href="<?=base_url('/about')?>">About Us </a>
                             </li>
                             <li
                                 class="nav-item-mobile h-100 flex-column gap-8 pt-8 pb-8 pl-12 pr-12 pointer home active">
@@ -75,7 +75,7 @@
                             </li>
                             <li
                                 class="nav-item-mobile h-100 flex-column gap-8 pt-8 pb-8 pl-12 pr-12 pointer home active">
-                                <a class="fs-14 nav-link-mobile" href="contact.html">Contact Us</a>
+                                <a class="fs-14 nav-link-mobile" href="<?=base_url('/contact')?>">Contact Us</a>
                             </li>
                         </ul>
                     </div>

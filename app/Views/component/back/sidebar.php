@@ -63,6 +63,12 @@
                      </a>
                  </li>
                  <li>
+                     <a href="<?=base_url('back-panel/register')?>" class="waves-effect">
+                         <i class="fas fa-users"></i>
+                         <span>Client Registration</span>
+                     </a>
+                 </li>
+                 <li>
                      <a href="<?=base_url('back-panel/logout')?>" class="waves-effect">
                          <i class="bx bx-power-off"></i>
                          <span>Logout</span>

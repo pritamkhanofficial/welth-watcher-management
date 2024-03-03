@@ -34,7 +34,7 @@
             </li> -->
                  <li>
                      <a href="<?=base_url('back-panel/core-need')?>" class="waves-effect">
-                     <i class="fas fa-search-plus"></i>
+                         <i class="fas fa-search-plus"></i>
                          <span>Core Need</span>
                      </a>
                  </li>
@@ -64,7 +64,7 @@
                  </li>
                  <li>
                      <a href="<?=base_url('back-panel/register')?>" class="waves-effect">
-                         <i class="fas fa-users"></i>
+                         <i class="fas fa-user-plus"></i>
                          <span>Client Registration</span>
                      </a>
                  </li>

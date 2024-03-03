@@ -9,6 +9,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'WebsiteController::home');
 $routes->match(['get', 'post'],'contact', 'WebsiteController::contact');
 $routes->match(['get', 'post'],'about', 'WebsiteController::about');
+$routes->match(['get', 'post'],'register', 'WebsiteController::register');
 
 $routes->get('get-file/(:any)', 'FileController::getFile/$1');
 

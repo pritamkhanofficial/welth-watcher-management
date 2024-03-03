@@ -144,7 +144,7 @@
                     </div>
                 </div>
             </div>
-        </div><a class="scroll-to-top-btn" href="#header"><i class="ph-bold ph-caret-up"></i></a>
+        
         <div class="pb-100"></div>
     </div>
     <?php echo view('component/front/footer'); ?>

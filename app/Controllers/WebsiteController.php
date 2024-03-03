@@ -55,4 +55,9 @@ class WebsiteController extends BaseController
         $result = $this->model->about();
         return view('website/about', ['data' => $result]);
     }
+    public function register()
+    {
+        // $result = $this->model->about();
+        return view('website/register');
+    }
 }

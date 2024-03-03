@@ -1,3 +1,4 @@
+</div><a class="scroll-to-top-btn" href="#header"><i class="ph-bold ph-caret-up"></i></a>
 <div id="footer">
         <div class="cta-block style-two">
             <div class="bg-cta w-100"><img class="w-100 h-100" src="<?=base_url()?>front/images/cta/bg-cta1.png" alt="" /></div>

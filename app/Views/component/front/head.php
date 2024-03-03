@@ -11,3 +11,4 @@
     <link rel="stylesheet" href="<?=base_url()?>front/icons/style.css"/>
     <link rel="stylesheet" href="<?=base_url()?>front/css/style.css"/>
     <link rel="stylesheet" href="<?=base_url()?>front/css/animate-4.1.1.min.css"/>
+    <link rel="stylesheet" href="<?=base_url()?>front/css/jquery.steps.css">

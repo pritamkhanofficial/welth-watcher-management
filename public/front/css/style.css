@@ -7241,6 +7241,7 @@ a.next:hover {
 
 .error {
   color: red;
+  margin-left:0 !important;
 }
 
 .spinner-border{

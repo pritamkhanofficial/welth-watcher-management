@@ -44,7 +44,7 @@
                                     <div class="col-md-12 col-lg-6 col-12">
                                         <div class="heading7 hover-text-blue mb-3">Budget planning</div>
                                         <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                            name="budget_planning" type="text" placeholder="Your city or metro area" />
+                                            name="budget_planning" required type="text" placeholder="Your city or metro area" />
                                         <div class="body3 text-secondary mt-2"><i>Select your city or metro area.</i>
                                         </div>
 
@@ -769,6 +769,12 @@
                                 headerTag: "h2",
                                 bodyTag: "section",
                                 transitionEffect: "slideLeft",
+                                onStepChanging: function(e, currentIndex, newIndex) {
+                                    var valid = $('#register-form').valid();
+                                        if (valid) {
+                                            return valid;
+                                        }
+                                },
                                 onFinished: function (event, currentIndex)
                                 {
                                     var form = $("#register-form");
@@ -783,52 +789,7 @@
         });
     </script>
     <script>
-    $('#contactForm').validate({
-        rules: {
-            name: "required",
-            email: {
-                required: true,
-                email: true
-            },
-            phone_no: {
-                required: true,
-                number: true,
-                minlength: 10,
-                maxlength: 10
-            },
-            state: "required",
-            city: "required",
-            zip_code: {
-                required: true,
-                number: true,
-                minlength: 6,
-                maxlength: 6
-            },
-            message: "required",
-        },
-        messages: {
-            name: "Please enter your name",
-            email: {
-                required: "Please enter your email",
-                email: "Please enter a valid email"
-            },
-            phone_no: {
-                required: "Please enter your phone number",
-                number: "Phone number must be numeric",
-                minlength: "Phone number must be 10 digit",
-                maxlength: "Phone number must be 10 digit"
-            },
-            state: "Please select your state",
-            city: "Please select your state",
-            zip_code: {
-                required: "Please enter your zip code",
-                number: "Please enter a valid zip code",
-                minlength: "Please enter a valid zip code",
-                maxlength: "Please enter a valid zip code"
-            },
-            message: "Please leave some message for us"
-        }
-    });
+    $('#register-form').validate();
 
 
     $("#register-form").ajaxForm({

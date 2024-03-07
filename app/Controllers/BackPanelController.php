@@ -420,13 +420,24 @@ class BackPanelController extends BaseController
         $crud->displayAs('state_id','State');
         $crud->displayAs('phone_no','Mobile');
         $crud->displayAs('is_active', 'Status');
-        // $crud->where("deleted_at", NULL);
+        $crud->where("contact.deleted_at", NULL);
         $crud->columns(['name', 'email', 'phone_no', 'state_id', 'city', 'zip_code', 'is_active']);
         $crud->fields(['name', 'email', 'phone_no', 'state_id', 'city', 'zip_code', 'message', 'is_active']);
         $crud->readFields(['name', 'email', 'phone_no', 'state_id', 'city', 'zip_code', 'message']);
         // $crud->setTexteditor(['address']);
         $crud->setRelation('state_id', 'state', 'label');
         // $crud->unsetAdd();
+
+        if ($crud->getState() === 'delete') {
+
+            $result = $this->websiteModel->softDelete('contact', $crud->getStateInfo()->primary_key);
+            if ($result) {
+                return $this->response->setJSON([
+                    'success' => true,
+                    'success_message' => "<p>Your data has been successfully deleted from the database.</p>",
+                ]);
+            }
+        }
 
         $crud->setRead();
         $crud->unsetAdd();

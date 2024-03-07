@@ -134,7 +134,7 @@
                                             name="message" id="message" cols="10" rows="4" placeholder="Your Message"></textarea>
                                     </div>   
                             </div>
-                            <div class="button-block">
+                            <div class="button-block mt-3">
                                 <button type="submit" name="submit" value="submit" class="button-share hover-border-blue bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Submit request <div class="spinner-border d-none" role="status">
                                 <span class="visually-hidden">Loading...</span>
                               </div></button>

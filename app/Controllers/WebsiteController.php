@@ -31,10 +31,20 @@ class WebsiteController extends BaseController
                 'message' =>$this->request->getVar('message'),
                 'created_at' =>\getCurrentDate(),
             ];
-
-            
             $result = $this->model->submitContact($data);
             if($result){
+                $email = \Config\Services::email();
+                $email->setTo('pritamkhanofficial@gmail.com');
+                $email->setFrom('support@techniglob.in');
+                $email->setSubject('Welth Watcher Management Contact Info');
+                $email->setMessage('Body of the email');
+
+                // Send the email
+                if ($email->send()) {
+                    // echo 'Email sent successfully';
+                } else {
+                    // echo $email->printDebugger(); die;
+                }
                 return $this->response->setJSON([
                     'success'=>true,
                     'message'=>'Thank You for Contacting Us!',

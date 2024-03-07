@@ -43,9 +43,9 @@
                      </a>
                  </li>
                  <li>
-                     <a href="<?=base_url('back-panel/contact-list')?>" class="waves-effect">
+                     <a href="<?=base_url('back-panel/contact')?>" class="waves-effect">
                          <i class="fa fa-address-book"></i>
-                         <span>Contact List</span>
+                         <span>Contact</span>
                      </a>
                  </li>
                  <li>

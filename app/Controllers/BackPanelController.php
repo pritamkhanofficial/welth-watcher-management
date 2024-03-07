@@ -413,19 +413,22 @@ class BackPanelController extends BaseController
         return view('common', (array)$output);
     }
 
-    public function contact_list()
+    public function contact()
     {
         $crud = new GroceryCrud();
         // $crud->displayAs('facebook_url','twitter_url','linkedin_url','youtube_url','mobile_no','address');
-        // $crud->displayAs('description','Content');
+        $crud->displayAs('state_id','State');
+        $crud->displayAs('phone_no','Mobile');
         $crud->displayAs('is_active', 'Status');
         // $crud->where("deleted_at", NULL);
-        $crud->columns(['name', 'email', 'phone_no', 'state_id', 'city', 'zip_code', 'message', 'is_active']);
+        $crud->columns(['name', 'email', 'phone_no', 'state_id', 'city', 'zip_code', 'is_active']);
         $crud->fields(['name', 'email', 'phone_no', 'state_id', 'city', 'zip_code', 'message', 'is_active']);
+        $crud->readFields(['name', 'email', 'phone_no', 'state_id', 'city', 'zip_code', 'message']);
         // $crud->setTexteditor(['address']);
+        $crud->setRelation('state_id', 'state', 'label');
         // $crud->unsetAdd();
 
-
+        $crud->setRead();
         $crud->unsetAdd();
         $crud->unsetEdit();
         $crud->unsetDelete();

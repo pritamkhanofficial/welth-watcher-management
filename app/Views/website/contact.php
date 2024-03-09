@@ -252,7 +252,8 @@
             $("#send_otp").html("Send OTP");
             $("#submit_otp").html("Submit OTP"); */
 
-            alert(response.message);
+            // alert(response.message);
+            swAlert(response)
             $('#contactForm')[0].reset();
             $(".spinner-border").addClass("d-none") 
         }

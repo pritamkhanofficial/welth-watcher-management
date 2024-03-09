@@ -530,10 +530,22 @@ class BackPanelController extends BaseController
         // $crud->setTexteditor(['address']);
         // $crud->unsetAdd();
 
+        /* if ($crud->getState() === 'delete') {
 
+            $result = $this->websiteModel->softDelete('register', $crud->getStateInfo()->primary_key);
+            if ($result) {
+                return $this->response->setJSON([
+                    'success' => true,
+                    'success_message' => "<p>Your data has been successfully deleted from the database.</p>",
+                ]);
+            }
+        } */
         $crud->unsetAdd();
+        // $crud->setReadFields(['id', 'created_at']);
+        // $crud->unsetFilters();
         $crud->unsetEdit();
-        $crud->unsetDelete();
+        $crud->setRead();
+        // $crud->unsetDelete();
 
         $crud->unsetPrint();
         $crud->unsetExport();

@@ -46,12 +46,14 @@ class WebsiteController extends BaseController
                     // echo $email->printDebugger(); die;
                 }
                 return $this->response->setJSON([
-                    'success'=>true,
+                    'type'=>'success',
+                    'title'=>'Success',
                     'message'=>'Thank You for Contacting Us!',
                 ]);
             }else{
                 return $this->response->setJSON([
-                    'success'=>false,
+                    'type'=>'error',
+                    'title'=>'Error',
                     'message'=>'!Oops something went wrong. Please try again.',
                 ]);
             }
@@ -124,12 +126,14 @@ class WebsiteController extends BaseController
             $result = $this->model->register($data);
             if($result){
                 return $this->response->setJSON([
-                    'success'=>true,
+                    'type'=>'success',
+                    'title'=>'Success',
                     'message'=>'Thank you for registering! Your information has been successfully submitted.',
                 ]);
             }else{
                 return $this->response->setJSON([
-                    'success'=>false,
+                    'type'=>'error',
+                    'title'=>'Error',
                     'message'=>'Oops! Something went wrong. Please try again later.',
                 ]);
             }

@@ -802,7 +802,8 @@
             }
         }, */
         success: function(response) {
-            alert(response?.message);
+            // alert(response?.message);
+            swAlert(response)
             // $('#register-form')[0].reset();
             // $(".spinner-border").addClass("d-none")
         }

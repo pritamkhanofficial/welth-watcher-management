@@ -13,4 +13,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 <!-- Ajax Form -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<script>
+
+   /*  $(document).ready(function(){
+        Swal.fire("Saved!", "fdsdsf", "success");
+    }); */
+    function swAlert(data){
+        Swal.fire(data?.title, data?.message, data?.type);
+    }
+</script>
 

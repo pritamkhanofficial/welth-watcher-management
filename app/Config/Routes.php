@@ -55,9 +55,9 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'core-need/(:segment)/(:segment)', 'BackPanelController::coreNeed/$1/$2');
 
 
-        $routes->match(['get', 'post'],'global-setting/', 'GlobalSetting::mannageGlobalSetting');
-        $routes->match(['get', 'post'],'global-setting/(:segment)', 'GlobalSetting::mannageGlobalSetting/$1');
-        $routes->match(['get', 'post'],'global-setting/(:segment)/(:segment)', 'GlobalSetting::mannageGlobalSetting/$1/$2');
+        $routes->match(['get', 'post'],'global-setting/', 'BackPanelController::globalSettings');
+        $routes->match(['get', 'post'],'global-setting/(:segment)', 'BackPanelController::globalSettings/$1');
+        $routes->match(['get', 'post'],'global-setting/(:segment)/(:segment)', 'BackPanelController::globalSettings/$1/$2');
 
 
         $routes->match(['get', 'post'],'news-category/', 'BackPanelController::newsCategory');

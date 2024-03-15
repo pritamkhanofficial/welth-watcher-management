@@ -41,13 +41,13 @@
                                     <div class="item-heading text-button-small text-white">Quick Links</div>
                                     <ul class="list-nav mt-4">
                                         <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="about-one.html">About us</a></li>
+                                                href="<?=base_url('/about')?>">About us</a></li>
                                         <li class="mt-12"><a class="caption1 text-line hover-underline"
                                                 href="service-one.html">Services</a></li>
                                         <li class="mt-12"><a class="caption1 text-line hover-underline"
                                                 href="case-studies-one.html">Case Studies</a></li>
                                         <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="contact-two.html">Contact</a></li>
+                                                href="<?=base_url('/contact')?>">Contact</a></li>
                                     </ul>
                                 </div>
                                 <div class="footer-nav-item">

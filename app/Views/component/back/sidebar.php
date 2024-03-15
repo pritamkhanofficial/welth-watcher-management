@@ -16,7 +16,7 @@
                  </li>
                  <li>
                      <a href="javascript: void(0);" class="has-arrow waves-effect">
-                         <i class="bx bx-wrench"></i>
+                         <i class="fas fa-cogs"></i>
                          <span key="t-master">Master</span>
                      </a>
                      <ul class="sub-menu" aria-expanded="false">
@@ -50,13 +50,13 @@
                  </li>
                  <li>
                      <a href="<?=base_url('back-panel/our-services')?>" class="waves-effect">
-                         <i class="fas fa-cogs"></i>
+                         <i class="fas fa-headset"></i>
                          <span>Our Services</span>
                      </a>
                  </li>
                  <li>
                      <a href="<?=base_url('back-panel/partner')?>" class="waves-effect">
-                         <i class="fas fa-users"></i>
+                         <i class="fas fa-handshake"></i>
                          <span>Partners</span>
                      </a>
                  </li>

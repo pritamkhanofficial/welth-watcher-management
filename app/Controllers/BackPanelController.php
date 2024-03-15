@@ -524,22 +524,23 @@ class BackPanelController extends BaseController
         // $crud->displayAs('facebook_url','twitter_url','linkedin_url','youtube_url','mobile_no','address');
         // $crud->displayAs('description','Content');
         $crud->displayAs('is_active', 'Status');
-        // $crud->where("deleted_at", NULL);
-        $crud->columns(['budget_planning', 'household_size', 'age', 'income', 'income_frequency']);
-        $crud->fields(['budget_planning', 'household_size', 'age', 'income', 'income_frequency']);
+        $crud->where("user_type", 'FRONT');
+        $crud->where("deleted_at", NULL);
+        $crud->columns(['full_name','username', 'email', 'mobile']);
+        // $crud->fields(['budget_planning', 'household_size', 'age', 'income', 'income_frequency']);
         // $crud->setTexteditor(['address']);
         // $crud->unsetAdd();
 
-        /* if ($crud->getState() === 'delete') {
+        if ($crud->getState() === 'delete') {
 
-            $result = $this->websiteModel->softDelete('register', $crud->getStateInfo()->primary_key);
+            $result = $this->websiteModel->softDelete('users', $crud->getStateInfo()->primary_key);
             if ($result) {
                 return $this->response->setJSON([
                     'success' => true,
                     'success_message' => "<p>Your data has been successfully deleted from the database.</p>",
                 ]);
             }
-        } */
+        }
         $crud->unsetAdd();
         // $crud->setReadFields(['id', 'created_at']);
         // $crud->unsetFilters();
@@ -550,7 +551,7 @@ class BackPanelController extends BaseController
         $crud->unsetPrint();
         $crud->unsetExport();
 
-        $crud->setTable('register');
+        $crud->setTable('users');
         $crud->setSubject('Registration List');
         $output = $crud->render();
         return view('common', (array)$output);

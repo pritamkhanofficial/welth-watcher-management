@@ -31,6 +31,9 @@ class Website extends Model
     public function register($data){
         return $this->db->table('register')->insert($data);
     }
+    public function submitRegister($data){
+        return $this->db->table('users')->insert($data);
+    }
 
     
 }

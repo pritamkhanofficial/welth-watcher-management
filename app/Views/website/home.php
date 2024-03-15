@@ -31,9 +31,14 @@
                                         <div class="body2 text-secondary mt-2">Limited Period Offer</div>
                                     </div>
 
-                                    <div class="button-block">
-                                        <a href="<?=base_url('register')?>"><button
+                                    <!-- <div class="button-block">
+                                        <a href="< ?=base_url('register')?>"><button
                                                 class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Register</button></a>
+                                    </div> -->
+                                    <div class="button-block">
+                                        <button
+                                            class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
+                                            data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</button>
                                     </div>
                                 </div>
                             </div>
@@ -45,39 +50,7 @@
             </div>
         </div>
 
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Registration Hare</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body p-3">
-                        <div class="row row-gap-20">
-                            <div class="col-12 col-sm-12 col-lg-6">
-                                <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-48" type="text"
-                                    placeholder="Name" />
-                            </div>
-                            <div class="col-12 col-sm-12 col-lg-6">
-                                <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-48" type="text"
-                                    placeholder="Name" />
-                            </div>
-                            <div class="col-12 col-sm-12 col-lg-12">
-                                <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-48" type="text"
-                                    placeholder="Name" />
-                            </div>
-                        </div>
 
-                    </div>
-                    <div class="modal-footer row">
-                        <div class="col-lg-12 text-center ">
-                            <button type="button" class="btn btn-success">Submit</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!--       <div class="style-two">
         <div class="partner-five-col style-one mt-100 bg-blue">
           <div class="list pt-32 pb-32">
@@ -320,9 +293,181 @@
         <?php } ?>
         <div class="pb-100"></div>
     </div>
+
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle"><a onclick="asd(1)" id="insert"
+                            class="cradit"><img src="<?=base_url('front/')?>/images/fav.png" class="img-fluid login">
+                            Login </a> &nbsp; |
+                        &nbsp; <a onclick="asd(2)" id="update" class="cradit">Register</a></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="new-added-form" name="insert" id="insertf">
+                        <div class="modal-body">
+                            <div class="form-group mb-3">
+                                <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                    type="text" placeholder="Login Id or Email Id">
+                                <div id="emailHelp" class="form-text"></div>
+                            </div>
+                            <div class="form-group mb-4">
+                                <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                    type="text" placeholder="Membership Password">
+                                <div id="emailHelp" class="form-text"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit"
+                                class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Login</button>
+                            <hr>
+                            <p class="account">Don't have an account? | <a href="">Register Me</a></p>
+                        </div>
+                    </form>
+
+
+                    <form class="new-added-form upd register" method="post" action="" name="update" id="updatef">
+                        <div class="modal-body">
+                            <div class="form-group mb-3">
+                                <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                    type="text" name="full_name" placeholder="Full Name">
+                            </div>
+                            <div class="row register-pera">
+                                <div class="col-12 col-sm-6 mt-4">
+                                    <div class="form-group mb-4">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="email" name="email" placeholder="Email Id">
+                                    </div>
+                                </div>
+
+
+                                <!-- <select class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8 mb-3"
+                                name="categories">
+                                <option value="Financial Planning">City</option>
+                                <option value="Business Planning">Business Planning</option>
+                                <option value="Development Planning">Development Planning</option>
+                            </select> -->
+
+                                <div class="col-12 col-sm-6 mt-4">
+                                    <div class="form-group mb-3">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="text" name="mobile_no" placeholder="Mobile No">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row register-pera">
+                                <div class="col-12 col-sm-6 mt-4">
+                                    <div class="form-group">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="password" name="password" id="password" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 mt-4">
+                                    <div class="form-group">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="password" name="confirm_password" id="confirm_password"
+                                            placeholder="Conform Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center pt-4">
+                                <button type="submit"
+                                    class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
+                                    name="register" value="register">Register
+                                    Me
+                                    <div class="spinner-border d-none" role="status">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php echo view('component/front/footer'); ?>
     <!--build:js assets/js/main.min.js-->
     <?php echo view('component/front/script'); ?>
+
+    <script>
+    function asd(a) {
+        if (a == 1) {
+            $('#insertf').show();
+            $('#updatef').hide();
+        } else {
+            $('#insertf').hide();
+            $('#updatef').show();
+        }
+    }
+
+
+    $('.register').validate({
+        rules: {
+            full_name: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true,
+                remote: "https://www.techniglob.in/mysms/ajax_username_check"
+            },
+            mobile_no: {
+                required: true,
+                number: true,
+                minlength: 10,
+                maxlength: 10
+            },
+            password: {
+                required: true,
+                minlength: 3
+            },
+            confirm_password: {
+                required: true,
+                minlength: 3,
+                equalTo: "#password"
+            }
+        },
+        messages: {
+            name: "Please enter your name",
+            email: {
+                required: "Please enter your email",
+                email: "Please enter a valid email"
+            },
+            mobile_no: {
+                required: "Please enter your mobile number",
+                number: "Mobile number must be numeric",
+                minlength: "Mobile number must be 10 digit",
+                maxlength: "Mobile number must be 10 digit"
+            }
+        }
+    });
+
+
+    $(".register").ajaxForm({
+        // contentType: 'application/json',
+        beforeSubmit: function() {
+            var valid = $('.register').valid();
+            if (valid) {
+                $(".spinner-border").removeClass("d-none")
+                return valid;
+            }
+        },
+        success: function(response) {
+            swAlert(response)
+            asd(1)
+            $('.register')[0].reset();
+            $(".spinner-border").addClass("d-none")
+        }
+    });
+    </script>
     <!--endbuild-->
 </body>
 

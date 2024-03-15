@@ -13,6 +13,32 @@ class WebsiteController extends BaseController
     }
     public function home()
     {
+        if($this->request->getVar('register')){
+            // getPrint($this->request->getVar());
+            $data = [
+                'full_name' =>$this->request->getVar('full_name'),
+                'username' =>rand(1000,9999) . date('dmY'),
+                'email' =>$this->request->getVar('email'),
+                'password' =>getHash($this->request->getVar('password')),
+                'mobile' =>$this->request->getVar('mobile_no'),
+                'created_at' =>\getCurrentDate(),
+            ];
+            $result = $this->model->submitRegister($data);
+            if($result){
+                return $this->response->setJSON([
+                    'type'=>'success',
+                    'title'=>'Success',
+                    'message'=>'Registration successful! You can now log in.',
+                ]);
+            }else{
+                return $this->response->setJSON([
+                    'type'=>'error',
+                    'title'=>'Error',
+                    'message'=>'!Oops something went wrong. Please try again.',
+                ]);
+            }
+
+        }
         $result = $this->model->home();
         return view('website/home', ['data' => $result]);
     }
@@ -143,5 +169,9 @@ class WebsiteController extends BaseController
         }
         // $result = $this->model->about();
         return view('website/register');
+    }
+
+    public function checkUniqueData(){
+
     }
 }

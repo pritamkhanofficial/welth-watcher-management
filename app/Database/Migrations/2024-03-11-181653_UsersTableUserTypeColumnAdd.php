@@ -10,7 +10,7 @@ class UsersTableUserTypeColumnAdd extends Migration
     {
         $fields = [
             'user_type' => [
-                'type' => "ENUM('FRONT', 'ADMIN')",
+                'type' => "ENUM('FRONT', 'BACK')",
                 'default' => 'FRONT',
                 'after' => 'id'
             ]

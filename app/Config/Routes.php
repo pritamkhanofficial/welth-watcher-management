@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 // $routes->get('/', 'Home::index');
-$routes->get('/', 'WebsiteController::home');
+$routes->match(['get','post'],'/', 'WebsiteController::home');
 $routes->match(['get', 'post'],'contact', 'WebsiteController::contact');
 $routes->match(['get', 'post'],'about', 'WebsiteController::about');
 $routes->match(['get', 'post'],'register', 'WebsiteController::register');

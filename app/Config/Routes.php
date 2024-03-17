@@ -8,6 +8,8 @@ use CodeIgniter\Router\RouteCollection;
 // $routes->get('/', 'Home::index');
 $routes->match(['get','post'],'/', 'WebsiteController::home');
 $routes->match(['get', 'post'],'contact', 'WebsiteController::contact');
+$routes->match(['get', 'post'],'check-email', 'WebsiteController::checkEmail');
+$routes->match(['get', 'post'],'check-mobile', 'WebsiteController::checkMobile');
 $routes->match(['get', 'post'],'about', 'WebsiteController::about');
 $routes->match(['get', 'post'],'register', 'WebsiteController::register');
 

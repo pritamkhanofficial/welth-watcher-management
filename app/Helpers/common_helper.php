@@ -28,6 +28,10 @@ function getQuota(){
     ];
 }
 
+function token(){
+    return  md5(time().mt_rand()).uniqid();
+}
+
 function getCurrentInstitute($id){
     $db = Database::connect();
     $sql = "SELECT * FROM institutes WHERE is_active=1 AND is_deleted=0 AND id = ?";

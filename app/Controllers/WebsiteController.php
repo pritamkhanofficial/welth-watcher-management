@@ -254,7 +254,7 @@ class WebsiteController extends BaseController
     public function checkEmail(){
         $model = new AuthModel();
         $email = $this->request->getVar('email');
-        $verify_email = $model->where(['email'=>$email])->first();
+        $verify_email = $model->where(['email'=>$email,'user_type'=>'FRONT'])->first();
         if(empty($verify_email)) { 
             echo json_encode('true', JSON_HEX_QUOT | JSON_HEX_TAG);
             exit();
@@ -266,7 +266,7 @@ class WebsiteController extends BaseController
     public function checkMobile(){
         $model = new AuthModel();
         $mobile = $this->request->getVar('mobile_no');
-        $verify_mobile_no = $model->where(['mobile'=>$mobile])->first();
+        $verify_mobile_no = $model->where(['mobile'=>$mobile,'user_type'=>'FRONT'])->first();
         if(empty($verify_mobile_no)) { 
             echo json_encode('true', JSON_HEX_QUOT | JSON_HEX_TAG);
             exit();

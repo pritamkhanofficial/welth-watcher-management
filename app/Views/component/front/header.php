@@ -1,7 +1,14 @@
 <div id="header">
     <div class="top-nav style-two">
         <div class="container flex-between h-44">
-            <div class="left-block flex-item-center">
+            <div class="left-block flex-item-center text-center">
+                <div class="  text-white">
+                    <?php
+                    if(getFrontUserData()){
+                        echo getFrontUserData()->full_name;
+                    }
+                    ?>
+                </div>
 
             </div>
             <div class="right-block flex-item-center gap-20">

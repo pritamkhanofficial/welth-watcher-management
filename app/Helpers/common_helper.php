@@ -719,10 +719,30 @@ function getDateFormat()
     }
 
 
-    function getUserData(){
+function getUserData(){
     $request = \Config\Services::request();
     if(isset($request->user)){
         $payload = $request->user;
+        if(!is_null($payload)){
+            if(!empty($payload->profile_pic)){
+                if($payload->profile_pic === 'default.png'){
+                    $payload->user_profile_pic = base_url('back/images/').$payload->profile_pic;
+                }else{
+                    $payload->user_profile_pic = getFileURL().$payload->profile_pic;
+                }
+            }else{
+                $payload->user_profile_pic = base_url('back/images/default.png');
+            }
+        }
+    }
+    return $payload;
+}
+
+function getFrontUserData(){
+    $request = \Config\Services::request();
+    $payload = [];
+    if(!empty($request->user_front)){
+        $payload = $request->user_front;
         if(!is_null($payload)){
             if(!empty($payload->profile_pic)){
                 if($payload->profile_pic === 'default.png'){

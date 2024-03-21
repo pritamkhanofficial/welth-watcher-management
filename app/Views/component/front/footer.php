@@ -10,22 +10,26 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form class="new-added-form" name="insert" id="insertf">
+                <form class="new-added-form" method="post" action="<?=base_url('login')?>" id="login_form">
                     <div class="modal-body">
                         <div class="form-group mb-3">
                             <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                type="text" placeholder="Login Id or Email Id">
+                                type="text" name="username" placeholder="Login Id or Email Id">
                             <div id="emailHelp" class="form-text"></div>
                         </div>
                         <div class="form-group mb-4">
                             <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                type="text" placeholder="Membership Password">
+                                type="password" name="password" placeholder="Membership Password">
                             <div id="emailHelp" class="form-text"></div>
                         </div>
                     </div>
                     <div class="text-center">
-                        <button type="submit"
-                            class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Login</button>
+                        <button type="submit" value="login" name="login"
+                            class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Login
+                            <div class="spinner-border d-none spinner-border-sm" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </button>
                         <hr>
                         <p class="account">Don't have an account? | <a href="javascript:void(0)"
                                 onclick="asd(2)">Register Me</a></p>
@@ -102,9 +106,9 @@
                                     <span class="visually-hidden">Loading...</span>
                                 </div>
                             </button>
-                            <!-- <hr>
+                            <hr>
                             <p class="account">Already have an account? | <a href="javascript:void(0)"
-                                    onclick="asd(1)">Login</a></p> -->
+                                    onclick="asd(1)">Login</a></p>
                         </div>
                     </div>
                 </form>

@@ -275,4 +275,50 @@ class WebsiteController extends BaseController
             exit();
         }
     }
+
+    public function login()
+    {
+        $authModel = new AuthModel();
+        // getPrint($this->request->getVar());
+        if($this->request->getVar('login') == 'login'){
+            // getPrint($this->request->getVar());
+            $username = $this->request->getVar('username');
+            $password = $this->request->getVar('password');
+            $data = $authModel->Auth($username);
+
+            if(!is_null($data)){
+                $pass = $data->password;
+                $authenticatePassword = password_verify($password, $pass);
+                if($authenticatePassword){
+                    $session = session();
+                    $session_data = [
+                        'user_front' => $data,
+                        'isFrontLoggedIn' => TRUE
+                    ];
+                    $session->set($session_data);
+                    return $this->response->setJSON([
+                        'type'=>'success',
+                        'title'=>'Success',
+                        'message'=>'Login Successfully',
+                    ]);
+                }else{
+                    return $this->response->setJSON([
+                        'type'=>'error',
+                        'title'=>'Error',
+                        'message'=>'Password is incorrect.',
+                    ]);
+                }
+            }else{
+                return $this->response->setJSON([
+                    'type'=>'error',
+                    'title'=>'Error',
+                    'message'=>'Email or Username does not exist.',
+                ]);
+            }
+        }
+        $result = $this->model->home();
+        return view('website/home', ['data' => $result]);
+    }
+
+    
 }

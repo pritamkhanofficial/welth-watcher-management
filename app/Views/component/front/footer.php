@@ -1,87 +1,206 @@
-</div><a class="scroll-to-top-btn" href="#header"><i class="ph-bold ph-caret-up"></i></a>
-<div id="footer">
-        <div class="cta-block style-two">
-            <div class="bg-cta w-100"><img class="w-100 h-100" src="<?=base_url()?>front/images/cta/bg-cta1.png" alt="" /></div>
-            <div class="container flex-between h-100">
-                <div class="heading5 text-white">Looking for a first-class business consultant?</div><a
-                    class="button-share hover-button-black bg-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
-                    href="contact-two.html">Get A Quote</a>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><a onclick="asd(1)" id="insert" class="cradit"><img
+                            src="<?=base_url('front/')?>/images/fav.png" class="img-fluid login">
+                        Login </a> &nbsp; |
+                    &nbsp; <a onclick="asd(2)" id="update" class="cradit">Register</a></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="new-added-form" method="post" action="<?=base_url('login')?>" id="login_form">
+                    <div class="modal-body">
+                        <div class="form-group mb-3">
+                            <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                type="text" name="username" placeholder="Login Id or Email Id">
+                            <div id="emailHelp" class="form-text"></div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                type="password" name="password" placeholder="Membership Password">
+                            <div id="emailHelp" class="form-text"></div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" value="login" name="login"
+                            class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Login
+                            <div class="spinner-border d-none spinner-border-sm" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </button>
+                        <hr>
+                        <p class="account">Don't have an account? | <a href="javascript:void(0)"
+                                onclick="asd(2)">Register Me</a></p>
+                    </div>
+                </form>
+
+
+                <form class="new-added-form upd register" method="post" action="" name="update" id="updatef">
+                    <div class="modal-body">
+                        <div class="form-group mb-3">
+                            <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                type="text" name="full_name" placeholder="Full Name">
+                        </div>
+                        <div class="row register-pera">
+                            <div class="col-12 col-sm-6 mt-4">
+                                <div class="form-group mb-4">
+                                    <input
+                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                        type="email" name="email" placeholder="Email Id">
+                                </div>
+                            </div>
+
+
+                            <!-- <select class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8 mb-3"
+                                name="categories">
+                                <option value="Financial Planning">City</option>
+                                <option value="Business Planning">Business Planning</option>
+                                <option value="Development Planning">Development Planning</option>
+                            </select> -->
+
+                            <div class="col-12 col-sm-6 mt-4">
+                                <div class="form-group mb-3">
+                                    <input
+                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                        type="text" name="mobile_no" placeholder="Mobile No">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row register-pera">
+                            <div class="col-12 col-sm-6 mt-4">
+                                <div class="form-group">
+                                    <input
+                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                        type="password" name="password" id="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 mt-4">
+                                <div class="form-group">
+                                    <input
+                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                        type="password" name="confirm_password" id="confirm_password"
+                                        placeholder="Conform Password">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3 submit_otp d-none">
+                            <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                type="text" name="otp" id="otp" placeholder="Enter Otp">
+                            <label class="form-label" id="timer"></label>
+                        </div>
+                        <div class="text-center pt-4">
+                            <button type="submit"
+                                class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
+                                name="send_otp" id="send_otp" value="send_otp">Send OTP
+                                <div class="spinner-border d-none" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </button>
+                            <button type="submit"
+                                class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48 submit_otp d-none "
+                                name="submit_otp" value="submit_otp">Submit Otp
+                                <div class="spinner-border d-none" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </button>
+                            <hr>
+                            <p class="account">Already have an account? | <a href="javascript:void(0)"
+                                    onclick="asd(1)">Login</a></p>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="style-two">
-            <div class="footer-block bg-dark pt-60">
-                <div class="container">
-                    <div class="row flex-between pb-40">
-                        <div class="col-3">
-                            <div class="footer-company-infor flex-columns-between gap-20"><img class="footer-logo"
-                                    src="<?=base_url()?>front/images/Logo-footer.png" alt="Logo" />
-                                <div class="text caption1 text-white">We are a diversified company specialized in
-                                    providing comprehensive financial solutions for individuals and businesses.</div>
-                                <div class="list-social flex-item-center gap-10 style-one"><a
-                                        class="item bora-50 w-28 h-28 border-grey-2px flex-center"
-                                        href="https://www.facebook.com/" target="_blank"><i
-                                            class="icon-facebook fs-12"></i></a><a
-                                        class="item bora-50 w-28 h-28 border-grey-2px flex-center"
-                                        href="https://www.linkedin.com/" target="_blank"><i
-                                            class="icon-in fs-12"></i></a><a
-                                        class="item bora-50 w-28 h-28 border-grey-2px flex-center"
-                                        href="https://www.twitter.com/" target="_blank"><i
-                                            class="icon-twitter fs-10"></i></a><a
-                                        class="item bora-50 w-28 h-28 border-grey-2px flex-center"
-                                        href="https://www.instagram.com/" target="_blank"><i
-                                            class="icon-insta fs-10"></i></a><a
-                                        class="item bora-50 w-28 h-28 border-grey-2px flex-center"
-                                        href="https://www.youtube.com/" target="_blank"><i
-                                            class="icon-youtube fs-10"></i></a></div>
+    </div>
+</div>
+
+</div><a class="scroll-to-top-btn" href="#header"><i class="ph-bold ph-caret-up"></i></a>
+<div id="footer">
+    <div class="cta-block style-two">
+        <div class="bg-cta w-100"><img class="w-100 h-100" src="<?=base_url()?>front/images/cta/bg-cta1.png" alt="" />
+        </div>
+        <div class="container flex-between h-100">
+            <div class="heading5 text-white">Looking for a first-class business consultant?</div><a
+                class="button-share hover-button-black bg-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
+                href="contact-two.html">Get A Quote</a>
+        </div>
+    </div>
+    <div class="style-two">
+        <div class="footer-block bg-dark pt-60">
+            <div class="container">
+                <div class="row flex-between pb-40">
+                    <div class="col-3">
+                        <div class="footer-company-infor flex-columns-between gap-20"><img class="footer-logo"
+                                src="<?=base_url()?>front/images/Logo-footer.png" alt="Logo" />
+                            <div class="text caption1 text-white">We are a diversified company specialized in
+                                providing comprehensive financial solutions for individuals and businesses.</div>
+                            <div class="list-social flex-item-center gap-10 style-one"><a
+                                    class="item bora-50 w-28 h-28 border-grey-2px flex-center"
+                                    href="https://www.facebook.com/" target="_blank"><i
+                                        class="icon-facebook fs-12"></i></a><a
+                                    class="item bora-50 w-28 h-28 border-grey-2px flex-center"
+                                    href="https://www.linkedin.com/" target="_blank"><i class="icon-in fs-12"></i></a><a
+                                    class="item bora-50 w-28 h-28 border-grey-2px flex-center"
+                                    href="https://www.twitter.com/" target="_blank"><i
+                                        class="icon-twitter fs-10"></i></a><a
+                                    class="item bora-50 w-28 h-28 border-grey-2px flex-center"
+                                    href="https://www.instagram.com/" target="_blank"><i
+                                        class="icon-insta fs-10"></i></a><a
+                                    class="item bora-50 w-28 h-28 border-grey-2px flex-center"
+                                    href="https://www.youtube.com/" target="_blank"><i
+                                        class="icon-youtube fs-10"></i></a></div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="footer-navigate flex-center gap-80">
+                            <div class="footer-nav-item">
+                                <div class="item-heading text-button-small text-white">Quick Links</div>
+                                <ul class="list-nav mt-4">
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="<?=base_url('/about')?>">About us</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="service-one.html">Services</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="case-studies-one.html">Case Studies</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="<?=base_url('/contact')?>">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-nav-item">
+                                <div class="item-heading text-button-small text-white">Pages</div>
+                                <ul class="list-nav mt-4">
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="faqs.html">FAQs</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="pricing.html">Pricing</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="partners.html">Partners</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="contact-two.html">Support Center</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-nav-item">
+                                <div class="item-heading text-button-small text-white">Blog</div>
+                                <ul class="list-nav mt-4">
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="blog-list-one.html">Blog List</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="blog-grid.html">Blog Grid</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="blog-masonry.html">Masonry</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="blog-detail-one.html">Blog Detail</a></li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="footer-navigate flex-center gap-80">
-                                <div class="footer-nav-item">
-                                    <div class="item-heading text-button-small text-white">Quick Links</div>
-                                    <ul class="list-nav mt-4">
-                                        <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="<?=base_url('/about')?>">About us</a></li>
-                                        <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="service-one.html">Services</a></li>
-                                        <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="case-studies-one.html">Case Studies</a></li>
-                                        <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="<?=base_url('/contact')?>">Contact</a></li>
-                                    </ul>
-                                </div>
-                                <div class="footer-nav-item">
-                                    <div class="item-heading text-button-small text-white">Pages</div>
-                                    <ul class="list-nav mt-4">
-                                        <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="faqs.html">FAQs</a></li>
-                                        <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="pricing.html">Pricing</a></li>
-                                        <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="partners.html">Partners</a></li>
-                                        <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="contact-two.html">Support Center</a></li>
-                                    </ul>
-                                </div>
-                                <div class="footer-nav-item">
-                                    <div class="item-heading text-button-small text-white">Blog</div>
-                                    <ul class="list-nav mt-4">
-                                        <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="blog-list-one.html">Blog List</a></li>
-                                        <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="blog-grid.html">Blog Grid</a></li>
-                                        <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="blog-masonry.html">Masonry</a></li>
-                                        <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                                href="blog-detail-one.html">Blog Detail</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="company-contact">
-                                <div class="heading text-button-small text-white">Newsletter</div>
-                                <!--  <div class="mt-12 flex-item-center"> 
+                    </div>
+                    <div class="col-3">
+                        <div class="company-contact">
+                            <div class="heading text-button-small text-white">Newsletter</div>
+                            <!--  <div class="mt-12 flex-item-center"> 
                     <svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M26.43 16.1254C25.785 16.1254 25.275 15.6004 25.275 14.9704C25.275 14.4154 24.72 13.2604 23.79 12.2554C22.875 11.2804 21.87 10.7104 21.03 10.7104C20.385 10.7104 19.875 10.1854 19.875 9.55539C19.875 8.92539 20.4 8.40039 21.03 8.40039C22.53 8.40039 24.105 9.21039 25.485 10.6654C26.775 12.0304 27.6 13.7254 27.6 14.9554C27.6 15.6004 27.075 16.1254 26.43 16.1254Z" fill="#C1D8FF"></path>
                       <path d="M31.8446 16.125C31.1996 16.125 30.6896 15.6 30.6896 14.97C30.6896 9.645 26.3546 5.325 21.0446 5.325C20.3996 5.325 19.8896 4.8 19.8896 4.17C19.8896 3.54 20.3996 3 21.0296 3C27.6296 3 32.9996 8.37 32.9996 14.97C32.9996 15.6 32.4746 16.125 31.8446 16.125Z" fill="#C1D8FF"></path>
@@ -93,32 +212,29 @@
                       <div class="fw-700 text-white mt-4">001-1234-88888</div>
                     </div>
                   </div> -->
-                                <div class="locate mt-12 flex-item-center"> <i
-                                        class="ph-light ph-map-pin text-line"></i>
-                                    <div class="caption1 text-line ml-8">101 E 129th St, East Chicago, IN 46312, US
-                                    </div>
+                            <div class="locate mt-12 flex-item-center"> <i class="ph-light ph-map-pin text-line"></i>
+                                <div class="caption1 text-line ml-8">101 E 129th St, East Chicago, IN 46312, US
                                 </div>
-                                <div class="send-block mt-20 flex-item-center">
-                                    <input class="caption1 text-secondary" type="text"
-                                        placeholder="Your email address" />
-                                    <button class="flex-center"><i
-                                            class="ph ph-paper-plane-tilt text-white"></i></button>
-                                </div>
+                            </div>
+                            <div class="send-block mt-20 flex-item-center">
+                                <input class="caption1 text-secondary" type="text" placeholder="Your email address" />
+                                <button class="flex-center"><i class="ph ph-paper-plane-tilt text-white"></i></button>
                             </div>
                         </div>
                     </div>
-                    <div class="border-line"></div>
-                    <div class="footer-bottom flex-between pt-12 pb-12">
-                        <div class="left-block flex-item-center">
-                            <div class="copy-right text-line caption1">©2023 Finatex. All Rights Reserved.</div>
-                        </div>
-                        <div class="nav-link flex-item-center gap-10"><a class="text-line caption1 hover-underline"
-                                href="#!">Terms Of Services</a><span class="text-line caption1">|</span><a
-                                class="text-line caption1 hover-underline" href="#!">Privacy Policy</a><span
-                                class="text-line caption1">|</span><a class="text-line caption1 hover-underline"
-                                href="#!">Cookie Policy</a></div>
+                </div>
+                <div class="border-line"></div>
+                <div class="footer-bottom flex-between pt-12 pb-12">
+                    <div class="left-block flex-item-center">
+                        <div class="copy-right text-line caption1">©2023 Finatex. All Rights Reserved.</div>
                     </div>
+                    <div class="nav-link flex-item-center gap-10"><a class="text-line caption1 hover-underline"
+                            href="#!">Terms Of Services</a><span class="text-line caption1">|</span><a
+                            class="text-line caption1 hover-underline" href="#!">Privacy Policy</a><span
+                            class="text-line caption1">|</span><a class="text-line caption1 hover-underline"
+                            href="#!">Cookie Policy</a></div>
                 </div>
             </div>
         </div>
     </div>
+</div>

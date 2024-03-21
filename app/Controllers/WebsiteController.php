@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\Website;
+use App\Models\AuthModel;
+use App\Models\OtpVerification;
 class WebsiteController extends BaseController
 {
     protected $model = NULL;
@@ -13,14 +15,92 @@ class WebsiteController extends BaseController
     }
     public function home()
     {
-        if($this->request->getVar('register')){
+        $otpVerification = new OtpVerification();
+        // getPrint($this->request->getVar());
+        if($this->request->getVar('send_otp') == 'send_otp'){
             // getPrint($this->request->getVar());
+            $email_data = $this->request->getVar('email');
+            $full_name = $this->request->getVar('full_name');
+            $otp = rand(100000,999999);
             $data = [
-                'full_name' =>$this->request->getVar('full_name'),
-                'username' =>rand(1000,9999) . date('dmY'),
-                'email' =>$this->request->getVar('email'),
-                'password' =>getHash($this->request->getVar('password')),
+                'access_token' =>token(),
+                'full_name' =>$full_name,
                 'mobile' =>$this->request->getVar('mobile_no'),
+                'email' =>$email_data,
+                'otp_generate_on' =>\getCurrentDate(),
+                'otp' =>$otp
+            ];
+            if($otpVerification->save($data)){
+                $email = \Config\Services::email();
+                $email->setTo($email_data);
+                $email->setFrom('support@techniglob.in');
+                $email->setSubject('One-Time Password (OTP) for Account Verification');
+                $html  = "<!DOCTYPE html>
+                            <html lang='en'>
+                            <head>
+                            <meta charset='UTF-8'>
+                            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                            <title>One-Time Password (OTP) for Account Verification</title>
+                            </head>
+                            <body>
+                            <p>Dear $full_name,</p>
+                            
+                            <p>We hope this message finds you well.</p>
+                            
+                            <p>As per your request, we have generated a (OTP) for the purpose of completing the verification process for your account. Please find your OTP below:</p>
+                            
+                            <p style='text-align: center; font-size: 24px; font-weight: bold;'><strong>OTP:</strong> <span style='color: #0073e6;'>$otp</span> </p>
+                            
+                            <p>Kindly use this OTP to complete the verification process for your account. Please ensure that you enter the OTP accurately and promptly to avoid any inconvenience.</p>
+                            
+                            <p>If you have any questions or require further assistance, please feel free to reach out to us. We are here to help.</p>
+                            
+                            <p>Thank you for choosing our services.</p>
+                            
+                            <p>Best regards,<br>
+                            [Welth Watcher Management]<br>
+                            </p>
+                            </body>
+                            </html>";
+                $email->setMessage($html);
+
+                // Send the email
+                if ($email->send()) {
+                    // echo 'Email sent successfully';
+                } else {
+                    // echo $email->printDebugger(); die;
+                }
+                return $this->response->setJSON([
+                    'type'=>'success',
+                    'title'=>'Success',
+                    'message'=>'Your OTP has been successfully sent. Please check your '. $email_data .' for the verification code. Thank you for choosing us.',
+                ]);
+            }else{
+                return $this->response->setJSON([
+                    'type'=>'error',
+                    'title'=>'Error',
+                    'message'=>'!Oops something went wrong. Please try again.',
+                ]);
+            }
+            
+
+        }
+        if($this->request->getVar('submit_otp') == 'submit_otp'){
+            $otp = $this->request->getVar('otp');
+            $verify_otp = $otpVerification->where(['otp'=>$otp])->first();
+            if(empty($verify_otp)){
+                return $this->response->setJSON([
+                    'type'=>'error',
+                    'title'=>'Error',
+                    'message'=>'Invalid OTP',
+                ]);
+            }
+            $data = [
+                'full_name' =>$verify_otp['full_name'],
+                'username' =>rand(1000,9999) . date('dmY'),
+                'email' =>$verify_otp['email'],
+                'password' =>getHash($this->request->getVar('password')),
+                'mobile' =>$verify_otp['mobile'],
                 'created_at' =>\getCurrentDate(),
             ];
             $result = $this->model->submitRegister($data);
@@ -171,7 +251,74 @@ class WebsiteController extends BaseController
         return view('website/register');
     }
 
-    public function checkUniqueData(){
-
+    public function checkEmail(){
+        $model = new AuthModel();
+        $email = $this->request->getVar('email');
+        $verify_email = $model->where(['email'=>$email,'user_type'=>'FRONT'])->first();
+        if(empty($verify_email)) { 
+            echo json_encode('true', JSON_HEX_QUOT | JSON_HEX_TAG);
+            exit();
+        } else {
+            echo json_encode('This email already exist', JSON_HEX_QUOT | JSON_HEX_TAG);
+            exit();
+        }
     }
+    public function checkMobile(){
+        $model = new AuthModel();
+        $mobile = $this->request->getVar('mobile_no');
+        $verify_mobile_no = $model->where(['mobile'=>$mobile,'user_type'=>'FRONT'])->first();
+        if(empty($verify_mobile_no)) { 
+            echo json_encode('true', JSON_HEX_QUOT | JSON_HEX_TAG);
+            exit();
+        } else {
+            echo json_encode('This mobile no already exist', JSON_HEX_QUOT | JSON_HEX_TAG);
+            exit();
+        }
+    }
+
+    public function login()
+    {
+        $authModel = new AuthModel();
+        // getPrint($this->request->getVar());
+        if($this->request->getVar('login') == 'login'){
+            // getPrint($this->request->getVar());
+            $username = $this->request->getVar('username');
+            $password = $this->request->getVar('password');
+            $data = $authModel->Auth($username);
+
+            if(!is_null($data)){
+                $pass = $data->password;
+                $authenticatePassword = password_verify($password, $pass);
+                if($authenticatePassword){
+                    $session = session();
+                    $session_data = [
+                        'user_front' => $data,
+                        'isFrontLoggedIn' => TRUE
+                    ];
+                    $session->set($session_data);
+                    return $this->response->setJSON([
+                        'type'=>'success',
+                        'title'=>'Success',
+                        'message'=>'Login Successfully',
+                    ]);
+                }else{
+                    return $this->response->setJSON([
+                        'type'=>'error',
+                        'title'=>'Error',
+                        'message'=>'Password is incorrect.',
+                    ]);
+                }
+            }else{
+                return $this->response->setJSON([
+                    'type'=>'error',
+                    'title'=>'Error',
+                    'message'=>'Email or Username does not exist.',
+                ]);
+            }
+        }
+        $result = $this->model->home();
+        return view('website/home', ['data' => $result]);
+    }
+
+    
 }

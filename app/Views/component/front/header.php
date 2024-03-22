@@ -3,11 +3,10 @@
         <div class="container flex-between h-44">
             <div class="left-block flex-item-center text-center">
                 <div class="  text-white">
-                    <?php
-                    if(getFrontUserData()){
-                        echo getFrontUserData()->full_name;
-                    }
-                    ?>
+                    <?php if(getFrontUserData()){ ?>
+                      <?php echo getFrontUserData()->full_name; ?>
+                      <a class="btn btn-primary btn-sm" href="<?=base_url('/logout')?>"> Logout </a>
+                    <?php } ?>
                 </div>
 
             </div>
@@ -32,7 +31,7 @@
                             <li class="nav-item h-100 flex-center home "><a class="nav-link" href="<?=base_url('/about')?>">About
                                     Us</a></li>
                             <li class="nav-item h-100 flex-center home "><a class="nav-link"
-                                    href="report-analysis.html">Report Analysis</a></li>
+                                    href="<?=base_url('report')?>">Report Analysis</a></li>
                             <li class="nav-item h-100 flex-center home "><a class="nav-link"
                                     href="Carrier.html">Carrier</a></li>
                             <li class="nav-item h-100 flex-center home "><a class="nav-link"
@@ -74,7 +73,7 @@
                             </li>
                             <li
                                 class="nav-item-mobile h-100 flex-column gap-8 pt-8 pb-8 pl-12 pr-12 pointer home active">
-                                <a class="fs-14 nav-link-mobile" href="report-analysis.html">Report Analysis</a>
+                                <a class="fs-14 nav-link-mobile" href="<?=base_url('report')?>">Report Analysis</a>
                             </li>
                             <li
                                 class="nav-item-mobile h-100 flex-column gap-8 pt-8 pb-8 pl-12 pr-12 pointer home active">

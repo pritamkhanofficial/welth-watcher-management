@@ -37,7 +37,7 @@
                 </form>
 
 
-                <form class="new-added-form upd register" method="post" action="" name="update" id="updatef">
+                <form class="new-added-form upd register" action="<?=base_url('register-user')?>" method="post" name="update" id="updatef">
                     <div class="modal-body">
                         <div class="form-group mb-3">
                             <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
@@ -125,7 +125,7 @@
         <div class="container flex-between h-100">
             <div class="heading5 text-white">Looking for a first-class business consultant?</div><a
                 class="button-share hover-button-black bg-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
-                href="contact-two.html">Get A Quote</a>
+                href="<?=base_url('contact')?>">Get A Quote</a>
         </div>
     </div>
     <div class="style-two">

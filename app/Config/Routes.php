@@ -7,12 +7,15 @@ use CodeIgniter\Router\RouteCollection;
  */
 // $routes->get('/', 'Home::index');
 $routes->match(['get','post'],'/', 'WebsiteController::home',['filter'=>'authFrontFilter']);
-$routes->match(['get', 'post'],'contact', 'WebsiteController::contact');
+$routes->match(['get','post'],'register-user', 'WebsiteController::registerUser');
+$routes->match(['get', 'post'],'contact', 'WebsiteController::contact',['filter'=>'authFrontFilter']);
 $routes->match(['get', 'post'],'check-email', 'WebsiteController::checkEmail');
 $routes->match(['get', 'post'],'check-mobile', 'WebsiteController::checkMobile');
-$routes->match(['get', 'post'],'about', 'WebsiteController::about');
-$routes->match(['get', 'post'],'register', 'WebsiteController::register');
+$routes->match(['get', 'post'],'about', 'WebsiteController::about',['filter'=>'authFrontFilter']);
+$routes->match(['get', 'post'],'register', 'WebsiteController::register',['filter'=>'authFrontFilter']);
 $routes->match(['get', 'post'],'login', 'WebsiteController::login');
+$routes->match(['get', 'post'],'report', 'WebsiteController::report',['filter'=>'authFrontFilter']);
+$routes->match(['get', 'post'],'logout', 'WebsiteController::logout');
 
 $routes->get('get-file/(:any)', 'FileController::getFile/$1');
 

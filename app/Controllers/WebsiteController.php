@@ -15,110 +15,6 @@ class WebsiteController extends BaseController
     }
     public function home()
     {
-        $otpVerification = new OtpVerification();
-        // getPrint($this->request->getVar());
-        if($this->request->getVar('send_otp') == 'send_otp'){
-            // getPrint($this->request->getVar());
-            $email_data = $this->request->getVar('email');
-            $full_name = $this->request->getVar('full_name');
-            $otp = rand(100000,999999);
-            $data = [
-                'access_token' =>token(),
-                'full_name' =>$full_name,
-                'mobile' =>$this->request->getVar('mobile_no'),
-                'email' =>$email_data,
-                'otp_generate_on' =>\getCurrentDate(),
-                'otp' =>$otp
-            ];
-            if($otpVerification->save($data)){
-                $email = \Config\Services::email();
-                $email->setTo($email_data);
-                $email->setFrom('support@techniglob.in');
-                $email->setSubject('One-Time Password (OTP) for Account Verification');
-                $html  = "<!DOCTYPE html>
-                            <html lang='en'>
-                            <head>
-                            <meta charset='UTF-8'>
-                            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-                            <title>One-Time Password (OTP) for Account Verification</title>
-                            </head>
-                            <body>
-                            <p>Dear $full_name,</p>
-                            
-                            <p>We hope this message finds you well.</p>
-                            
-                            <p>As per your request, we have generated a (OTP) for the purpose of completing the verification process for your account. Please find your OTP below:</p>
-                            
-                            <p style='text-align: center; font-size: 24px; font-weight: bold;'><strong>OTP:</strong> <span style='color: #0073e6;'>$otp</span> </p>
-                            
-                            <p>Kindly use this OTP to complete the verification process for your account. Please ensure that you enter the OTP accurately and promptly to avoid any inconvenience.</p>
-                            
-                            <p>If you have any questions or require further assistance, please feel free to reach out to us. We are here to help.</p>
-                            
-                            <p>Thank you for choosing our services.</p>
-                            
-                            <p>Best regards,<br>
-                            [Welth Watcher Management]<br>
-                            </p>
-                            </body>
-                            </html>";
-                $email->setMessage($html);
-
-                // Send the email
-                if ($email->send()) {
-                    // echo 'Email sent successfully';
-                } else {
-                    // echo $email->printDebugger(); die;
-                }
-                return $this->response->setJSON([
-                    'type'=>'success',
-                    'title'=>'Success',
-                    'message'=>'Your OTP has been successfully sent. Please check your '. $email_data .' for the verification code. Thank you for choosing us.',
-                ]);
-            }else{
-                return $this->response->setJSON([
-                    'type'=>'error',
-                    'title'=>'Error',
-                    'message'=>'!Oops something went wrong. Please try again.',
-                ]);
-            }
-            
-
-        }
-        if($this->request->getVar('submit_otp') == 'submit_otp'){
-            $otp = $this->request->getVar('otp');
-            $verify_otp = $otpVerification->where(['otp'=>$otp])->first();
-            if(empty($verify_otp)){
-                return $this->response->setJSON([
-                    'type'=>'error',
-                    'title'=>'Error',
-                    'message'=>'Invalid OTP',
-                ]);
-            }
-            $data = [
-                'full_name' =>$verify_otp['full_name'],
-                'username' =>rand(1000,9999) . date('dmY'),
-                'email' =>$verify_otp['email'],
-                'password' =>getHash($this->request->getVar('password')),
-                'mobile' =>$verify_otp['mobile'],
-                'created_at' =>\getCurrentDate(),
-            ];
-            $result = $this->model->submitRegister($data);
-            if($result){
-                return $this->response->setJSON([
-                    'type'=>'success',
-                    'title'=>'Success',
-                    'message'=>'Registration successful! You can now log in.',
-                ]);
-            }else{
-                return $this->response->setJSON([
-                    'type'=>'error',
-                    'title'=>'Error',
-                    'message'=>'!Oops something went wrong. Please try again.',
-                ]);
-            }
-
-        }
         $result = $this->model->home();
         return view('website/home', ['data' => $result]);
     }
@@ -251,6 +147,113 @@ class WebsiteController extends BaseController
         return view('website/register');
     }
 
+    public function registerUser(){
+        $otpVerification = new OtpVerification();
+        // getPrint($this->request->getVar());
+        if($this->request->getVar('send_otp') == 'send_otp'){
+            // getPrint($this->request->getVar());
+            $email_data = $this->request->getVar('email');
+            $full_name = $this->request->getVar('full_name');
+            $otp = rand(100000,999999);
+            $data = [
+                'access_token' =>token(),
+                'full_name' =>$full_name,
+                'mobile' =>$this->request->getVar('mobile_no'),
+                'email' =>$email_data,
+                'otp_generate_on' =>\getCurrentDate(),
+                'otp' =>$otp
+            ];
+            if($otpVerification->save($data)){
+                $email = \Config\Services::email();
+                $email->setTo($email_data);
+                $email->setFrom('support@techniglob.in');
+                $email->setSubject('One-Time Password (OTP) for Account Verification');
+                $html  = "<!DOCTYPE html>
+                            <html lang='en'>
+                            <head>
+                            <meta charset='UTF-8'>
+                            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                            <title>One-Time Password (OTP) for Account Verification</title>
+                            </head>
+                            <body>
+                            <p>Dear $full_name,</p>
+                            
+                            <p>We hope this message finds you well.</p>
+                            
+                            <p>As per your request, we have generated a (OTP) for the purpose of completing the verification process for your account. Please find your OTP below:</p>
+                            
+                            <p style='text-align: center; font-size: 24px; font-weight: bold;'><strong>OTP:</strong> <span style='color: #0073e6;'>$otp</span> </p>
+                            
+                            <p>Kindly use this OTP to complete the verification process for your account. Please ensure that you enter the OTP accurately and promptly to avoid any inconvenience.</p>
+                            
+                            <p>If you have any questions or require further assistance, please feel free to reach out to us. We are here to help.</p>
+                            
+                            <p>Thank you for choosing our services.</p>
+                            
+                            <p>Best regards,<br>
+                            [Welth Watcher Management]<br>
+                            </p>
+                            </body>
+                            </html>";
+                $email->setMessage($html);
+
+                // Send the email
+                if ($email->send()) {
+                    // echo 'Email sent successfully';
+                } else {
+                    // echo $email->printDebugger(); die;
+                }
+                return $this->response->setJSON([
+                    'type'=>'success',
+                    'title'=>'Success',
+                    'message'=>'Your OTP has been successfully sent. Please check your '. $email_data .' for the verification code. Thank you for choosing us.',
+                ]);
+            }else{
+                return $this->response->setJSON([
+                    'type'=>'error',
+                    'title'=>'Error',
+                    'message'=>'!Oops something went wrong. Please try again.',
+                ]);
+            }
+            
+
+        }
+        if($this->request->getVar('submit_otp') == 'submit_otp'){
+            $otp = $this->request->getVar('otp');
+            $verify_otp = $otpVerification->where(['otp'=>$otp])->first();
+            if(empty($verify_otp)){
+                return $this->response->setJSON([
+                    'type'=>'error',
+                    'title'=>'Error',
+                    'message'=>'Invalid OTP',
+                ]);
+            }
+            $data = [
+                'full_name' =>$verify_otp['full_name'],
+                'username' =>rand(1000,9999) . date('dmY'),
+                'email' =>$verify_otp['email'],
+                'password' =>getHash($this->request->getVar('password')),
+                'mobile' =>$verify_otp['mobile'],
+                'created_at' =>\getCurrentDate(),
+            ];
+            $result = $this->model->submitRegister($data);
+            if($result){
+                return $this->response->setJSON([
+                    'type'=>'success',
+                    'title'=>'Success',
+                    'message'=>'Registration successful! You can now log in.',
+                ]);
+            }else{
+                return $this->response->setJSON([
+                    'type'=>'error',
+                    'title'=>'Error',
+                    'message'=>'!Oops something went wrong. Please try again.',
+                ]);
+            }
+
+        }
+    }
+
     public function checkEmail(){
         $model = new AuthModel();
         $email = $this->request->getVar('email');
@@ -318,6 +321,19 @@ class WebsiteController extends BaseController
         }
         $result = $this->model->home();
         return view('website/home', ['data' => $result]);
+    }
+
+    public function report()
+    {
+        return view('website/report');
+    }
+
+    public function logout()
+    {
+        session()->remove('isFrontLoggedIn');
+        session()->remove('user_front');
+        return redirect()
+                ->to('/');
     }
 
     

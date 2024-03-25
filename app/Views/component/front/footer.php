@@ -115,7 +115,7 @@
                 </form>
 
                 
-                <form class="new-added-form reset pass" action="<?=base_url('reset-pass')?>" method="post" name="reset" id="resetpass">
+                <form class="new-added-form reset pass upd" action="<?=base_url('reset-pass')?>" method="post" name="reset" id="resetpass">
                     <div class="modal-body">
                         <div class="form-group mb-3">
                             <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"

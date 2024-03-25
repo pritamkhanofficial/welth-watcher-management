@@ -31,18 +31,10 @@
                             <div class="heading3 text-white">About Us</div>
                             <div class="sub-heading mt-8 text-white fw-400">We perform a full analysis of the client’s
                                 website and
-                                collect information about all the competitors to formulate a proper strategy.We perform
-                                a full analysis
-                                of the client’s website and collect information about all the competitors to formulate a
-                                proper
-                                strategy.We perform a full analysis of the client’s website and collect information
-                                about all the
-                                competitors to formulate a proper strategy.We perform a full analysis of the client’s
-                                website and
-                                collect information about all the competitors to formulate a proper strategy.</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-12 col-lg-6">
+                    <!-- <div class="col-12 col-md-12 col-lg-6">
                         <div class="text-nav">
                             <div class="heading3 text-white">Why Choose Us</div>
                             <div class="sub-heading mt-8 text-white fw-400">We perform a full analysis of the client’s
@@ -55,7 +47,7 @@
                                 about all the
                                 competitors to formulate a proper strategy.</div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -74,6 +66,7 @@
                                 <div class="nav-item active" data-name="about-us">About Us</div>
                                 <div class="nav-item" data-name="mission">Mission</div>
                                 <div class="nav-item" data-name="vision">Vision</div>
+                                <div class="nav-item" data-name="why-choose-us">Why Choose Us</div>
                             </div>
                             <div class="description item-filter" data-name="about-us">
                                 <div class="title body3 text-secondary mt-16">We're a devoted team providing premium
@@ -138,11 +131,35 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="description item-filter hide" data-name="why-choose-us">
+                                <div class="title body3 text-secondary mt-16">Our unwavering vision is to be the most
+                                    trusted and
+                                    preferred partner in achieving financial success, diligently guiding our valued
+                                    clients toward a
+                                    secure and prosperous future.</div>
+                                <div class="more-infor mt-24">
+                                    <div class="infor flex-item-center gap-12"> <i
+                                            class="ph-fill ph-check-circle fs-20 text-blue"></i>
+                                        <div class="text-button">Creation of savings and investment plan</div>
+                                    </div>
+                                    <div class="infor flex-item-center gap-12 mt-12"> <i
+                                            class="ph-fill ph-check-circle fs-20 text-blue"></i>
+                                        <div class="text-button">Management and calculation of monthly expenses</div>
+                                    </div>
+                                    <div class="infor flex-item-center gap-12 mt-12"> <i
+                                            class="ph-fill ph-check-circle fs-20 text-blue"></i>
+                                        <div class="text-button">Identification of monthly income</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="button-block flex-item-center gap-20 ml-40 mt-40 pb-8"><a
-                                class="button-share text-white bg-blue hover-button-black text-button pt-14 pb-14 pl-36 pr-36 bora-48"
-                                href="contact-two.html">Get started</a><a
-                                class="button-share text-on-surface hover-button-black bg-white text-button pt-12 pb-12 pl-36 pr-36 bora-48 border-blue-2px flex-item-center gap-8"
+                        <div class="button-block flex-item-center gap-20 ml-40 mt-40 pb-8">
+                            <?php if(!getFrontUserData()){ ?>
+                            <a class="button-share text-white bg-blue hover-button-black text-button pt-14 pb-14 pl-36 pr-36 bora-48"
+                                href="contact-two.html" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Get
+                                started</a>
+                            <?php } ?>
+                            <a class="button-share text-on-surface hover-button-black bg-white text-button pt-12 pb-12 pl-36 pr-36 bora-48 border-blue-2px flex-item-center gap-8"
                                 href="contact-two.html"><i class="ph ph-phone fs-20"></i><span>(00) 123 456
                                     789</span></a>
                         </div>
@@ -155,25 +172,29 @@
                 <div class="row row-gap-32">
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 flex-columns-center">
                         <div class="count-block flex-item-center">
-                            <div class="counter heading3">2.3</div><span class="heading3">k</span>
+                            <div class="counter heading3"><?=getGlobalSetting()?->business_setup_growth?></div><span
+                                class="heading3">k</span>
                         </div>
                         <div class="body1 text-secondary">Business Setup Growth</div>
                     </div>
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 flex-columns-center">
                         <div class="count-block flex-item-center">
-                            <div class="counter heading3">1.77</div><span class="heading3">k</span>
+                            <div class="counter heading3"><?=getGlobalSetting()?->business_problem_solving?></div><span
+                                class="heading3">k</span>
                         </div>
                         <div class="body1 text-secondary">Business Problem Solving</div>
                     </div>
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 flex-columns-center">
                         <div class="count-block flex-item-center">
-                            <div class="counter heading3">298</div><span class="heading3">k</span>
+                            <div class="counter heading3"><?=getGlobalSetting()?->goal_achiever?></div><span
+                                class="heading3">k</span>
                         </div>
                         <div class="body1 text-secondary">Goal achiever</div>
                     </div>
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 flex-columns-center">
                         <div class="count-block flex-item-center">
-                            <div class="counter heading3">246</div><span class="heading3">k</span>
+                            <div class="counter heading3"><?=getGlobalSetting()?->passive_income_earners?></div><span
+                                class="heading3">k</span>
                         </div>
                         <div class="body1 text-secondary">Passive income earners</div>
                     </div>
@@ -215,7 +236,8 @@
         <div class="partner-five-col style-one mt-60 pb-60 bg-white">
             <div class="list pt-32 pb-32">
                 <?php  foreach($data['partner'] as $row){  ?>
-                    <div class="bg-img flex-center"><img class="w-100" src="<?=base_url('get-file/' . $row->image)?>" alt=""></div>
+                <div class="bg-img flex-center"><img class="w-100" src="<?=base_url('get-file/' . $row->image)?>"
+                        alt=""></div>
                 <?php } ?>
             </div>
         </div>

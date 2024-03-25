@@ -213,7 +213,7 @@
                     </div>
                   </div> -->
                             <div class="locate mt-12 flex-item-center"> <i class="ph-light ph-map-pin text-line"></i>
-                                <div class="caption1 text-line ml-8">101 E 129th St, East Chicago, IN 46312, US
+                                <div class="caption1 text-line ml-8"><?=getGlobalSetting()?->address?>
                                 </div>
                             </div>
                             <div class="send-block mt-20 flex-item-center">

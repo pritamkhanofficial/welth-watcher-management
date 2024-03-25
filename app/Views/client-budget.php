@@ -42,88 +42,131 @@
                                                         <h2 class="accordion-header" id="headingOne">
                                                             <button class="accordion-button fw-medium collapsed"
                                                                 type="button" data-bs-toggle="collapse"
-                                                                data-bs-target="#collapseOne" aria-expanded="false"
-                                                                aria-controls="collapseOne">
-                                                                Accordion Item #1
+                                                                data-bs-target="#basics" aria-expanded="false"
+                                                                aria-controls="basics">
+                                                                Basics
                                                             </button>
                                                         </h2>
-                                                        <div id="collapseOne" class="accordion-collapse collapse"
+                                                        <div id="basics" class="accordion-collapse collapse"
                                                             aria-labelledby="headingOne"
                                                             data-bs-parent="#accordionExample" style="">
                                                             <div class="accordion-body">
-                                                                <div class="text-muted">
-                                                                    <strong class="text-dark">This is the first item's
-                                                                        accordion body.</strong> It is hidden by
-                                                                    default, until the collapse plugin adds the
-                                                                    appropriate classes that we use to style each
-                                                                    element. These classes control the overall
-                                                                    appearance, as well as the showing and hiding via
-                                                                    CSS transitions. You can modify any of this with
-                                                                    custom CSS or overriding our default variables. It's
-                                                                    also worth noting that just about any HTML can go
-                                                                    within the <code>.accordion-body</code>, though the
-                                                                    transition does limit overflow.
-                                                                </div>
+                                                                <table class="table table-bordered border-primary">
+                                                                    <tr>
+                                                                        <th></th>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </table>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="accordion-item">
-                                                        <h2 class="accordion-header" id="headingTwo">
+                                                        <h2 class="accordion-header" id="headingOne">
                                                             <button class="accordion-button fw-medium collapsed"
                                                                 type="button" data-bs-toggle="collapse"
-                                                                data-bs-target="#collapseTwo" aria-expanded="false"
-                                                                aria-controls="collapseTwo">
-                                                                Accordion Item #2
+                                                                data-bs-target="#income" aria-expanded="false"
+                                                                aria-controls="income">
+                                                                Income
                                                             </button>
                                                         </h2>
-                                                        <div id="collapseTwo" class="accordion-collapse collapse"
-                                                            aria-labelledby="headingTwo"
+                                                        <div id="income" class="accordion-collapse collapse"
+                                                            aria-labelledby="headingOne"
                                                             data-bs-parent="#accordionExample" style="">
                                                             <div class="accordion-body">
-                                                                <div class="text-muted">
-                                                                    <strong class="text-dark">This is the second item's
-                                                                        accordion body.</strong> It is hidden by
-                                                                    default, until the collapse plugin adds the
-                                                                    appropriate classes that we use to style each
-                                                                    element. These classes control the overall
-                                                                    appearance, as well as the showing and hiding via
-                                                                    CSS transitions. You can modify any of this with
-                                                                    custom CSS or overriding our default variables. It's
-                                                                    also worth noting that just about any HTML can go
-                                                                    within the <code>.accordion-body</code>, though the
-                                                                    transition does limit overflow.
-
-                                                                </div>
+                                                                <table class="table table-bordered border-primary">
+                                                                    <tr>
+                                                                        <th></th>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </table>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="accordion-item">
-                                                        <h2 class="accordion-header" id="headingThree">
+                                                        <h2 class="accordion-header" id="headingOne">
                                                             <button class="accordion-button fw-medium collapsed"
                                                                 type="button" data-bs-toggle="collapse"
-                                                                data-bs-target="#collapseThree" aria-expanded="false"
-                                                                aria-controls="collapseThree">
-                                                                Accordion Item #3
+                                                                data-bs-target="#spending" aria-expanded="false"
+                                                                aria-controls="spending">
+                                                                Spending
                                                             </button>
                                                         </h2>
-                                                        <div id="collapseThree" class="accordion-collapse collapse"
-                                                            aria-labelledby="headingThree"
-                                                            data-bs-parent="#accordionExample">
+                                                        <div id="spending" class="accordion-collapse collapse"
+                                                            aria-labelledby="headingOne"
+                                                            data-bs-parent="#accordionExample" style="">
                                                             <div class="accordion-body">
-                                                                <div class="text-muted">
-                                                                    <strong class="text-dark">This is the third item's
-                                                                        accordion body.</strong> It is hidden by
-                                                                    default, until the collapse plugin adds the
-                                                                    appropriate classes that we use to style each
-                                                                    element. These classes control the overall
-                                                                    appearance, as well as the showing and hiding via
-                                                                    CSS transitions. You can modify any of this with
-                                                                    custom CSS or overriding our default variables. It's
-                                                                    also worth noting that just about any HTML can go
-                                                                    within the <code>.accordion-body</code>, though the
-                                                                    transition does limit overflow.
-
-                                                                </div>
+                                                                <table class="table table-bordered border-primary">
+                                                                    <tr>
+                                                                        <th></th>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="headingOne">
+                                                            <button class="accordion-button fw-medium collapsed"
+                                                                type="button" data-bs-toggle="collapse"
+                                                                data-bs-target="#retirement" aria-expanded="false"
+                                                                aria-controls="retirement">
+                                                                Retirement
+                                                            </button>
+                                                        </h2>
+                                                        <div id="retirement" class="accordion-collapse collapse"
+                                                            aria-labelledby="headingOne"
+                                                            data-bs-parent="#accordionExample" style="">
+                                                            <div class="accordion-body">
+                                                                <table class="table table-bordered border-primary">
+                                                                    <tr>
+                                                                        <th></th>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="headingOne">
+                                                            <button class="accordion-button fw-medium collapsed"
+                                                                type="button" data-bs-toggle="collapse"
+                                                                data-bs-target="#assets" aria-expanded="false"
+                                                                aria-controls="assets">
+                                                                Assets
+                                                            </button>
+                                                        </h2>
+                                                        <div id="assets" class="accordion-collapse collapse"
+                                                            aria-labelledby="headingOne"
+                                                            data-bs-parent="#accordionExample" style="">
+                                                            <div class="accordion-body">
+                                                                <table class="table table-bordered border-primary">
+                                                                    <tr>
+                                                                        <th></th>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="accordion-item">
+                                                        <h2 class="accordion-header" id="headingOne">
+                                                            <button class="accordion-button fw-medium collapsed"
+                                                                type="button" data-bs-toggle="collapse"
+                                                                data-bs-target="#debts" aria-expanded="false"
+                                                                aria-controls="debts">
+                                                                Debts
+                                                            </button>
+                                                        </h2>
+                                                        <div id="debts" class="accordion-collapse collapse"
+                                                            aria-labelledby="headingOne"
+                                                            data-bs-parent="#accordionExample" style="">
+                                                            <div class="accordion-body">
+                                                                <table class="table table-bordered border-primary">
+                                                                    <tr>
+                                                                        <th></th>
+                                                                        <td></td>
+                                                                    </tr>
+                                                                </table>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -133,7 +176,7 @@
                                         </div>
                                         <!-- end col -->
 
-                                       
+
                                     </div>
                                     <!-- end row -->
                                 </div>

@@ -34,12 +34,12 @@
             <div class="content">
                 <div class="row">
                     <?php if(getFrontUserData()){ ?>
-                    <div class="col-lg-12">
+                    <div class="col-lg-12 text-center">
                         <h1 class="display-1">Live Report</h1>
                     </div>
                     <?php }else{ ?>
-                    <div class="col-lg-12">
-                        <h1 class="display-4">Display 4</h1>
+                    <div class="col-lg-12 text-center ">
+                        <h1 class="display-4">Demo Report</h1>
                     </div>
                     <?php } ?>
 

@@ -29,10 +29,10 @@ function swAlert(data) {
 <script>
 function asd(a) {
     if (a == 1) {
-        $('#insertf').show();
+        $('#login_form').show();
         $('#updatef').hide();
     } else {
-        $('#insertf').hide();
+        $('#login_form').hide();
         $('#updatef').show();
     }
 }

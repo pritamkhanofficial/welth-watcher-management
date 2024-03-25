@@ -103,6 +103,8 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'register/', 'BackPanelController::register');
         $routes->match(['get', 'post'],'register/(:segment)', 'BackPanelController::register/$1');
         $routes->match(['get', 'post'],'register/(:segment)/(:segment)', 'BackPanelController::register/$1/$2');
+
+        $routes->match(['get', 'post'],'client-budget/(:num)', 'BackPanelController::clientBudget/$1');
        
     });
 });

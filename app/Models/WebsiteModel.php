@@ -54,4 +54,12 @@ class WebsiteModel extends Model
             'deleted_at'=> getCurrentDate()
         ], ['id'=>$id]);
     }
+    public function clientBudget($id){
+        return  $this->db->table('register')
+                        ->select('register.*, users.full_name')
+                        ->join('users','users.id=register.user_id','inner')
+                        ->where(['user_id'=>$id])
+                        ->get()
+                        ->getRow();
+    }
 }

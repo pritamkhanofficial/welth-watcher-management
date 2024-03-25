@@ -542,6 +542,10 @@ class BackPanelController extends BaseController
             }
         }
         $crud->unsetAdd();
+
+        $crud->setActionButton('', 'fa fa-eye', function ($row) {
+            return base_url('back-panel/client-budget/' . $row);
+        }, true);
         // $crud->setReadFields(['id', 'created_at']);
         // $crud->unsetFilters();
         $crud->unsetEdit();
@@ -564,9 +568,9 @@ class BackPanelController extends BaseController
         $crud->displayAs('description','Content');
         $crud->displayAs('is_active','Status');
         $crud->where("deleted_at", NULL); */
-        $crud->columns(['facebook_url','twitter_url','linkedin_url','youtube_url','mobile_no']);
-        $crud->fields(['facebook_url','twitter_url','linkedin_url','insta_url','youtube_url','mobile_no','address','email','front_logo','back_logo_lg','back_logo_sm','business_setup_growth','business_problem_solving','goal_achiever','passive_income_earners','footer_text','about_us','mission','vision']);
-        $crud->setTexteditor(['address','about_us','mission','vision']);
+        $crud->columns(['facebook_url','pinterest_url','linkedin_url','youtube_url','mobile_no']);
+        $crud->fields(['facebook_url','pinterest_url','linkedin_url','instagram_url','youtube_url','mobile_no','address','email','business_setup_growth','business_problem_solving','goal_achiever','passive_income_earners','footer_text']);
+        $crud->setTexteditor(['address']);
         // $crud->unsetAdd();
 
 
@@ -579,6 +583,13 @@ class BackPanelController extends BaseController
         $crud->setSubject('Global Setting');
         $output = $crud->render();
         return view('common', (array)$output);
+    }
+
+    public function clientBudget($id)
+    {
+        $data = [];
+        $data['result'] = $this->websiteModel->clientBudget($id);
+        return view('client-budget',$data);
     }
 
 }

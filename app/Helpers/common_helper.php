@@ -32,10 +32,10 @@ function token(){
     return  md5(time().mt_rand()).uniqid();
 }
 
-function getCurrentInstitute($id){
+function getGlobalSetting(){
     $db = Database::connect();
-    $sql = "SELECT * FROM institutes WHERE is_active=1 AND is_deleted=0 AND id = ?";
-    return  $db->query($sql,[$id])->getRow();
+    $sql = "SELECT * FROM global_settings";
+    return  $db->query($sql)->getRow();
 }
 
 function UploadFile(\CodeIgniter\HTTP\Files\UploadedFile $imageFile, $folder=NULL, $editFileName = NULL)

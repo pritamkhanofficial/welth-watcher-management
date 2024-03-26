@@ -124,7 +124,7 @@
                         <div class="text-center pt-4">
                             <button type="submit"
                                 class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
-                                name="send_otp" id="send_otp" value="send_otp">Send Mail
+                                name="send_mail" id="send_otp" value="send_mail">Send Mail
                                 <div class="spinner-border d-none" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>

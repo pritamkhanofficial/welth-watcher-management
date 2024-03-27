@@ -33,7 +33,7 @@
                                 class="icon-in fs-12 icon-on-surface ml-2"></i></a><a
                             class="item bora-50 w-28 h-28 border-grey-1px flex-center" href="<?=getGlobalSetting()?->twitter_url?>"
                             target="_blank"><i class="icon-twitter fs-10 icon-on-surface"></i></a><a
-                            class="item bora-50 w-28 h-28 border-grey-1px flex-center" href="<?=getGlobalSetting()?->insta_url?>"
+                            class="item bora-50 w-28 h-28 border-grey-1px flex-center" href="<?=getGlobalSetting()?->instagram_url?>"
                             target="_blank"><i class="icon-insta fs-10 icon-on-surface"></i></a><a
                             class="item bora-50 w-28 h-28 border-grey-1px flex-center" href="<?=getGlobalSetting()?->youtube_url?>"
                             target="_blank"><i class="icon-youtube fs-10 icon-on-surface"></i></a></div>

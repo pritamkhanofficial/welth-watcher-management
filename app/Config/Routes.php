@@ -12,7 +12,7 @@ $routes->match(['get', 'post'],'contact', 'WebsiteController::contact',['filter'
 $routes->match(['get', 'post'],'check-email', 'WebsiteController::checkEmail');
 $routes->match(['get', 'post'],'check-mobile', 'WebsiteController::checkMobile');
 $routes->match(['get', 'post'],'about', 'WebsiteController::about',['filter'=>'authFrontFilter']);
-$routes->match(['get', 'post'],'register', 'WebsiteController::register',['filter'=>'authFrontFilter']);
+$routes->match(['get', 'post'],'budget-planning', 'WebsiteController::budgetPlanning',['filter'=>'authFrontFilter']);
 $routes->match(['get', 'post'],'login', 'WebsiteController::login');
 $routes->match(['get', 'post'],'report', 'WebsiteController::report',['filter'=>'authFrontFilter']);
 $routes->match(['get', 'post'],'logout', 'WebsiteController::logout');

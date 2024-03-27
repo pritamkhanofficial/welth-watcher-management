@@ -34,6 +34,9 @@ class Website extends Model
     public function submitRegister($data){
         return $this->db->table('users')->insert($data);
     }
+    public function checkMail($email_data){
+        return $this->db->table('users')->where('email', $email_data)->get()->getNumRows();
+    }
 
     
 }

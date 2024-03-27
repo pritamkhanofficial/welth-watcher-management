@@ -29,11 +29,17 @@ function swAlert(data) {
 <script>
 function asd(a) {
     if (a == 1) {
-        $('#login_form').show();
         $('#updatef').hide();
-    } else {
+        $('#resetpass').hide();
+        $('#login_form').show();
+    } else if (a == 2) {
         $('#login_form').hide();
+        $('#resetpass').hide();
         $('#updatef').show();
+    } else if(a == 3){
+        $('#login_form').hide();
+        $('#updatef').hide();
+        $('#resetpass').show();
     }
 }
 

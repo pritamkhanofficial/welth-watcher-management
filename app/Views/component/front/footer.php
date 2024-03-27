@@ -6,7 +6,8 @@
                 <h5 class="modal-title" id="exampleModalLongTitle"><a onclick="asd(1)" id="insert" class="cradit"><img
                             src="<?=base_url('front/')?>/images/fav.png" class="img-fluid login">
                         Login </a> &nbsp; |
-                    &nbsp; <a onclick="asd(2)" id="update" class="cradit">Register</a></h5>
+                    &nbsp; <a onclick="asd(2)" id="update" class="cradit">Register</a> &nbsp; |
+                    &nbsp; <a onclick="asd(3)" id="reset" class="cradit">Reset Password</a></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -109,6 +110,26 @@
                             <hr>
                             <p class="account">Already have an account? | <a href="javascript:void(0)"
                                     onclick="asd(1)">Login</a></p>
+                        </div>
+                    </div>
+                </form>
+
+                
+                <form class="new-added-form reset pass upd" action="<?=base_url('reset-pass')?>" method="post" name="reset" id="resetpass">
+                    <div class="modal-body">
+                        <div class="form-group mb-3">
+                            <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                type="text" name="email" placeholder="Enter Mail Id For Reset Password">
+                        </div>
+                        <div class="text-center pt-4">
+                            <button type="submit"
+                                class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
+                                name="send_mail" id="send_otp" value="send_mail">Send Mail
+                                <div class="spinner-border d-none" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </button>
+                            <hr>
                         </div>
                     </div>
                 </form>

@@ -53,8 +53,17 @@
                                                             <div class="accordion-body">
                                                                 <table class="table table-bordered border-primary">
                                                                     <tr>
-                                                                        <th></th>
-                                                                        <td></td>
+                                                                        <th>Budget planning</th>
+                                                                        <td><?=$result->budget_planning?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>How many people are in your household?</th>
+                                                                        <td><?=$result->household_size?></td>
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>How old are you?</th>
+                                                                        <td><?=$result->age?></td>
                                                                     </tr>
                                                                 </table>
                                                             </div>
@@ -75,8 +84,23 @@
                                                             <div class="accordion-body">
                                                                 <table class="table table-bordered border-primary">
                                                                     <tr>
-                                                                        <th></th>
-                                                                        <td></td>
+                                                                        <th>What is your income?</th>
+                                                                        <td><?=$result->income?>
+                                                                            (<?=$result->income_frequency?>)</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>What is your income after taxes? </th>
+                                                                        <td><?=$result->income_after_taxes?>
+                                                                            (<?=$result->income_after_taxes_frequency?>)
+                                                                        </td>
+
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>How much do you pay in Social Security
+                                                                            taxes?</th>
+                                                                        <td><?=$result->social_security_taxes?>
+                                                                            (<?=$result->social_security_taxes_frequency?>)
+                                                                        </td>
                                                                     </tr>
                                                                 </table>
                                                             </div>
@@ -97,8 +121,53 @@
                                                             <div class="accordion-body">
                                                                 <table class="table table-bordered border-primary">
                                                                     <tr>
-                                                                        <th></th>
-                                                                        <td></td>
+                                                                        <th>Food and beverages?</th>
+                                                                        <td><?=$result->food_and_beverages?>
+                                                                            (<?=$result->food_and_beverages_frequency?>)
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Clothes?</th>
+                                                                        <td><?=$result->clothes?>
+                                                                            (<?=$result->clothes_frequency?>)
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Housing?</th>
+                                                                        <td><?=$result->housing?>
+                                                                            (<?=$result->housing_frequency?>)
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Transportation?</th>
+                                                                        <td><?=$result->transportation?>
+                                                                            (<?=$result->transportation_frequency?>)
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Healthcare and personal care products?</th>
+                                                                        <td><?=$result->healthcare_and_personal_care?>
+                                                                            (<?=$result->healthcare_and_personal_care_frequency?>)
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Entertainment?</th>
+                                                                        <td><?=$result->entertainment?>
+                                                                            (<?=$result->entertainment_frequency?>)
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Education?</th>
+                                                                        <td><?=$result->education?>
+                                                                            (<?=$result->education_frequency?>)
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Everything else except retirement savings?
+                                                                        </th>
+                                                                        <td><?=$result->other_expenses?>
+                                                                            (<?=$result->other_expenses_frequency?>)
+                                                                        </td>
                                                                     </tr>
                                                                 </table>
                                                             </div>
@@ -119,8 +188,22 @@
                                                             <div class="accordion-body">
                                                                 <table class="table table-bordered border-primary">
                                                                     <tr>
-                                                                        <th></th>
-                                                                        <td></td>
+                                                                        <th>How much do you save for retirement?</th>
+                                                                        <td><?=$result->retirement_savings_amount?>
+                                                                            (<?=$result->retirement_savings_frequency?>)
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Education?</th>
+                                                                        <td><?=$result->employer_contribution?>
+                                                                            (<?=$result->employer_contribution_frequency?>)
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>Everything else except retirement savings?
+                                                                        </th>
+                                                                        <td><?=$result->starting_age_for_saving?>
+                                                                        </td>
                                                                     </tr>
                                                                 </table>
                                                             </div>
@@ -141,8 +224,43 @@
                                                             <div class="accordion-body">
                                                                 <table class="table table-bordered border-primary">
                                                                     <tr>
-                                                                        <th></th>
-                                                                        <td></td>
+                                                                        <th>How much do you have in bank accounts?</th>
+                                                                        <td><?=$result->bank_accounts_value?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>What is the current value of your
+                                                                            non-retirement investment accounts?</th>
+                                                                        <td><?=$result->investment_accounts_value?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>If you own your home, what is its current
+                                                                            value?</th>
+                                                                        <td><?=$result->home_value?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>What is the combined value of any rental
+                                                                            properties you own?</th>
+                                                                        <td><?=$result->rental_properties_value?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>What is the combined value of your vehicles?
+                                                                        </th>
+                                                                        <td><?=$result->vehicles_value?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>What is the total value of any other assets?
+                                                                        </th>
+                                                                        <td><?=$result->other_assets_value?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>What is the current value of your retirement
+                                                                            savings accounts?</th>
+                                                                        <td><?=$result->retirement_savings_value?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>How much of your assets are available for
+                                                                            emergencies? </th>
+                                                                        <td><?=$result->emergency_assets_value?></td>
                                                                     </tr>
                                                                 </table>
                                                             </div>
@@ -163,8 +281,38 @@
                                                             <div class="accordion-body">
                                                                 <table class="table table-bordered border-primary">
                                                                     <tr>
-                                                                        <th></th>
-                                                                        <td></td>
+                                                                        <th>How much do you owe for mortgages and
+                                                                            home-equity loans? </th>
+                                                                        <td><?=$result->mortgage_loans_value?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>How much business debt do you have? </th>
+                                                                        <td><?=$result->business_debt_value?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>How much do you owe for vehicle loans?</th>
+                                                                        <td><?=$result->vehicle_loans_value?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>How much credit card debt do you have?</th>
+                                                                        <td><?=$result->credit_card_debt_value?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>How much student debt do you owe? </th>
+                                                                        <td><?=$result->student_debt_value?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>How much do you owe for all other debts?
+                                                                        </th>
+                                                                        <td><?=$result->other_debts_value?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>How much do you spend to pay off the above
+                                                                            debts?
+                                                                        </th>
+                                                                        <td><?=$result->debt_payment_value?>
+                                                                            (<?=$result->debt_payment_frequency?>)
+                                                                        </td>
                                                                     </tr>
                                                                 </table>
                                                             </div>

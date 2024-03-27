@@ -36,6 +36,10 @@
                     <?php if(getFrontUserData()){ ?>
                     <div class="col-lg-12 text-center">
                         <h1 class="display-1">Live Report</h1>
+                        <br>
+                        <a href="<?=base_url('budget-planning')?>"
+                            class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Add
+                            Your Budget </a>
                     </div>
                     <?php }else{ ?>
                     <div class="col-lg-12 text-center ">

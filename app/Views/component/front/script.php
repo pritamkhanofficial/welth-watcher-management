@@ -30,16 +30,16 @@ function swAlert(data) {
 function asd(a) {
     if (a == 1) {
         $('#updatef').hide();
-        $('#resetpass').hide();
+        $('#forgot-password').hide();
         $('#login_form').show();
     } else if (a == 2) {
         $('#login_form').hide();
-        $('#resetpass').hide();
+        $('#forgot-password').hide();
         $('#updatef').show();
-    } else if(a == 3){
+    } else if (a == 3) {
         $('#login_form').hide();
         $('#updatef').hide();
-        $('#resetpass').show();
+        $('#forgot-password').show();
     }
 }
 
@@ -82,6 +82,20 @@ $('.register').validate({
             number: "Mobile number must be numeric",
             minlength: "Mobile number must be 10 digit",
             maxlength: "Mobile number must be 10 digit"
+        }
+    }
+});
+$('#forgot-password').validate({
+    rules: {
+        email: {
+            required: true,
+            email: true
+        }
+    },
+    messages: {
+        email: {
+            required: "Please enter your email",
+            email: "Please enter a valid email"
         }
     }
 });
@@ -161,7 +175,46 @@ $("#login_form").ajaxForm({
             }
         } */
         $(".spinner-border").addClass("d-none")
-        if(response?.type == 'success'){
+        if (response?.type == 'success') {
+            location.href = location.href
+        }
+    }
+});
+$("#forgot-password").ajaxForm({
+    // contentType: 'application/json',
+    beforeSubmit: function() {
+
+        $(".spinner-border").removeClass("d-none")
+    },
+    success: function(response) {
+        // swAlert(response)
+        /* if (response?.type == 'success') {
+            if (response?.message == 'Registration successful! You can now log in.') {
+                asd(1)
+                $('.register')[0].reset();
+                $("#otp").attr("required", false);
+                $("#send_otp").removeClass("d-none")
+                $(".submit_otp").addClass("d-none")
+            } else {
+                $("#send_otp").addClass("d-none")
+                $(".submit_otp").removeClass("d-none")
+                $("#otp").attr("required", true);
+                var time = 300;
+                timer(time);
+                var counter = setInterval(function() {
+                    if (!timerOn) {
+                        clearInterval(counter);
+                        //alert(timerOn)
+                        $("#otp").attr("required", false);
+                        $("#send_otp").removeClass("d-none")
+                        $(".submit_otp").addClass("d-none")
+                    }
+
+                }, time);
+            }
+        } */
+        $(".spinner-border").addClass("d-none")
+        if (response?.type == 'success') {
             location.href = location.href
         }
     }

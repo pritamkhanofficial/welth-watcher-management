@@ -17,6 +17,8 @@ $routes->match(['get', 'post'],'login', 'WebsiteController::login');
 $routes->match(['get', 'post'],'report', 'WebsiteController::report',['filter'=>'authFrontFilter']);
 $routes->match(['get', 'post'],'logout', 'WebsiteController::logout');
 $routes->match(['get', 'post'], 'reset-pass', 'WebsiteController::reset_pass');
+$routes->match(['get', 'post'], 'forgot-password-check', 'WebsiteController::forgotPasswordCheck');
+$routes->match(['get', 'post'], 'forgot-password/(:any)', 'WebsiteController::forgotPassword/$1');
 $routes->match(['get', 'post'], 'add-new-password', 'WebsiteController::add_new_password');
 
 $routes->get('get-file/(:any)', 'FileController::getFile/$1');

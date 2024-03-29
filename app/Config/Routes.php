@@ -24,6 +24,8 @@ $routes->group('', ['filter'=>'authFrontFilter','namespace' => 'App\Controllers'
     $routes->match(['get', 'post'], 'forgot-password/(:any)', 'WebsiteController::forgotPassword/$1');
     $routes->match(['get', 'post'], 'add-new-password', 'WebsiteController::add_new_password');
     $routes->match(['get', 'post'], 'profile', 'WebsiteController::profile');
+    $routes->match(['get', 'post'],'career', 'WebsiteController::career');
+    $routes->match(['get', 'post'],'career-form', 'WebsiteController::career_form');
 });
 $routes->get('get-file/(:any)', 'FileController::getFile/$1');
 

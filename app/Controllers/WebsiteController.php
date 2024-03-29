@@ -567,9 +567,14 @@ class WebsiteController extends BaseController
         return view('website/profile');
     }
 
-    public function add_new_password()
+    public function career()
     {
-        getPrint('Done');
+        return view('website/career');
+    }
+
+    public function career_form()
+    {
+        return view('website/career_form');
     }
 
     

@@ -187,7 +187,7 @@ $("#forgot-password").ajaxForm({
         $(".spinner-border").removeClass("d-none")
     },
     success: function(response) {
-        // swAlert(response)
+        swAlert(response)
         /* if (response?.type == 'success') {
             if (response?.message == 'Registration successful! You can now log in.') {
                 asd(1)
@@ -214,9 +214,9 @@ $("#forgot-password").ajaxForm({
             }
         } */
         $(".spinner-border").addClass("d-none")
-        if (response?.type == 'success') {
+        /* if (response?.type == 'success') {
             location.href = location.href
-        }
+        } */
     }
 });
 </script>

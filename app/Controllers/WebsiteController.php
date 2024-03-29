@@ -468,58 +468,32 @@ class WebsiteController extends BaseController
     }
     public function forgotPassword($token)
     {
-        getPrint($token);
-        $checkMail = $this->model->checkMail($email_data);       
-        if($checkMail == 1){
-            $email = \Config\Services::email();
-            $email->setTo($email_data);
-            $email->setFrom('support@techniglob.in');
-            $email->setSubject('Reset Password (URL) for Change Password');
-            $html  = "<!DOCTYPE html>
-                            <html lang='en'>
-                            <head>
-                            <meta charset='UTF-8'>
-                            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-                            <title>Reset Password (URL) for Change Password</title>
-                            </head>
-                            <body>
-                            <p>Dear User,</p>
-                            
-                            <p>We hope this message finds you well.</p>
-                            
-                            <p>As per your request, we have generated a (URL) for the purpose of reset the password for your account. Please find your URL below:</p>
-                            
-                            <p style='text-align: center; font-size: 24px; font-weight: bold;'><strong>URL:</strong> <span style='color: #0073e6;'>$url</span> </p>
-                            
-                            <p>Kindly click on this URL to complete the Reset Password process for your account. Please ensure that you click on the Link accurately and promptly to avoid any inconvenience.</p>
-                            
-                            <p>If you have any questions or require further assistance, please feel free to reach out to us. We are here to help.</p>
-                            
-                            <p>Thank you for choosing our services.</p>
-                            
-                            <p>Best regards,<br>
-                            [Welth Watcher Management]<br>
-                            </p>
-                            </body>
-                            </html>";
-                $email->setMessage($html);
-                if ($email->send()) {
-                    echo 'Email sent successfully';
-                } else {
-                    echo $email->printDebugger(); die;
-                }
+
+        if($this->request->getVar('submit') == 'submit'){
+            $confirm_password = $this->request->getVar('confirm_password');
+            $data = [
+                'password' =>getHash($confirm_password)
+            ];
+
+            $model = new AuthModel();
+            if($model->where(['generate_token'=>$token,'user_type'=>'FRONT'])->set($data)->update()){
                 return $this->response->setJSON([
                     'type'=>'success',
                     'title'=>'Success',
-                    'message'=>'Your Reset Password Link has been successfully sent. Please check your Mail for the Reset Link. Thank you for choosing us.',
+                    'message'=>'Updated',
                 ]);
-        }else{
-            return $this->response->setJSON([
-                'type'=>'error',
-                'title'=>'Error',
-                'message'=>'Email or Username does not exist.',
-            ]);
+            }else{
+                return $this->response->setJSON([
+                    'type'=>'error',
+                    'title'=>'Error',
+                    'message'=>'!Oops something went wrong. Please try again',
+                ]);
+            }
+           
+            
+
         }
+        return view('website/forgot-password');
     }
 
     public function add_new_password()

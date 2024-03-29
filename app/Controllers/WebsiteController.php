@@ -495,6 +495,35 @@ class WebsiteController extends BaseController
         }
         return view('website/forgot-password');
     }
+    public function profile()
+    {
+
+        if($this->request->getVar('submit') == 'submit'){
+            $confirm_password = $this->request->getVar('confirm_password');
+            $data = [
+                'password' =>getHash($confirm_password)
+            ];
+
+            $model = new AuthModel();
+            if($model->where(['generate_token'=>$token,'user_type'=>'FRONT'])->set($data)->update()){
+                return $this->response->setJSON([
+                    'type'=>'success',
+                    'title'=>'Success',
+                    'message'=>'Updated',
+                ]);
+            }else{
+                return $this->response->setJSON([
+                    'type'=>'error',
+                    'title'=>'Error',
+                    'message'=>'!Oops something went wrong. Please try again',
+                ]);
+            }
+           
+            
+
+        }
+        return view('website/profile');
+    }
 
     public function add_new_password()
     {

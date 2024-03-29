@@ -6,23 +6,28 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 // $routes->get('/', 'Home::index');
-$routes->match(['get','post'],'/', 'WebsiteController::home',['filter'=>'authFrontFilter']);
-$routes->match(['get','post'],'register-user', 'WebsiteController::registerUser');
-$routes->match(['get', 'post'],'contact', 'WebsiteController::contact',['filter'=>'authFrontFilter']);
-$routes->match(['get', 'post'],'check-email', 'WebsiteController::checkEmail');
-$routes->match(['get', 'post'],'check-mobile', 'WebsiteController::checkMobile');
-$routes->match(['get', 'post'],'about', 'WebsiteController::about',['filter'=>'authFrontFilter']);
-$routes->match(['get', 'post'],'budget-planning', 'WebsiteController::budgetPlanning',['filter'=>'authFrontFilter']);
-$routes->match(['get', 'post'],'login', 'WebsiteController::login');
-$routes->match(['get', 'post'],'report', 'WebsiteController::report',['filter'=>'authFrontFilter']);
-$routes->match(['get', 'post'],'logout', 'WebsiteController::logout');
-$routes->match(['get', 'post'], 'reset-pass', 'WebsiteController::reset_pass');
-$routes->match(['get', 'post'], 'forgot-password-check', 'WebsiteController::forgotPasswordCheck');
-$routes->match(['get', 'post'], 'forgot-password/(:any)', 'WebsiteController::forgotPassword/$1');
-$routes->match(['get', 'post'], 'add-new-password', 'WebsiteController::add_new_password');
-$routes->match(['get', 'post'], 'profile', 'WebsiteController::profile',['filter'=>'authFrontFilter']);
 
+
+$routes->group('', ['filter'=>'authFrontFilter','namespace' => 'App\Controllers'], static function ($routes) {
+    $routes->match(['get','post'],'/', 'WebsiteController::home');
+    $routes->match(['get', 'post'],'contact', 'WebsiteController::contact');
+    $routes->match(['get','post'],'register-user', 'WebsiteController::registerUser');
+    $routes->match(['get', 'post'],'check-email', 'WebsiteController::checkEmail');
+    $routes->match(['get', 'post'],'check-mobile', 'WebsiteController::checkMobile');
+    $routes->match(['get', 'post'],'about', 'WebsiteController::about');
+    $routes->match(['get', 'post'],'budget-planning', 'WebsiteController::budgetPlanning');
+    $routes->match(['get', 'post'],'login', 'WebsiteController::login');
+    $routes->match(['get', 'post'],'report', 'WebsiteController::report');
+    $routes->match(['get', 'post'],'logout', 'WebsiteController::logout');
+    $routes->match(['get', 'post'], 'reset-pass', 'WebsiteController::reset_pass');
+    $routes->match(['get', 'post'], 'forgot-password-check', 'WebsiteController::forgotPasswordCheck');
+    $routes->match(['get', 'post'], 'forgot-password/(:any)', 'WebsiteController::forgotPassword/$1');
+    $routes->match(['get', 'post'], 'add-new-password', 'WebsiteController::add_new_password');
+    $routes->match(['get', 'post'], 'profile', 'WebsiteController::profile');
+});
 $routes->get('get-file/(:any)', 'FileController::getFile/$1');
+
+
 
 
 $routes->group('back-panel', static function ($routes) {

@@ -32,7 +32,7 @@
 
         <div class="container pt-5 pb-5">
             <div class="content">
-                <form action="<?=base_url('register')?>" method="post" id="register-form">
+                <form action="" method="post" id="register-form">
                     <div id="wizard">
                         <h2>BASICS</h2>
                         <section>
@@ -804,6 +804,9 @@
         success: function(response) {
             // alert(response?.message);
             swAlert(response)
+            if(response?.type == 'success'){
+                window.location.href = "<?=base_url('/')?>";
+            }
             // $('#register-form')[0].reset();
             // $(".spinner-border").addClass("d-none")
         }

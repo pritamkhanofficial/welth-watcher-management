@@ -70,12 +70,16 @@ class WebsiteController extends BaseController
         $result = $this->model->about();
         return view('website/about', ['data' => $result]);
     }
-    public function register()
+    public function budgetPlanning()
     {
+        if(!getFrontUserData()){
+            return redirect('/');
+        }
         if($_POST){
             // getPrint($this->request->getVar());
 
             $data = [
+                'user_id' => getFrontUserData()->id,
                 'budget_planning' => $this->request->getVar('budget_planning'),
                 'household_size' => $this->request->getVar('household_size'),
                 'age' => $this->request->getVar('age'),
@@ -125,7 +129,7 @@ class WebsiteController extends BaseController
                 'debt_payment_frequency' => $this->request->getVar('debt_payment_frequency'),
             ];
 
-            $result = $this->model->register($data);
+            $result = $this->model->budgetPlanning($data);
             if($result){
                 return $this->response->setJSON([
                     'type'=>'success',
@@ -144,7 +148,7 @@ class WebsiteController extends BaseController
             
         }
         // $result = $this->model->about();
-        return view('website/register');
+        return view('website/budget-planning');
     }
 
     public function registerUser(){

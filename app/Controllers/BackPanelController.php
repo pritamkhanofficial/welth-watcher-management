@@ -589,6 +589,9 @@ class BackPanelController extends BaseController
     {
         $data = [];
         $data['result'] = $this->websiteModel->clientBudget($id);
+        if(empty($data['result'])){
+            return redirect('back-panel/register');
+        }
         return view('client-budget',$data);
     }
 

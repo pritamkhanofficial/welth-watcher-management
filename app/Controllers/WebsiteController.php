@@ -424,21 +424,21 @@ class WebsiteController extends BaseController
                         <head>
                         <meta charset='UTF-8'>
                         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-                        <title>Reset Password (URL) for Change Password</title>
+                        <title>Forgot Password (Button) for Change Password</title>
                         </head>
                         <body>
                         <p>Dear User,</p>
                         
                         <p>We hope this message finds you well.</p>
                         
-                        <p>As per your request, we have generated a (Link) for the purpose of reset the password for your account. Please find your URL below:</p>
+                        <p>As per your request, we have generated a (Button) for the purpose of reset the password for your account. Please find your BUTTON below:</p>
                         
                         <p style='text-align:center;'>
                         <a href='$url' style='background:#20e277;text-decoration:none !important; font-weight:500; margin-top:35px; color:#fff;text-transform:uppercase; font-size:14px;padding:10px 24px;display:inline-block;border-radius:50px;'>Reset
                         Password</a>
                         </p>
                         
-                        <p>Kindly click on this URL to complete the Reset Password process for your account. Please ensure that you click on the Link accurately and promptly to avoid any inconvenience.</p>
+                        <p>Kindly click on this BUTTON to complete the Reset Password process for your account. Please ensure that you click on the Button accurately and promptly to avoid any inconvenience.</p>
                         
                         <p>If you have any questions or require further assistance, please feel free to reach out to us. We are here to help.</p>
                         

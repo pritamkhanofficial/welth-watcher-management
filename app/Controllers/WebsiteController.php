@@ -72,6 +72,7 @@ class WebsiteController extends BaseController
     }
     public function budgetPlanning()
     {
+        $dataArr = [];
         if(!getFrontUserData()){
             return redirect('/');
         }
@@ -147,8 +148,8 @@ class WebsiteController extends BaseController
 
             
         }
-        // $result = $this->model->about();
-        return view('website/budget-planning');
+        $dataArr['budget'] = $this->model->getBudgetPlanning(getFrontUserData()->id);
+        return view('website/budget-planning',$dataArr);
     }
 
     public function registerUser(){

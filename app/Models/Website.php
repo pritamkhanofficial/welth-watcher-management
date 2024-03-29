@@ -31,6 +31,9 @@ class Website extends Model
     public function budgetPlanning($data){
         return $this->db->table('register')->insert($data);
     }
+    public function getBudgetPlanning($id){
+        return $this->db->table('register')->where(['user_id'=>$id])->get()->getRow();
+    }
     public function submitRegister($data){
         return $this->db->table('users')->insert($data);
     }

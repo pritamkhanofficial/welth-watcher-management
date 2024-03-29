@@ -1,5 +1,5 @@
 <div id="header">
-    
+
     <div class="style-subpage style-home-two">
         <div class="header-menu style-one bg-white">
             <div class="container flex-between h-80"><a class="menu-left-block" href="#">
@@ -31,12 +31,38 @@
                             class="item bora-50 w-28 h-28 border-grey-1px flex-center"
                             href="<?=getGlobalSetting()?->linkedin_url?>" target="_blank"><i
                                 class="icon-in fs-12 icon-on-surface ml-2"></i></a><a
-                            class="item bora-50 w-28 h-28 border-grey-1px flex-center" href="<?=getGlobalSetting()?->twitter_url?>"
-                            target="_blank"><i class="icon-twitter fs-10 icon-on-surface"></i></a><a
-                            class="item bora-50 w-28 h-28 border-grey-1px flex-center" href="<?=getGlobalSetting()?->instagram_url?>"
-                            target="_blank"><i class="icon-insta fs-10 icon-on-surface"></i></a><a
-                            class="item bora-50 w-28 h-28 border-grey-1px flex-center" href="<?=getGlobalSetting()?->youtube_url?>"
-                            target="_blank"><i class="icon-youtube fs-10 icon-on-surface"></i></a></div>
+                            class="item bora-50 w-28 h-28 border-grey-1px flex-center"
+                            href="<?=getGlobalSetting()?->twitter_url?>" target="_blank"><i
+                                class="icon-twitter fs-10 icon-on-surface"></i></a><a
+                            class="item bora-50 w-28 h-28 border-grey-1px flex-center"
+                            href="<?=getGlobalSetting()?->instagram_url?>" target="_blank"><i
+                                class="icon-insta fs-10 icon-on-surface"></i></a><a
+                            class="item bora-50 w-28 h-28 border-grey-1px flex-center"
+                            href="<?=getGlobalSetting()?->youtube_url?>" target="_blank"><i
+                                class="icon-youtube fs-10 icon-on-surface"></i></a></div>
+                    <?php if(getFrontUserData()){ ?>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="<?=base_url('back/')?>/images/default.png" class="img-fluid man-icon">
+                            <span class="d-none d-xl-inline-block ms-1" key="t-henry"><?=getFrontUserData()->full_name?></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="<?=base_url('profile')?>"><i class="fas fa-user"></i> &nbsp; Profile</a>
+                            </li>
+                            <!-- <li><a class="dropdown-item" href="#"><i class="fas fa-lock-open"></i> &nbsp; Another
+                                    action</a>
+                            </li> -->
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item log-out" href="<?=base_url('logout')?>"><i
+                                        class="fas fa-power-off"></i> &nbsp;
+                                    Log Out</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <?php } ?>
                     <div class="menu-humburger display-none pointer"><i class="ph-bold ph-list"></i></div>
                 </div>
             </div>

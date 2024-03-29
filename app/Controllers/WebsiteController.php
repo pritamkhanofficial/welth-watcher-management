@@ -262,24 +262,55 @@ class WebsiteController extends BaseController
         $model = new AuthModel();
         $email = $this->request->getVar('email');
         $verify_email = $model->where(['email'=>$email,'user_type'=>'FRONT'])->first();
-        if(empty($verify_email)) { 
-            echo json_encode('true', JSON_HEX_QUOT | JSON_HEX_TAG);
-            exit();
-        } else {
-            echo json_encode('This email already exist', JSON_HEX_QUOT | JSON_HEX_TAG);
-            exit();
+        if(getFrontUserData()){
+            if(empty($verify_email)) { 
+                echo json_encode('true', JSON_HEX_QUOT | JSON_HEX_TAG);
+                exit();
+            } else {
+                if($verify_email->email == getFrontUserData()->email){
+                    echo json_encode('true', JSON_HEX_QUOT | JSON_HEX_TAG);
+                    exit();
+                }else{
+                    echo json_encode('This email already exist1', JSON_HEX_QUOT | JSON_HEX_TAG);
+                    exit();
+                }
+            }
+            
+        }else{
+            if(empty($verify_email)) { 
+                echo json_encode('true', JSON_HEX_QUOT | JSON_HEX_TAG);
+                exit();
+            } else {
+                echo json_encode('This email already exist', JSON_HEX_QUOT | JSON_HEX_TAG);
+                exit();
+            }
         }
     }
     public function checkMobile(){
         $model = new AuthModel();
         $mobile = $this->request->getVar('mobile_no');
         $verify_mobile_no = $model->where(['mobile'=>$mobile,'user_type'=>'FRONT'])->first();
-        if(empty($verify_mobile_no)) { 
-            echo json_encode('true', JSON_HEX_QUOT | JSON_HEX_TAG);
-            exit();
-        } else {
-            echo json_encode('This mobile no already exist', JSON_HEX_QUOT | JSON_HEX_TAG);
-            exit();
+        if(getFrontUserData()){
+            if(empty($verify_mobile_no)) { 
+                echo json_encode('true', JSON_HEX_QUOT | JSON_HEX_TAG);
+                exit();
+            } else {
+                if($verify_mobile_no->mobile == getFrontUserData()->mobile){
+                    echo json_encode('true', JSON_HEX_QUOT | JSON_HEX_TAG);
+                    exit();
+                }else{
+                    echo json_encode('This mobile no already exist', JSON_HEX_QUOT | JSON_HEX_TAG);
+                    exit();
+                }
+            }
+        }else{
+            if(empty($verify_mobile_no)) { 
+                echo json_encode('true', JSON_HEX_QUOT | JSON_HEX_TAG);
+                exit();
+            } else {
+                echo json_encode('This mobile no already exist', JSON_HEX_QUOT | JSON_HEX_TAG);
+                exit();
+            }
         }
     }
 

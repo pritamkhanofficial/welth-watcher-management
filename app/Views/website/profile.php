@@ -47,7 +47,7 @@
                         <div class="card overflow-hidden" style="border: 1px solid rgba(0,0,0,.125) !important;">
                             <div class="card-body p-5">
                                 <div class="p-2">
-                                    <form class="form-horizontal" action="" id="profile-update">
+                                    <form class="form-horizontal" action="<?=base_url('profile')?>" id="profile-update">
 
                                         <div class="mb-3 row">
                                             <label for="full_name" class="form-label col-lg-2">Full Name</label>
@@ -111,7 +111,8 @@
                 required: true,
                 number: true,
                 minlength: 10,
-                maxlength: 10
+                maxlength: 10,
+                remote: "<?=base_url('check-mobile')?>"
             },
         },
 

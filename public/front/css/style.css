@@ -7279,3 +7279,17 @@ img.img-fluid.man-icon {
     width: 40px;
     height: auto;
 }
+.my-card{
+  height: 295px !important;
+}
+span.types {
+    font-size: 13px;
+    color: #777;
+}
+.bid{
+  font-size: 14px;
+  line-height: 1.5;
+}
+.left-datails{
+  background-color:#555;
+}

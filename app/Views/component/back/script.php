@@ -18,17 +18,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 
 <script>
-$(document).ready(function() {
-    <?php if(session()->getFlashdata('type')){ ?>
-        toastr["<?=strtolower(session()->getFlashdata('type'))?>"]("<?=session()->getFlashdata('message')?>",
-            "<?=session()->getFlashdata('title')?>")
-
-        toastr.options = {
+    const opns = {
             "closeButton": true,
             "debug": false,
             "newestOnTop": false,
             "progressBar": true,
-            "positionClass": "toast-top-right",
+            "positionClass": "toast-bottom-right",
             "preventDuplicates": false,
             "onclick": null,
             "showDuration": 300,
@@ -39,7 +34,13 @@ $(document).ready(function() {
             "hideEasing": "linear",
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
-        }
+        };
+$(document).ready(function() {
+    <?php if(session()->getFlashdata('type')){ ?>
+        toastr["<?=strtolower(session()->getFlashdata('type'))?>"]("<?=session()->getFlashdata('message')?>",
+            "<?=session()->getFlashdata('title')?>")
+
+        toastr.options = opns
     <?php } ?>
 });
 
@@ -48,23 +49,7 @@ function notification() {
         toastr["<?=strtolower(session()->getFlashdata('type'))?>"]("<?=session()->getFlashdata('message')?>",
             "<?=session()->getFlashdata('title')?>")
 
-        toastr.options = {
-            "closeButton": true,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": true,
-            "positionClass": "toast-top-right",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": 300,
-            "hideDuration": 1000,
-            "timeOut": 5000,
-            "extendedTimeOut": 1000,
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        }
+        toastr.options = opns
     <?php } ?>
 }
 </script>

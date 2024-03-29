@@ -590,6 +590,11 @@ class BackPanelController extends BaseController
         $data = [];
         $data['result'] = $this->websiteModel->clientBudget($id);
         if(empty($data['result'])){
+            generateFlash([
+                'type'=>'error',
+                'title'=>'Error',
+                'message'=>'Data not Found',
+            ]);
             return redirect('back-panel/register');
         }
         return view('client-budget',$data);

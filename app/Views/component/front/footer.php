@@ -248,7 +248,7 @@
                 <div class="border-line"></div>
                 <div class="footer-bottom flex-between pt-12 pb-12">
                     <div class="left-block flex-item-center">
-                        <div class="copy-right text-line caption1">©2023 Finatex. All Rights Reserved.</div>
+                        <div class="copy-right text-line caption1">©2023 ALL IT SOLUTIONS LLC. All Rights Reserved   .</div>
                     </div>
                     <div class="nav-link flex-item-center gap-10"><a class="text-line caption1 hover-underline"
                             href="#!">Terms Of Services</a><span class="text-line caption1">|</span><a

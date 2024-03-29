@@ -53,21 +53,21 @@
                                             <label for="full_name" class="form-label col-lg-2">Full Name</label>
                                             <div class="col-lg-10">
                                                 <input type="text" class="form-control" name="full_name" id="full_name"
-                                                    placeholder="<?=getFrontUserData()->full_name?>">
+                                                    value="<?=getFrontUserData()->full_name?>">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label for="mobile" class="form-label col-lg-2">Mobile</label>
                                             <div class="col-lg-10">
                                                 <input type="text" class="form-control" name="mobile" id="mobile"
-                                                    placeholder="<?=getFrontUserData()->mobile?>">
+                                                    value="<?=getFrontUserData()->mobile?>">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label for="email" class="form-label col-lg-2">Email</label>
                                             <div class="col-lg-10">
                                                 <input type="email" class="form-control" name="email" id="email"
-                                                    placeholder="<?=getFrontUserData()->email?>">
+                                                    value="<?=getFrontUserData()->email?>">
                                             </div>
                                         </div>
 

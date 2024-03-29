@@ -6439,7 +6439,6 @@ Scroll To Top Button: Start
   bottom: 30px;
   opacity: 1;
   visibility: visible;
-  z-index: 9999999999;
 }
 
 /*
@@ -7272,6 +7271,11 @@ p.account a {
 select.w-100.bg-surface.text-secondary.caption1.pl-12.pt-12.pb-12.bora-8.mb-3 {
     border: 0;
 }
-.error{
-  color: red !important;
+a.dropdown-item.log-out {
+    color: #d52b2b;
+    font-weight: 500;
+}
+img.img-fluid.man-icon {
+    width: 40px;
+    height: auto;
 }

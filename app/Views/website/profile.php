@@ -52,29 +52,30 @@
                                         <div class="mb-3 row">
                                             <label for="full_name" class="form-label col-lg-2">Full Name</label>
                                             <div class="col-lg-10">
-                                            <input type="text" class="form-control" name="full_name"
-                                                id="full_name" placeholder="<?=getFrontUserData()->full_name?>">
+                                                <input type="text" class="form-control" name="full_name" id="full_name"
+                                                    placeholder="<?=getFrontUserData()->full_name?>">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label for="mobile" class="form-label col-lg-2">Mobile</label>
                                             <div class="col-lg-10">
-                                            <input type="text" class="form-control" name="mobile"
-                                                id="mobile" placeholder="<?=getFrontUserData()->mobile?>">
+                                                <input type="text" class="form-control" name="mobile" id="mobile"
+                                                    placeholder="<?=getFrontUserData()->mobile?>">
                                             </div>
                                         </div>
                                         <div class="mb-3 row">
                                             <label for="email" class="form-label col-lg-2">Email</label>
                                             <div class="col-lg-10">
-                                            <input type="email" class="form-control" name="email"
-                                                id="email" placeholder="<?=getFrontUserData()->email?>">
+                                                <input type="email" class="form-control" name="email" id="email"
+                                                    placeholder="<?=getFrontUserData()->email?>">
                                             </div>
                                         </div>
 
 
                                         <div class="mt-3 text-center">
                                             <button class="btn btn-primary waves-effect waves-light w-25" name="submit"
-                                                value="submit" type="submit">Update <span class="spinner-border spinner-border-sm d-none" role="status"
+                                                value="submit" type="submit">Update <span
+                                                    class="spinner-border spinner-border-sm d-none" role="status"
                                                     aria-hidden="true"></span></button>
                                         </div>
 
@@ -96,26 +97,31 @@
     <?php echo view('component/front/script'); ?>
     <!--endbuild-->
     <script>
-    $('#forgot-password-complete').validate({
+    $('#profile-update').validate({
         rules: {
-            new_password: {
+            full_name: {
                 required: true,
-                minlength: 3
             },
-            confirm_password: {
+            email: {
                 required: true,
-                minlength: 3,
-                equalTo: "#new_password"
-            }
+                email: true,
+                remote: "<?=base_url('check-email')?>"
+            },
+            mobile: {
+                required: true,
+                number: true,
+                minlength: 10,
+                maxlength: 10
+            },
         },
 
     });
 
 
-    $("#forgot-password-complete").ajaxForm({
+    $("#profile-update").ajaxForm({
         // contentType: 'application/json',
         beforeSubmit: function() {
-            var valid = $('#forgot-password-complete').valid();
+            var valid = $('#profile-update').valid();
             if (valid) {
                 $(".spinner-border").removeClass("d-none")
                 return valid;
@@ -125,7 +131,7 @@
             swAlert(response)
             $(".spinner-border").addClass("d-none")
             if (response?.type == 'success') {
-                location.href = "<?=base_url('/')?>"
+                location.href = location.href
             }
         }
     });

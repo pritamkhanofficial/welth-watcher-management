@@ -497,15 +497,26 @@ class WebsiteController extends BaseController
     }
     public function profile()
     {
+        if(!getFrontUserData()){
+            return redirect('/');
+        }
 
         if($this->request->getVar('submit') == 'submit'){
-            $confirm_password = $this->request->getVar('confirm_password');
             $data = [
-                'password' =>getHash($confirm_password)
+                'full_name' =>$this->request->getVar('full_name'),
+                'mobile' =>$this->request->getVar('mobile'),
+                'email' =>$this->request->getVar('email'),
             ];
 
             $model = new AuthModel();
-            if($model->where(['generate_token'=>$token,'user_type'=>'FRONT'])->set($data)->update()){
+            if($model->where(['id'=>getFrontUserData()->id,'user_type'=>'FRONT'])->set($data)->update()){
+                    $data = $model->where(['id'=>getFrontUserData()->id,'user_type'=>'FRONT'])->first();
+                    $session = session();
+                    $session_data = [
+                        'user_front' => $data,
+                        'isFrontLoggedIn' => TRUE
+                    ];
+                    $session->set($session_data);
                 return $this->response->setJSON([
                     'type'=>'success',
                     'title'=>'Success',

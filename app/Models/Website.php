@@ -28,8 +28,15 @@ class Website extends Model
     public function submitContact($data){
         return $this->db->table('contact')->insert($data);
     }
-    public function budgetPlanning($data){
-        return $this->db->table('register')->insert($data);
+    public function budgetPlanning($data,$type, $id = NULL){
+        if($type == 'add'){
+            return $this->db->table('register')->insert($data);
+        }
+        if($type == 'update'){
+            return $this->db->table('register')->update($data,[
+                'id'=>$id
+            ]);
+        }
     }
     public function getBudgetPlanning($id){
         return $this->db->table('register')->where(['user_id'=>$id])->get()->getRow();

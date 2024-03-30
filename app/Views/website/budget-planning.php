@@ -29,8 +29,12 @@
                 </div>
             </div>
         </div>
+        <?php 
 
+// getPrint($budget);
+?>
         <div class="container pt-5 pb-5">
+            <?php if(is_null($budget)){ ?>
             <div class="content">
                 <form action="" method="post" id="register-form">
                     <div id="wizard">
@@ -44,7 +48,8 @@
                                     <div class="col-md-12 col-lg-6 col-12">
                                         <div class="heading7 hover-text-blue mb-3">Budget planning</div>
                                         <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                            name="budget_planning" required type="text" placeholder="Your city or metro area" />
+                                            name="budget_planning" required type="text"
+                                            placeholder="Your city or metro area" />
                                         <div class="body3 text-secondary mt-2"><i>Select your city or metro area.</i>
                                         </div>
 
@@ -757,6 +762,735 @@
                     </div>
                 </form>
             </div>
+            <?php }else{ ?>
+            <div class="content">
+                <form action="" method="post" id="register-form">
+                    <div id="wizard">
+                        <h2>BASICS</h2>
+                        <section>
+                            <div class="heading3 mt-10">The Basics</div>
+                            <div class="body3 text-secondary mt-20">Tell us about yourself.</div>
+                            <hr>
+                            <div class="mb-5 mt-5">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-6 col-12">
+                                        <div class="heading7 hover-text-blue mb-3">Budget planning</div>
+                                        <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            name="budget_planning" required type="text"
+                                            placeholder="Your city or metro area" />
+                                        <div class="body3 text-secondary mt-2"><i>Select your city or metro area.</i>
+                                        </div>
+
+                                        <div class="heading7 hover-text-blue mb-3 mt-3">How many people are in your
+                                            household?</div>
+                                        <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            name="household_size" type="text" placeholder="Number of people" />
+                                        <div class="body3 text-secondary mt-2"><i>Enter 1 if you live alone; otherwise,
+                                                include yourself, your partner and any dependents.</i></div>
+
+                                        <div class="heading7 hover-text-blue mb-3 mt-3">How old are you?</div>
+                                        <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            name="age" type="text" placeholder="Your age" />
+                                        <div class="body3 text-secondary mt-2"><i>In years</i></div>
+                                        <div class="form-check mt-5">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckDefault" name="advertisement_interest">
+                                            <label class="form-check-label" for="flexCheckDefault">
+                                                Bloomberg may use my information to provide me with advertisements that
+                                                may
+                                                be of particular interest to me (note if you do not check this box you
+                                                will
+                                                still receive online advertising)
+                                            </label>
+                                        </div>
+                                        <div class="form-check mt-3">
+                                            <input class="form-check-input" type="checkbox" value=""
+                                                id="flexCheckChecked" name="offers_promotions" checked>
+                                            <label class="form-check-label" for="flexCheckChecked">
+                                                Bloomberg may send me offers and promotions
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-12 col-lg-6 col-12 p-5">
+                                        <div class="security">
+                                            <div class="heading7 hover-text-blue mb-3">Why do I need to share this
+                                                information?</div>
+                                            <div class="body3 text-secondary mt-20">Your answers will help us provide
+                                                the
+                                                survey, learn more about our audience and prepare analysis for our
+                                                internal
+                                                use. We may also use your responses to enhance your experience with this
+                                                site and improve our services by providing customized content,
+                                                contextual
+                                                advertisements and, if you agree, advertisements tailored to your
+                                                interests.
+                                                Please see our Privacy Policy for more information.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+                        <h2>INCOME</h2>
+                        <section>
+                            <div class="heading3 mt-10">Your Income</div>
+                            <div class="body3 text-secondary mt-20">Show us the money. We’ll give you ideas for getting
+                                answers quickly,
+                                and it’s okay to guesstimate. You can update your answers later for more precise
+                                results.
+                            </div>
+                            <hr>
+                            <div class="mb-5 mt-5">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-6 col-12">
+                                        <div class="row row-gap-20">
+                                            <div class="heading7 hover-text-blue mt-3">What is your income?</div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="income" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="income_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Annualize a paycheck’s gross or use W-2
+                                                    box
+                                                    No. 5 (Medicare
+                                                    wages and tips), and add to any other taxable income for all working
+                                                    household members.</i>
+                                            </div>
+
+                                            <div class="heading7 hover-text-blue mt-2">What is your income after taxes?
+                                            </div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="income_after_taxes" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="income_after_taxes_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Subtract all federal, state and local
+                                                    income taxes from the
+                                                    above number, using latest income tax returns.</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">How much do you pay in Social
+                                                Security taxes?</div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="social_security_taxes" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="social_security_taxes_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>The current rate is 6.2% for corporate
+                                                    employees and 12.4% for
+                                                    the self-employed on earnings up to $147,000. It’s in W-2 box No.
+                                                    3.</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-6 col-12 p-5">
+                                        <div class="security">
+                                            <div class="heading7 hover-text-blue mb-3">Why do you need my Social
+                                                Security
+                                                taxes?</div>
+                                            <div class="body3 text-secondary mt-20">The Bureau of Labor Statistics
+                                                considers
+                                                them money “spent”
+                                                on retirement savings and includes them in its averages. So when we
+                                                compare
+                                                how much you save for
+                                                your golden years to your peers’ savings, we’ll include your Social
+                                                Security
+                                                contributions.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+                        <h2>SPENDING</h2>
+                        <section>
+                            <div class="heading3 mt-10">Your Spending</div>
+                            <div class="body3 text-secondary mt-20">Let’s dive into the nitty-gritty: Where does your
+                                money
+                                go? You can
+                                enter weekly, monthly, or yearly amounts. We’ll adjust accordingly.</div>
+                            <hr>
+                            <div class="mb-5 mt-5">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-6 col-12">
+                                        <div class="row row-gap-20">
+                                            <div class="heading7 hover-text-blue mt-3">How much do you spend on...</div>
+                                            <div class="heading7 hover-text-blue mt-3">Food and beverages?</div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="food_and_beverages" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="food_and_beverages_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Consumed at home or elsewhere,
+                                                    including in
+                                                    restaurants</i>
+                                            </div>
+
+                                            <div class="heading7 hover-text-blue mt-2">Clothes?</div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="clothes" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="clothes_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Include related services, footwear,
+                                                    accessories.</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">Housing?</div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="housing" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="housing_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Rent or mortgage, taxes, insurance,
+                                                    maintenance, utilities,
+                                                    cell services, personal services, furnishings, appliances, related
+                                                    items
+                                                    and services</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">Transportation?</div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="transportation" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="transportation_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Vehicle purchases, rentals, leases,
+                                                    insurance, fuel, upkeep,
+                                                    licenses, public transit, taxis</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">Healthcare and personal care
+                                                products?</div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="healthcare_and_personal_care" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="healthcare_and_personal_care_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Medical insurance, uncovered cost of
+                                                    medical supplies, drugs
+                                                    and services, shampoo, toothpaste, other such non-food items</i>
+                                            </div>
+
+                                            <div class="heading7 hover-text-blue mt-2">Entertainment?</div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="entertainment" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="entertainment_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Admission fees, audio visual equipment
+                                                    and
+                                                    services, pets,
+                                                    toys, hobbies and playground equipment</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">Education?</div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="education" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="education_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Tuition, fees, textbooks, supplies and
+                                                    equipment, from
+                                                    pre-school to graduate school</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">Everything else except retirement
+                                                savings?</div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="other_expenses" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="other_expenses_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Premiums for insurance not covered
+                                                    above
+                                                    (such as life, income
+                                                    protection, personal liability and disability), tobacco, alimony,
+                                                    child
+                                                    support, cash given
+                                                    others and charities, subscriptions and books, legal fees and credit
+                                                    card interest</i></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-6 col-12 p-5">
+                                        <div class="security">
+                                            <div class="heading7 hover-text-blue mb-3">Why do you need my spending
+                                                details?
+                                            </div>
+                                            <div class="body3 text-secondary mt-20">Understanding your spending habits
+                                                helps
+                                                us provide more
+                                                accurate financial insights and advice tailored to your lifestyle.</div>
+                                        </div>
+                                        <div class="security">
+                                            <div class="heading7 hover-text-blue mb-3">What’s a benchmark?</div>
+                                            <div class="body3 text-secondary mt-20">It’s a standard against which
+                                                performance is measured. We’ve
+                                                identified seven that are generally agreed upon in the personal finance
+                                                industry to assess your
+                                                financial health. Once you’ve completed all questions, they’ll be
+                                                averaged
+                                                to calculate your
+                                                WealthScore.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+                        <h2>RETIREMENT</h2>
+                        <section>
+                            <div class="heading3 mt-10">Your Retirement Contributions</div>
+                            <div class="body3 text-secondary mt-20">Now we’re going to look at how much you’re
+                                squirreling
+                                away for your
+                                golden years. Later, we’ll also look at how much you’ve saved so far.</div>
+                            <hr>
+                            <div class="mb-5 mt-5">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-6 col-12">
+                                        <div class="row row-gap-20">
+                                            <div class="heading7 hover-text-blue mt-3">How much do you save for
+                                                retirement?
+                                            </div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="retirement_savings_amount" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="retirement_savings_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Contributions to retirement plans, such
+                                                    as
+                                                    401(k) programs and
+                                                    IRAs, pensions and the like.</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">How much does your employer
+                                                contribute to your retirement
+                                                savings?</div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="employer_contribution" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="employer_contribution_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Such as matching 401(k) and IRA
+                                                    contributions and profit
+                                                    sharing or stock options grants if they are part of your employer’s
+                                                    retirement plan.</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">How old were you when you started
+                                                saving for retirement?
+                                            </div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="starting_age_for_saving" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>We need this to estimate your
+                                                    retirement-savings goals.</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-6 col-12 p-5">
+                                        <div class="security">
+                                            <div class="heading7 hover-text-blue mb-3">What do I do if I'm below the
+                                                benchmark?</div>
+                                            <div class="body3 text-secondary mt-20">There's a lot you can do. We can
+                                                tell
+                                                you more after you
+                                                finish entering your information.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+                        <h2>ASSETS</h2>
+                        <section>
+                            <div class="heading3 mt-10">Your Assets</div>
+                            <div class="body3 text-secondary mt-20">Now let's start figuring out your net worth and your
+                                preparedness
+                                for the future by looking at your bank accounts, retirement savings, investments,
+                                property
+                                and other
+                                valuables.</div>
+                            <hr>
+                            <div class="mb-5 mt-5">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-6 col-12">
+                                        <div class="row row-gap-20">
+                                            <div class="heading7 hover-text-blue mt-3">How much do you have in bank
+                                                accounts?</div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="bank_accounts_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Include money from all checking and
+                                                    savings
+                                                    accounts and the
+                                                    like.</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">What is the current value of your
+                                                non-retirement
+                                                investment accounts?</div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="investment_accounts_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Stocks, bonds, certificates of deposit,
+                                                    etc</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">If you own your home, what is its
+                                                current value?</div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="home_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>How much it would sell for now, minus
+                                                    the
+                                                    principal remaining
+                                                    on any mortgages. If you rent and don’t own your home, enter $0.</i>
+                                            </div>
+
+                                            <div class="heading7 hover-text-blue mt-2">What is the combined value of any
+                                                rental properties you
+                                                own?</div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="rental_properties_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>How much they would sell for now, minus
+                                                    the
+                                                    principal remaining
+                                                    on any mortgages. If you don’t own any rental properties, enter
+                                                    $0.</i>
+                                            </div>
+
+                                            <div class="heading7 hover-text-blue mt-2">What is the combined value of
+                                                your
+                                                vehicles?</div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="vehicles_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>How much they would sell for now, minus
+                                                    any
+                                                    loan principals. If
+                                                    you lease or don’t have a car, enter $0.</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">What is the total value of any
+                                                other
+                                                assets?</div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="other_assets_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Include equity in businesses, annuities
+                                                    and
+                                                    trusts, cash value
+                                                    of life insurance and any other tangible assets, including
+                                                    motorcycles,
+                                                    boats, artworks,
+                                                    electronics and jewelry.</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">What is the current value of your
+                                                retirement savings
+                                                accounts?</div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="retirement_savings_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Include 401(k)s, 403bs, IRAs, annuities
+                                                    and
+                                                    pension-vested
+                                                    benefits.</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">How much of your assets are
+                                                available
+                                                for emergencies?
+                                            </div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="emergency_assets_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>How much they would sell for now, minus
+                                                    the
+                                                    principal remaining
+                                                    on any mortgages. If you don’t own any other properties, enter
+                                                    $0.</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-6 col-12 p-5">
+                                        <div class="security">
+                                            <div class="heading7 hover-text-blue mb-3">What do I do if I'm below the
+                                                benchmark?</div>
+                                            <div class="body3 text-secondary mt-20">There's a lot you can do. We can
+                                                tell
+                                                you more after you
+                                                finish entering your information.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+                        <h2>DEBT</h2>
+                        <section>
+                            <div class="heading3 mt-10">Your Debts</div>
+                            <div class="body3 text-secondary mt-20">In this final section, we’ll look at the other side
+                                of
+                                the ledger:
+                                How much you owe.</div>
+                            <hr>
+                            <div class="mb-5 mt-5">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-6 col-12">
+                                        <div class="row row-gap-20">
+                                            <div class="heading7 hover-text-blue mt-3">How much do you owe for mortgages
+                                                and
+                                                home-equity loans?
+                                            </div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="mortgage_loans_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Do not include unused lines of
+                                                    credit.</i>
+                                            </div>
+
+                                            <div class="heading7 hover-text-blue mt-2">How much business debt do you
+                                                have?
+                                            </div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="business_debt_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Include loans for businesses you own
+                                                    for
+                                                    your own employment or
+                                                    for an investment.</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">How much do you owe for vehicle
+                                                loans?</div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="vehicle_loans_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Include debt on motorcycles and
+                                                    recreational vehicles.</i>
+                                            </div>
+
+                                            <div class="heading7 hover-text-blue mt-2">How much credit card debt do you
+                                                have?</div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="credit_card_debt_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Include only balances that are or will
+                                                    be
+                                                    outstanding for
+                                                    multiple months.</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">How much student debt do you owe?
+                                            </div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="student_debt_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Include loans for any educational
+                                                    related
+                                                    expenses, but not
+                                                    home-equity loans, even if used for tuition and the like.</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">How much do you owe for all other
+                                                debts?</div>
+                                            <div class="col-12 col-sm-12">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="other_debts_value" />
+                                            </div>
+                                            <div class="body3 text-secondary"><i>Include any other unsecured debt,
+                                                    including
+                                                    medical debt, money
+                                                    owed to private individuals, bank or credit union loans and debt
+                                                    held
+                                                    against mutual funds or
+                                                    stocks via margin accounts.</i></div>
+
+                                            <div class="heading7 hover-text-blue mt-2">How much do you spend to pay off
+                                                the
+                                                above debts?</div>
+                                            <div class="col-6 col-sm-7">
+                                                <input
+                                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    type="text" placeholder="$" name="debt_payment_value" />
+                                            </div>
+                                            <div class="col-6 col-sm-5">
+                                                <select
+                                                    class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                                    name="debt_payment_frequency">
+                                                    <option value="Per Year">Per Year</option>
+                                                    <option value="Per Month">Per Month</option>
+                                                    <option value="Per Week">Per Week</option>
+                                                </select>
+                                            </div>
+                                            <div class="body3 text-secondary"><i>For credit cards, only include sums
+                                                    paid to
+                                                    reduce outstanding
+                                                    balances over the course of multiple months. Don't include amounts
+                                                    used
+                                                    to pay off credit card
+                                                    balances in their entirety each month.</i></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 col-lg-6 col-12 p-5">
+                                        <div class="security">
+                                            <div class="heading7 hover-text-blue mb-3">What do I do if I'm below the
+                                                benchmark?</div>
+                                            <div class="body3 text-secondary mt-20">There's a lot you can do. We can
+                                                tell
+                                                you more after you
+                                                finish entering your information.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </form>
+            </div>
+            <?php } ?>
         </div>
     </div>
     <?php echo view('component/front/footer'); ?>
@@ -764,29 +1498,28 @@
     <?php echo view('component/front/script'); ?>
     <!--endbuild-->
     <script>
-        $(function() {
-            var wizard = $("#wizard").steps({
-                                headerTag: "h2",
-                                bodyTag: "section",
-                                transitionEffect: "slideLeft",
-                                onStepChanging: function(e, currentIndex, newIndex) {
-                                    var valid = $('#register-form').valid();
-                                        if (valid) {
-                                            return valid;
-                                        }
-                                },
-                                onFinished: function (event, currentIndex)
-                                {
-                                    var form = $("#register-form");
-                                    // Submit form input
-                                    form.submit();
-                                }
+    $(function() {
+        var wizard = $("#wizard").steps({
+            headerTag: "h2",
+            bodyTag: "section",
+            transitionEffect: "slideLeft",
+            onStepChanging: function(e, currentIndex, newIndex) {
+                var valid = $('#register-form').valid();
+                if (valid) {
+                    return valid;
+                }
+            },
+            onFinished: function(event, currentIndex) {
+                var form = $("#register-form");
+                // Submit form input
+                form.submit();
+            }
 
-                            });
-            wizard.find('a[href*="#previous"] ').addClass('prev');
-            wizard.find('a[href*="#next"] ').addClass('next');
-            wizard.find('a[href*="#finish"] ').addClass('next');
         });
+        wizard.find('a[href*="#previous"] ').addClass('prev');
+        wizard.find('a[href*="#next"] ').addClass('next');
+        wizard.find('a[href*="#finish"] ').addClass('next');
+    });
     </script>
     <script>
     $('#register-form').validate();
@@ -804,7 +1537,7 @@
         success: function(response) {
             // alert(response?.message);
             swAlert(response)
-            if(response?.type == 'success'){
+            if (response?.type == 'success') {
                 window.location.href = "<?=base_url('/')?>";
             }
             // $('#register-form')[0].reset();

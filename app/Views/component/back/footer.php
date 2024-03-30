@@ -6,7 +6,7 @@
                             </div> -->
                             <div class="col-sm-12">
                                 <div class="text-center">
-                                    Design &amp; Develop by Datatronics
+                                    Design &amp; Develop by ALL IT SOLUTIONS LLC
                                 </div>
                             </div>
                         </div>

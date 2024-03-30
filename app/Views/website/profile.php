@@ -15,7 +15,7 @@
             <div class="bg-img"> <img src="<?=base_url('front/')?>images/banner/profile.jpg" alt="banner" /></div>
             <div class="container">
                 <div class="heading-nav gap-4 mt-32"><a class="hover-underline caption1 text-white"
-                        href="index-2.html">Home</a><i class="ph ph-caret-double-right text-white"></i>
+                        href="<?= base_url('/') ?>">Home</a><i class="ph ph-caret-double-right text-white"></i>
                     <div class="caption1 text-white">Update Profile</div>
                 </div>
                 <div class="row">

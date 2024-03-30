@@ -278,15 +278,19 @@ class WebsiteController extends BaseController
 
                 // Send the email
                 if ($email->send()) {
-                    // echo 'Email sent successfully';
+                    return $this->response->setJSON([
+                        'type'=>'success',
+                        'title'=>'Success',
+                        'message'=>'Your OTP has been successfully sent. Please check your '. $email_data .' for the verification code. Thank you for choosing us.',
+                    ]);
                 } else {
-                    // echo $email->printDebugger(); die;
+                    return $this->response->setJSON([
+                        'type'=>'error',
+                        'title'=>'Error',
+                        'message'=>'!Oops something went wrong. Mail not send. Please try again.',
+                    ]);
                 }
-                return $this->response->setJSON([
-                    'type'=>'success',
-                    'title'=>'Success',
-                    'message'=>'Your OTP has been successfully sent. Please check your '. $email_data .' for the verification code. Thank you for choosing us.',
-                ]);
+                
             }else{
                 return $this->response->setJSON([
                     'type'=>'error',

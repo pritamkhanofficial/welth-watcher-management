@@ -22,6 +22,7 @@
                      <ul class="sub-menu" aria-expanded="false">
                          <li><a href="<?=base_url('back-panel/news-category')?>" key="t-default">News Category</a></li>
                          <li><a href="<?=base_url('back-panel/state')?>" key="t-default">State</a></li>
+                         <li><a href="<?=base_url('back-panel/job-category')?>" key="t-default">Job Category</a></li>
                      </ul>
                  </li>
                  <!-- <li>

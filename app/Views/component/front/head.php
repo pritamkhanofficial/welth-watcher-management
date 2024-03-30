@@ -13,5 +13,6 @@
 <!-- on your view layout file HEAD section -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 <link rel="stylesheet" href="<?=base_url()?>front/css/style.css" />
+<link rel="stylesheet" href="<?=base_url()?>front/css/custom-style.css" />
 <link rel="stylesheet" href="<?=base_url()?>front/css/animate-4.1.1.min.css" />
 <link rel="stylesheet" href="<?=base_url()?>front/css/jquery.steps.css">

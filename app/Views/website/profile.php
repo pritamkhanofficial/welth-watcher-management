@@ -109,7 +109,7 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
     <?php echo view('component/front/footer'); ?>
     <!--build:js assets/js/main.min.js-->

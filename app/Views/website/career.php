@@ -14,7 +14,7 @@
             <div class="slider-sub ">
               <div class="bg-img"> <img src="<?=base_url('front/')?>images/banner/contact.png" alt="banner"/></div>
               <div class="container"> 
-                <div class="heading-nav gap-4 mt-32"><a class="hover-underline caption1 text-white" href="index-2.html">Home</a><i class="ph ph-caret-double-right text-white"></i>
+                <div class="heading-nav gap-4 mt-32"><a class="hover-underline caption1 text-white" href="<?= base_url('/') ?>">Home</a><i class="ph ph-caret-double-right text-white"></i>
                   <div class="caption1 text-white">Career</div>
                 </div>
                 <div class="text-nav"> 

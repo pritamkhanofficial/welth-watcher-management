@@ -30,67 +30,86 @@
             </div>
         </div>
 
-        <div class="container pt-5 pb-5">
-            <div class="content">
-                <div class="row justify-content-center">
-                    <div class="col-lg-4">
-                        <div class="card overflow-hidden" style="border: 1px solid rgba(0,0,0,.125) !important;">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Full Name: <?=getFrontUserData()->full_name?></li>
-                                <li class="list-group-item">Username: <?=getFrontUserData()->username?></li>
-                                <li class="list-group-item">Email: <?=getFrontUserData()->email?></li>
-                                <li class="list-group-item">Mobile: <?=getFrontUserData()->mobile?></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-8">
-                        <div class="card overflow-hidden" style="border: 1px solid rgba(0,0,0,.125) !important;">
-                            <div class="card-body p-5">
-                                <div class="p-2">
-                                    <form class="form-horizontal" action="<?=base_url('profile')?>" id="profile-update">
-
-                                        <div class="mb-3 row">
-                                            <label for="full_name" class="form-label col-lg-2">Full Name</label>
-                                            <div class="col-lg-10">
-                                                <input type="text" class="form-control" name="full_name" id="full_name"
-                                                    value="<?=getFrontUserData()->full_name?>">
-                                            </div>
-                                        </div>
-                                        <div class="mb-3 row">
-                                            <label for="mobile" class="form-label col-lg-2">Mobile</label>
-                                            <div class="col-lg-10">
-                                                <input type="text" class="form-control" name="mobile" id="mobile"
-                                                    value="<?=getFrontUserData()->mobile?>">
-                                            </div>
-                                        </div>
-                                        <div class="mb-3 row">
-                                            <label for="email" class="form-label col-lg-2">Email</label>
-                                            <div class="col-lg-10">
-                                                <input type="email" class="form-control" name="email" id="email"
-                                                    value="<?=getFrontUserData()->email?>">
-                                            </div>
-                                        </div>
-
-
-                                        <div class="mt-3 text-center">
-                                            <button class="btn btn-primary waves-effect waves-light w-25" name="submit"
-                                                value="submit" type="submit">Update <span
-                                                    class="spinner-border spinner-border-sm d-none" role="status"
-                                                    aria-hidden="true"></span></button>
-                                        </div>
-
-
-                                    </form>
+        <div class="form-contact style-one mt-100 mb-3">
+            <div class="container">
+                <div class="row flex-center row-gap-32">
+                    <div class="col-12 col-xl-4">
+                        <div class="infor bg-blue bora-12 p-40">
+                            <div class="heading5 text-white">Profile Details</div>
+                            <div class="body3 text-white mt-8">We will get back to you within 24 hours, or call us
+                                everyday</div>
+                            <div class="mt-40"></div>
+                            <div class="list-more-infor mt-40">
+                                <div class="item flex-item-center gap-12 mt-20">
+                                    <i class="ph-fill ph-check-circle text-blue bg-white p-8 bora-50"></i>
+                                    <div class="line-y"> </div>
+                                    <div class="text-button text-white">Full Name: <?=getFrontUserData()->full_name?>
+                                    </div>
                                 </div>
-
+                                <div class="item flex-item-center gap-12 mt-20">
+                                    <i class="ph-bold ph-user text-blue bg-white p-8 bora-50"></i>
+                                    <div class="line-y"> </div>
+                                    <div class="text-button text-white">Username : <?=getFrontUserData()->username?>
+                                    </div>
+                                </div>
+                                <div class="item flex-item-center gap-12 mt-20">
+                                    <i class="ph-bold ph-envelope-simple text-blue bg-white p-8 bora-50"></i>
+                                    <div class="line-y"> </div>
+                                    <div class="text-button text-white">Email : <?=getFrontUserData()->email?></div>
+                                </div>
+                                <div class="item flex-item-center gap-12 mt-20">
+                                    <i class="ph-bold ph-phone text-blue bg-white p-8 bora-50"></i>
+                                    <div class="line-y"> </div>
+                                    <div class="text-button text-white">Mobile : <?=getFrontUserData()->mobile?></div>
+                                </div>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="col-12 col-xl-6 pl-55">
+                        <form action="<?=base_url('profile')?>" id="profile-update">
+                            <div class="form-block flex-columns-between gap-20">
+                                <div class="heading">
+                                    <div class="heading5">Drop your details</div>
+                                    <div class="body3 text-secondary mt-8">We will get back to you within 24 hours, or
+                                        call
+                                        us everyday
+                                    </div>
+                                </div>
+                                <div class="row row-gap-20">
+                                    <div class="col-12 col-sm-12">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="text" placeholder="Name" name="full_name" id="full_name"
+                                            value="<?=getFrontUserData()->full_name?>" />
+                                    </div>
+                                    <div class="col-12 col-sm-12">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="text" placeholder="Email" name="email" id="email"
+                                            value="<?=getFrontUserData()->email?>" />
+                                    </div>
+                                    <div class="col-12 col-sm-12">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="text" placeholder="Phone no" name="mobile" id="mobile"
+                                            value="<?=getFrontUserData()->mobile?>" />
+                                    </div>
+                                </div>
+                                <div class="button-block text-center ">
+                                    <button
+                                        class="button-share hover-border-blue bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
+                                        name="submit" value="submit" type="submit">Update Profile
+                                        <span class="spinner-border spinner-border-sm d-none" role="status"
+                                            aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-
+        
     </div>
     <?php echo view('component/front/footer'); ?>
     <!--build:js assets/js/main.min.js-->

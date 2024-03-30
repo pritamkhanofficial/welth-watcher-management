@@ -28,74 +28,46 @@
                 </div>
             </div>
         </div>
-
-        <div class="container pt-5 pb-5">
-            <div class="content">
-                <!-- <div class="row  justify-content-evenly mt-5">
-
-                    <div class="col-lg-6  ">
-                        <div class="card p-2" style="border: 1px solid rgba(0,0,0,.125) !important;">
-                            <div class="card-body">
-                                <form>
-                                    <div class="form-group row m-1">
-                                        <label for="staticEmail" class="col-sm-4 col-form-label">New Password</label>
-                                        <div class="col-sm-8">
-                                            <input type="password" class="form-control" id="new-password">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row m-1">
-                                        <label for="inputPassword" class="col-sm-4 col-form-label">Confirm Password</label>
-                                        <div class="col-sm-8">
-                                            <input type="password" class="form-control" id="confirm-password">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div> -->
-
-                <div class="row justify-content-center">
-                    <div class="col-md-8 col-lg-6 col-xl-5">
-                        <div class="card overflow-hidden" style="border: 1px solid rgba(0,0,0,.125) !important;">
-                            <div class="card-body pt-0">
-                                <div class="p-2">
-                                    <form class="form-horizontal" action="" id="forgot-password-complete">
-
-                                        <div class="mb-3">
-                                            <label for="new_password" class="form-label">New Password</label>
-                                            <input type="password" class="form-control" name="new_password"
-                                                id="new_password" placeholder="Enter New Password">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label class="form-label" for="confirm_password">Confirm Password</label>
-                                            <input type="password" class="form-control" name="confirm_password"
-                                                id="confirm_password" placeholder="Enter Confirm Password">
-                                        </div>
-
-
-
-                                        <div class="mt-3 d-grid">
-                                            <button class="btn btn-primary waves-effect waves-light" name="submit"
-                                                value="submit" type="submit">Log
-                                                In <span class="spinner-border spinner-border-sm d-none" role="status"
-                                                    aria-hidden="true"></span></button>
-                                        </div>
-
-
-                                    </form>
+        <div class="form-contact style-one mt-100 mb-3">
+            <div class="container">
+                <div class="row flex-center row-gap-32">
+                    <div class="col-12 col-xl-5 pl-55">
+                        <div class="form-block  flex-columns-between gap-20">
+                            <div class="heading">
+                                <div class="heading5">Reset Your passward</div>
+                                <div class="body3 text-secondary mt-8">We will get back to you within 24 hours, or call
+                                    us everyday
                                 </div>
-
                             </div>
-                        </div>
+                            <form action="" class="form-horizontal" id="forgot-password-complete">
+                                <div class="row row-gap-20 pb-2">
 
+                                    <div class="col-12 col-sm-12">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="password" name="new_password" id="new_password"
+                                            placeholder="New Passward" />
+                                    </div>
+                                    <div class="col-12 col-sm-12">
+                                        <input
+                                            class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            type="password" name="confirm_password" id="confirm_password"
+                                            placeholder="Confirm Passward" />
+                                    </div>
+                                </div>
+                                <div class="button-block text-center ">
+                                    <button type="submit"
+                                        class="button-share hover-border-blue bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48" name="submit" value="submit">Submit
+                                        <span class="spinner-border spinner-border-sm d-none" role="status"
+                                            aria-hidden="true"></span></button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
     </div>
     <?php echo view('component/front/footer'); ?>

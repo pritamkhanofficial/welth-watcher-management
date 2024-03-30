@@ -83,6 +83,11 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'news-category/(:segment)/(:segment)', 'BackPanelController::newsCategory/$1/$2');
 
 
+        $routes->match(['get', 'post'],'job-category/', 'BackPanelController::jobCategory');
+        $routes->match(['get', 'post'],'job-category/(:segment)', 'BackPanelController::jobCategory/$1');
+        $routes->match(['get', 'post'],'job-category/(:segment)/(:segment)', 'BackPanelController::jobCategory/$1/$2');
+
+
         $routes->match(['get', 'post'],'news/', 'BackPanelController::news');
         $routes->match(['get', 'post'],'news/(:segment)', 'BackPanelController::news/$1');
         $routes->match(['get', 'post'],'news/(:segment)/(:segment)', 'BackPanelController::news/$1/$2');
@@ -117,6 +122,10 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'register/(:segment)/(:segment)', 'BackPanelController::register/$1/$2');
 
         $routes->match(['get', 'post'],'client-budget/(:num)', 'BackPanelController::clientBudget/$1');
+
+        $routes->match(['get', 'post'],'Job/', 'BackPanelController::Job');
+        $routes->match(['get', 'post'],'Job/(:segment)', 'BackPanelController::Job/$1');
+        $routes->match(['get', 'post'],'Job/(:segment)/(:segment)', 'BackPanelController::Job/$1/$2');
        
     });
 });

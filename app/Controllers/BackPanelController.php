@@ -600,4 +600,44 @@ class BackPanelController extends BaseController
         return view('client-budget',$data);
     }
 
+    public function jobCategory()
+    {
+        $crud = new GroceryCrud();
+        // $crud->displayAs('facebook_url','twitter_url','linkedin_url','youtube_url','mobile_no','address');
+        // $crud->displayAs('description','Content');
+        $crud->displayAs('is_active', 'Status');
+        // $crud->where("deleted_at", NULL);
+        $crud->columns(['label', 'is_active']);
+        $crud->fields(['label', 'is_active']);
+        // $crud->setTexteditor(['address']);
+        // $crud->unsetAdd();
+
+
+        $crud->unsetDelete();
+
+        $crud->unsetPrint();
+        $crud->unsetExport();
+
+        $crud->setTable('job_category');
+        $crud->setSubject('Job Category');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
+
+    public function Job()
+    {
+        $crud = new GroceryCrud();
+        $crud->displayAs('is_active');
+        $crud->columns(['title','job_type','location','is_active']);
+        $crud->fields(['title', 'description','job_type','location','is_active']);
+        $crud->setTexteditor(['description']);
+        $crud->unsetDelete();
+        $crud->unsetPrint();
+        $crud->unsetExport();
+        $crud->setTable('job');
+        $crud->setSubject('Jobs');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
+
 }

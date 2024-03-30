@@ -22,6 +22,7 @@
                      <ul class="sub-menu" aria-expanded="false">
                          <li><a href="<?=base_url('back-panel/news-category')?>" key="t-default">News Category</a></li>
                          <li><a href="<?=base_url('back-panel/state')?>" key="t-default">State</a></li>
+                         <li><a href="<?=base_url('back-panel/job-category')?>" key="t-default">Job Category</a></li>
                      </ul>
                  </li>
                  <!-- <li>
@@ -70,6 +71,12 @@
                      <a href="<?=base_url('back-panel/global-setting')?>" class="waves-effect">
                          <i class="fas fa-globe"></i>
                          <span>Global Setting</span>
+                     </a>
+                 </li>
+                 <li>
+                     <a href="<?=base_url('back-panel/Job')?>" class="waves-effect">
+                         <i class="fas fa-briefcase"></i>
+                         <span>Jobs</span>
                      </a>
                  </li>
                  <li>

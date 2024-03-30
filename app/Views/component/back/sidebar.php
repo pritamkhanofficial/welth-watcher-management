@@ -74,6 +74,12 @@
                      </a>
                  </li>
                  <li>
+                     <a href="<?=base_url('back-panel/Job')?>" class="waves-effect">
+                         <i class="fas fa-briefcase"></i>
+                         <span>Jobs</span>
+                     </a>
+                 </li>
+                 <li>
                      <a href="<?=base_url('back-panel/logout')?>" class="waves-effect">
                          <i class="bx bx-power-off"></i>
                          <span>Logout</span>

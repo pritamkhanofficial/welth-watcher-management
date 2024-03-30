@@ -624,4 +624,20 @@ class BackPanelController extends BaseController
         return view('common', (array)$output);
     }
 
+    public function Job()
+    {
+        $crud = new GroceryCrud();
+        $crud->displayAs('is_active');
+        $crud->columns(['title','job_type','location','is_active']);
+        $crud->fields(['title', 'description','job_type','location','is_active']);
+        $crud->setTexteditor(['description']);
+        $crud->unsetDelete();
+        $crud->unsetPrint();
+        $crud->unsetExport();
+        $crud->setTable('job');
+        $crud->setSubject('Jobs');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
+
 }

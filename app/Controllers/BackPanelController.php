@@ -628,9 +628,9 @@ class BackPanelController extends BaseController
     {
         $crud = new GroceryCrud();
         $crud->displayAs('category', 'Category');
-        $crud->displayAs('content', 'Content');
-        $crud->displayAs('is_active', 'Status');
-        $crud->where("job.deleted_at", NULL);
+        $crud->displayAs('description', 'Description');
+        $crud->displayAs('is_active');
+        // $crud->where("job.deleted_at", " ");
         $crud->setRelation('category', 'job_category', 'label', ['is_active' => 1, 'deleted_at' => NULL]);
         // $crud->displayAs('is_active');
         $crud->columns(['title','job_type','location','is_active']);

@@ -759,12 +759,15 @@ class WebsiteController extends BaseController
 
     public function career()
     {
-        return view('website/career');
+        $result = $this->model->job();
+        // getPrint($result);
+        return view('website/career', ['data' => $result]);
     }
 
-    public function career_form()
+    public function career_form($id)
     {
-        return view('website/career_form');
+        $result = $this->model->job_detl($id);
+        return view('website/career_form', ['data' => $result]);
     }
 
     

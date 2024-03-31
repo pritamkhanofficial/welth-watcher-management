@@ -77,6 +77,8 @@ class WebsiteController extends BaseController
             return redirect('/');
         }
         $dataArr['budget'] = $this->model->getBudgetPlanning(getFrontUserData()->id);
+        $full_name = getFrontUserData()->full_name;
+        $email_data = getFrontUserData()->email;
         // getPrint($_POST);
         if($this->request->getVar('form_submit') == 'add'){
             // getPrint($this->request->getVar());
@@ -134,6 +136,61 @@ class WebsiteController extends BaseController
 
             $result = $this->model->budgetPlanning($data,'add');
             if($result){
+                $htmlTable = "<table><tbody>";
+
+                foreach($data AS $key=>$d){
+                    if($key == 'user_id'){ continue; }
+                    $htmlTable .= "<tr>";
+                    $htmlTable .= "<th>" . str_replace('_',' ', ucwords($key)) . "</th>";
+                    $htmlTable .= "<td>" . $d . "</td>";
+                    $htmlTable .= "</tr>";
+                }
+
+                $htmlTable .= "</table></tbody>";
+                $email = \Config\Services::email();
+                $email->setTo($email_data);
+                $email->setFrom('support@techniglob.in');
+                $email->setSubject('Budget Planning Details');
+                $html  = "<!DOCTYPE html>
+                            <html lang='en'>
+                            <head>
+                            <meta charset='UTF-8'>
+                            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                            <title>Budget Planning Details</title>
+                            <style>
+                                table {
+                                    width: 100%;
+                                    border-collapse: collapse;
+                                }
+                                th, td {
+                                    border: 1px solid black;
+                                    padding: 8px;
+                                }
+                            </style>
+                            </head>
+                            <body>
+                            <p>Dear $full_name,</p>
+                            
+                            <p>We hope this message finds you well.</p>
+                            
+                            <p>Your budget planning data find  below:</p>
+                            
+                            <p style='text-align: center; font-size: 24px; font-weight: bold;'>
+                            $htmlTable
+                            </p>
+                            
+                           
+                            <p>If you have any questions or require further assistance, please feel free to reach out to us. We are here to help.</p>
+                            
+                            <p>Thank you for choosing our services.</p>
+                            
+                            <p>Best regards,<br>
+                            [Welth Watcher Management]<br>
+                            </p>
+                            </body>
+                            </html>";
+                $email->setMessage($html);
+                $email->send();
                 return $this->response->setJSON([
                     'type'=>'success',
                     'title'=>'Success',
@@ -152,7 +209,6 @@ class WebsiteController extends BaseController
         }
         if($this->request->getVar('form_submit') == 'update'){
             // getPrint($this->request->getVar());
-
             $data = [
                 'user_id' => getFrontUserData()->id,
                 'budget_planning' => $this->request->getVar('budget_planning'),
@@ -206,6 +262,61 @@ class WebsiteController extends BaseController
 
             $result = $this->model->budgetPlanning($data,'update',$dataArr['budget']->id);
             if($result){
+                $htmlTable = "<table><tbody>";
+
+                foreach($data AS $key=>$d){
+                    if($key == 'user_id'){ continue; }
+                    $htmlTable .= "<tr>";
+                    $htmlTable .= "<th>" . str_replace('_',' ', ucwords($key)) . "</th>";
+                    $htmlTable .= "<td>" . $d . "</td>";
+                    $htmlTable .= "</tr>";
+                }
+
+                $htmlTable .= "</table></tbody>";
+                $email = \Config\Services::email();
+                $email->setTo($email_data);
+                $email->setFrom('support@techniglob.in');
+                $email->setSubject('Budget Planning Details');
+                $html  = "<!DOCTYPE html>
+                            <html lang='en'>
+                            <head>
+                            <meta charset='UTF-8'>
+                            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                            <title>Budget Planning Details</title>
+                            <style>
+                                table {
+                                    width: 100%;
+                                    border-collapse: collapse;
+                                }
+                                th, td {
+                                    border: 1px solid black;
+                                    padding: 8px;
+                                }
+                            </style>
+                            </head>
+                            <body>
+                            <p>Dear $full_name,</p>
+                            
+                            <p>We hope this message finds you well.</p>
+                            
+                            <p>Your budget planning data find  below:</p>
+                            
+                            <p style='text-align: center; font-size: 24px; font-weight: bold;'>
+                            $htmlTable
+                            </p>
+                            
+                           
+                            <p>If you have any questions or require further assistance, please feel free to reach out to us. We are here to help.</p>
+                            
+                            <p>Thank you for choosing our services.</p>
+                            
+                            <p>Best regards,<br>
+                            [Welth Watcher Management]<br>
+                            </p>
+                            </body>
+                            </html>";
+                $email->setMessage($html);
+                $email->send();
                 return $this->response->setJSON([
                     'type'=>'success',
                     'title'=>'Success',

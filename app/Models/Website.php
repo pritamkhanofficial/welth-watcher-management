@@ -65,6 +65,11 @@ class Website extends Model
         return $data;
     }
 
+    public function jobCandidateAdd($data){
+        return $this->db->table('job_candidate')->insert($data);
+        
+    }
+
     
 }
 

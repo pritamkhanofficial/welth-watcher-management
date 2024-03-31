@@ -1655,9 +1655,9 @@
         success: function(response) {
             // alert(response?.message);
             swAlert(response)
-            if (response?.type == 'success') {
-                window.location.href = "<?=base_url('/')?>";
-            }
+            /*if (response?.type == 'success') {
+                window.location.href = "< ?=base_url('/')?>";
+            }*/
             // $('#register-form')[0].reset();
             // $(".spinner-border").addClass("d-none")
         }

@@ -237,7 +237,7 @@ class WebsiteController extends BaseController
             $data = [
                 'access_token' =>token(),
                 'full_name' =>$full_name,
-                'mobile' =>$this->request->getVar('mobile_no'),
+                'mobile' =>$this->request->getVar('mobile'),
                 'email' =>$email_data,
                 'otp_generate_on' =>\getCurrentDate(),
                 'otp' =>$otp
@@ -367,7 +367,7 @@ class WebsiteController extends BaseController
     }
     public function checkMobile(){
         $model = new AuthModel();
-        $mobile = $this->request->getVar('mobile_no');
+        $mobile = $this->request->getVar('mobile');
         $verify_mobile_no = $model->where(['mobile'=>$mobile,'user_type'=>'FRONT'])->first();
         if(getFrontUserData()){
             if(empty($verify_mobile_no)) { 

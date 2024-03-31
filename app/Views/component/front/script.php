@@ -57,7 +57,7 @@ $('.register').validate({
             email: true,
             remote: "<?=base_url('check-email')?>"
         },
-        mobile_no: {
+        mobile: {
             required: true,
             number: true,
             minlength: 10,

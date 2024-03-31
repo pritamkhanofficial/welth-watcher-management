@@ -67,7 +67,7 @@
                                 <div class="form-group mb-3">
                                     <input
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        type="text" name="mobile_no" placeholder="Mobile No">
+                                        type="text" name="mobile" placeholder="Mobile No">
                                 </div>
                             </div>
 

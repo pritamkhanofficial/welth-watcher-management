@@ -67,20 +67,25 @@
 
 
           <div class="list-service row mt-40">
-              <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-6">
-                      <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px my-card"><a class="service-item-main flex-column gap-16" href="<?= base_url('career-form') ?>">
+          <?php 
+                foreach($data['job'] as $key=>$jobs){
+                  $placehover = str_pad(++$key, 2, "0", STR_PAD_LEFT);
+              ?>
+            <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-6">
+              <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px my-card"><a class="service-item-main flex-column gap-16" href="<?= base_url('career-form/'. $jobs->id) ?>">
                             <div class="heading flex-between">
-                              <div class="number heading3 text-placehover">01</div>
+                              <div class="number heading3 text-placehover"><?= $placehover ?></div>
                             </div>
                             <div class="desc">
-                              <div class="heading7 hover-text-blue">Job Title: Bid Manager/Pre-Sales Manager</div>
-                              <div class="body3 text-secondary mt-4">Bid Manager <br> DurgapurWest Bengal
+                              <div class="heading7 hover-text-blue">Job Title: <?= $jobs->title; ?></div>
+                              <div class="body3 text-secondary mt-4"><?= $jobs->label; ?> <br> <?= $jobs->location?>
                             </div>
                             </div>
                             <div class="read-block flex-item-center gap-4 hover-text-blue"><span class="fs-14 fw-700 text-blue">Read More</span><i class="ph-bold ph-caret-double-right fs-12 text-blue"></i></div></a>
                         </div>
               </div>
-              <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-6">
+              <?php } ?>
+              <!-- <div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-6">
                         <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px my-card"><a class="service-item-main flex-column gap-16" href="<?= base_url('career-form') ?>">
                             <div class="heading flex-between">
                               <div class="number heading3 text-placehover">02</div>
@@ -103,7 +108,7 @@
                             </div>
                             <div class="read-block flex-item-center gap-4 hover-text-blue"><span class="fs-14 fw-700 text-blue">Read More</span><i class="ph-bold ph-caret-double-right fs-12 text-blue"></i></div></a>
                         </div>
-              </div>
+              </div> -->
             </div>
         </div>
       </div><a class="scroll-to-top-btn" href="#header"><i class="ph-bold ph-caret-up"></i></a>

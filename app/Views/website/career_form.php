@@ -30,21 +30,13 @@
             <div class="container">
                 <div class="row flex-center row-gap-32">
                     <div class="col-12 col-xl-5">
+                        <?php
+                            foreach($data['job_detl'] as $row){
+                        ?>
                         <div class="infor bg-blue bora-12 p-40 left-datails">
-                            <div class="heading5 text-white">Bid Manager/Pre-Sales Manager</div>
+                            <div class="heading5 text-white"><?= $row->title; ?></div>
                             <hr>
-                            <div class="text-button text-white">ID-AIS2023 <br>
-
-                                Candidate Location-PAN India <br>
-
-                                Company HQ- Durgapur, West Bengal <br>
-
-                                Job Types:
-                                Remote (Initially): For candidates staying out of Durgapur <br>
-
-                                Work from Office: For candidates staying in the suburban areas of Durgapur
-
-                                Job Description</div>
+                            <div class="text-button text-white"><?= $row->description;?></div>
                             <div class="body3 text-white mt-8 bid">As a Bid Manager you will need to create the solution
                                 and proposal ensuring compliance with customer requirements while highlighting company
                                 value proposition.</div>
@@ -62,20 +54,21 @@
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-fill ph-check-circle fs-20 text-blue bg-white p-8 bora-50"></i>
                                     <div class="line-y"> </div>
-                                    <div class="text-button text-white">Job Category : Bid Manager</div>
+                                    <div class="text-button text-white">Job Category : <?= $row->label;?></div>
                                 </div>
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-fill ph-check-circle fs-20 text-blue bg-white p-8 bora-50"></i>
                                     <div class="line-y"> </div>
-                                    <div class="text-button text-white">Job Type: Full Time</div>
+                                    <div class="text-button text-white">Job Type: <?= $row->job_type;?></div>
                                 </div>
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-fill ph-check-circle fs-20 text-blue bg-white p-8 bora-50"></i>
                                     <div class="line-y"> </div>
-                                    <div class="text-button text-white">Job Location: DurgapurWest Bengal</div>
+                                    <div class="text-button text-white">Job Location: <?= $row->location;?></div>
                                 </div>
                             </div>
                         </div>
+                        <?php } ?>
                     </div>
                     <div class="col-12 col-xl-6 pl-55">
                         <div class="form-block flex-columns-between gap-20">
@@ -83,6 +76,7 @@
                                 <div class="heading5">Apply for this position</div>
                             </div>
                         </div>
+                        <form action="" id="apply-form" method="POST">
                         <div class="row row-gap-20 mt-20">
                             <div class="col-12 col-sm-12">
                                 <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
@@ -102,7 +96,7 @@
                             </div>
                             <div class="col-12 col-sm-8">
                                 <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                    type="file" placeholder="Phone no" />
+                                    type="file" placeholder="Phone no" accept=".pdf, .doc, .docx" />
                             </div>
                             <div class="col-12">
                                 <textarea
@@ -115,6 +109,7 @@
                                 class="button-share hover-border-blue bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Submit
                                 request</button>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -124,6 +119,30 @@
     <!--build:js assets/js/main.min.js-->
     <?php echo view('component/front/script'); ?>
     <!--endbuild-->
+    <script>
+    $('#apply-form').validate();
+
+
+    $("#apply-form").ajaxForm({
+        // contentType: 'application/json',
+        /* beforeSubmit: function() {
+            var valid = $('#register-form').valid();
+            if (valid) {
+                // $(".spinner-border").removeClass("d-none")
+                return valid;
+            }
+        }, */
+        success: function(response) {
+            // alert(response?.message);
+            swAlert(response)
+            if (response?.type == 'success') {
+                window.location.href = "<?=base_url('/')?>";
+            }
+            // $('#register-form')[0].reset();
+            // $(".spinner-border").addClass("d-none")
+        }
+});
+</script>
 
 </body>
 

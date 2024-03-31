@@ -767,6 +767,40 @@ class WebsiteController extends BaseController
     public function career_form($id)
     {
         $result = $this->model->job_detl($id);
+
+        if($this->request->getVar('submit') == 'submit'){
+            // getPrint($this->request->getVar());
+            $data = [
+                'candidate_name' =>$this->request->getVar('name'),
+                'mobile' =>$this->request->getVar('mobile'),
+                'email' =>$this->request->getVar('email'),
+                'description' =>$this->request->getVar('message'),
+                'job_id' =>$id,
+            ];
+            $file = $this->request->getFile('attch');
+            if (isset($file)) {
+                $file = UploadFile($file);
+                $data['attachment'] = $file;
+            } 
+            $model = new Website();
+            if($model->jobCandidateAdd($data)){
+                   
+                return $this->response->setJSON([
+                    'type'=>'success',
+                    'title'=>'Success',
+                    'message'=>'Thank you for registering! Your information has been successfully submitted.',
+                ]);
+            }else{
+                return $this->response->setJSON([
+                    'type'=>'error',
+                    'title'=>'Error',
+                    'message'=>'!Oops something went wrong. Please try again',
+                ]);
+            }
+           
+            
+
+        }
         return view('website/career_form', ['data' => $result]);
     }
 

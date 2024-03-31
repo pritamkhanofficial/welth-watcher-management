@@ -644,5 +644,26 @@ class BackPanelController extends BaseController
         $output = $crud->render();
         return view('common', (array)$output);
     }
+    public function JobCandidate()
+    {
+        $crud = new GroceryCrud();
+        $crud->displayAs('category', 'Category');
+        $crud->displayAs('description', 'Description');
+        $crud->displayAs('is_active');
+        // $crud->where("job.deleted_at", " ");
+        $crud->setRelation('job_id', 'job', 'title', ['is_active' => 1, 'deleted_at' => NULL]);
+        // $crud->displayAs('is_active');
+        $crud->columns(['candidate_name','mobile','email','job_id','attachment','description']);
+        // $crud->fields(['candidate_name', 'mobile', 'email','job_type','location','is_active']);
+        $crud->setTexteditor(['description']);
+        $crud->callbackColumn('attachment', array($this, 'showFile'));
+        $crud->unsetDelete();
+        $crud->unsetPrint();
+        $crud->unsetExport();
+        $crud->setTable('job_candidate');
+        $crud->setSubject('Jobs');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
 
 }

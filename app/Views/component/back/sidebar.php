@@ -68,15 +68,21 @@
                      </a>
                  </li>
                  <li>
-                     <a href="<?=base_url('back-panel/global-setting')?>" class="waves-effect">
-                         <i class="fas fa-globe"></i>
-                         <span>Global Setting</span>
-                     </a>
-                 </li>
-                 <li>
                      <a href="<?=base_url('back-panel/Job')?>" class="waves-effect">
                          <i class="fas fa-briefcase"></i>
                          <span>Jobs</span>
+                     </a>
+                 </li>
+                 <li>
+                     <a href="<?=base_url('back-panel/job-candidate')?>" class="waves-effect">
+                         <i class="fas fa-portrait"></i>
+                         <span>Job Candidate</span>
+                     </a>
+                 </li>
+                 <li>
+                     <a href="<?=base_url('back-panel/global-setting')?>" class="waves-effect">
+                         <i class="fas fa-globe"></i>
+                         <span>Global Setting</span>
                      </a>
                  </li>
                  <li>

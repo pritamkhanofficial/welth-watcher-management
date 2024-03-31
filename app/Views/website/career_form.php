@@ -76,39 +76,43 @@
                                 <div class="heading5">Apply for this position</div>
                             </div>
                         </div>
-                        <form action="" id="apply-form" method="POST">
-                        <div class="row row-gap-20 mt-20">
-                            <div class="col-12 col-sm-12">
-                                <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                    type="text" placeholder="Name" />
+                        <form action="" id="apply-form" method="POST" enctype="multipart/form-data">
+                            <div class="row row-gap-20 mt-20">
+                                <div class="col-12 col-sm-12">
+                                    <input name="name"
+                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                        type="text" placeholder="Name" />
+                                </div>
+                                <div class="col-12 col-sm-12">
+                                    <input name="email"
+                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                        type="text" placeholder="Email" />
+                                </div>
+                                <div class="col-12 col-sm-12">
+                                    <input name="mobile"
+                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                        type="text" placeholder="Phone no" />
+                                </div>
+                                <div class="col-12 col-sm-4">
+                                    Upload CV/Resume *
+                                    <span class="types">Allowed: .pdf, .doc, .docx</span>
+                                </div>
+                                <div class="col-12 col-sm-8">
+                                    <input
+                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                        type="file" name="attch" placeholder="Phone no" accept=".pdf, .doc, .docx" />
+                                </div>
+                                <div class="col-12">
+                                    <textarea
+                                        class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                        name="message" cols="10" rows="4" placeholder="Your Message"></textarea>
+                                </div>
                             </div>
-                            <div class="col-12 col-sm-12">
-                                <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                    type="text" placeholder="Email" />
+                            <div class="button-block mt-20 text-center ">
+                                <button type="submit" name="submit" value="submit"
+                                    class="button-share hover-border-blue bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Submit
+                                    request</button>
                             </div>
-                            <div class="col-12 col-sm-12">
-                                <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                    type="text" placeholder="Phone no" />
-                            </div>
-                            <div class="col-12 col-sm-4">
-                                Upload CV/Resume *
-                                <span class="types">Allowed: .pdf, .doc, .docx</span>
-                            </div>
-                            <div class="col-12 col-sm-8">
-                                <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                    type="file" placeholder="Phone no" accept=".pdf, .doc, .docx" />
-                            </div>
-                            <div class="col-12">
-                                <textarea
-                                    class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                    name="message" cols="10" rows="4" placeholder="Your Message"></textarea>
-                            </div>
-                        </div>
-                        <div class="button-block mt-20">
-                            <button
-                                class="button-share hover-border-blue bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Submit
-                                request</button>
-                        </div>
                         </form>
                     </div>
                 </div>
@@ -141,8 +145,8 @@
             // $('#register-form')[0].reset();
             // $(".spinner-border").addClass("d-none")
         }
-});
-</script>
+    });
+    </script>
 
 </body>
 

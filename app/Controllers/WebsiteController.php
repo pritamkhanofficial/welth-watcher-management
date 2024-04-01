@@ -36,8 +36,7 @@ class WebsiteController extends BaseController
             $result = $this->model->submitContact($data);
             if($result){
                 $email = \Config\Services::email();
-                $email->setTo('pritamkhanofficial@gmail.com');
-                $email->setFrom('support@techniglob.in');
+                $email->setTo('allitsolutionshosting@gmail.com');
                 $email->setSubject('Welth Watcher Management Contact Info');
                 $email->setMessage('Body of the email');
 
@@ -149,7 +148,6 @@ class WebsiteController extends BaseController
                 $htmlTable .= "</table></tbody>";
                 $email = \Config\Services::email();
                 $email->setTo($email_data);
-                $email->setFrom('support@techniglob.in');
                 $email->setSubject('Budget Planning Details');
                 $html  = "<!DOCTYPE html>
                             <html lang='en'>
@@ -275,7 +273,6 @@ class WebsiteController extends BaseController
                 $htmlTable .= "</table></tbody>";
                 $email = \Config\Services::email();
                 $email->setTo($email_data);
-                $email->setFrom('support@techniglob.in');
                 $email->setSubject('Budget Planning Details');
                 $html  = "<!DOCTYPE html>
                             <html lang='en'>
@@ -356,7 +353,6 @@ class WebsiteController extends BaseController
             if($otpVerification->save($data)){
                 $email = \Config\Services::email();
                 $email->setTo($email_data);
-                $email->setFrom('support@techniglob.in');
                 $email->setSubject('One-Time Password (OTP) for Account Verification');
                 $html  = "<!DOCTYPE html>
                             <html lang='en'>
@@ -571,7 +567,6 @@ class WebsiteController extends BaseController
         if($checkMail == 1){
             $email = \Config\Services::email();
             $email->setTo($email_data);
-            $email->setFrom('support@techniglob.in');
             $email->setSubject('Reset Password (URL) for Change Password');
             $html  = "<!DOCTYPE html>
                             <html lang='en'>
@@ -638,7 +633,6 @@ class WebsiteController extends BaseController
         
         $email = \Config\Services::email();
         $email->setTo($row->email);
-        $email->setFrom('support@techniglob.in');
         $email->setSubject('Reset Password (URL) for Change Password');
         $html  = "<!DOCTYPE html>
                         <html lang='en'>
@@ -679,12 +673,12 @@ class WebsiteController extends BaseController
                 ]);
                 echo 'Email sent successfully';
             } else {
-                return $this->response->setJSON([
+                /* return $this->response->setJSON([
                     'type'=>'error',
                     'title'=>'Error',
                     'message'=>'!Oops something went wrong. Please try again.',
-                ]);
-                // echo $email->printDebugger(); die;
+                ]); */
+                echo $email->printDebugger(); die;
             }
     }
     public function forgotPassword($token)

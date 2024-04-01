@@ -666,4 +666,10 @@ class BackPanelController extends BaseController
         return view('common', (array)$output);
     }
 
+    public function databaseBackup(){
+        $dbutil = \Config\Database::utils();
+
+        $dbutil->backup();
+    }
+
 }

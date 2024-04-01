@@ -6,8 +6,8 @@ use CodeIgniter\Config\BaseConfig;
 
 class Email extends BaseConfig
 {
-    public string $fromEmail  = 'support@techniglob.in';
-    public string $fromName   = 'Welth Watcher Management Contact Info';
+    public string $fromEmail  = 'support@wealthwatchermanagement.com';
+    public string $fromName   = 'Welth Watcher Management';
     public string $recipients = '';
 
     /**
@@ -28,17 +28,17 @@ class Email extends BaseConfig
     /**
      * SMTP Server Hostname
      */
-    public string $SMTPHost = 'mail.techniglob.in';
+    public string $SMTPHost = 'smtp.titan.email';
 
     /**
      * SMTP Username
      */
-    public string $SMTPUser = 'support@techniglob.in';
+    public string $SMTPUser = 'support@wealthwatchermanagement.com';
 
     /**
      * SMTP Password
      */
-    public string $SMTPPass = 'lwZ#4(yMhi&R';
+    public string $SMTPPass = "gWR;8KD'XC5xVwS";
 
     /**
      * SMTP Port

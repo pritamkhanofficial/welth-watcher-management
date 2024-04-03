@@ -649,6 +649,7 @@ class BackPanelController extends BaseController
         $crud = new GroceryCrud();
         $crud->displayAs('category', 'Category');
         $crud->displayAs('description', 'Description');
+        $crud->displayAs('job_id', 'Apply For');
         $crud->displayAs('is_active');
         // $crud->where("job.deleted_at", " ");
         $crud->setRelation('job_id', 'job', 'title', ['is_active' => 1, 'deleted_at' => NULL]);
@@ -658,6 +659,8 @@ class BackPanelController extends BaseController
         $crud->setTexteditor(['description']);
         $crud->callbackColumn('attachment', array($this, 'showFile'));
         $crud->unsetDelete();
+        $crud->unsetAdd();
+        $crud->unsetEdit();
         $crud->unsetPrint();
         $crud->unsetExport();
         $crud->setTable('job_candidate');

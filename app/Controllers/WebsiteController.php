@@ -192,7 +192,7 @@ class WebsiteController extends BaseController
                 return $this->response->setJSON([
                     'type'=>'success',
                     'title'=>'Success',
-                    'message'=>'Thank you for registering! Your information has been successfully submitted.',
+                    'message'=>'Thank you for submitting Your information.',
                 ]);
             }else{
                 return $this->response->setJSON([
@@ -317,7 +317,7 @@ class WebsiteController extends BaseController
                 return $this->response->setJSON([
                     'type'=>'success',
                     'title'=>'Success',
-                    'message'=>'Thank you for registering! Your information has been successfully submitted.',
+                    'message'=>'Thank you for submitting Your information.',
                 ]);
             }else{
                 return $this->response->setJSON([
@@ -431,7 +431,7 @@ class WebsiteController extends BaseController
                 return $this->response->setJSON([
                     'type'=>'success',
                     'title'=>'Success',
-                    'message'=>'Registration successful! You can now log in.',
+                    'message'=>'Registration successful! You can log in now.',
                 ]);
             }else{
                 return $this->response->setJSON([
@@ -695,7 +695,7 @@ class WebsiteController extends BaseController
                 return $this->response->setJSON([
                     'type'=>'success',
                     'title'=>'Success',
-                    'message'=>'Updated',
+                    'message'=>'Password Updated',
                 ]);
             }else{
                 return $this->response->setJSON([
@@ -735,7 +735,7 @@ class WebsiteController extends BaseController
                 return $this->response->setJSON([
                     'type'=>'success',
                     'title'=>'Success',
-                    'message'=>'Updated',
+                    'message'=>'Profile Updated',
                 ]);
             }else{
                 return $this->response->setJSON([
@@ -782,7 +782,7 @@ class WebsiteController extends BaseController
                 return $this->response->setJSON([
                     'type'=>'success',
                     'title'=>'Success',
-                    'message'=>'Thank you for registering! Your information has been successfully submitted.',
+                    'message'=>'Thank you for contact us Your message has been successfully submitted.',
                 ]);
             }else{
                 return $this->response->setJSON([

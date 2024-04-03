@@ -760,7 +760,7 @@ class WebsiteController extends BaseController
 
     public function career_form($id)
     {
-        $result = $this->model->job_detl($id);
+        $data['result'] = $this->model->job_detl($id);
 
         if($this->request->getVar('submit') == 'submit'){
             // getPrint($this->request->getVar());
@@ -795,7 +795,7 @@ class WebsiteController extends BaseController
             
 
         }
-        return view('website/career_form', ['data' => $result]);
+        return view('website/career_form', $data);
     }
 
     

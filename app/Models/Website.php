@@ -60,9 +60,7 @@ class Website extends Model
     }
 
     public function job_detl($id){
-        $data = [];
-        $data['job_detl'] = $this->db->table('job')->join('job_category', 'job_category.id = job.category', 'left')->where(['job.id'=>$id,'job.is_active'=>1])->orderBy('job.created_at','DESC')->get()->getResult();
-        return $data;
+       return  $this->db->table('job')->join('job_category', 'job_category.id = job.category', 'left')->where(['job.id'=>$id,'job.is_active'=>1])->orderBy('job.created_at','DESC')->get()->getRow();
     }
 
     public function jobCandidateAdd($data){

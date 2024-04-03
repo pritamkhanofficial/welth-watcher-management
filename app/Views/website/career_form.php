@@ -28,47 +28,52 @@
         </div>
         <div class="form-contact style-one mt-100 mb-3">
             <div class="container">
+
                 <div class="row flex-center row-gap-32">
                     <div class="col-12 col-xl-5">
-                        <?php
-                            foreach($data['job_detl'] as $row){
-                        ?>
-                        <div class="infor bg-blue bora-12 p-40 left-datails">
-                            <div class="heading5 text-white"><?= $row->title; ?></div>
+
+                        <div class="infor bg-blue bora-12 p-40">
+                            <div class="heading5 text-white"><?= $result->title; ?></div>
                             <hr>
-                            <div class="text-button text-white"><?= $row->description;?></div>
-                            <div class="body3 text-white mt-8 bid">As a Bid Manager you will need to create the solution
-                                and proposal ensuring compliance with customer requirements while highlighting company
-                                value proposition.</div>
-                            <div class="text-button text-white mt-20">Qualification & Desired Experience Range</div>
-                            <div class="body3 text-white mt-8 bid">1.) Graduation in any field <br>
-
-                                2.) PGDM /MBA in Sales or marketing <br>
-
-                                3.) 3 to 7 years of experience in BPO industry <br>
-
-                                <b>Sales Cycle :</b> Operations and Consultancy
+                            <div class="text-button text-white">
+                                ID-AIS2023
                             </div>
+                            <div class="text-button text-white">
+                                <!-- < ?= $result->description;?> -->
+                                <p>
+                                    Candidate Location-PAN IndiaCompany HQ- Durgapur, West BengalWork from Office: For
+                                    candidates
+                                    staying in the suburban areas of DurgapurAs a Bid Manager you will need to create
+                                    the solution and
+                                    proposal ensuring compliance with customer requirements while highlighting company
+                                    value
+                                    proposition. Qualification &amp; Desired Experience Range<br />
+                                    1.) Graduation in any field<br />
+                                    2.) PGDM /MBA in Sales or marketing<br />
+                                    3.) 3 to 7 years of experience in BPO industry<br />
+                                    <b>Sales Cycle :</b> Operations and Consultancy
+                                </p>
+                            </div>
+
                             <div class="mt-40"></div>
                             <div class="list-more-infor mt-40">
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-fill ph-check-circle fs-20 text-blue bg-white p-8 bora-50"></i>
                                     <div class="line-y"> </div>
-                                    <div class="text-button text-white">Job Category : <?= $row->label;?></div>
+                                    <div class="text-button text-white">Job Category : <?= $result->label;?></div>
                                 </div>
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-fill ph-check-circle fs-20 text-blue bg-white p-8 bora-50"></i>
                                     <div class="line-y"> </div>
-                                    <div class="text-button text-white">Job Type: <?= $row->job_type;?></div>
+                                    <div class="text-button text-white">Job Type: <?= $result->job_type;?></div>
                                 </div>
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-fill ph-check-circle fs-20 text-blue bg-white p-8 bora-50"></i>
                                     <div class="line-y"> </div>
-                                    <div class="text-button text-white">Job Location: <?= $row->location;?></div>
+                                    <div class="text-button text-white">Job Location: <?= $result->location;?></div>
                                 </div>
                             </div>
                         </div>
-                        <?php } ?>
                     </div>
                     <div class="col-12 col-xl-6 pl-55">
                         <div class="form-block flex-columns-between gap-20">
@@ -81,26 +86,27 @@
                                 <div class="col-12 col-sm-12">
                                     <input name="name"
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        type="text" placeholder="Name" />
+                                        type="text" required placeholder="Name *" />
                                 </div>
                                 <div class="col-12 col-sm-12">
                                     <input name="email"
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        type="text" placeholder="Email" />
+                                        type="text" required placeholder="Email *" />
                                 </div>
                                 <div class="col-12 col-sm-12">
                                     <input name="mobile"
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        type="text" placeholder="Phone no" />
+                                        type="text" required placeholder="Phone no *" />
                                 </div>
-                                <div class="col-12 col-sm-4">
+                                <div class="col-12 col-sm-4 text-danger ">
                                     Upload CV/Resume *
                                     <span class="types">Allowed: .pdf, .doc, .docx</span>
                                 </div>
                                 <div class="col-12 col-sm-8">
                                     <input
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        type="file" name="attch" placeholder="Phone no" accept=".pdf, .doc, .docx" />
+                                        type="file" name="attch" required placeholder="Phone no"
+                                        accept=".pdf, .doc, .docx" />
                                 </div>
                                 <div class="col-12">
                                     <textarea

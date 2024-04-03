@@ -27,7 +27,7 @@
                             <div class="bg-main">
                                 <div class="form-block form-stock bora-16 bg-white p-28 flex-columns-between gap-20">
                                     <div class="heading6 free-apply">
-                                        OPEN FREE* DEMAT AND TRADING ACCOUNT IN 15 MIN**
+                                    Join us in 15 mins**
                                         <div class="body2 text-secondary mt-2">Limited Period Offer</div>
                                     </div>
 

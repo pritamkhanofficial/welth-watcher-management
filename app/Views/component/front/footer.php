@@ -184,37 +184,37 @@
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
                                             href="<?=base_url('/about')?>">About us</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="service-one.html">Services</a></li>
+                                            href="#">Services</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="case-studies-one.html">Case Studies</a></li>
+                                            href="<?= base_url('report') ?>">Case Studies</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="<?=base_url('/contact')?>">Contact</a></li>
+                                            href="<?=base_url('/contact')?>">Contact Us</a></li>
                                 </ul>
                             </div>
                             <div class="footer-nav-item">
                                 <div class="item-heading text-button-small text-white">Pages</div>
                                 <ul class="list-nav mt-4">
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="faqs.html">FAQs</a></li>
+                                            href="#">FAQs</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="pricing.html">Pricing</a></li>
+                                            href="<?= base_url('report') ?>">Pricing</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="partners.html">Partners</a></li>
+                                            href="#">Partners</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="contact-two.html">Support Center</a></li>
+                                            href="<?=base_url('/contact')?>">Support Center</a></li>
                                 </ul>
                             </div>
                             <div class="footer-nav-item">
                                 <div class="item-heading text-button-small text-white">Blog</div>
                                 <ul class="list-nav mt-4">
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="blog-list-one.html">Blog List</a></li>
+                                            href="#">Blog List</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="blog-grid.html">Blog Grid</a></li>
+                                            href="#">Blog Grid</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="blog-masonry.html">Masonry</a></li>
+                                            href="#">Masonry</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="blog-detail-one.html">Blog Detail</a></li>
+                                            href="#">Blog Detail</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -248,7 +248,7 @@
                 <div class="border-line"></div>
                 <div class="footer-bottom flex-between pt-12 pb-12">
                     <div class="left-block flex-item-center">
-                        <div class="copy-right text-line caption1">©2023 ALL IT SOLUTIONS LLC. All Rights Reserved   .</div>
+                        <div class="copy-right text-line caption1">©2024 ALL IT SOLUTIONS LLC. All Rights Reserved   .</div>
                     </div>
                     <div class="nav-link flex-item-center gap-10"><a class="text-line caption1 hover-underline"
                             href="#!">Terms Of Services</a><span class="text-line caption1">|</span><a

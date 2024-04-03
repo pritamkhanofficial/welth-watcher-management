@@ -75,7 +75,7 @@
                                 <a class="fs-14 nav-link-mobile" href="<?= base_url('report') ?>">Report Analysis</a>
                             </li>
                             <li class="nav-item-mobile h-100 flex-column gap-8 pt-8 pb-8 pl-12 pr-12 pointer home active">
-                                <a class="fs-14 nav-link-mobile" href="Carrier.html">Carrier</a>
+                                <a class="fs-14 nav-link-mobile" href="<?= base_url('career') ?>">Carrier</a>
                             </li>
                             <li class="nav-item-mobile h-100 flex-column gap-8 pt-8 pb-8 pl-12 pr-12 pointer home active">
                                 <a class="fs-14 nav-link-mobile" href="<?= base_url('/contact') ?>">Contact Us</a>

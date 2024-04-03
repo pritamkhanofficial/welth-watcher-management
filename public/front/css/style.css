@@ -535,6 +535,7 @@ Container: Start
   font-weight: 700;
   line-height: 26px;
   text-transform: capitalize;
+  word-break: break-all;
 }
 
 .text-button-small {

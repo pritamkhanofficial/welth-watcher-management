@@ -39,20 +39,7 @@
                                 ID-AIS2023
                             </div>
                             <div class="text-button text-white">
-                                <!-- < ?= $result->description;?> -->
-                                <p>
-                                    Candidate Location-PAN IndiaCompany HQ- Durgapur, West BengalWork from Office: For
-                                    candidates
-                                    staying in the suburban areas of DurgapurAs a Bid Manager you will need to create
-                                    the solution and
-                                    proposal ensuring compliance with customer requirements while highlighting company
-                                    value
-                                    proposition. Qualification &amp; Desired Experience Range<br />
-                                    1.) Graduation in any field<br />
-                                    2.) PGDM /MBA in Sales or marketing<br />
-                                    3.) 3 to 7 years of experience in BPO industry<br />
-                                    <b>Sales Cycle :</b> Operations and Consultancy
-                                </p>
+                                <?=$result->description;?>
                             </div>
 
                             <div class="mt-40"></div>

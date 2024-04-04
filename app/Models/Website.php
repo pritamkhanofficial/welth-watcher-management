@@ -52,6 +52,7 @@ class Website extends Model
         $data['job'] = $this->db->table('job')
             ->select('job.id, job.category, job.title, job.slug, job.description, job.job_type, job.location, job.is_active, job.created_at, job.created_by, job.updated_at, job.updated_by, job_category.label')
             ->join('job_category', 'job_category.id = job.category', 'left')
+            ->where('job.is_active = 1')
             ->orderBy('job.created_at', 'DESC')
             ->limit(3)
             ->get()

@@ -12,7 +12,7 @@
                         <li class="nav-item h-100 flex-center home "><a class="nav-link" href="<?= base_url('/about') ?>">About
                                 Us</a></li>
                         <li class="nav-item h-100 flex-center home "><a class="nav-link" href="<?= base_url('report') ?>">Report Analysis</a></li>
-                        <li class="nav-item h-100 flex-center home "><a class="nav-link" href="<?= base_url('career') ?>">Carrier</a>
+                        <li class="nav-item h-100 flex-center home "><a class="nav-link" href="<?= base_url('career') ?>">Careers</a>
                         </li>
                         <li class="nav-item h-100 flex-center home "><a class="nav-link" href="<?= base_url('/contact') ?>">Contact
                                 Us</a></li>

@@ -15,7 +15,7 @@
                         <div class="text-content my-top-text flex-columns-between row-gap-40">
                             <div class="title">
                                 <div class="heading2 animate__animated animate__fadeInUp animate__delay-0-2s">If you are
-                                    <span class="casualabout">casualabout<br> the market,</span> here<br>is what we have
+                                    <span class="casualabout">casual about<br> the market,</span> here<br>is what we have
                                     to say
                                 </div>
                                 <div

@@ -38,7 +38,6 @@
                     </div>
                 </form>
 
-
                 <form class="new-added-form upd register" action="<?=base_url('register-user')?>" method="post"
                     name="update" id="updatef">
                     <div class="modal-body">
@@ -91,7 +90,7 @@
                         </div>
                         <div class="form-group mb-3 submit_otp d-none">
                             <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                type="text" name="otp" id="otp" placeholder="Enter Otp">
+                                type="text" name="otp" id="otp" placeholder="Enter OTP">
                             <label class="form-label" id="timer"></label>
                         </div>
                         <div class="text-center pt-4">
@@ -115,8 +114,8 @@
                         </div>
                     </div>
                 </form>
-                <form class="new-added-form reset pass upd" action="<?=base_url('forgot-password-check')?>" method="post"
-                    name="reset" id="forgot-password">
+                <form class="new-added-form reset pass upd" action="<?=base_url('forgot-password-check')?>"
+                    method="post" name="reset" id="forgot-password">
                     <div class="modal-body">
                         <div class="form-group mb-3">
                             <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
@@ -194,8 +193,8 @@
                             <div class="footer-nav-item">
                                 <div class="item-heading text-button-small text-white">Pages</div>
                                 <ul class="list-nav mt-4">
-                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="#">FAQs</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline" href="#">FAQs</a>
+                                    </li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
                                             href="<?= base_url('report') ?>">Pricing</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
@@ -207,14 +206,14 @@
                             <div class="footer-nav-item">
                                 <div class="item-heading text-button-small text-white">Blog</div>
                                 <ul class="list-nav mt-4">
-                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="#">Blog List</a></li>
-                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="#">Blog Grid</a></li>
-                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="#">Masonry</a></li>
-                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="#">Blog Detail</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline" href="#">Blog
+                                            List</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline" href="#">Blog
+                                            Grid</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline" href="#">Masonry</a>
+                                    </li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline" href="#">Blog
+                                            Detail</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -248,7 +247,8 @@
                 <div class="border-line"></div>
                 <div class="footer-bottom flex-between pt-12 pb-12">
                     <div class="left-block flex-item-center">
-                        <div class="copy-right text-line caption1">©2024 ALL IT SOLUTIONS LLC. All Rights Reserved   .</div>
+                        <div class="copy-right text-line caption1">©2024 ALL IT SOLUTIONS LLC. All Rights Reserved .
+                        </div>
                     </div>
                     <div class="nav-link flex-item-center gap-10"><a class="text-line caption1 hover-underline"
                             href="#!">Terms Of Services</a><span class="text-line caption1">|</span><a

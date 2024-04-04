@@ -46,6 +46,13 @@ function asd(a) {
     }
 }
 
+$(".regBtn").click(function(){
+    asd(2)
+});
+$(".loginBtn").click(function(){
+    asd(1)
+});
+
 
 $('.register').validate({
     rules: {

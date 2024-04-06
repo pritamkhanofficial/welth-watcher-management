@@ -1,5 +1,5 @@
 <?php 
-// getPrint($data['state']);
+// getPrint($data['job_cat']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,7 @@
                                 <div class="body3 text-secondary mt-8">We will get back to you within 24 hours, or call
                                     us everyday</div>
                             </div>
-                           <!--  <div class="row row-gap-20">
+                            <div class="row row-gap-20">
                                 <div class="col-12 col-sm-4">
                                     <input
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
@@ -44,20 +44,21 @@
                                 <div class="col-12 col-sm-4">
                                     <select class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                         name="categories">
-                                        <option value="">Financial Planning</option>
-                                        <option value="">Business Planning</option>
-                                        <option value="">Development Planning</option>
+                                        <option value="">Select</option>
+                                        <?php foreach($data['job_cat'] as $job_cat){?>
+                                        <option value="<?= $job_cat->id?>"><?= $job_cat->label?></option>
+                                        <?php } ?>
                                     </select><i class="ph ph-caret-down"></i>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <select class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                         name="categories">
-                                        <option value="Financial Planning">Financial Planning</option>
-                                        <option value="Business Planning">Business Planning</option>
-                                        <option value="Development Planning">Development Planning</option>
+                                        <option value="">Select</option>
+                                        <option value="Full Time">Full Time</option>
+                                        <option value="Part Time">Part Time</option>
                                     </select><i class="ph ph-caret-down"></i>
                                 </div>
-                            </div> -->
+                            </div>
                             <!-- <div class="button-block">
                     <button class="button-share hover-border-blue bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Submit request</button>
                 </div> -->

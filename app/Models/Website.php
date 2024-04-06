@@ -61,7 +61,17 @@ class Website extends Model
             ->limit(3)
             ->get()
             ->getResult();
+
+            $data['job_cat'] = $this->db->table('job_category')
+                ->select('id, label')
+                ->get()
+                ->getResult();
         return $data;
+    }
+
+    public function job_cat()
+    {
+
     }
 
     public function job_detl($id){

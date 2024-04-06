@@ -41,13 +41,13 @@
                 <form class="new-added-form upd register" action="<?=base_url('register-user')?>" method="post"
                     name="update" id="updatef">
                     <div class="modal-body">
-                        <div class="form-group mb-3">
+                        <div class="form-group mb-1">
                             <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
                                 type="text" name="full_name" placeholder="Full Name">
                         </div>
-                        <div class="row register-pera">
-                            <div class="col-12 col-sm-6 mt-4">
-                                <div class="form-group mb-4">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 mt-3">
+                                <div class="form-group">
                                     <input
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
                                         type="email" name="email" placeholder="Email Id">
@@ -62,8 +62,8 @@
                                 <option value="Development Planning">Development Planning</option>
                             </select> -->
 
-                            <div class="col-12 col-sm-6 mt-4">
-                                <div class="form-group mb-3">
+                            <div class="col-12 col-sm-6 mt-3">
+                                <div class="form-group">
                                     <input
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
                                         type="text" name="mobile" placeholder="Mobile No">
@@ -71,15 +71,15 @@
                             </div>
 
                         </div>
-                        <div class="row register-pera">
-                            <div class="col-12 col-sm-6 mt-4">
+                        <div class="row">
+                            <div class="col-12 col-sm-6 mt-3">
                                 <div class="form-group">
                                     <input
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
                                         type="password" name="password" id="password" placeholder="Password">
                                 </div>
                             </div>
-                            <div class="col-12 col-sm-6 mt-4">
+                            <div class="col-12 col-sm-6 mt-3">
                                 <div class="form-group">
                                     <input
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
@@ -88,7 +88,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group mb-3 submit_otp d-none">
+                        <div class="form-group mb-3 submit_otp mt-3">
                             <input class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
                                 type="text" name="otp" id="otp" placeholder="Enter OTP">
                             <label class="form-label" id="timer"></label>

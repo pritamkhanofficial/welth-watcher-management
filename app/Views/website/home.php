@@ -15,7 +15,8 @@
                         <div class="text-content my-top-text flex-columns-between row-gap-40">
                             <div class="title">
                                 <div class="heading2 animate__animated animate__fadeInUp animate__delay-0-2s">If you are
-                                    <span class="casualabout">casual about<br> the market,</span> here<br>is what we have
+                                    <span class="casualabout">casual about<br> the market,</span> here<br>is what we
+                                    have
                                     to say
                                 </div>
                                 <div
@@ -27,7 +28,7 @@
                             <div class="bg-main">
                                 <div class="form-block form-stock bora-16 bg-white p-28 flex-columns-between gap-20">
                                     <div class="heading6 free-apply">
-                                    Join us in 15 mins**
+                                        Join us in 15 mins**
                                         <div class="body2 text-secondary mt-2">Limited Period Offer</div>
                                     </div>
 
@@ -36,14 +37,14 @@
                                                 class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Register</button></a>
                                     </div> -->
                                     <div class="button-block">
-                                    <?php if(!getFrontUserData()){ ?>
+                                        <?php if(!getFrontUserData()){ ?>
                                         <button
                                             class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48 regBtn"
                                             data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</button>
                                         <button
                                             class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48 loginBtn"
                                             data-bs-toggle="modal" data-bs-target="#staticBackdrop">Login </button>
-                                    <?php } ?>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -224,11 +225,11 @@
                                     <?= $row->label ?></div>
                                 <div class="heading6 mt-8"><?= $row->title ?></div>
                                 <div class="date flex-item-center gap-16 mt-8">
+                                    <!-- <div class="item-date flex-item-center"><i
+                                            class="ph-bold ph-calendar-blank"></i><span class="ml-4 caption2">
+                                            <?=dateDiff($row->created_at)?> </span></div>
                                     <div class="author caption2 text-secondary">by <span
-                                            class="text-on-surface">Avitex</span></div>
-                                    <div class="item-date flex-item-center"><i
-                                            class="ph-bold ph-calendar-blank"></i><span class="ml-4 caption2">1 days
-                                            ago</span></div>
+                                            class="text-on-surface"><?= $row->full_name ?></span></div> -->
                                 </div>
                             </div>
                         </a>

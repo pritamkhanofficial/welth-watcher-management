@@ -757,7 +757,6 @@ class WebsiteController extends BaseController
         // getPrint($result);
         return view('website/career', ['data' => $result]);
     }
-
     public function career_form($id)
     {
         $data['result'] = $this->model->job_detl($id);
@@ -796,6 +795,41 @@ class WebsiteController extends BaseController
 
         }
         return view('website/career_form', $data);
+    }
+
+    public function getAllJob()
+    {
+        $job_category = $this->request->getVar('job_category');
+        $job_type = $this->request->getVar('job_type');
+        $search = $this->request->getVar('search');
+        $results = $this->model->getAllJob($search,$job_category,$job_type);
+        // getPrint($results);
+        $html = empty($results) ? '<div class="col-12 text-center">Sorry! No jobs to show.</div>':'';
+        $url = base_url('career-form/');
+        foreach($results AS $key=>$row){
+            $placehover = str_pad(++$key, 2, "0", STR_PAD_LEFT);
+            $html .= '<div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                        <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px my-card"><a
+                                class="service-item-main flex-column gap-16"
+                                href="' . $url . $row->id . '">
+                                <div class="heading flex-between">
+                                    <div class="number heading3 text-placehover">' . $placehover . '</div>
+                                </div>
+                                <div class="desc">
+                                    <div class="heading7 hover-text-blue">' .$row->title. '</div>
+                                    <div class="body3 text-secondary mt-4">' .$row->label. '  <br>
+                                        ' .$row->location. '
+                                    </div>
+                                </div>
+                                <div class="read-block flex-item-center gap-4 hover-text-blue"><span
+                                        class="fs-14 fw-700 text-blue">Read More</span><i
+                                        class="ph-bold ph-caret-double-right fs-12 text-blue"></i></div>
+                            </a>
+                        </div>
+                    </div>';
+        }
+
+        return $html;
     }
 
     

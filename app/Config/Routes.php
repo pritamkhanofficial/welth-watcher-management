@@ -25,6 +25,7 @@ $routes->group('', ['filter'=>'authFrontFilter','namespace' => 'App\Controllers'
     $routes->match(['get', 'post'], 'add-new-password', 'WebsiteController::add_new_password');
     $routes->match(['get', 'post'], 'profile', 'WebsiteController::profile');
     $routes->match(['get', 'post'],'career', 'WebsiteController::career');
+    $routes->match(['get', 'post'],'get-all-job', 'WebsiteController::getAllJob');
     $routes->match(['get', 'post'],'career-form/(:any)', 'WebsiteController::career_form/$1');
     $routes->match(['get','post'],'apply-job', 'WebsiteController::apply_job');
 });

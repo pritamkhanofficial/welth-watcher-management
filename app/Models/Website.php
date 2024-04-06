@@ -61,7 +61,43 @@ class Website extends Model
             ->limit(3)
             ->get()
             ->getResult();
+
+            $data['job_cat'] = $this->db->table('job_category')
+                ->select('id, label')
+                ->get()
+                ->getResult();
         return $data;
+    }
+
+    public function getAllJob($search,$job_category,$job_type){
+        $query =  $this->db->table('job');
+        $query->select('job.id, job.category, job.title, job.slug, job.description, job.job_type, job.location, job.is_active, job.created_at, job.created_by, job.updated_at, job.updated_by, job_category.label');
+        $query->join('job_category', 'job_category.id = job.category', 'left');
+        $query->where('job.is_active', 1);
+        if(!empty($search)){
+            $query->groupStart();
+                $query->like('job.title', $search);
+                $query->orLike('job.description', $search);
+                $query->orLike('job.location', $search);
+            $query->groupEnd();
+            
+        }
+        if(!empty($job_category)){
+            $query->where('job.category', $job_category);
+        }
+        if(!empty($job_type)){
+            $query->where('job.job_type', $job_type);
+        }
+        $query->orderBy('job.created_at', 'DESC');
+        if(empty($search) && empty($job_category) && empty($job_type)){
+            $query->limit(3);
+        }
+        return $query->get()->getResult();
+    }
+
+    public function job_cat()
+    {
+
     }
 
     public function job_detl($id){

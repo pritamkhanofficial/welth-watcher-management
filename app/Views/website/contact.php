@@ -36,7 +36,7 @@
         <div class="form-contact style-one mt-100">
             <div class="container">
                 <div class="row flex-center row-gap-32">
-                    <div class="col-12 col-xl-4">
+                    <div class="col-12 col-xl-5">
                         <div class="infor bg-blue bora-12 p-40">
                             <div class="heading5 text-white">Get it touch</div>
                             <div class="body3 text-white mt-8">We will get back to you within 24 hours, or call us
@@ -82,7 +82,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-xl-6 pl-55">
+                    <div class="col-12 col-xl-5 pl-55">
                         <div class="form-block flex-columns-between gap-20">
                             <div class="heading">
                                 <div class="heading5">Request a quote</div>

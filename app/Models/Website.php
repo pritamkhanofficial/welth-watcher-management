@@ -9,7 +9,11 @@ class Website extends Model
     public function home(){
         $data = [];
         $data['core_need'] =  $this->db->table('core_need')->where(['deleted_at'=>NULL,'is_active'=>1])->orderBy('created_at','DESC')->limit(4)->get()->getResult();
-        $data['news'] = $this->db->table('news')->join('news_category', 'news_category.id = news.news_category_id', 'left')->where(['news.deleted_at'=>NULL,'news.is_active'=>1])->orderBy('news.created_at','DESC')->limit(3)->get()->getResult();
+        $data['news'] = $this->db->table('news')->select('news.*, news_category.label,users.full_name')->join('news_category', 'news_category.id = news.news_category_id', 'left')->join('users', 'users.id = news.published_by AND users.user_type = "BACK"', 'inner')->where(['news.deleted_at'=>NULL,'news.is_active'=>1])->orderBy('news.created_at','DESC')->limit(3)->get()->getResult();
+        // \getQuery();
+        // getPrint($data['news']);
+        /* foreach($data['news'] as $key=>$row){ getPrint(dateDiff($row->created_at)) ;
+        } */
         return $data;
     }
     public function about(){

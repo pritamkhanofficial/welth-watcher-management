@@ -759,12 +759,28 @@ function getFrontUserData(){
 }
 
 
-function dateDiff($date){
-        $dStart = new \DateTime($date);
-        $dEnd  = new \DateTime();
-        $dDiff = $dStart->diff($dEnd);
-        return  $dDiff->format('%r%a')  + 1;
+if (!function_exists('dateDiff')) {
+    function dateDiff($datetime) {
+        // echo $datetime;
+        $now = new \DateTime();
+        $ago = new \DateTime($datetime);
+        $diff = $now->diff($ago);
+
+        if ($diff->d == 1) {
+            return '1 day ago';
+        } elseif ($diff->d > 1) {
+            return $diff->d . ' days ago';
+        } elseif ($diff->h == 1) {
+            return '1 hour ago';
+        } elseif ($diff->h > 1) {
+            return $diff->h . ' hours ago';
+        } elseif ($diff->i > 1) {
+            return $diff->i . ' minutes ago';
+        } else {
+            return 'Just now';
+        }
     }
+}
 
 
 ?>

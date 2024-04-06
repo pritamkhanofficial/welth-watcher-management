@@ -1,4 +1,3 @@
-<script src="https://chatrace.com/webchat/plugin.js?v=5"></script><script>ktt10.setup({id:"95C8IVnqkHPY",accountId:"1980394",color:"#006dff"})</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?=base_url()?>front/js/jquery-3.7.0.js"></script>
 <!-- <script src="<?=base_url()?>front/js/jquery-migrate-3.4.1.js"></script> -->

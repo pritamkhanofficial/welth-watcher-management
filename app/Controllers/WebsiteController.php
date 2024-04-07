@@ -508,7 +508,7 @@ class WebsiteController extends BaseController
             // getPrint($this->request->getVar());
             $username = $this->request->getVar('username');
             $password = $this->request->getVar('password');
-            $data = $authModel->Auth($username);
+            $data = $authModel->Auth($username,'FRONT');
 
             if(!is_null($data)){
                 $pass = $data->password;
@@ -673,17 +673,30 @@ class WebsiteController extends BaseController
                 ]);
                 echo 'Email sent successfully';
             } else {
-                /* return $this->response->setJSON([
+                return $this->response->setJSON([
                     'type'=>'error',
                     'title'=>'Error',
                     'message'=>'!Oops something went wrong. Please try again.',
-                ]); */
-                echo $email->printDebugger(); die;
+                ]);
+                // echo $email->printDebugger(); die;
             }
     }
     public function forgotPassword($token)
     {
 
+        $model = new AuthModel();
+        $data = $model->where(['generate_token'=>$token,'user_type'=>'FRONT'])->first();
+        if(is_null($data)){
+            return redirect('/');
+        }
+        $currentDateTime = new \DateTime();
+        $anotherDateTime = new \DateTime($data->generate_on);
+        $interval = $currentDateTime->diff($anotherDateTime);
+        $totalMinutes = ($interval->days * 24 * 60) + ($interval->h * 60) + $interval->i;
+        if($totalMinutes >= 5){
+            return view('website/forgot-password',['valid'=>false]);
+        }
+        
         if($this->request->getVar('submit') == 'submit'){
             $confirm_password = $this->request->getVar('confirm_password');
             $data = [
@@ -708,7 +721,7 @@ class WebsiteController extends BaseController
             
 
         }
-        return view('website/forgot-password');
+        return view('website/forgot-password',['valid'=>true]);
     }
     public function profile()
     {
@@ -760,6 +773,9 @@ class WebsiteController extends BaseController
     public function career_form($id)
     {
         $data['result'] = $this->model->job_detl($id);
+        if(is_null($data['result'])){
+            return redirect('/');
+        }
 
         if($this->request->getVar('submit') == 'submit'){
             // getPrint($this->request->getVar());

@@ -124,7 +124,7 @@ $(".register").ajaxForm({
     success: function(response) {
         swAlert(response)
         if (response?.type == 'success') {
-            if (response?.message == 'Registration successful! You can now log in.') {
+            if (response?.message == 'Registration successful! You can log in now.') {
                 asd(1)
                 $('.register')[0].reset();
                 $("#otp").attr("required", false);

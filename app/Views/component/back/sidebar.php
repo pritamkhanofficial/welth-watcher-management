@@ -68,7 +68,7 @@
                      </a>
                  </li>
                  <li>
-                     <a href="<?=base_url('back-panel/Job')?>" class="waves-effect">
+                     <a href="<?=base_url('back-panel/job')?>" class="waves-effect">
                          <i class="fas fa-briefcase"></i>
                          <span>Jobs</span>
                      </a>

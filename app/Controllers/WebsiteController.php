@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\Website;
 use App\Models\AuthModel;
+use Dompdf\Dompdf;
 use App\Models\OtpVerification;
 class WebsiteController extends BaseController
 {
@@ -188,6 +189,7 @@ class WebsiteController extends BaseController
                             </body>
                             </html>";
                 $email->setMessage($html);
+                // $email->attach('https://tourism.gov.in/sites/default/files/2019-04/dummy-pdf_2.pdf');
                 $email->send();
                 return $this->response->setJSON([
                     'type'=>'success',

@@ -31,6 +31,7 @@
         <div class="form-contact style-one mt-100 mb-3">
             <div class="container">
                 <div class="row flex-center row-gap-32">
+                    <?php if($valid){ ?>
                     <div class="col-12 col-xl-5 pl-55">
                         <div class="form-block  flex-columns-between gap-20">
                             <div class="heading">
@@ -57,13 +58,25 @@
                                 </div>
                                 <div class="button-block text-center ">
                                     <button type="submit"
-                                        class="button-share hover-border-blue bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48" name="submit" value="submit">Submit
+                                        class="button-share hover-border-blue bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
+                                        name="submit" value="submit">Submit
                                         <span class="spinner-border spinner-border-sm d-none" role="status"
                                             aria-hidden="true"></span></button>
                                 </div>
                             </form>
                         </div>
                     </div>
+                    <?php }else{ ?>
+                    <div class="col-12 col-xl-4 pl-55 mb-5">
+                        <div class="form-block  flex-columns-between gap-20">
+                            <div class="heading">
+                                <div class="heading5">Password Reset Timeout</div>
+                                <div class="body3 text-secondary mt-8">Please try resetting your password again by initiating the process once more
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>

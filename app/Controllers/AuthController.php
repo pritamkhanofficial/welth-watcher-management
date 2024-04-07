@@ -23,7 +23,7 @@ class AuthController extends BaseController
             $model = new AuthModel();
             $username = $this->request->getVar('username');
             $password = $this->request->getVar('password');
-            $data = $model->Auth($username);
+            $data = $model->Auth($username,'BACK');
             if(!is_null($data)){
                 $pass = $data->password;
                 $authenticatePassword = password_verify($password, $pass);

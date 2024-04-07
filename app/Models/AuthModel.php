@@ -53,7 +53,7 @@ class AuthModel extends Model
     protected $afterDelete    = [];
 
 
-    public function Auth($username){
+    public function Auth($username,$type){
 
         $query = $this->db->table('users')
                  ->select('users.*')
@@ -61,6 +61,7 @@ class AuthModel extends Model
                     ->where(['users.username' => $username])
                     ->orWhere(['users.email' => $username])
                  ->groupEnd()
+                 ->where('user_type', $type)
                  ->get();
         $result = $query->getRow();
     return $result;

@@ -6,13 +6,15 @@
     rel="stylesheet" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="shortcut icon" type="image/png" href="<?=base_url()?>front/images/fav.png" />
-<link rel="stylesheet" href="<?=base_url()?>front/css/bootstrap.css" />
-<link rel="stylesheet" href="<?=base_url()?>front/css/slick.min.css" />
-<link rel="stylesheet" href="<?=base_url()?>front/css/bootstrap-drawer.min.css" />
-<link rel="stylesheet" href="<?=base_url()?>front/icons/style.css" />
+<link rel="stylesheet" href="<?=base_url()?>front/css/bootstrap.css<?=ct()?>" />
+<!-- <link rel="stylesheet" href="<?=base_url()?>front/css/slick.min.css<?=ct()?>" /> -->
+<link rel="stylesheet" href="<?=base_url()?>front/css/bootstrap-drawer.min.css<?=ct()?>" />
+<link rel="stylesheet" href="<?=base_url()?>front/icons/style.css<?=ct()?>" />
 <!-- on your view layout file HEAD section -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-<link rel="stylesheet" href="<?=base_url()?>front/css/style.css" />
-<link rel="stylesheet" href="<?=base_url()?>front/css/custom-style.css" />
-<link rel="stylesheet" href="<?=base_url()?>front/css/animate-4.1.1.min.css" />
-<link rel="stylesheet" href="<?=base_url()?>front/css/jquery.steps.css">
+<link rel="stylesheet" href="<?=base_url()?>front/css/style.css<?=ct()?>" />
+<link rel="stylesheet" href="<?=base_url()?>front/css/custom-style.css<?=ct()?>" />
+<link rel="stylesheet" href="<?=base_url()?>front/css/animate-4.1.1.min.css<?=ct()?>" />
+<link rel="stylesheet" href="<?=base_url()?>front/css/jquery.steps.css<?=ct()?>">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" />
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" /> -->

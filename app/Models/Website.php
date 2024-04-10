@@ -19,7 +19,7 @@ class Website extends Model
     public function about(){
         $data = [];
         $data['services'] =  $this->db->table('services')->where(['deleted_at'=>NULL,'is_active'=>1])->orderBy('created_at','DESC')->limit(4)->get()->getResult();
-        $data['partner'] =  $this->db->table('partners')->where(['deleted_at'=>NULL,'is_active'=>1])->orderBy('created_at','DESC')->limit(4)->get()->getResult();
+        /* $data['partner'] =  $this->db->table('partners')->where(['deleted_at'=>NULL,'is_active'=>1])->orderBy('created_at','DESC')->limit(4)->get()->getResult(); */
         return $data;
     }
 

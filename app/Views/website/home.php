@@ -12,18 +12,6 @@
             <div class="slider-main">
                 <div class="slider-item">
                     <div class="container">
-                        <div class="text-content my-top-text flex-columns-between row-gap-40">
-                            <div class="title">
-                                <div class="heading2 animate__animated animate__fadeInUp animate__delay-0-2s">If you are
-                                    <span class="casualabout">casual about<br> the market,</span> here<br>is what we
-                                    have
-                                    to say
-                                </div>
-                                <div
-                                    class="body2 text-secondary mt-16 animate__animated animate__fadeInUp animate__delay-0-5s smoll-text">
-                                    Get personalized financial advice to help reach your financial goals.</div>
-                            </div>
-                        </div>
                         <div class="slider-img animate__animated animate__fadeInRight animate__delay-0-2s">
                             <div class="bg-main">
                                 <div class="form-block form-stock bora-16 bg-white p-28 flex-columns-between gap-20">
@@ -51,30 +39,65 @@
                             <img class="box-shadow" src="<?=base_url()?>front/images/slider/subslider2-1.png" alt="" />
                             <img class="box-shadow" src="<?=base_url()?>front/images/slider/subslider2-2.png" alt="" />
                         </div>
+                        <div class="text-content my-top-text flex-columns-between row-gap-40">
+                            <div class="title">
+                                <div class="heading2 animate__animated animate__fadeInUp animate__delay-0-2s">If you are
+                                    <span class="casualabout">casual about<br> the market,</span> here<br>is what we
+                                    have
+                                    to say
+                                </div>
+                                <div
+                                    class="body2 text-secondary mt-16 animate__animated animate__fadeInUp animate__delay-0-5s smoll-text">
+                                    Get personalized financial advice to help reach your financial goals.</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-
-        <!--       <div class="style-two">
-        <div class="partner-five-col style-one mt-100 bg-blue">
-          <div class="list pt-32 pb-32">
-            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-1.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-2.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-3.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-4.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-5.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-1.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-2.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-3.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-4.png" alt=""/></div>
-            <div class="bg-img flex-center"><img class="w-100" src="<?=base_url()?>front/images/partner/Logo-5.png" alt=""/></div>
-          </div>
+        <?php if(!empty(partners())){ ?>
+        <div class="style-two">
+            <div class="partner-five-col style-one mt-60 bg-white">
+                <div class="list pt-32 owl-carousel">
+                    <?php  foreach(partners() as $row){  ?>
+                    <div class="bg-img flex-center"><img class="w-100" src="<?=base_url('get-file/' . $row->image)?>"
+                            alt=""></div>
+                    <?php } ?>
+                </div>
+            </div>
         </div>
-      </div> -->
+        <?php } ?>
+        <!-- <div class="style-two">
+            <div class="partner-five-col style-one mt-100 bg-blue">
+                <div class="list pt-32 pb-32">
+                    <div class="bg-img flex-center"><img class="w-100"
+                            src="<?=base_url()?>front/images/partner/Logo.png" alt="" /></div>
+                    <div class="bg-img flex-center"><img class="w-100"
+                            src="<?=base_url()?>front/images/partner/Logo-1.png" alt="" /></div>
+                    <div class="bg-img flex-center"><img class="w-100"
+                            src="<?=base_url()?>front/images/partner/Logo-2.png" alt="" /></div>
+                    <div class="bg-img flex-center"><img class="w-100"
+                            src="<?=base_url()?>front/images/partner/Logo-3.png" alt="" /></div>
+                    <div class="bg-img flex-center"><img class="w-100"
+                            src="<?=base_url()?>front/images/partner/Logo-4.png" alt="" /></div>
+                    <div class="bg-img flex-center"><img class="w-100"
+                            src="<?=base_url()?>front/images/partner/Logo-5.png" alt="" /></div>
+                    <div class="bg-img flex-center"><img class="w-100"
+                            src="<?=base_url()?>front/images/partner/Logo.png" alt="" /></div>
+                    <div class="bg-img flex-center"><img class="w-100"
+                            src="<?=base_url()?>front/images/partner/Logo-1.png" alt="" /></div>
+                    <div class="bg-img flex-center"><img class="w-100"
+                            src="<?=base_url()?>front/images/partner/Logo-2.png" alt="" /></div>
+                    <div class="bg-img flex-center"><img class="w-100"
+                            src="<?=base_url()?>front/images/partner/Logo-3.png" alt="" /></div>
+                    <div class="bg-img flex-center"><img class="w-100"
+                            src="<?=base_url()?>front/images/partner/Logo-4.png" alt="" /></div>
+                    <div class="bg-img flex-center"><img class="w-100"
+                            src="<?=base_url()?>front/images/partner/Logo-5.png" alt="" /></div>
+                </div>
+            </div>
+        </div> -->
         <div class="about-home-five mt-100">
             <div class="container">
                 <div class="row flex-between row-gap-32">
@@ -91,12 +114,12 @@
                             </div>
                         </div>
                         <div class="button-block mt-5">
-                            <button
-                                class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Serious
-                                Approach - Investing</button>
-                            <button
-                                class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Serious
-                                Approach - Trading</button>
+                            <a href=""><button
+                                    class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Investing</button></a>
+                            <a href="">
+                                <button
+                                    class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Trading</button>
+                            </a>
                         </div>
                     </div>
                     <div class="col-12 col-lg-5 col-md-8 col-sm-8">
@@ -111,7 +134,7 @@
         <div class="service-block service-block-two mt-100">
             <div class="container">
                 <div class="row row-gap-32">
-                    <div class="col-12 col-xl-4 flex-column gap-16">
+                    <div class="col-12 col-xl-4 flex-column gap-16v2">
                         <div class="bg-img w-100"><img class="w-100"
                                 src="<?=base_url()?>front/images/component/gateway2-bg.png" alt="" /></div>
                     </div>
@@ -136,10 +159,10 @@
                                                 <div class="body3 text-secondary mt-8">Get access to baseline learning
                                                     about the market, whether you want to trade, invest or do both!
                                                 </div>
-                                                <div class="explore-block flex-item-center gap-4 mt-8">
+                                                <!-- <div class="explore-block flex-item-center gap-4 mt-8">
                                                     <div class="text-button-small text-blue">Explore Plan</div><i
                                                         class="ph-bold ph-caret-double-right fs-12 text-blue"></i>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </a>
                                     </div>
@@ -154,10 +177,10 @@
                                                 <div class="body3 text-secondary mt-8">Master the skills you need to
                                                     trade and invest with confidence, attend a Power Money Webinar (zero
                                                     cost)</div>
-                                                <div class="explore-block flex-item-center gap-4 mt-8">
+                                                <!-- <div class="explore-block flex-item-center gap-4 mt-8">
                                                     <div class="text-button-small text-blue">Explore Plan</div><i
                                                         class="ph-bold ph-caret-double-right fs-12 text-blue"></i>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </a>
                                     </div>
@@ -186,9 +209,8 @@
                           $placehover = str_pad(++$key, 2, "0", STR_PAD_LEFT);
                       ?>
                         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                            <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px"><a
-                                    class="service-item-main flex-column gap-16"
-                                    href="service-cryptocurrency-trading.html">
+                            <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px">
+                                <a class="service-item-main flex-column gap-16" href="javascript:void(0);">
                                     <div class="heading flex-between"><i
                                             class="<?= $row->icon_text?> text-blue fs-60"></i>
                                         <div class="number heading3 text-placehover"><?= $placehover ?></div>
@@ -197,9 +219,9 @@
                                         <div class="heading7 hover-text-blue"><?= $row->title?></div>
                                         <div class="body3 text-secondary mt-4"><?= $row->description?></div>
                                     </div>
-                                    <div class="read-block flex-item-center gap-4 hover-text-blue"><span
+                                    <!-- <div class="read-block flex-item-center gap-4 hover-text-blue"><span
                                             class="fs-14 fw-700 text-blue">Read More</span><i
-                                            class="ph-bold ph-caret-double-right fs-12 text-blue"></i></div>
+                                            class="ph-bold ph-caret-double-right fs-12 text-blue"></i></div> -->
                                 </a>
                             </div>
                         </div>
@@ -216,7 +238,8 @@
                 <div class="heading3 text-center">Latest News</div>
                 <div class="row row-gap-32 mt-40">
                     <?php foreach($data['news'] as $key=>$row){?>
-                    <div class="blog-item col-12 col-xl-4 col-sm-6" data-name=""><a class="blog-item-main" href="#">
+                    <div class="blog-item col-12 col-xl-4 col-sm-6" data-name=""><a class="blog-item-main"
+                            href="javascript:void(0);">
                             <div class="bg-img w-100 overflow-hidden mb-minus-1"><img class="w-100 h-100 display-block"
                                     src="<?=base_url('get-file/' . $row->featured_image)?>"
                                     alt="CI Financial sells RIA stake in new expansion strategy" /></div>
@@ -224,7 +247,7 @@
                                 <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
                                     <?= $row->label ?></div>
                                 <div class="heading6 mt-8"><?= $row->title ?></div>
-                                <div class="date flex-item-center gap-16 mt-8">
+                                <div class="date flex-item-center gap-16v2 mt-8">
                                     <!-- <div class="item-date flex-item-center"><i
                                             class="ph-bold ph-calendar-blank"></i><span class="ml-4 caption2">
                                             <?=dateDiff($row->created_at)?> </span></div>
@@ -245,7 +268,7 @@
                                     Development</div>
                                 <div class="heading6 mt-8">Barred financial advisors charged in $72 million criminal
                                 </div>
-                                <div class="date flex-item-center gap-16 mt-8">
+                                <div class="date flex-item-center gap-16v2 mt-8">
                                     <div class="author caption2 text-secondary">by <span
                                             class="text-on-surface">Avitex</span></div>
                                     <div class="item-date flex-item-center"><i
@@ -264,7 +287,7 @@
                                 <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
                                     Design</div>
                                 <div class="heading6 mt-8">Retirement Planning Strategies</div>
-                                <div class="date flex-item-center gap-16 mt-8">
+                                <div class="date flex-item-center gap-16v2 mt-8">
                                     <div class="author caption2 text-secondary">by <span
                                             class="text-on-surface">Avitex</span></div>
                                     <div class="item-date flex-item-center"><i
@@ -283,7 +306,7 @@
                                 <div class="caption2 pt-4 pb-4 pl-12 pr-12 bg-surface bora-40 display-inline-block">
                                     Makerting</div>
                                 <div class="heading6 mt-8">Helping a local business</div>
-                                <div class="date flex-item-center gap-16 mt-8">
+                                <div class="date flex-item-center gap-16v2 mt-8">
                                     <div class="author caption2 text-secondary">by <span
                                             class="text-on-surface">Avitex</span></div>
                                     <div class="item-date flex-item-center"><i

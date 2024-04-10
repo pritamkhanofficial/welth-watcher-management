@@ -1,16 +1,18 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="<?=base_url()?>front/js/jquery-3.7.0.js"></script>
+<script src="<?=base_url()?>front/js/jquery-3.7.0.js<?=ct()?>"></script>
 <!-- <script src="<?=base_url()?>front/js/jquery-migrate-3.4.1.js"></script> -->
-<script src="<?=base_url()?>front/js/slick.min.js"></script>
-<script src="<?=base_url()?>front/js/waypoints.min.js"></script>
-<script src="<?=base_url()?>front/js/countUp.min.js"></script>
-<script src="<?=base_url()?>front/js/phosphor-icon.js"></script>
-<script src="<?=base_url()?>front/js/scrollreveal-4.0.0.min.js"></script>
-<script src="<?=base_url()?>front/js/bootstrap-drawer.min.js"></script>
-<script src="<?=base_url()?>front/js/drawer.min.js"></script>
-<script src="<?=base_url()?>front/js/main.min.js"></script>
-<script src="<?=base_url()?>front/js/jquery.steps.js"></script>
-<script src="<?=base_url()?>front/js/script.js"></script>
+<script src="<?=base_url()?>front/js/slick.min.js<?=ct()?>"></script>
+<script src="<?=base_url()?>front/js/waypoints.min.js<?=ct()?>"></script>
+<script src="<?=base_url()?>front/js/countUp.min.js<?=ct()?>"></script>
+<script src="<?=base_url()?>front/js/phosphor-icon.js<?=ct()?>"></script>
+<script src="<?=base_url()?>front/js/scrollreveal-4.0.0.min.js<?=ct()?>"></script>
+<script src="<?=base_url()?>front/js/bootstrap-drawer.min.js<?=ct()?>"></script>
+<script src="<?=base_url()?>front/js/drawer.min.js<?=ct()?>"></script>
+<script src="<?=base_url()?>front/js/main.min.js<?=ct()?>"></script>
+<script src="<?=base_url()?>front/js/jquery.steps.js<?=ct()?>"></script>
+<script src="<?=base_url()?>front/js/script.js<?=ct()?>"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 <!-- Ajax Form -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
@@ -20,12 +22,12 @@
 <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" crossorigin="anonymous"></script>
 
 <!-- Start of LiveChat (www.livechat.com) code -->
-<script>
+<!-- <script>
     window.__lc = window.__lc || {};
     window.__lc.license = 17610915;
     ;(function(n,t,c){function i(n){return e._h?e._h.apply(null,n):e._q.push(n)}var e={_q:[],_h:null,_v:"2.0",on:function(){i(["on",c.call(arguments)])},once:function(){i(["once",c.call(arguments)])},off:function(){i(["off",c.call(arguments)])},get:function(){if(!e._h)throw new Error("[LiveChatWidget] You can't use getters before load.");return i(["get",c.call(arguments)])},call:function(){i(["call",c.call(arguments)])},init:function(){var n=t.createElement("script");n.async=!0,n.type="text/javascript",n.src="https://cdn.livechatinc.com/tracking.js",t.head.appendChild(n)}};!n.__lc.asyncInit&&e.init(),n.LiveChatWidget=n.LiveChatWidget||e}(window,document,[].slice))
 </script>
-<noscript><a href="https://www.livechat.com/chat-with/17610915/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript>
+<noscript><a href="https://www.livechat.com/chat-with/17610915/" rel="nofollow">Chat with us</a>, powered by <a href="https://www.livechat.com/?welcome" rel="noopener nofollow" target="_blank">LiveChat</a></noscript> -->
 <!-- End of LiveChat code -->
 
 <script>

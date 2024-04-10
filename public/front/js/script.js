@@ -31,3 +31,37 @@ function timer(remaining) {
 
   timerOn = false;
 }
+
+
+$(document).ready(function(){
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    autoplay:true,
+    // autoplayTimeout:1200,
+    // autoplaySpeed: 4000,
+    // autoplayTimeout: 8000,
+    slideTransition: 'linear',
+    autoplaySpeed: 6000,
+    smartSpeed: 6000,
+    // slidesToScroll: 1,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+            nav:true,
+            loop:true
+        },
+        600:{
+            items:12,
+            nav:false,
+            loop:true
+        },
+        1000:{
+            items:12,
+            nav:true,
+            loop:true
+        }
+    }
+})
+});

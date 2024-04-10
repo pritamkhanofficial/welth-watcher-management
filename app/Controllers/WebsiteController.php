@@ -828,7 +828,7 @@ class WebsiteController extends BaseController
             $placehover = str_pad(++$key, 2, "0", STR_PAD_LEFT);
             $html .= '<div class="col-12 col-xl-4 col-lg-6 col-md-6 col-sm-6">
                         <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px my-card"><a
-                                class="service-item-main flex-column gap-16"
+                                class="service-item-main flex-column gap-16v2"
                                 href="' . $url . $row->id . '">
                                 <div class="heading flex-between">
                                     <div class="number heading3 text-placehover">' . $placehover . '</div>

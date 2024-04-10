@@ -84,7 +84,7 @@
                                     <input
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
                                         type="password" name="confirm_password" id="confirm_password"
-                                        placeholder="Conform Password">
+                                        placeholder="Confirm Password">
                                 </div>
                             </div>
                         </div>
@@ -155,7 +155,7 @@
                 <div class="row flex-between pb-40">
                     <div class="col-3">
                         <div class="footer-company-infor flex-columns-between gap-20"><img class="footer-logo"
-                                src="<?=base_url()?>front/images/Logo-footer.png" alt="Logo" />
+                                src="<?=base_url()?>back/images/logo-long-back.png" alt="Logo" />
                             <div class="text caption1 text-white">We are a diversified company specialized in
                                 providing comprehensive financial solutions for individuals and businesses.</div>
                             <div class="list-social flex-item-center gap-10 style-one"><a
@@ -181,9 +181,9 @@
                                 <div class="item-heading text-button-small text-white">Quick Links</div>
                                 <ul class="list-nav mt-4">
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="<?=base_url('/about')?>">About us</a></li>
+                                            href="javascript:void(0)">Log In</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="#">Services</a></li>
+                                            href="javascript:void(0)">Register</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
                                             href="<?= base_url('report') ?>">Case Studies</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
@@ -193,18 +193,19 @@
                             <div class="footer-nav-item">
                                 <div class="item-heading text-button-small text-white">Pages</div>
                                 <ul class="list-nav mt-4">
-                                    <li class="mt-12"><a class="caption1 text-line hover-underline" href="#">FAQs</a>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="<?= base_url('/') ?>">Home</a>
                                     </li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="<?= base_url('report') ?>">Pricing</a></li>
+                                            href="<?= base_url('/about') ?>">About Us</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="#">Partners</a></li>
+                                            href="<?= base_url('report') ?>">Report Analysis</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="<?=base_url('/contact')?>">Support Center</a></li>
+                                            href="<?= base_url('career') ?>">Carrier</a></li>
                                 </ul>
                             </div>
-                            <div class="footer-nav-item">
-                                <div class="item-heading text-button-small text-white">Blog</div>
+                           <!--  <div class="footer-nav-item">
+                                <div class="item-heading text-button-small text-white">News</div>
                                 <ul class="list-nav mt-4">
                                     <li class="mt-12"><a class="caption1 text-line hover-underline" href="#">Blog
                                             List</a></li>
@@ -215,7 +216,7 @@
                                     <li class="mt-12"><a class="caption1 text-line hover-underline" href="#">Blog
                                             Detail</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-3">
@@ -237,10 +238,14 @@
                                 <div class="caption1 text-line ml-8"><?=getGlobalSetting()?->address?>
                                 </div>
                             </div>
-                            <div class="send-block mt-20 flex-item-center">
+                            <div class="locate mt-12 flex-item-center"> <i class="ph-lightph ph ph-phone text-line"></i>
+                                <div class="caption1 text-line ml-8"><?=getGlobalSetting()?->mobile_no?>
+                                </div>
+                            </div>
+                            <!-- <div class="send-block mt-20 flex-item-center">
                                 <input class="caption1 text-secondary" type="text" placeholder="Your email address" />
                                 <button class="flex-center"><i class="ph ph-paper-plane-tilt text-white"></i></button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -252,9 +257,11 @@
                     </div>
                     <div class="nav-link flex-item-center gap-10"><a class="text-line caption1 hover-underline"
                             href="#!">Terms Of Services</a><span class="text-line caption1">|</span><a
-                            class="text-line caption1 hover-underline" href="#!">Privacy Policy</a><!-- <span
+                            class="text-line caption1 hover-underline" href="#!">Privacy Policy</a>
+                        <!-- <span
                             class="text-line caption1">|</span><a class="text-line caption1 hover-underline"
-                            href="#!">Cookie Policy</a> --></div>
+                            href="#!">Cookie Policy</a> -->
+                    </div>
                 </div>
             </div>
         </div>

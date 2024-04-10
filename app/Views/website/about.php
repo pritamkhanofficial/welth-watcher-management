@@ -214,8 +214,8 @@
                     <?php  foreach($data['services'] as $row){  ?>
                     <div class="col-12 col-xl-3 col-lg-6 col-md-6 col-sm-6">
                         <div class="service-item hover-box-shadow bora-8 pt-32 pb-32 pl-28 pr-28 bg-white"><a
-                                class="service-item-main flex-column gap-16" href="service-cryptocurrency-trading.html">
-                                <div class="heading flex-item-center gap-16"><i
+                                class="service-item-main flex-column gap-16v2" href="service-cryptocurrency-trading.html">
+                                <div class="heading flex-item-center gap-16v2"><i
                                         class="<?=$row->icon_text?> text-blue fs-42"></i>
                                     <div class="heading6 hover-text-blue"><?=$row->title?></div>
                                 </div>
@@ -232,10 +232,10 @@
             </div>
         </div>
         <?php } ?>
-        <?php if(!empty($data['partner'])){ ?>
+        <?php if(!empty(partners())){ ?>
         <div class="partner-five-col style-one mt-60 pb-60 bg-white">
-            <div class="list pt-32 pb-32">
-                <?php  foreach($data['partner'] as $row){  ?>
+            <div class="list pt-32 pb-32 owl-carousel">
+                <?php  foreach(partners() as $row){  ?>
                 <div class="bg-img flex-center"><img class="w-100" src="<?=base_url('get-file/' . $row->image)?>"
                         alt=""></div>
                 <?php } ?>

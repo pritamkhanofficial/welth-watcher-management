@@ -782,5 +782,13 @@ if (!function_exists('dateDiff')) {
     }
 }
 
+function partners(){
+    $db = Database::connect();
+    return $db->table('partners')->where(['deleted_at'=>NULL,'is_active'=>1])->orderBy('created_at','DESC')->get()->getResult();
+}
+function ct(){
+    return "?cache=" . time();
+}
+
 
 ?>

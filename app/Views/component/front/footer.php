@@ -180,10 +180,10 @@
                             <div class="footer-nav-item">
                                 <div class="item-heading text-button-small text-white">Quick Links</div>
                                 <ul class="list-nav mt-4">
-                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="javascript:void(0)">Log In</a></li>
-                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="javascript:void(0)">Register</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline loginBtn"
+                                            href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Log In</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline regBtn"
+                                            href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
                                             href="<?= base_url('report') ?>">Case Studies</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"

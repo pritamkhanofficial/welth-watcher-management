@@ -201,7 +201,7 @@
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
                                             href="<?= base_url('report') ?>">Report Analysis</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="<?= base_url('career') ?>">Carrier</a></li>
+                                            href="<?= base_url('career') ?>">Careers</a></li>
                                 </ul>
                             </div>
                            <!--  <div class="footer-nav-item">

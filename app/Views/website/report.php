@@ -47,7 +47,7 @@
                         <div class="button-block">
                             <?php if(!getFrontUserData()){ ?>
                             <button
-                                class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
+                                class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48 regBtn"
                                 data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</button>
                             <?php } ?>
                         </div>

@@ -22,7 +22,7 @@
                 </div>
                 <div class="text-nav">
                     <div class="heading3 text-white">Apply For This Position</div>
-                    <div class="sub-heading mt-8 text-white fw-400">Explore our Contact Us page for prompt assistance
+                    <div class="sub-heading mt-8 text-white fw-400">Explore our Careers page for prompt assistance
                         from our dedicated team.</div>
                 </div>
             </div>

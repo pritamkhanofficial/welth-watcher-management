@@ -214,11 +214,9 @@
         <?php if(!empty($data['core_need'])){ ?>
         <div class="service-style-five mt-100">
             <div class="container">
-                <div class="heading3 text-center">For those serious about getting services <br>designed for their core
-                    needs</div>
+                <div class="heading3 text-center">For Those Eager About Getting Services designed <br> to their Core Needs</div>
                 <div class="body3 text-secondary text-center mt-20">Our years of experience has indicated that people
-                    have different needs when they come to the markets. So to offer services focused on different needs
-                    we have different segments that one can belong to and avail of unique services.</div>
+                    have different needs when they come to the markets. So to offer services focused on different needs we have different plans that one can refer to and avail of unique services.</div>
             </div>
             <div class="service-block mt-80">
                 <div class="container">

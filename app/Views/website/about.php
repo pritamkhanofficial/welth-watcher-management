@@ -206,9 +206,7 @@
             <div class="container">
                 <div class="heading-block text-center">
                     <div class="heading3">Our Services</div>
-                    <div class="body3 text-secondary mt-12">Customized financial services designed to meet your unique
-                        needs and
-                        drive your financial success</div>
+                    <div class="body3 text-secondary mt-12">We provide customized financial services designed to meet your unique needs and drive your financial success</div>
                 </div>
                 <div class="list-service row mt-32 row-gap-24">
                     <?php  foreach($data['services'] as $row){  ?>

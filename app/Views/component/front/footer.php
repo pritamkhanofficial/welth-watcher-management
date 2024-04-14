@@ -156,8 +156,8 @@
                     <div class="col-3">
                         <div class="footer-company-infor flex-columns-between gap-20"><img class="footer-logo"
                                 src="<?=base_url()?>back/images/logo-long-back.png" alt="Logo" />
-                            <div class="text caption1 text-white">We are a diversified company specialized in
-                                providing comprehensive financial solutions for individuals and businesses.</div>
+                            <!-- <div class="text caption1 text-white">We are a diversified company specialized in
+                                providing comprehensive financial solutions for individuals and businesses.</div> -->
                             <div class="list-social flex-item-center gap-10 style-one"><a
                                     class="item bora-50 w-28 h-28 border-grey-2px flex-center"
                                     href="https://www.facebook.com/" target="_blank"><i
@@ -221,7 +221,7 @@
                     </div>
                     <div class="col-3">
                         <div class="company-contact">
-                            <div class="heading text-button-small text-white">Newsletter</div>
+                            <!-- <div class="heading text-button-small text-white">Newsletter</div> -->
                             <!--  <div class="mt-12 flex-item-center"> 
                     <svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M26.43 16.1254C25.785 16.1254 25.275 15.6004 25.275 14.9704C25.275 14.4154 24.72 13.2604 23.79 12.2554C22.875 11.2804 21.87 10.7104 21.03 10.7104C20.385 10.7104 19.875 10.1854 19.875 9.55539C19.875 8.92539 20.4 8.40039 21.03 8.40039C22.53 8.40039 24.105 9.21039 25.485 10.6654C26.775 12.0304 27.6 13.7254 27.6 14.9554C27.6 15.6004 27.075 16.1254 26.43 16.1254Z" fill="#C1D8FF"></path>
@@ -252,7 +252,7 @@
                 <div class="border-line"></div>
                 <div class="footer-bottom flex-between pt-12 pb-12">
                     <div class="left-block flex-item-center">
-                        <div class="copy-right text-line caption1">©2024 ALL IT SOLUTIONS LLC. All Rights Reserved .
+                        <div class="copy-right text-line caption1">©2024 ALL IT SOLUTIONS LLC. All Rights Reserved.
                         </div>
                     </div>
                     <div class="nav-link flex-item-center gap-10"><a class="text-line caption1 hover-underline"

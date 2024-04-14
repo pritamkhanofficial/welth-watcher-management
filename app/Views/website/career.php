@@ -20,7 +20,7 @@
                 </div>
                 <div class="text-nav">
                     <div class="heading3 text-white">Careers</div>
-                    <div class="sub-heading mt-8 text-white fw-400">Explore opportunities to shape the future and unleash your potential with us.</div>
+                    <!-- <div class="sub-heading mt-8 text-white fw-400">Explore opportunities to shape the future and unleash your potential with us.</div> -->
                 </div>
             </div>
         </div>

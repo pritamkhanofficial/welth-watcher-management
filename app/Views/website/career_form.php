@@ -16,7 +16,8 @@
             <div class="bg-img"> <img src="<?= base_url('front/') ?>images/banner/contact.png" alt="banner" /></div>
             <div class="container">
                 <div class="heading-nav gap-4 mt-32"><a class="hover-underline caption1 text-white"
-                        href="<?= base_url('/') ?>">Home</a><i class="ph ph-caret-double-right text-white"></i>
+                        href="<?= base_url('/') ?>">Home</a><i class="ph ph-caret-double-right text-white"></i><a class="hover-underline caption1 text-white"
+                        href="<?= base_url('career') ?>">Careers</a><i class="ph ph-caret-double-right text-white"></i>
                     <div class="caption1 text-white">Apply For This Position</div>
                 </div>
                 <div class="text-nav">
@@ -36,7 +37,7 @@
                             <div class="heading5 text-white"><?= $result->title; ?></div>
                             <hr>
                             <div class="text-button text-white">
-                                ID-AIS2023
+                                ID - WWMC2024UX
                             </div>
                             <div class="text-button text-white">
                                 <?=$result->description;?>
@@ -83,7 +84,7 @@
                                 <div class="col-12 col-sm-12">
                                     <input name="mobile"
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        type="text" required placeholder="Phone no *" />
+                                        type="text" required placeholder="Contact No *" />
                                 </div>
                                 <div class="col-12 col-sm-4 text-danger ">
                                     Upload CV/Resume *
@@ -92,7 +93,7 @@
                                 <div class="col-12 col-sm-8">
                                     <input
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        type="file" name="attch" required placeholder="Phone no"
+                                        type="file" name="attch"
                                         accept=".pdf, .doc, .docx" />
                                 </div>
                                 <div class="col-12">

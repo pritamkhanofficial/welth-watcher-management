@@ -84,7 +84,7 @@
                                     <input
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
                                         type="password" name="confirm_password" id="confirm_password"
-                                        placeholder="Conform Password">
+                                        placeholder="Confirm Password">
                                 </div>
                             </div>
                         </div>
@@ -155,9 +155,9 @@
                 <div class="row flex-between pb-40">
                     <div class="col-3">
                         <div class="footer-company-infor flex-columns-between gap-20"><img class="footer-logo"
-                                src="<?=base_url()?>front/images/Logo-footer.png" alt="Logo" />
-                            <div class="text caption1 text-white">We are a diversified company specialized in
-                                providing comprehensive financial solutions for individuals and businesses.</div>
+                                src="<?=base_url()?>back/images/logo-long-back.png" alt="Logo" />
+                            <!-- <div class="text caption1 text-white">We are a diversified company specialized in
+                                providing comprehensive financial solutions for individuals and businesses.</div> -->
                             <div class="list-social flex-item-center gap-10 style-one"><a
                                     class="item bora-50 w-28 h-28 border-grey-2px flex-center"
                                     href="https://www.facebook.com/" target="_blank"><i
@@ -180,10 +180,10 @@
                             <div class="footer-nav-item">
                                 <div class="item-heading text-button-small text-white">Quick Links</div>
                                 <ul class="list-nav mt-4">
-                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="<?=base_url('/about')?>">About us</a></li>
-                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="#">Services</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline loginBtn"
+                                            href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Log In</a></li>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline regBtn"
+                                            href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
                                             href="<?= base_url('report') ?>">Case Studies</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
@@ -193,18 +193,19 @@
                             <div class="footer-nav-item">
                                 <div class="item-heading text-button-small text-white">Pages</div>
                                 <ul class="list-nav mt-4">
-                                    <li class="mt-12"><a class="caption1 text-line hover-underline" href="#">FAQs</a>
+                                    <li class="mt-12"><a class="caption1 text-line hover-underline"
+                                            href="<?= base_url('/') ?>">Home</a>
                                     </li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="<?= base_url('report') ?>">Pricing</a></li>
+                                            href="<?= base_url('/about') ?>">About Us</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="#">Partners</a></li>
+                                            href="<?= base_url('report') ?>">Report Analysis</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="<?=base_url('/contact')?>">Support Center</a></li>
+                                            href="<?= base_url('career') ?>">Careers</a></li>
                                 </ul>
                             </div>
-                            <div class="footer-nav-item">
-                                <div class="item-heading text-button-small text-white">Blog</div>
+                           <!--  <div class="footer-nav-item">
+                                <div class="item-heading text-button-small text-white">News</div>
                                 <ul class="list-nav mt-4">
                                     <li class="mt-12"><a class="caption1 text-line hover-underline" href="#">Blog
                                             List</a></li>
@@ -215,12 +216,12 @@
                                     <li class="mt-12"><a class="caption1 text-line hover-underline" href="#">Blog
                                             Detail</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-3">
                         <div class="company-contact">
-                            <div class="heading text-button-small text-white">Newsletter</div>
+                            <!-- <div class="heading text-button-small text-white">Newsletter</div> -->
                             <!--  <div class="mt-12 flex-item-center"> 
                     <svg width="36" height="36" viewbox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M26.43 16.1254C25.785 16.1254 25.275 15.6004 25.275 14.9704C25.275 14.4154 24.72 13.2604 23.79 12.2554C22.875 11.2804 21.87 10.7104 21.03 10.7104C20.385 10.7104 19.875 10.1854 19.875 9.55539C19.875 8.92539 20.4 8.40039 21.03 8.40039C22.53 8.40039 24.105 9.21039 25.485 10.6654C26.775 12.0304 27.6 13.7254 27.6 14.9554C27.6 15.6004 27.075 16.1254 26.43 16.1254Z" fill="#C1D8FF"></path>
@@ -237,24 +238,30 @@
                                 <div class="caption1 text-line ml-8"><?=getGlobalSetting()?->address?>
                                 </div>
                             </div>
-                            <div class="send-block mt-20 flex-item-center">
+                            <div class="locate mt-12 flex-item-center"> <i class="ph-lightph ph ph-phone text-line"></i>
+                                <div class="caption1 text-line ml-8"><?=getGlobalSetting()?->mobile_no?>
+                                </div>
+                            </div>
+                            <!-- <div class="send-block mt-20 flex-item-center">
                                 <input class="caption1 text-secondary" type="text" placeholder="Your email address" />
                                 <button class="flex-center"><i class="ph ph-paper-plane-tilt text-white"></i></button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
                 <div class="border-line"></div>
                 <div class="footer-bottom flex-between pt-12 pb-12">
                     <div class="left-block flex-item-center">
-                        <div class="copy-right text-line caption1">©2024 ALL IT SOLUTIONS LLC. All Rights Reserved .
+                        <div class="copy-right text-line caption1">©2024 ALL IT SOLUTIONS LLC. All Rights Reserved.
                         </div>
                     </div>
                     <div class="nav-link flex-item-center gap-10"><a class="text-line caption1 hover-underline"
                             href="#!">Terms Of Services</a><span class="text-line caption1">|</span><a
-                            class="text-line caption1 hover-underline" href="#!">Privacy Policy</a><!-- <span
+                            class="text-line caption1 hover-underline" href="#!">Privacy Policy</a>
+                        <!-- <span
                             class="text-line caption1">|</span><a class="text-line caption1 hover-underline"
-                            href="#!">Cookie Policy</a> --></div>
+                            href="#!">Cookie Policy</a> -->
+                    </div>
                 </div>
             </div>
         </div>

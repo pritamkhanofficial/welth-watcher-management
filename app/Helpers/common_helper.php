@@ -64,24 +64,24 @@ function UploadFile(\CodeIgniter\HTTP\Files\UploadedFile $imageFile, $folder=NUL
 }
 
 function generateFlash($alert = array())
-   {
-       if(array_key_exists('type',$alert)){
-         session()->setFlashdata('type', $alert['type']);
-       }else{
-         session()->setFlashdata('type', "success");
-       }
-   
-       if(array_key_exists('title',$alert)){
-         session()->setFlashdata('title', $alert['title']);
-       }else{
-         session()->setFlashdata('title', "Success");
-       }
-       if(array_key_exists('message',$alert)){
-         session()->setFlashdata('message', $alert['message']);
-       }else{
-         session()->setFlashdata('message', NULL);
-       }
-   }
+{
+    if(array_key_exists('type',$alert)){
+        session()->setFlashdata('type', $alert['type']);
+    }else{
+        session()->setFlashdata('type', "success");
+    }
+
+    if(array_key_exists('title',$alert)){
+        session()->setFlashdata('title', $alert['title']);
+    }else{
+        session()->setFlashdata('title', "Success");
+    }
+    if(array_key_exists('message',$alert)){
+        session()->setFlashdata('message', $alert['message']);
+    }else{
+        session()->setFlashdata('message', NULL);
+    }
+}
 
 
  /**
@@ -780,6 +780,14 @@ if (!function_exists('dateDiff')) {
             return 'Just now';
         }
     }
+}
+
+function partners(){
+    $db = Database::connect();
+    return $db->table('partners')->where(['deleted_at'=>NULL,'is_active'=>1])->orderBy('created_at','DESC')->get()->getResult();
+}
+function ct(){
+    return "?cache=" . time();
 }
 
 

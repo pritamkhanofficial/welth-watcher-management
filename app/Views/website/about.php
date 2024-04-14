@@ -26,11 +26,10 @@
                     <div class="caption1 text-white">About Us</div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-12 col-lg-6">
+                    <div class="col-12 col-md-12 col-lg-12">
                         <div class="text-nav">
                             <div class="heading3 text-white">About Us</div>
-                            <div class="sub-heading mt-8 text-white fw-400">We perform a full analysis of the client’s
-                                website and
+                            <div class="sub-heading mt-8 text-white fw-400">Wealth Watcher Management Consultant, we are dedicated to helping our clients achieve their financial goals through expert investment management and financial planning services. Our team of experienced professionals has a deep understanding of the financial markets and is committed to providing our clients with the highest level of service and support. Our mission is to empower clients to make informed investment decisions and build long-term wealth through strategic investment planning. We believe that every client is unique, and we take the time to understand their individual financial goals, risk tolerance, and investment horizon. Our investment philosophy is centered around a disciplined, research-driven approach that emphasizes diversification and risk management. At Wealth Watcher Management Consultant, we pride ourselves on our commitment to transparency, integrity, and client satisfaction. We believe that open communication and regular reporting are essential to building trust and long-lasting relationships with our clients. Whether you are a seasoned investor or just starting out, we are here to help you navigate the complex world of finance and achieve your financial dreams. Contact us today to learn more about our investment services and how we can help you build a brighter financial future.
                             </div>
                         </div>
                     </div>
@@ -63,12 +62,12 @@
                         <div class="heading3 ml-40">company overview</div>
                         <div class="nav-infor ml-40 mt-40">
                             <div class="list-nav flex-item-center gap-40">
-                                <div class="nav-item active" data-name="about-us">About Us</div>
-                                <div class="nav-item" data-name="mission">Mission</div>
+                                <!-- <div class="nav-item active" data-name="about-us">About Us</div> -->
+                                <div class="nav-item active" data-name="mission">Mission</div>
                                 <div class="nav-item" data-name="vision">Vision</div>
                                 <div class="nav-item" data-name="why-choose-us">Why Choose Us</div>
                             </div>
-                            <div class="description item-filter" data-name="about-us">
+                            <!-- <div class="description item-filter" data-name="about-us">
                                 <div class="title body3 text-secondary mt-16">We're a devoted team providing premium
                                     financial
                                     solutions. Explore our mission, values, and achievements as we empower clients for a
@@ -88,12 +87,9 @@
                                         <div class="text-button">Management and calculation of monthly expenses</div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="description item-filter hide" data-name="mission">
-                                <div class="title body3 text-secondary mt-16">Our mission is to provide comprehensive
-                                    and personalized
-                                    financial solutions that empower our clients to achieve their financial goals and
-                                    secure their future.
+                            </div> -->
+                            <div class="description item-filter" data-name="mission">
+                                <div class="title body3 text-secondary mt-16">To empower individuals and institutions with comprehensive investment solutions ethically personalized to meet their short and long-term goals
                                 </div>
                                 <div class="more-infor mt-24">
                                     <div class="infor flex-item-center gap-12"> <i
@@ -111,23 +107,19 @@
                                 </div>
                             </div>
                             <div class="description item-filter hide" data-name="vision">
-                                <div class="title body3 text-secondary mt-16">Our unwavering vision is to be the most
-                                    trusted and
-                                    preferred partner in achieving financial success, diligently guiding our valued
-                                    clients toward a
-                                    secure and prosperous future.</div>
+                                <div class="title body3 text-secondary mt-16">To envision a future that sustainably and transparently aligns our clients' objectives with our innovative financial strategies and unwavering support</div>
                                 <div class="more-infor mt-24">
                                     <div class="infor flex-item-center gap-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Creation of savings and investment plan</div>
+                                        <div class="text-button">Creation of savings and investment plans</div>
                                     </div>
                                     <div class="infor flex-item-center gap-12 mt-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Management and calculation of monthly expenses</div>
+                                        <div class="text-button">Management and calculation of expenses</div>
                                     </div>
                                     <div class="infor flex-item-center gap-12 mt-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Identification of monthly income</div>
+                                        <div class="text-button">Identification of income paths through smart financial plans</div>
                                     </div>
                                 </div>
                             </div>
@@ -140,15 +132,23 @@
                                 <div class="more-infor mt-24">
                                     <div class="infor flex-item-center gap-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Creation of savings and investment plan</div>
+                                        <div class="text-button"> We specialize in ethical investing strategies that align with your values, ensuring that your investments contribute positively to society and the environment</div>
                                     </div>
                                     <div class="infor flex-item-center gap-12 mt-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Management and calculation of monthly expenses</div>
+                                        <div class="text-button">Our personalized approach creates a financial plan that fits your lifestyle and goals, helping you to manage your finances more effectively.</div>
                                     </div>
                                     <div class="infor flex-item-center gap-12 mt-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Identification of monthly income</div>
+                                        <div class="text-button">Our team of experts utilizes cutting-edge techniques to provide you with insights that can help inform and influence your investment decisions.</div>
+                                    </div>
+                                    <div class="infor flex-item-center gap-12 mt-12"> <i
+                                            class="ph-fill ph-check-circle fs-20 text-blue"></i>
+                                        <div class="text-button">Our customer-centric approach provides clear and concise information so you can confidently make financial choices.</div>
+                                    </div>
+                                    <div class="infor flex-item-center gap-12 mt-12"> <i
+                                            class="ph-fill ph-check-circle fs-20 text-blue"></i>
+                                        <div class="text-button">Our history of delivering effective financial advice and achieving results portrays how dedicated we are to continuing this tradition of excellence.</div>
                                     </div>
                                 </div>
                             </div>
@@ -156,12 +156,11 @@
                         <div class="button-block flex-item-center gap-20 ml-40 mt-40 pb-8">
                             <?php if(!getFrontUserData()){ ?>
                             <a class="button-share text-white bg-blue hover-button-black text-button pt-14 pb-14 pl-36 pr-36 bora-48"
-                                href="contact-two.html" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Get
+                                href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Get
                                 started</a>
                             <?php } ?>
                             <a class="button-share text-on-surface hover-button-black bg-white text-button pt-12 pb-12 pl-36 pr-36 bora-48 border-blue-2px flex-item-center gap-8"
-                                href="contact-two.html"><i class="ph ph-phone fs-20"></i><span>(00) 123 456
-                                    789</span></a>
+                                href="tel:<?=getGlobalSetting()?->mobile_no?>"><i class="ph ph-phone fs-20"></i><span><?=getGlobalSetting()?->mobile_no?></span></a>
                         </div>
                     </div>
                 </div>
@@ -173,28 +172,28 @@
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 flex-columns-center">
                         <div class="count-block flex-item-center">
                             <div class="counter heading3"><?=getGlobalSetting()?->business_setup_growth?></div><span
-                                class="heading3">k</span>
+                                class="heading3"></span>
                         </div>
                         <div class="body1 text-secondary">Business Setup Growth</div>
                     </div>
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 flex-columns-center">
                         <div class="count-block flex-item-center">
                             <div class="counter heading3"><?=getGlobalSetting()?->business_problem_solving?></div><span
-                                class="heading3">k</span>
+                                class="heading3"></span>
                         </div>
                         <div class="body1 text-secondary">Business Problem Solving</div>
                     </div>
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 flex-columns-center">
                         <div class="count-block flex-item-center">
                             <div class="counter heading3"><?=getGlobalSetting()?->goal_achiever?></div><span
-                                class="heading3">k</span>
+                                class="heading3"></span>
                         </div>
                         <div class="body1 text-secondary">Goal achiever</div>
                     </div>
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 flex-columns-center">
                         <div class="count-block flex-item-center">
                             <div class="counter heading3"><?=getGlobalSetting()?->passive_income_earners?></div><span
-                                class="heading3">k</span>
+                                class="heading3"></span>
                         </div>
                         <div class="body1 text-secondary">Passive income earners</div>
                     </div>
@@ -212,16 +211,16 @@
                     <?php  foreach($data['services'] as $row){  ?>
                     <div class="col-12 col-xl-3 col-lg-6 col-md-6 col-sm-6">
                         <div class="service-item hover-box-shadow bora-8 pt-32 pb-32 pl-28 pr-28 bg-white"><a
-                                class="service-item-main flex-column gap-16" href="service-cryptocurrency-trading.html">
-                                <div class="heading flex-item-center gap-16"><i
+                                class="service-item-main flex-column gap-16v2" href="javascript:void(0)">
+                                <div class="heading flex-item-center gap-16v2"><i
                                         class="<?=$row->icon_text?> text-blue fs-42"></i>
                                     <div class="heading6 hover-text-blue"><?=$row->title?></div>
                                 </div>
                                 <div class="body3 text-secondary"><?=$row->short_description?></div>
-                                <div class="explore-block flex-item-center gap-4">
-                                    <div class="text-button-small text-blue">Explore Plan</div><i
-                                        class="ph-bold ph-caret-double-right fs-12 text-blue"></i>
-                                </div>
+                                    <!-- <div class="explore-block flex-item-center gap-4">
+                                        <div class="text-button-small text-blue">Explore Plan</div><i
+                                            class="ph-bold ph-caret-double-right fs-12 text-blue"></i>
+                                    </div> -->
                             </a>
                         </div>
                     </div>
@@ -230,10 +229,10 @@
             </div>
         </div>
         <?php } ?>
-        <?php if(!empty($data['partner'])){ ?>
+        <?php if(!empty(partners())){ ?>
         <div class="partner-five-col style-one mt-60 pb-60 bg-white">
-            <div class="list pt-32 pb-32">
-                <?php  foreach($data['partner'] as $row){  ?>
+            <div class="list pt-32 pb-32 owl-carousel">
+                <?php  foreach(partners() as $row){  ?>
                 <div class="bg-img flex-center"><img class="w-100" src="<?=base_url('get-file/' . $row->image)?>"
                         alt=""></div>
                 <?php } ?>

@@ -46,9 +46,9 @@
                                     have
                                     to say
                                 </div>
-                                <div
+                                <!-- <div
                                     class="body2 text-secondary mt-16 animate__animated animate__fadeInUp animate__delay-0-5s smoll-text">
-                                    Get personalized financial advice to help reach your financial goals.</div>
+                                    Get personalized financial advice to help reach your financial goals.</div> -->
                             </div>
                         </div>
                     </div>
@@ -103,14 +103,18 @@
                 <div class="row flex-between row-gap-32">
                     <div class="col-12 col-lg-7">
                         <div class="text-about">
-                            <div class="heading3 mt-24">Designed for the serious, welcome to Wealth Watcher!</div>
-                            <div class="body3 text-secondary mt-20">Ask any market veteran and you will know that
-                                consistently making money from the markets is not easy at all. It requires a serious
-                                approach that involves serious research, serious risk analysis and serious discipline.
-                                Our full-service model, which consists of an expert Research team, experienced
-                                Relationship Managers, wide network of branches, information packed trading & investing
-                                platforms and education is designed to help you understand the required serious
-                                approach. It also helps you get the power of our experience and expertise on your side
+                            <div class="heading3 mt-24">Designed for the Curious, Welcome to Wealth Watcher!</div>
+                            <div class="body3 text-secondary mt-20"> Navigating the financial markets can be a daunting
+                                task, but with Wealth Watcher Management Consultant, you gain an ally with a proven
+                                track record of success. Our seasoned market experts understand that achieving
+                                consistent profitability requires a disciplined approach backed by in-depth research and
+                                meticulous risk management. We offer a robust full-service model, featuring a team of
+                                astute Research Analysts and savvy Relationship Managers, bolstered by our expansive
+                                branch network and state-of-the-art trading platforms. Our educational resources are
+                                crafted to demystify the complexities of the market, equipping you with the necessary
+                                tools and insights. Choose Wealth Watcher Management Consultant to harness the
+                                collective power of our experience and expertise, propelling you towards your financial
+                                aspirations.
                             </div>
                         </div>
                         <div class="button-block mt-5">
@@ -143,11 +147,27 @@
                             <div class="row row-gap-32">
                                 <div class="text-about">
                                     <div class="heading3 mt-24">For those serious about becoming "Wealth Watcher"</div>
-                                    <div class="body3 text-secondary mt-20">The one thing required to become a "Market
-                                        ka Watcher" is to constantly improve your knowledge and understanding about
-                                        investing and trading. Education is a core pillar of how Sharekhan wants to help
-                                        new comers and experienced customers both - so we offer zero cost & paid
-                                        education modules to our customers.</div>
+                                    <div class="body3 text-secondary mt-20">Embark on a journey to financial mastery
+                                        with Wealth Watcher Management Consultant—where becoming a ‘Wealth Watcher’ is
+                                        not just a title, it’s a commitment to growth and understanding. Our bold
+                                        initiative invites you to step into a world where your financial acumen is honed
+                                        to perfection.
+                                        <br>
+                                        Join the ranks of the informed, those who choose to actively engage with their
+                                        investments and seize control of their economic destiny. With Wealth Watcher
+                                        Management Consultant, you’re not just investing; you’re elevating your
+                                        knowledge, sharpening your skills, and aligning with a community dedicated to
+                                        the art of wealth creation.
+                                        <br>
+                                        Transform your aspirations into achievements as you navigate the markets with
+                                        confidence, backed by our comprehensive educational modules and expert guidance.
+                                        Whether you’re starting fresh or building on a foundation of experience, our
+                                        zero-cost and premium education offerings are your gateway to becoming a true
+                                        ‘Wealth Watcher’.
+                                        <br>
+                                        Choose Wealth Watcher Management Consultant—where serious investors find serious
+                                        success. Let’s unlock the power of the market together and watch your wealth
+                                        flourish.</div>
                                 </div>
                                 <div class="col-12 col-lg-6 col-md-6">
                                     <div class="service-item hover-box-shadow bora-8 p-24 bg-white box-shadow h-100"><a

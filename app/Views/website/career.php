@@ -16,12 +16,11 @@
             <div class="container">
                 <div class="heading-nav gap-4 mt-32"><a class="hover-underline caption1 text-white"
                         href="<?= base_url('/') ?>">Home</a><i class="ph ph-caret-double-right text-white"></i>
-                    <div class="caption1 text-white">Career</div>
+                    <div class="caption1 text-white">Careers</div>
                 </div>
                 <div class="text-nav">
-                    <div class="heading3 text-white">Career</div>
-                    <div class="sub-heading mt-8 text-white fw-400">Explore our Contact Us page for prompt assistance
-                        from our dedicated team.</div>
+                    <div class="heading3 text-white">Careers</div>
+                    <div class="sub-heading mt-8 text-white fw-400">Explore opportunities to shape the future and unleash your potential with us.</div>
                 </div>
             </div>
         </div>
@@ -39,7 +38,8 @@
                                 <div class="col-12 col-sm-4">
                                     <input
                                         class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                        type="text" id="search" onblur="search()" placeholder="Search" /><i class="ph ph-magnifying-glass" onclick="search()"></i>
+                                        type="text" id="search" onblur="search()" placeholder="Search" /><i
+                                        class="ph ph-magnifying-glass" onclick="search()"></i>
                                 </div>
                                 <div class="col-12 col-sm-4">
                                     <select class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
@@ -51,8 +51,8 @@
                                     </select><i class="ph ph-caret-down"></i>
                                 </div>
                                 <div class="col-12 col-sm-4">
-                                    <select class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8" onchange="search()"
-                                        id="job_type">
+                                    <select class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
+                                        onchange="search()" id="job_type">
                                         <option value="">Select</option>
                                         <option value="FULL">Full Time</option>
                                         <option value="PART">Part Time</option>
@@ -93,14 +93,18 @@
         });
     });
 
-    function search(){
+    function search() {
         var job_category = $("#job_category").val();
         var job_type = $("#job_type").val();
         var search = $("#search").val();
         $.ajax({
             url: "<?=base_url('get-all-job')?>",
             type: "POST",
-            data:{job_category:job_category,job_type:job_type,search:search},
+            data: {
+                job_category: job_category,
+                job_type: job_type,
+                search: search
+            },
             success: function(response) {
                 // You will get response from your PHP page (what you echo or print)
                 console.log(response);
@@ -111,8 +115,6 @@
             }
         });
     }
-
-    
     </script>
 </body>
 

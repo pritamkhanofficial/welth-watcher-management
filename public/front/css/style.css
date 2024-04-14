@@ -2697,7 +2697,7 @@ Section Slider Homepage Main: Start
     animation: moveY 10s ease infinite;
 }
 .slider-block.style-two .slider-img > img:last-child {
-    height: 157px;
+    height: 120px;
     position: absolute;
     bottom: 56px;
     right: 0px;
@@ -2716,6 +2716,7 @@ Section Slider Homepage Main: Start
   }
   .slider-block.style-two .slider-main .slider-item .slider-img {
     display: inline;
+    margin-top: 165px;
   }
   .my-top-text{
     display: none;
@@ -6792,7 +6793,7 @@ Footer: Start
   align-items: flex-start;
 }
 #footer .footer-block .row .footer-logo {
-  width: 145px;
+  width: 271px;
 }
 #footer .footer-block .row .list-social .item {
   width: 40px;
@@ -7026,6 +7027,7 @@ Reduce font and spacing: Start
   .button-share {
     padding: 4px 7px;
     border: none;
+    width: 100px;
   }
   .mt-100 {
     margin-top: 60px;
@@ -7146,7 +7148,7 @@ Reduce font and spacing: End
     background: #000;
 }
 .form-block.form-stock.bora-16.bg-white.p-28.flex-columns-between.gap-20 {
-    width: 460px;
+    width: 430px;
 }
 img.menu-logo{
     width: 207px;

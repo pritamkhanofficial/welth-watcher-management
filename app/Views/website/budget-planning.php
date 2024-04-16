@@ -34,9 +34,9 @@
 // getPrint($budget);
 ?>
         <div class="container pt-5 pb-5">
-            <?php if(is_null($budget)){ ?>
+            <?php if(is_null($budget)){ // For Add ?>
             <div class="content">
-                <form action="" method="post" id="register-form">
+                <form action="" method="post" id="budget-planning-save-form">
                     <input type="hidden" name="form_submit" value="add">
                     <div id="wizard">
                         <h2>BASICS</h2>
@@ -763,7 +763,7 @@
                     </div>
                 </form>
             </div>
-            <?php }else{ ?>
+            <?php }else{ // For Edit ?>
             <div class="content">
                 <form action="" method="post" id="register-form">
                     <input type="hidden" name="form_submit" value="update">
@@ -1616,19 +1616,40 @@
     <?php echo view('component/front/script'); ?>
     <!--endbuild-->
     <script>
+    var stepFormIndex = 0;
     $(function() {
         var wizard = $("#wizard").steps({
             headerTag: "h2",
             bodyTag: "section",
             transitionEffect: "slideLeft",
             onStepChanging: function(e, currentIndex, newIndex) {
-                var valid = $('#register-form').valid();
+                var valid = $('#budget-planning-save-form').valid();
                 if (valid) {
+                    var form = $("#budget-planning-save-form");
+                    var newInput = $('<input>');
+                    // Set attributes for the input element if needed
+                    newInput.attr('type', 'hidden'); // Example: setting type to text
+                    newInput.attr('name', 'steps'); // Set the name attribute
+                    newInput.attr('value', currentIndex); // Set the name attribute
+
+                    // Append the input element to the form
+                    form.append(newInput);
+                    // Submit form input
+                    form.submit();
                     return valid;
                 }
+                stepFormIndex = currentIndex;
             },
             onFinished: function(event, currentIndex) {
-                var form = $("#register-form");
+                var form = $("#budget-planning-save-form");
+                var newInput = $('<input>');
+                // Set attributes for the input element if needed
+                newInput.attr('type', 'hidden'); // Example: setting type to text
+                newInput.attr('name', 'steps'); // Set the name attribute
+                newInput.attr('value', currentIndex); // Set the name attribute
+
+                // Append the input element to the form
+                form.append(newInput);
                 // Submit form input
                 form.submit();
             }
@@ -1640,10 +1661,10 @@
     });
     </script>
     <script>
-    $('#register-form').validate();
+    $('#budget-planning-save-form').validate();
 
 
-    $("#register-form").ajaxForm({
+    $("#budget-planning-save-form").ajaxForm({
         // contentType: 'application/json',
         /* beforeSubmit: function() {
             var valid = $('#register-form').valid();
@@ -1654,8 +1675,10 @@
         }, */
         success: function(response) {
             // alert(response?.message);
-            swAlert(response)
-            if (response?.type == 'success') {
+            if(stepFormIndex == 5){
+                swAlert(response)
+            }
+            if (response?.type == 'success' && stepFormIndex == 5) {
                 window.location.href = "<?=base_url('/')?>";
             }
             // $('#register-form')[0].reset();

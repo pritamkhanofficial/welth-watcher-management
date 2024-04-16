@@ -42,6 +42,16 @@ class Website extends Model
             ]);
         }
     }
+    public function budgetPlanningSave($data,$table){
+        $count = $this->db->table($table)->where(['user_id'=>$data['user_id']])->get()->getNumRows();
+        if($count == 0){
+            return $this->db->table($table)->insert($data);
+        }else{
+            return $this->db->table($table)->update($data,[
+                'user_id'=>$data['user_id']
+            ]);
+        }
+    }
     public function getBudgetPlanning($id){
         return $this->db->table('register')->where(['user_id'=>$id])->get()->getRow();
     }

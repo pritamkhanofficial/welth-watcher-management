@@ -83,7 +83,7 @@ class WebsiteController extends BaseController
         if($this->request->getVar('form_submit') == 'add'){
             // getPrint($this->request->getVar());
 
-            $data = [
+            /* $data = [
                 'user_id' => getFrontUserData()->id,
                 'budget_planning' => $this->request->getVar('budget_planning'),
                 'household_size' => $this->request->getVar('household_size'),
@@ -202,7 +202,28 @@ class WebsiteController extends BaseController
                     'title'=>'Error',
                     'message'=>'Oops! Something went wrong. Please try again later.',
                 ]);
+            } */
+
+            /* new think work start */
+            // \getPrint($this->request->getVar());
+            if($this->request->getVar('steps') == 0){
+                $basics = [
+                    'user_id' => getFrontUserData()->id,
+                    'area_id' => 44,
+                    'household_size' => $this->request->getVar('household_size'),
+                    'age' => $this->request->getVar('age'),
+                    'offers_promotions' => $this->request->getVar('offers_promotions')
+                ];
+                $result = $this->model->budgetPlanningSave($basics,'basic');
+                if($result){
+                    return $this->response->setJSON([
+                        'type'=>'success',
+                        'title'=>'Success',
+                        'message'=>'Thank you for submitting Your Basic information.',
+                    ]);
+                }
             }
+            /* ------------------- */
 
 
             

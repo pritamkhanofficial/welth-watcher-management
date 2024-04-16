@@ -135,6 +135,11 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'job-candidate/(:segment)/(:segment)', 'BackPanelController::JobCandidate/$1/$2');
 
 
+        $routes->match(['get', 'post'],'area/', 'BackPanelController::area');
+        $routes->match(['get', 'post'],'area/(:segment)', 'BackPanelController::area/$1');
+        $routes->match(['get', 'post'],'area/(:segment)/(:segment)', 'BackPanelController::area/$1/$2');
+
+
         $routes->match(['get', 'post'],'database-backup', 'BackPanelController::databaseBackup');
        
     });

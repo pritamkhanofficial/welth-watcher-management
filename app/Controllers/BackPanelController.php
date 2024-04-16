@@ -675,4 +675,26 @@ class BackPanelController extends BaseController
         $dbutil->backup();
     }
 
+    public function area()
+    {
+        $crud = new GroceryCrud();
+
+        $crud->displayAs('is_active', 'Status');
+
+        $crud->columns(['label', 'is_active']);
+        $crud->fields(['label', 'is_active']);
+
+
+        $crud->unsetDelete();
+
+        $crud->unsetPrint();
+        $crud->unsetExport();
+
+
+        $crud->setTable('area');
+        $crud->setSubject('Area');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
+
 }

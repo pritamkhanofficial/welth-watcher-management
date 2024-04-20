@@ -17,6 +17,14 @@ function getGender(){
         '2' => 'Other',
     ];
 }
+
+function getFrequency(){
+    return [
+        'PERYEAR',
+        'PERMONTH',
+        'PERWEEK'
+    ];
+}
 function getHash($data){
     return password_hash($data,  PASSWORD_DEFAULT);
 }

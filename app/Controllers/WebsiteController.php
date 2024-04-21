@@ -323,8 +323,7 @@ class WebsiteController extends BaseController
                     'debt_payment_value' => $this->request->getVar('debt_payment_value'),
                     'debt_payment_frequency' => $this->request->getVar('debt_payment_frequency')
                 ];
-            }
-            $result = $this->model->budgetPlanningSave($debt,'debt');
+                $result = $this->model->budgetPlanningSave($debt,'debt');
                 if($result){
                     return $this->response->setJSON([
                         'type'=>'success',
@@ -332,6 +331,7 @@ class WebsiteController extends BaseController
                         'message'=>'Thank you for submitting Your Debt information.',
                     ]);
                 }
+            }
             /* ------------------- */
 
 

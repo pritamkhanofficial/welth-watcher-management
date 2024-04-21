@@ -1,5 +1,5 @@
 <?php
-// getPrint($data['state']);
+// getPrint($budget);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,6 +46,7 @@
             <?php //if (is_null($budget)) { // For Add 
             ?>
             <div class="content">
+                <!-- < ?php foreach($data as $key => $value){?> -->
                 <form action="" method="post" id="budget-planning-save-form">
                     <input type="hidden" name="form_submit" value="add">
                     <div id="wizard">
@@ -72,16 +73,16 @@
                                         <div class="heading7 hover-text-blue mb-3 mt-3">How many people are in your
                                             household?</div>
                                         <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                            name="household_size" type="number" required placeholder="Number of people" />
+                                            name="household_size" value="<?= ($budget->household_size == '') ? '' : $budget->household_size; ?>" type="number" required placeholder="Number of people" />
                                         <div class="body3 text-secondary mt-2"><i>Enter 1 if you live alone; otherwise,
                                                 include yourself, your partner and any dependents.</i></div>
 
                                         <div class="heading7 hover-text-blue mb-3 mt-3">How old are you?</div>
                                         <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                            name="age" type="number" required placeholder="Your age" />
+                                            name="age" value="<?= ($budget->age == '') ? '' : $budget->age; ?>" type="number" required placeholder="Your age" />
                                         <div class="body3 text-secondary mt-2"><i>In years</i></div>
                                         <div class="form-check mt-5">
-                                            <input class="form-check-input" type="checkbox" value=""
+                                            <input class="form-check-input" type="checkbox" value="<?= ($budget->advertisement_interest == '') ? '' : $budget->advertisement_interest; ?>"
                                                 id="flexCheckDefault" name="advertisement_interest">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 Bloomberg may use my information to provide me with advertisements that
@@ -92,7 +93,7 @@
                                             </label>
                                         </div>
                                         <div class="form-check mt-3">
-                                            <input class="form-check-input" type="checkbox" value=""
+                                            <input class="form-check-input" type="checkbox" value="<?= ($budget->offers_promotions == '') ? '' : $budget->offers_promotions; ?>"
                                                 id="flexCheckChecked" name="offers_promotions" checked>
                                             <label class="form-check-label" for="flexCheckChecked">
                                                 Bloomberg may send me offers and promotions
@@ -138,15 +139,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" required placeholder="₹" name="income" />
+                                                    type="text" value="<?= ($budget->income == '') ? '' : $budget->income; ?>" required placeholder="₹" name="income" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="income_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->income_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->income_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->income_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Annualize a paycheck’s gross or use W-2
@@ -161,15 +162,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="income_after_taxes" />
+                                                    type="text" value="<?= ($budget->income_after_taxes == '') ? '' : $budget->income_after_taxes; ?>" required placeholder="₹" name="income_after_taxes" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="income_after_taxes_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->income_after_taxes_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->income_after_taxes_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->income_after_taxes_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Subtract all federal, state and local
@@ -181,15 +182,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="social_security_taxes" />
+                                                    type="text" value="<?= ($budget->social_security_taxes == '') ? '' : $budget->social_security_taxes; ?>" required placeholder="₹" name="social_security_taxes" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="social_security_taxes_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->social_security_taxes_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->social_security_taxes_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->social_security_taxes_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>The current rate is 6.2% for corporate
@@ -237,15 +238,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="food_and_beverages" />
+                                                    type="text" value="<?= ($budget->food_and_beverages == '') ? '' : $budget->food_and_beverages; ?>" required placeholder="₹" name="food_and_beverages" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="food_and_beverages_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->food_and_beverages_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->food_and_beverages_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->food_and_beverages_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Consumed at home or elsewhere,
@@ -257,15 +258,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="clothes" />
+                                                    type="text" value="<?= ($budget->clothes == '') ? '' : $budget->clothes; ?>" required placeholder="₹" name="clothes" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="clothes_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->clothes_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->clothes_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->clothes_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Include related services, footwear,
@@ -275,15 +276,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="housing" />
+                                                    type="text" value="<?= ($budget->housing == '') ? '' : $budget->housing; ?>" required placeholder="₹" name="housing" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="housing_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->housing_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->housing_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->housing_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Rent or mortgage, taxes, insurance,
@@ -296,15 +297,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="transportation" />
+                                                    type="text" value="<?= ($budget->transportation == '') ? '' : $budget->transportation; ?>" required placeholder="₹" name="transportation" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="transportation_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->transportation_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->transportation_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->transportation_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Vehicle purchases, rentals, leases,
@@ -316,15 +317,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="healthcare_and_personal_care" />
+                                                    type="text" value="<?= ($budget->healthcare_and_personal_care == '') ? '' : $budget->age; ?>" required placeholder="₹" name="healthcare_and_personal_care" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="healthcare_and_personal_care_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->healthcare_and_personal_care_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->healthcare_and_personal_care_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->healthcare_and_personal_care_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Medical insurance, uncovered cost of
@@ -336,15 +337,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="entertainment" />
+                                                    type="text" value="<?= ($budget->entertainment == '') ? '' : $budget->entertainment; ?>" required placeholder="₹" name="entertainment" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="entertainment_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->entertainment_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->entertainment_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->entertainment_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Admission fees, audio visual equipment
@@ -356,15 +357,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="education" />
+                                                    type="text" value="<?= ($budget->education == '') ? '' : $budget->education; ?>" required placeholder="₹" name="education" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="education_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->education_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->education_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->education_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Tuition, fees, textbooks, supplies and
@@ -376,15 +377,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="other_expenses" />
+                                                    type="text" value="<?= ($budget->other_expenses == '') ? '' : $budget->other_expenses; ?>" required placeholder="₹" name="other_expenses" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="other_expenses_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->other_expenses_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->other_expenses_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->other_expenses_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Premiums for insurance not covered
@@ -442,15 +443,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="retirement_savings_amount" />
+                                                    type="text" value="<?= ($budget->retirement_savings_amount == '') ? '' : $budget->retirement_savings_amount; ?>" required placeholder="₹" name="retirement_savings_amount" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="retirement_savings_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->retirement_savings_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->retirement_savings_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->retirement_savings_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Contributions to retirement plans, such
@@ -464,15 +465,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="employer_contribution" />
+                                                    type="text" value="<?= ($budget->employer_contribution == '') ? '' : $budget->employer_contribution; ?>" required placeholder="₹" name="employer_contribution" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="employer_contribution_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->employer_contribution_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->employer_contribution_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->employer_contribution_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Such as matching 401(k) and IRA
@@ -486,7 +487,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="starting_age_for_saving" />
+                                                    type="text" value="<?= ($budget->starting_age_for_saving == '') ? '' : $budget->starting_age_for_saving; ?>" required placeholder="₹" name="starting_age_for_saving" />
                                             </div>
                                             <div class="body3 text-secondary"><i>We need this to estimate your
                                                     retirement-savings goals.</i>
@@ -527,7 +528,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="bank_accounts_value" />
+                                                    type="text" value="<?= ($budget->bank_accounts_value == '') ? '' : $budget->bank_accounts_value; ?>" required placeholder="₹" name="bank_accounts_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include money from all checking and
                                                     savings
@@ -540,7 +541,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="investment_accounts_value" />
+                                                    type="text" value="<?= ($budget->investment_accounts_value == '') ? '' : $budget->investment_accounts_value; ?>" required placeholder="₹" name="investment_accounts_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Stocks, bonds, certificates of deposit,
                                                     etc</i></div>
@@ -550,7 +551,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="home_value" />
+                                                    type="text" value="<?= ($budget->home_value == '') ? '' : $budget->home_value; ?>" required placeholder="₹" name="home_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>How much it would sell for now, minus
                                                     the
@@ -564,7 +565,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="rental_properties_value" />
+                                                    type="text" value="<?= ($budget->rental_properties_value == '') ? '' : $budget->rental_properties_value; ?>" required placeholder="₹" name="rental_properties_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>How much they would sell for now, minus
                                                     the
@@ -579,7 +580,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="vehicles_value" />
+                                                    type="text" value="<?= ($budget->vehicles_value == '') ? '' : $budget->vehicles_value; ?>" required placeholder="₹" name="vehicles_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>How much they would sell for now, minus
                                                     any
@@ -592,7 +593,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="other_assets_value" />
+                                                    type="text" value="<?= ($budget->other_assets_value == '') ? '' : $budget->other_assets_value; ?>" required placeholder="₹" name="other_assets_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include equity in businesses, annuities
                                                     and
@@ -608,7 +609,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="retirement_savings_value" />
+                                                    type="text" value="<?= ($budget->retirement_savings_value == '') ? '' : $budget->retirement_savings_value; ?>" required placeholder="₹" name="retirement_savings_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include 401(k)s, 403bs, IRAs, annuities
                                                     and
@@ -622,7 +623,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="emergency_assets_value" />
+                                                    type="text" value="<?= ($budget->emergency_assets_value == '') ? '' : $budget->emergency_assets_value; ?>" required placeholder="₹" name="emergency_assets_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>How much they would sell for now, minus
                                                     the
@@ -666,7 +667,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="mortgage_loans_value" />
+                                                    type="text" value="<?= ($budget->mortgage_loans_value == '') ? '' : $budget->mortgage_loans_value; ?>" required placeholder="₹" name="mortgage_loans_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Do not include unused lines of
                                                     credit.</i>
@@ -678,7 +679,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="business_debt_value" />
+                                                    type="text" value="<?= ($budget->business_debt_value == '') ? '' : $budget->business_debt_value; ?>" required placeholder="₹" name="business_debt_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include loans for businesses you own
                                                     for
@@ -690,7 +691,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="vehicle_loans_value" />
+                                                    type="text" value="<?= ($budget->vehicle_loans_value == '') ? '' : $budget->vehicle_loans_value; ?>" required placeholder="₹" name="vehicle_loans_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include debt on motorcycles and
                                                     recreational vehicles.</i>
@@ -701,7 +702,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="credit_card_debt_value" />
+                                                    type="text" value="<?= ($budget->credit_card_debt_value == '') ? '' : $budget->credit_card_debt_value; ?>" required placeholder="₹" name="credit_card_debt_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include only balances that are or will
                                                     be
@@ -713,7 +714,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="student_debt_value" />
+                                                    type="text" value="<?= ($budget->student_debt_value == '') ? '' : $budget->student_debt_value; ?>" required placeholder="₹" name="student_debt_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include loans for any educational
                                                     related
@@ -725,7 +726,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="other_debts_value" />
+                                                    type="text" value="<?= ($budget->other_debts_value == '') ? '' : $budget->other_debts_value; ?>" required placeholder="₹" name="other_debts_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include any other unsecured debt,
                                                     including
@@ -741,15 +742,15 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="debt_payment_value" />
+                                                    type="text" value="<?= ($budget->age == '') ? '' : $budget->age; ?>" required placeholder="₹" name="debt_payment_value" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="debt_payment_frequency">
-                                                    <option value="PERYEAR">Per Year</option>
-                                                    <option value="PERMONTH">Per Month</option>
-                                                    <option value="PERWEEK">Per Week</option>
+                                                    <option value="PERYEAR" <?= ($budget->debt_payment_frequency == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
+                                                    <option value="PERMONTH" <?= ($budget->debt_payment_frequency == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
+                                                    <option value="PERWEEK" <?= ($budget->debt_payment_frequency == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>For credit cards, only include sums
@@ -777,6 +778,7 @@
 
                     </div>
                 </form>
+                <!-- < ?php } ?> -->
             </div>
             <?php //} else { // For Edit 
             ?>

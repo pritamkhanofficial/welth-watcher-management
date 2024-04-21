@@ -55,9 +55,9 @@
                                     <p>Here you can find a summary of the responses you provided, along with a few
                                         totals that were calculated when determining your WealthScore.</p>
                                     <br>
-                                    <div class="card border  mb-3" style="max-width: 18rem;">
-                                        <div class="card-header">Basics<span class="float-end"><i
-                                                    class="fas fa-pen"></i></span></div>
+                                    <div class="card border  mb-3" >
+                                        <div class="card-header">Basics<span class="float-end"><a href="<?=base_url('budget-planning/0')?>"><i
+                                                    class="fas fa-pen"></i></a></span></div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">An item <span class="float-end">₹ 454</span>
                                             </li>
@@ -66,7 +66,7 @@
                                         </ul>
                                     </div>
                                     <br>
-                                    <div class="card border  mb-3" style="max-width: 18rem;">
+                                    <div class="card border  mb-3">
                                         <div class="card-header">Your Annual Income<span class="float-end"><i
                                                     class="fas fa-pen"></i></span></div>
                                         <ul class="list-group list-group-flush">
@@ -77,7 +77,7 @@
                                         </ul>
                                     </div>
                                     <br>
-                                    <div class="card border  mb-3" style="max-width: 18rem;">
+                                    <div class="card border  mb-3" >
                                         <div class="card-header">Your Annual Spending
                                             <span class="float-end"><i class="fas fa-pen"></i></span>
                                         </div>
@@ -89,7 +89,7 @@
                                         </ul>
                                     </div>
                                     <br>
-                                    <div class="card border  mb-3" style="max-width: 18rem;">
+                                    <div class="card border  mb-3" >
                                         <div class="card-header">Your Annual Retirement Contributions
                                             <span class="float-end"><i class="fas fa-pen"></i></span>
                                         </div>

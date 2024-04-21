@@ -210,7 +210,7 @@ class WebsiteController extends BaseController
             if($this->request->getVar('steps') == 0){
                 $basics = [
                     'user_id' => getFrontUserData()->id,
-                    'area_id' => 44,
+                    'area_id' => $this->request->getVar('budget_planning_area'),
                     'household_size' => $this->request->getVar('household_size'),
                     'age' => $this->request->getVar('age'),
                     'offers_promotions' => $this->request->getVar('offers_promotions')
@@ -464,6 +464,10 @@ class WebsiteController extends BaseController
         } */
         
         return view('website/budget-planning',$dataArr);
+    }
+
+    public function budgetDetails(){
+        return view('website/budget_details');
     }
 
     public function registerUser(){

@@ -25,12 +25,12 @@
             <div class="container">
                 <div class="heading-nav gap-4 mt-32"><a class="hover-underline caption1 text-white"
                         href="index-2.html">Home</a><i class="ph ph-caret-double-right text-white"></i>
-                    <div class="caption1 text-white">Register</div>
+                    <div class="caption1 text-white">Wealth Score</div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-6">
                         <div class="text-nav">
-                            <div class="heading3 text-white">Register</div>
+                            <div class="heading3 text-white">Wealth Score</div>
                             <div class="sub-heading mt-8 text-white fw-400">We perform a full analysis of the client’s
                                 website .</div>
                         </div>
@@ -63,7 +63,7 @@
                                                     name="budget_planning_area">
                                                     <option value="">-- Select Your city or metro area --</option>
                                                     <?php foreach ($getBPA as $key => $row) { ?>
-                                                    <option value="<?=$row->id?>"><?=$row->label?></option>
+                                                    <option value="<?=$row->id?>" <?= (isset($budget->area_id) == $row->id) ? 'selected' : '' ?>><?=$row->label?></option>
                                                     <?php } ?>
                                                 </select>
                                         <div class="body3 text-secondary mt-2">

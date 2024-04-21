@@ -1,6 +1,7 @@
 <?php
 use CodeIgniter\HTTP\RequestInterface;
 use \Config\Database;
+use App\Models\Website;
 
 use Cocur\Slugify\Slugify;
 
@@ -44,6 +45,16 @@ function getGlobalSetting(){
     $db = Database::connect();
     $sql = "SELECT * FROM global_settings";
     return  $db->query($sql)->getRow();
+}
+
+function getBudgetDetails(){
+    $model = new Website();
+    if(getFrontUserData()){
+        $result = $model->getBudgetPlanning(getFrontUserData()->id);
+    }else{
+        $result = [];
+    }
+    return  $result;
 }
 
 function UploadFile(\CodeIgniter\HTTP\Files\UploadedFile $imageFile, $folder=NULL, $editFileName = NULL)

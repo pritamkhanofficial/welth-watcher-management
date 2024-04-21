@@ -16,6 +16,7 @@ $routes->group('', ['filter'=>'authFrontFilter','namespace' => 'App\Controllers'
     $routes->match(['get', 'post'],'check-mobile', 'WebsiteController::checkMobile');
     $routes->match(['get', 'post'],'about', 'WebsiteController::about');
     $routes->match(['get', 'post'],'budget-planning', 'WebsiteController::budgetPlanning');
+    $routes->match(['get', 'post'],'budget-details', 'WebsiteController::budgetDetails');
     $routes->match(['get', 'post'],'login', 'WebsiteController::login');
     $routes->match(['get', 'post'],'report', 'WebsiteController::report');
     $routes->match(['get', 'post'],'logout', 'WebsiteController::logout');

@@ -58,12 +58,17 @@ class Website extends Model
     }
     public function getBudgetPlanning($id){
         $basis =  $this->db->table('basic')->where(['user_id'=>$id])->get()->getRowArray();
+        $basis = is_null($basis) ? [] : $basis;
         $income =  $this->db->table('income')->where(['user_id'=>$id])->get()->getRowArray();
+        $income = is_null($income) ? [] : $income;
         $spending =  $this->db->table('spending')->where(['user_id'=>$id])->get()->getRowArray();
+        $spending = is_null($spending) ? [] : $spending;
         $retirement =  $this->db->table('retirement')->where(['user_id'=>$id])->get()->getRowArray();
+        $retirement = is_null($retirement) ? [] : $retirement;
         $assets =  $this->db->table('assets')->where(['user_id'=>$id])->get()->getRowArray();
+        $assets = is_null($assets) ? [] : $assets;
         $debt =  $this->db->table('debt')->where(['user_id'=>$id])->get()->getRowArray();
-        
+        $debt = is_null($debt) ? [] : $debt;        
         $data = array_merge($basis,$income,$spending,$retirement,$assets,$debt);
         $data = (object)$data;
         return $data;

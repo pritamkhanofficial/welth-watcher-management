@@ -73,16 +73,16 @@
                                         <div class="heading7 hover-text-blue mb-3 mt-3">How many people are in your
                                             household?</div>
                                         <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                            name="household_size" value="<?= ($budget->household_size == '') ? '' : $budget->household_size; ?>" type="number" required placeholder="Number of people" />
+                                            name="household_size" value="<?= (isset($budget->household_size) == '') ? '' : $budget->household_size; ?>" type="number" required placeholder="Number of people" />
                                         <div class="body3 text-secondary mt-2"><i>Enter 1 if you live alone; otherwise,
                                                 include yourself, your partner and any dependents.</i></div>
 
                                         <div class="heading7 hover-text-blue mb-3 mt-3">How old are you?</div>
                                         <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                            name="age" value="<?= ($budget->age == '') ? '' : $budget->age; ?>" type="number" required placeholder="Your age" />
+                                            name="age" value="<?= (isset($budget->age) == '') ? '' : $budget->age; ?>" type="number" required placeholder="Your age" />
                                         <div class="body3 text-secondary mt-2"><i>In years</i></div>
                                         <div class="form-check mt-5">
-                                            <input class="form-check-input" type="checkbox" value="<?= ($budget->advertisement_interest == '') ? '' : $budget->advertisement_interest; ?>"
+                                            <input class="form-check-input" type="checkbox" value="<?= (isset($budget->advertisement_interest) == '') ? '' : $budget->advertisement_interest; ?>"
                                                 id="flexCheckDefault" name="advertisement_interest">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 Bloomberg may use my information to provide me with advertisements that
@@ -93,7 +93,7 @@
                                             </label>
                                         </div>
                                         <div class="form-check mt-3">
-                                            <input class="form-check-input" type="checkbox" value="<?= ($budget->offers_promotions == '') ? '' : $budget->offers_promotions; ?>"
+                                            <input class="form-check-input" type="checkbox" value="<?= (isset($budget->offers_promotions) == '') ? '' : $budget->offers_promotions; ?>"
                                                 id="flexCheckChecked" name="offers_promotions" checked>
                                             <label class="form-check-label" for="flexCheckChecked">
                                                 Bloomberg may send me offers and promotions
@@ -139,7 +139,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= ($budget->income == '') ? '' : $budget->income; ?>" required placeholder="₹" name="income" />
+                                                    type="text" value="<?= (isset($budget->income) == '') ? '' : $budget->income; ?>" required placeholder="₹" name="income" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -317,7 +317,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= ($budget->healthcare_and_personal_care == '') ? '' : $budget->age; ?>" required placeholder="₹" name="healthcare_and_personal_care" />
+                                                    type="text" value="<?= (isset($budget->healthcare_and_personal_care) == '') ? '' : $budget->healthcare_and_personal_care; ?>" required placeholder="₹" name="healthcare_and_personal_care" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -742,7 +742,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= ($budget->age == '') ? '' : $budget->age; ?>" required placeholder="₹" name="debt_payment_value" />
+                                                    type="text" value="<?= (isset($budget->debt_payment_value) == '') ? '' : $budget->debt_payment_value; ?>" required placeholder="₹" name="debt_payment_value" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select

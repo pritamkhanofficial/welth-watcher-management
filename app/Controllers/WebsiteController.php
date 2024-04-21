@@ -70,7 +70,7 @@ class WebsiteController extends BaseController
         $result = $this->model->about();
         return view('website/about', ['data' => $result]);
     }
-    public function budgetPlanning()
+    public function budgetPlanning($steps = "")
     {
         $dataArr = [];
         if(!getFrontUserData()){
@@ -78,6 +78,7 @@ class WebsiteController extends BaseController
         }
         $dataArr['budget'] = $this->model->getBudgetPlanning(getFrontUserData()->id);
         $dataArr['getBPA'] = $this->model->getBudgetPlanningArea();
+        $dataArr['steps'] = $steps;
         $full_name = getFrontUserData()->full_name;
         $email_data = getFrontUserData()->email;
         // getPrint($dataArr['budget']);

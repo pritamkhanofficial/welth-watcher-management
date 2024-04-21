@@ -77,9 +77,10 @@ class WebsiteController extends BaseController
             return redirect('/');
         }
         $dataArr['budget'] = $this->model->getBudgetPlanning(getFrontUserData()->id);
+        $dataArr['getBPA'] = $this->model->getBudgetPlanningArea();
         $full_name = getFrontUserData()->full_name;
         $email_data = getFrontUserData()->email;
-        // getPrint($_POST);
+        // getPrint($dataArr['budget']);
         if($this->request->getVar('form_submit') == 'add'){
             // getPrint($this->request->getVar());
 
@@ -336,7 +337,7 @@ class WebsiteController extends BaseController
 
             
         }
-        if($this->request->getVar('form_submit') == 'update'){
+        /* if($this->request->getVar('form_submit') == 'update'){
             // getPrint($this->request->getVar());
             $data = [
                 'user_id' => getFrontUserData()->id,
@@ -460,7 +461,7 @@ class WebsiteController extends BaseController
 
 
             
-        }
+        } */
         
         return view('website/budget-planning',$dataArr);
     }

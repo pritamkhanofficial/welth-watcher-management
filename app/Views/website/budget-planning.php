@@ -58,10 +58,15 @@
                                 <div class="row">
                                     <div class="col-md-12 col-lg-6 col-12">
                                         <div class="heading7 hover-text-blue mb-3">Where do you live?</div>
-                                        <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                            name="budget_planning" required type="text"
-                                            placeholder="Your city or metro area" />
-                                        <div class="body3 text-secondary mt-2"><i>Select your city or metro area.</i>
+                                            <select required class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                                    name="budget_planning_area">
+                                                    <option value="">-- Select Your city or metro area --</option>
+                                                    <?php foreach ($getBPA as $key => $row) { ?>
+                                                    <option value="<?=$row->id?>"><?=$row->label?></option>
+                                                    <?php } ?>
+                                                </select>
+                                        <div class="body3 text-secondary mt-2">
+                                            <i>Select your city or metro area.</i>
                                         </div>
 
                                         <div class="heading7 hover-text-blue mb-3 mt-3">How many people are in your
@@ -133,7 +138,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" require placeholder="₹" name="income" />
+                                                    type="text" required placeholder="₹" name="income" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select

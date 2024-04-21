@@ -32,6 +32,10 @@ class Website extends Model
     public function submitContact($data){
         return $this->db->table('contact')->insert($data);
     }
+
+    public function getBudgetPlanningArea(){
+        return $this->db->table('area')->where(['is_active'=>1])->orderBy('id', 'DESC')->get()->getResult();
+    }
     public function budgetPlanning($data,$type, $id = NULL){
         if($type == 'add'){
             return $this->db->table('register')->insert($data);
@@ -53,7 +57,17 @@ class Website extends Model
         }
     }
     public function getBudgetPlanning($id){
-        return $this->db->table('register')->where(['user_id'=>$id])->get()->getRow();
+        $basis =  $this->db->table('basic')->where(['user_id'=>$id])->get()->getRowArray();
+        $income =  $this->db->table('income')->where(['user_id'=>$id])->get()->getRowArray();
+        $spending =  $this->db->table('spending')->where(['user_id'=>$id])->get()->getRowArray();
+        $retirement =  $this->db->table('retirement')->where(['user_id'=>$id])->get()->getRowArray();
+        $assets =  $this->db->table('assets')->where(['user_id'=>$id])->get()->getRowArray();
+        $debt =  $this->db->table('debt')->where(['user_id'=>$id])->get()->getRowArray();
+        
+        $data = array_merge($basis,$income,$spending,$retirement,$assets,$debt);
+        $data = (object)$data;
+        return $data;
+        // getPrint($data);
     }
     public function submitRegister($data){
         return $this->db->table('users')->insert($data);

@@ -1,5 +1,5 @@
 <?php
-// getPrint(₹data['state']);
+// getPrint($data['state']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -133,7 +133,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="income" />
+                                                    type="text" require placeholder="₹" name="income" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -156,7 +156,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="income_after_taxes" />
+                                                    type="text" require placeholder="₹" name="income_after_taxes" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -176,7 +176,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="social_security_taxes" />
+                                                    type="text" require placeholder="₹" name="social_security_taxes" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -232,7 +232,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="food_and_beverages" />
+                                                    type="text" require placeholder="₹" name="food_and_beverages" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -252,7 +252,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="clothes" />
+                                                    type="text" require placeholder="₹" name="clothes" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -270,7 +270,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="housing" />
+                                                    type="text" require placeholder="₹" name="housing" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -291,7 +291,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="transportation" />
+                                                    type="text" require placeholder="₹" name="transportation" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -311,7 +311,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="healthcare_and_personal_care" />
+                                                    type="text" require placeholder="₹" name="healthcare_and_personal_care" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -331,7 +331,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="entertainment" />
+                                                    type="text" require placeholder="₹" name="entertainment" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -351,7 +351,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="education" />
+                                                    type="text" require placeholder="₹" name="education" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -371,7 +371,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="other_expenses" />
+                                                    type="text" require placeholder="₹" name="other_expenses" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -437,7 +437,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="retirement_savings_amount" />
+                                                    type="text" require placeholder="₹" name="retirement_savings_amount" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -459,7 +459,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="employer_contribution" />
+                                                    type="text" require placeholder="₹" name="employer_contribution" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
@@ -481,7 +481,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="starting_age_for_saving" />
+                                                    type="text" require placeholder="₹" name="starting_age_for_saving" />
                                             </div>
                                             <div class="body3 text-secondary"><i>We need this to estimate your
                                                     retirement-savings goals.</i>
@@ -522,7 +522,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="bank_accounts_value" />
+                                                    type="text" require placeholder="₹" name="bank_accounts_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include money from all checking and
                                                     savings
@@ -535,7 +535,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="investment_accounts_value" />
+                                                    type="text" require placeholder="₹" name="investment_accounts_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Stocks, bonds, certificates of deposit,
                                                     etc</i></div>
@@ -545,7 +545,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="home_value" />
+                                                    type="text" require placeholder="₹" name="home_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>How much it would sell for now, minus
                                                     the
@@ -559,7 +559,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="rental_properties_value" />
+                                                    type="text" require placeholder="₹" name="rental_properties_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>How much they would sell for now, minus
                                                     the
@@ -574,7 +574,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="vehicles_value" />
+                                                    type="text" require placeholder="₹" name="vehicles_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>How much they would sell for now, minus
                                                     any
@@ -587,7 +587,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="other_assets_value" />
+                                                    type="text" require placeholder="₹" name="other_assets_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include equity in businesses, annuities
                                                     and
@@ -603,7 +603,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="retirement_savings_value" />
+                                                    type="text" require placeholder="₹" name="retirement_savings_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include 401(k)s, 403bs, IRAs, annuities
                                                     and
@@ -617,7 +617,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="emergency_assets_value" />
+                                                    type="text" require placeholder="₹" name="emergency_assets_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>How much they would sell for now, minus
                                                     the
@@ -661,7 +661,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="mortgage_loans_value" />
+                                                    type="text" require placeholder="₹" name="mortgage_loans_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Do not include unused lines of
                                                     credit.</i>
@@ -673,7 +673,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="business_debt_value" />
+                                                    type="text" require placeholder="₹" name="business_debt_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include loans for businesses you own
                                                     for
@@ -685,7 +685,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="vehicle_loans_value" />
+                                                    type="text" require placeholder="₹" name="vehicle_loans_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include debt on motorcycles and
                                                     recreational vehicles.</i>
@@ -696,7 +696,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="credit_card_debt_value" />
+                                                    type="text" require placeholder="₹" name="credit_card_debt_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include only balances that are or will
                                                     be
@@ -708,7 +708,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="student_debt_value" />
+                                                    type="text" require placeholder="₹" name="student_debt_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include loans for any educational
                                                     related
@@ -720,7 +720,7 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="other_debts_value" />
+                                                    type="text" require placeholder="₹" name="other_debts_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include any other unsecured debt,
                                                     including
@@ -736,7 +736,7 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" placeholder="₹" name="debt_payment_value" />
+                                                    type="text" require placeholder="₹" name="debt_payment_value" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select

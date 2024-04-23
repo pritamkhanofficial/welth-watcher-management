@@ -809,5 +809,21 @@ function ct(){
     return "?cache=" . time();
 }
 
+function generateUsername($fullName){
+    $nameParts = explode(' ', strtolower($fullName));
+    
+    // Take the first letter of the first name
+    $username = substr($nameParts[0], 0, 1);
+    
+    // Concatenate it with the full last name
+    if (isset($nameParts[1])) {
+        $username .= substr($nameParts[1], 0, 1);
+    }
+    
+    // You might want to add additional logic to ensure uniqueness
+    
+    return $username.rand(100,999);
+}
+
 
 ?>

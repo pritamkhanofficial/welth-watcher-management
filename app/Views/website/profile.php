@@ -84,8 +84,7 @@
                                         class="button-share hover-border-blue bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48"
                                         name="submit" value="submit" type="submit"> <span
                                             class="spinner-border spinner-border-sm d-none" role="status"
-                                            aria-hidden="true"></span>Update
-                                        Profile</button>
+                                            aria-hidden="true"></span> Update Profile</button>
                                 </div>
                             </form>
                         </div>
@@ -138,13 +137,17 @@
     });
 
 
+    $(".button-share").click(function(){
+      $(".spinner-border").removeClass("d-none")
+    });
+
     $("#profile-update").ajaxForm({
         // contentType: 'application/json',
         beforeSubmit: function() {
             var valid = $('#profile-update').valid();
             if (valid) {
-                $(".spinner-border").removeClass("d-none")
-                return valid;
+              $(".spinner-border").removeClass("d-none")
+              return valid;
             }
         },
         success: function(response) {

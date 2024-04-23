@@ -468,6 +468,9 @@ class WebsiteController extends BaseController
     }
 
     public function budgetDetails(){
+        if(empty(getFrontUserData())){
+            return redirect('/');
+        }
         return view('website/budget_details');
     }
 
@@ -557,7 +560,7 @@ class WebsiteController extends BaseController
             }
             $data = [
                 'full_name' =>$verify_otp['full_name'],
-                'username' =>rand(1000,9999) . date('dmY'),
+                'username' =>generateUsername($this->request->getVar('full_name')),
                 'email' =>$verify_otp['email'],
                 'password' =>getHash($this->request->getVar('password')),
                 'mobile' =>$verify_otp['mobile'],
@@ -871,6 +874,7 @@ class WebsiteController extends BaseController
                 'full_name' =>$this->request->getVar('full_name'),
                 'mobile' =>$this->request->getVar('mobile'),
                 'email' =>$this->request->getVar('email'),
+                'username' =>generateUsername($this->request->getVar('full_name')),
             ];
 
             $model = new AuthModel();

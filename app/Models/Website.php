@@ -57,7 +57,10 @@ class Website extends Model
         }
     }
     public function getBudgetPlanning($id){
-        $basis =  $this->db->table('basic')->where(['user_id'=>$id])->get()->getRowArray();
+        $basis =  $this->db->table('basic')
+                  ->select('basic.*, area.label AS area_name')
+                  ->join('area','area.id=basic.area_id','left')
+                  ->where(['user_id'=>$id])->get()->getRowArray();
         $basis = is_null($basis) ? [] : $basis;
         $income =  $this->db->table('income')->where(['user_id'=>$id])->get()->getRowArray();
         $income = is_null($income) ? [] : $income;

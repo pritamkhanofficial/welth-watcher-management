@@ -37,7 +37,7 @@
                             <div class="heading5 text-white"><?= $result->title; ?></div>
                             <hr>
                             <div class="text-button text-white">
-                                ID - WWMC2024UX
+                                ID - <?= $result->job_code;?>
                             </div>
                             <div class="text-button text-white">
                                 <?=$result->description;?>
@@ -54,6 +54,11 @@
                                         class="ph-fill ph-check-circle fs-20 text-blue bg-white p-8 bora-50"></i>
                                     <div class="line-y"> </div>
                                     <div class="text-button text-white">Job Type: <?= $result->job_type;?></div>
+                                </div>
+                                <div class="item flex-item-center gap-12 mt-20"><i
+                                        class="ph-fill ph-check-circle fs-20 text-blue bg-white p-8 bora-50"></i>
+                                    <div class="line-y"> </div>
+                                    <div class="text-button text-white">Experience: <?= $result->experience;?></div>
                                 </div>
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-fill ph-check-circle fs-20 text-blue bg-white p-8 bora-50"></i>

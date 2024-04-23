@@ -39,8 +39,7 @@
                     <div class="col-12 col-xl-5">
                         <div class="infor bg-blue bora-12 p-40">
                             <div class="heading5 text-white">Get it touch</div>
-                            <div class="body3 text-white mt-8">We will get back to you within 24 hours, or call us
-                                everyday
+                            <div class="body3 text-white mt-8">We will get back to you within 24 hours
                             </div>
                             <div class="mt-40"></div>
                             <div class="list-social flex-item-center gap-10"><a
@@ -86,8 +85,7 @@
                         <div class="form-block flex-columns-between gap-20">
                             <div class="heading">
                                 <div class="heading5">Request a quote</div>
-                                <div class="body3 text-secondary mt-8">We will get back to you within 24 hours, or call
-                                    us everyday
+                                <div class="body3 text-secondary mt-8">We will get back to you within 24 hours
                                 </div>
                             </div>
                             <form class="contactForm" id="contactForm" method="post" action="<?=base_url('/contact')?>">

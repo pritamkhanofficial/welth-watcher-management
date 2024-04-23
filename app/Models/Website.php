@@ -16,11 +16,18 @@ class Website extends Model
         } */
         return $data;
     }
-    public function about(){
+    public function about($limit = 4){
         $data = [];
-        $data['services'] =  $this->db->table('services')->where(['deleted_at'=>NULL,'is_active'=>1])->orderBy('created_at','DESC')->get()->getResult();
+        $query =   $this->db->table('services');
+        $query->where(['deleted_at'=>NULL,'is_active'=>1]);
+        if($limit == 2){
+            $query->limit($limit);
+        }else{
+            $query->limit($limit);
+        }
+        $query->orderBy('created_at','DESC');
+        return  $query->get()->getResult();
         /* $data['partner'] =  $this->db->table('partners')->where(['deleted_at'=>NULL,'is_active'=>1])->orderBy('created_at','DESC')->limit(4)->get()->getResult(); */
-        return $data;
     }
 
     public function contact(){

@@ -633,10 +633,17 @@ class BackPanelController extends BaseController
         // $crud->where("job.deleted_at", " ");
         $crud->setRelation('category', 'job_category', 'label', ['is_active' => 1, 'deleted_at' => NULL]);
         // $crud->displayAs('is_active');
-        $crud->columns(['title','job_type','location','is_active']);
-        $crud->fields(['title', 'description', 'category','job_type','location','is_active']);
+        $crud->columns(['job_code','title','job_type','location','is_active']);
+        $crud->fields(['title', 'description', 'category','job_type','experience','location','is_active','job_code']);
+        $crud->fieldType('job_code', 'hidden');
+        $crud->callbackBeforeInsert(function ($stateParameters) {
+            $stateParameters->data['job_code'] = 'WWMC'. date('Y').rand(10,99);
+        
+            return $stateParameters;
+        });
+        
         $crud->setTexteditor(['description']);
-        $crud->unsetDelete();
+        // $crud->unsetDelete();
         $crud->unsetPrint();
         $crud->unsetExport();
         $crud->setTable('job');

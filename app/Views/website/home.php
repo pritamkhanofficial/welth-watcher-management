@@ -41,10 +41,9 @@
                         </div>
                         <div class="text-content my-top-text flex-columns-between row-gap-40">
                             <div class="title">
-                                <div class="heading2 animate__animated animate__fadeInUp animate__delay-0-2s">If you are
-                                    <span class="casualabout">casual about<br> the market,</span> here<br>is what we
-                                    have
-                                    to say
+                                <div class="heading2 animate__animated animate__fadeInUp animate__delay-0-2s"> Start
+                                    <span class="casualabout">Small</span> Save Big
+                                    <!-- Start Small, Save Big -->
                                 </div>
                                 <!-- <div
                                     class="body2 text-secondary mt-16 animate__animated animate__fadeInUp animate__delay-0-5s smoll-text">
@@ -169,42 +168,25 @@
                                         success. Let’s unlock the power of the market together and watch your wealth
                                         flourish.</div>
                                 </div>
+                                <?php  foreach($services as $row){  ?>
                                 <div class="col-12 col-lg-6 col-md-6">
                                     <div class="service-item hover-box-shadow bora-8 p-24 bg-white box-shadow h-100"><a
                                             class="service-item-main flex-item-center gap-30"
-                                            href="service-portfolio-management.html">
-                                            <div class="heading"><i class="icon-coin-hand text-blue fs-48"></i></div>
+                                            href="<?=base_url('about')?>">
+                                            <div class="heading"><i class="<?=$row->icon_text?> text-blue fs-48"></i></div>
                                             <div class="desc">
-                                                <div class="heading7 hover-text-blue">Budget planning</div>
-                                                <div class="body3 text-secondary mt-8">Get access to baseline learning
-                                                    about the market, whether you want to trade, invest or do both!
+                                                <div class="heading7 hover-text-blue"><?=$row->title?></div>
+                                                <div class="body3 text-secondary mt-8"><?=$row->short_description?>
                                                 </div>
-                                                <!-- <div class="explore-block flex-item-center gap-4 mt-8">
-                                                    <div class="text-button-small text-blue">Explore Plan</div><i
+                                                <div class="explore-block flex-item-center gap-2 mt-8">
+                                                    <div class="text-button-small text-blue">Much More</div><i
                                                         class="ph-bold ph-caret-double-right fs-12 text-blue"></i>
-                                                </div> -->
+                                                </div>
                                             </div>
                                         </a>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-6 col-md-6">
-                                    <div class="service-item hover-box-shadow bora-8 p-24 bg-white box-shadow h-100"><a
-                                            class="service-item-main flex-item-center gap-30"
-                                            href="service-detail.html">
-                                            <div class="heading"><i class="icon-coin-pig text-blue fs-48"></i></div>
-                                            <div class="desc">
-                                                <div class="heading7 hover-text-blue">Savings advice</div>
-                                                <div class="body3 text-secondary mt-8">Master the skills you need to
-                                                    trade and invest with confidence, attend a Power Money Webinar (zero
-                                                    cost)</div>
-                                                <!-- <div class="explore-block flex-item-center gap-4 mt-8">
-                                                    <div class="text-button-small text-blue">Explore Plan</div><i
-                                                        class="ph-bold ph-caret-double-right fs-12 text-blue"></i>
-                                                </div> -->
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>

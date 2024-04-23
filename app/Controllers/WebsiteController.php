@@ -17,7 +17,8 @@ class WebsiteController extends BaseController
     public function home()
     {
         $result = $this->model->home();
-        return view('website/home', ['data' => $result]);
+        $services = $this->model->about(2);
+        return view('website/home', ['data' => $result, 'services'=>$services]);
     }
     public function contact()
     {
@@ -67,8 +68,8 @@ class WebsiteController extends BaseController
 
     public function about()
     {
-        $result = $this->model->about();
-        return view('website/about', ['data' => $result]);
+        $services = $this->model->about();
+        return view('website/about', ['services' => $services]);
     }
     public function budgetPlanning($steps = "")
     {
@@ -663,7 +664,7 @@ class WebsiteController extends BaseController
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
-                        'message'=>'Login Successfully',
+                        'message'=>'Logged In Succesfully',
                     ]);
                 }else{
                     return $this->response->setJSON([
@@ -701,7 +702,7 @@ class WebsiteController extends BaseController
     {
         $email_data = $this->request->getPost('email');
         $checkMail = $this->model->checkMail($email_data);
-        $url = "http://localhost/welth-watcher-management/add-new-password";
+        $url = base_url('add-new-password');
         
         // getPrint($checkMail);
         if($checkMail == 1){

@@ -20,6 +20,7 @@
 
 <!-- on your view layout file HEAD section -->
 <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
 
 <!-- Start of LiveChat (www.livechat.com) code -->
 <!-- <script>

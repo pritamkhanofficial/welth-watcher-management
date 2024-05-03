@@ -139,7 +139,7 @@ class BackPanelController extends BaseController
         return view('common', (array)$output);
     }
 
-    public function aboutHospital()
+    /* public function aboutHospital()
     {
 
         $webModel = new WebsiteModel();
@@ -155,9 +155,9 @@ class BackPanelController extends BaseController
         $crud->callbackColumn('file', array($this, 'showFile'));
         $crud->fieldType('created_by', 'hidden', getUserData()->id);
         $crud->fieldType('updated_by', 'hidden', getUserData()->id);
-        /* $crud->callbackAfterInsert(function ($stateParameters) {
+        $crud->callbackAfterInsert(function ($stateParameters) {
             return $this->saveLogData('add','state',$stateParameters->data);
-        }); */
+        });
 
         $crud->callbackBeforeUpdate(
             function ($cbData) {
@@ -175,14 +175,14 @@ class BackPanelController extends BaseController
         }
         $crud->unsetPrint();
         $crud->unsetExport();
-        /* $crud->callbackBeforeUpdate(function ($stateParameters) {
+        $crud->callbackBeforeUpdate(function ($stateParameters) {
             return $this->saveLogData('edit','state',$stateParameters->data);
-        }); */
+        });
         $crud->setTable('about_hospital');
         $crud->setSubject('About Hospital');
         $output = $crud->render();
         return view('common', (array)$output);
-    }
+    } */
 
 
     public function cryptocurrencyTrading()
@@ -568,8 +568,8 @@ class BackPanelController extends BaseController
         $crud->displayAs('description','Content');
         $crud->displayAs('is_active','Status');
         $crud->where("deleted_at", NULL); */
-        $crud->columns(['facebook_url','pinterest_url','linkedin_url','youtube_url','mobile_no']);
-        $crud->fields(['facebook_url','pinterest_url','linkedin_url','instagram_url','youtube_url','mobile_no','address','email','business_setup_growth','business_problem_solving','goal_achiever','passive_income_earners','footer_text']);
+        $crud->columns(['facebook_url','twitter_url','linkedin_url','youtube_url','mobile_no']);
+        $crud->fields(['facebook_url','twitter_url','linkedin_url','instagram_url','youtube_url','mobile_no','address','email','business_setup_growth','business_problem_solving','goal_achiever','passive_income_earners','footer_text']);
         $crud->setTexteditor(['address']);
         $crud->unsetAdd();
 

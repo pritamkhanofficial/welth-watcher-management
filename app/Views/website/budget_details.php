@@ -92,7 +92,7 @@ $getBD = getBudgetDetails();
                                     </div>
                                     <br>
                                     <div class="card border  mb-3">
-                                        <div class="card-header"><b>Your Annual Spending</b>
+                                        <div class="card-header"><b>Your Annual Expenses</b>
                                             <span class="float-end"><i class="fas fa-pen"></i></span>
                                         </div>
                                         <ul class="list-group list-group-flush">

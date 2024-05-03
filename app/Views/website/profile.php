@@ -94,7 +94,7 @@
                             style="margin-top: -30px">
                             <div class="heading">
                                 <div class="heading5 mt-12">Linked Account</div>
-                                <div class="body3 mt-8">We will get back to you within 24 hours
+                                <div class="body3 mt-8">We will get back to you soon
                                 </div>
                             </div>
                             <div class="list-more-infor">

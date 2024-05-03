@@ -21,12 +21,12 @@ $getBD = getBudgetDetails();
             <div class="container">
                 <div class="heading-nav gap-4 mt-32"><a class="hover-underline caption1 text-white"
                         href="index-2.html">Home</a><i class="ph ph-caret-double-right text-white"></i>
-                    <div class="caption1 text-white">Wealth Calculator</div>
+                    <div class="caption1 text-white">Wealth Score Calculator</div>
                 </div>
                 <div class="row">
                     <div class="col-12 col-md-12 col-lg-6">
                         <div class="text-nav">
-                            <div class="heading3 text-white">Wealth Calculator</div>
+                            <div class="heading3 text-white">Wealth Score Calculator</div>
                             <div class="sub-heading mt-8 text-white fw-400">We perform a full analysis of the client’s
                                 website .</div>
                         </div>
@@ -36,7 +36,7 @@ $getBD = getBudgetDetails();
         </div>
         <div class="container pt-5 pb-5">
             <div class="content">
-                <nav>
+                <nav class="d-none">
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <button class="nav-link " id="your-sort-tab" data-bs-toggle="tab" data-bs-target="#your-sort"
                             type="button" role="tab" aria-controls="your-sort" aria-selected="true">YOUR
@@ -75,22 +75,22 @@ $getBD = getBudgetDetails();
                                         </ul>
                                     </div>
                                     <br>
-                                    <div class="card border  mb-3">
+                                    <!-- <div class="card border  mb-3">
                                         <div class="card-header"><b>Your Annual Income</b><span class="float-end"><i
                                                     class="fas fa-pen"></i></span></div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Pre-tax Income <span
-                                                    class="float-end"><b>₹<?= isset($getBD->income) ? $getBD->income : '' ?></b></span></span>
+                                                    class="float-end"><b>₹< ?= isset($getBD->income) ? $getBD->income : '' ?></b></span></span>
                                             </li>
                                             <li class="list-group-item">After-tax Income<span
-                                                    class="float-end"><b>₹<?= isset($getBD->income_after_taxes) ? $getBD->income_after_taxes : '' ?></b></span>
+                                                    class="float-end"><b>₹< ?= isset($getBD->income_after_taxes) ? $getBD->income_after_taxes : '' ?></b></span>
                                             </li>
                                             <li class="list-group-item">Social Security Contribution<span
-                                                    class="float-end"><b>₹<?= isset($getBD->social_security_taxes) ? $getBD->social_security_taxes : '' ?></b></span>
+                                                    class="float-end"><b>₹< ?= isset($getBD->social_security_taxes) ? $getBD->social_security_taxes : '' ?></b></span>
                                             </li>
                                         </ul>
                                     </div>
-                                    <br>
+                                    <br> -->
                                     <div class="card border  mb-3">
                                         <div class="card-header"><b>Your Annual Expenses</b>
                                             <span class="float-end"><i class="fas fa-pen"></i></span>
@@ -122,23 +122,23 @@ $getBD = getBudgetDetails();
                                             </li>
                                         </ul>
                                     </div>
-                                    <br>
+                                    <!-- <br>
                                     <div class="card border  mb-3">
                                         <div class="card-header"><b>Your Annual Retirement Contributions</b>
                                             <span class="float-end"><i class="fas fa-pen"></i></span>
                                         </div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Retirement Contributions <span
-                                                    class="float-end"><b>₹<?= isset($getBD->retirement_savings_amount) ? $getBD->retirement_savings_amount : '' ?></b></span>
+                                                    class="float-end"><b>₹< ?= isset($getBD->retirement_savings_amount) ? $getBD->retirement_savings_amount : '' ?></b></span>
                                             </li>
                                             <li class="list-group-item">Employer Contributions<span
-                                                    class="float-end"><b>₹<?= isset($getBD->employer_contribution) ? $getBD->employer_contribution : '' ?></b></span>
+                                                    class="float-end"><b>₹< ?= isset($getBD->employer_contribution) ? $getBD->employer_contribution : '' ?></b></span>
                                             </li>
                                             <li class="list-group-item">Age You Began Saving<span
-                                                    class="float-end"><b>₹<?= isset($getBD->starting_age_for_saving) ? $getBD->starting_age_for_saving : '' ?></b></span>
+                                                    class="float-end"><b>₹< ?= isset($getBD->starting_age_for_saving) ? $getBD->starting_age_for_saving : '' ?></b></span>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> -->
 
 
                                 </div>
@@ -197,9 +197,9 @@ $getBD = getBudgetDetails();
                                             <li class="list-group-item">Other Debt<span
                                                     class="float-end"><b>₹<?= isset($getBD->other_debts_value) ? $getBD->other_debts_value : '' ?></b></span>
                                             </li>
-                                            <li class="list-group-item">Annual Debt Spending<span
-                                                    class="float-end"><b>₹<?= isset($getBD->debt_payment_value) ? $getBD->debt_payment_value : '' ?></b></span>
-                                            </li>
+                                            <!-- <li class="list-group-item">Annual Debt Spending<span
+                                                    class="float-end"><b>₹< ?= isset($getBD->debt_payment_value) ? $getBD->debt_payment_value : '' ?></b></span>
+                                            </li> -->
                                         </ul>
                                     </div>
                                     <br>
@@ -211,10 +211,10 @@ $getBD = getBudgetDetails();
                                             </li>
                                             <li class="list-group-item">Total Assets<span class="float-end"><b>₹
                                                         0</b></span></li>
-                                            <li class="list-group-item">Unsecured Debt
+                                            <!-- <li class="list-group-item">Unsecured Debt
                                                 <span class="float-end"><b>₹
                                                         0</b></span>
-                                            </li>
+                                            </li> -->
                                             <li class="list-group-item">Net Worth<span class="float-end"><b>₹
                                                         0</b></span></li>
                                         </ul>

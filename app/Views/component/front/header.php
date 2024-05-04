@@ -36,7 +36,7 @@ if(getFrontUserData()){
                         <li class="nav-item h-100 flex-center home "><a class="nav-link"
                                 href="<?= base_url('/contact') ?>">Contact
                                 Us</a></li>
-                        <li class="nav-item h-100 flex-center home "><a class="nav-link <?=$class?>" <?=$url?> >Score Calculator</a></li>
+                        <li class="nav-item h-100 flex-center home "><a class="nav-link <?=$class?>" <?=$url?> >Wealth Score Calculator</a></li>
                     </ul>
                 </div>
                 <div class="menu-right-block flex-item-center gap-12">

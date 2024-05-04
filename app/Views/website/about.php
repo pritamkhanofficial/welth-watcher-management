@@ -94,15 +94,15 @@
                                 <div class="more-infor mt-24">
                                     <div class="infor flex-item-center gap-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Management and calculation of monthly expenses</div>
+                                        <div class="text-button">Creation of savings and investment plans</div>
                                     </div>
                                     <div class="infor flex-item-center gap-12 mt-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Identification of monthly income</div>
+                                        <div class="text-button">Management and calculation of expenses</div>
                                     </div>
                                     <div class="infor flex-item-center gap-12 mt-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Creation of savings and investment plan</div>
+                                        <div class="text-button">Identification of income paths through smart financial plans</div>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
                                     preferred partner in achieving financial success, diligently guiding our valued
                                     clients toward a
                                     secure and prosperous future.</div>
-                                <div class="more-infor mt-24">
+                                <!-- <div class="more-infor mt-24">
                                     <div class="infor flex-item-center gap-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
                                         <div class="text-button"> We specialize in ethical investing strategies that align with your values, ensuring that your investments contribute positively to society and the environment</div>
@@ -149,6 +149,21 @@
                                     <div class="infor flex-item-center gap-12 mt-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
                                         <div class="text-button">Our history of delivering effective financial advice and achieving results portrays how dedicated we are to continuing this tradition of excellence.</div>
+                                    </div>
+                                </div> -->
+
+                                <div class="more-infor mt-24">
+                                    <div class="infor flex-item-center gap-12"> <i
+                                            class="ph-fill ph-check-circle fs-20 text-blue"></i>
+                                        <div class="text-button">Creation of savings and investment plans</div>
+                                    </div>
+                                    <div class="infor flex-item-center gap-12 mt-12"> <i
+                                            class="ph-fill ph-check-circle fs-20 text-blue"></i>
+                                        <div class="text-button">Management and calculation of expenses</div>
+                                    </div>
+                                    <div class="infor flex-item-center gap-12 mt-12"> <i
+                                            class="ph-fill ph-check-circle fs-20 text-blue"></i>
+                                        <div class="text-button">Identification of income paths through smart financial plans</div>
                                     </div>
                                 </div>
                             </div>

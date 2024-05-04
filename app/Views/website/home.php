@@ -166,14 +166,16 @@
                                         <br>
                                         Choose Wealth Watcher Management Consultant—where serious investors find serious
                                         success. Let’s unlock the power of the market together and watch your wealth
-                                        flourish.</div>
+                                        flourish.
+                                    </div>
                                 </div>
                                 <?php  foreach($services as $row){  ?>
                                 <div class="col-12 col-lg-6 col-md-6">
                                     <div class="service-item hover-box-shadow bora-8 p-24 bg-white box-shadow h-100"><a
                                             class="service-item-main flex-item-center gap-30"
                                             href="<?=base_url('about')?>">
-                                            <div class="heading"><i class="<?=$row->icon_text?> text-blue fs-48"></i></div>
+                                            <div class="heading"><i class="<?=$row->icon_text?> text-blue fs-48"></i>
+                                            </div>
                                             <div class="desc">
                                                 <div class="heading7 hover-text-blue"><?=$row->title?></div>
                                                 <div class="body3 text-secondary mt-8"><?=$row->short_description?>
@@ -187,6 +189,11 @@
                                     </div>
                                 </div>
                                 <?php } ?>
+                                <div class="col-xl-12">
+                                    <h4>
+                                        Check your Wealth Score for FREE! Register TODAY!
+                                    </h4>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -196,9 +203,11 @@
         <?php if(!empty($data['core_need'])){ ?>
         <div class="service-style-five mt-100">
             <div class="container">
-                <div class="heading3 text-center">For Those Eager About Getting Services designed <br> to their Core Needs</div>
+                <div class="heading3 text-center">For Those Eager About Getting Services designed <br> to their Core
+                    Needs</div>
                 <div class="body3 text-secondary text-center mt-20">Our years of experience has indicated that people
-                    have different needs when they come to the markets. So to offer services focused on different needs we have different plans that one can refer to and avail of unique services.</div>
+                    have different needs when they come to the markets. So to offer services focused on different needs
+                    we have different plans that one can refer to and avail of unique services.</div>
             </div>
             <div class="service-block mt-80">
                 <div class="container">

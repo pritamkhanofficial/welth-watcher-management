@@ -1696,12 +1696,13 @@
             }
         }, */
         success: function(response) {
-            // alert(response?.message);
-            if (stepFormIndex == 5) {
+            // alert(stepFormIndex);
+            // if (stepFormIndex == 5) {
+                
+            // }
+            if (response?.type == 'success' && response?.steps == '5') {
                 swAlert(response)
-            }
-            if (response?.type == 'success' && stepFormIndex == 5) {
-                window.location.href = "<?= base_url('/') ?>";
+                window.location.href = "<?= base_url('budget-details') ?>";
             }
             // ₹('#register-form')[0].reset();
             // ₹(".spinner-border").addClass("d-none")

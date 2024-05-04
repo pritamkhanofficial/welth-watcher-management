@@ -222,6 +222,7 @@ class WebsiteController extends BaseController
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
+                        'steps'=>$this->request->getVar('steps'),
                         'message'=>'Thank you for submitting Your Basic information.',
                     ]);
                 }
@@ -241,6 +242,7 @@ class WebsiteController extends BaseController
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
+                        'steps'=>$this->request->getVar('steps'),
                         'message'=>'Thank you for submitting Your Income information.',
                     ]);
                 }
@@ -270,6 +272,7 @@ class WebsiteController extends BaseController
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
+                        'steps'=>$this->request->getVar('steps'),
                         'message'=>'Thank you for submitting Your Spending information.',
                     ]);
                 }
@@ -288,6 +291,7 @@ class WebsiteController extends BaseController
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
+                        'steps'=>$this->request->getVar('steps'),
                         'message'=>'Thank you for submitting Your Retirement information.',
                     ]);
                 }
@@ -309,6 +313,7 @@ class WebsiteController extends BaseController
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
+                        'steps'=>$this->request->getVar('steps'),
                         'message'=>'Thank you for submitting Your Assets information.',
                     ]);
                 }
@@ -330,7 +335,8 @@ class WebsiteController extends BaseController
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
-                        'message'=>'Thank you for submitting Your Debt information.',
+                        'steps'=>$this->request->getVar('steps'),
+                        'message'=>'Thank you for submitting Your information.',
                     ]);
                 }
             }

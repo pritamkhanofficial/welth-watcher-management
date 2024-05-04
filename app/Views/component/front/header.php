@@ -4,7 +4,7 @@ $url = 'data-bs-toggle="modal" data-bs-target="#staticBackdrop" tabindex="0"';
 $class = "regBtn";
 if(getFrontUserData()){ 
     $url = "href=".base_url('budget-planning')."";
-    // getPrint((array)getBudgetDetails());
+    // getPrint(getBudgetDetails());
     if(!empty((array)getBudgetDetails())){
         // echo "fcsddsf"; die;
         $url = "href=".base_url('budget-details')."";

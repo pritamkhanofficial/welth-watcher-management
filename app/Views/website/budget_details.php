@@ -93,7 +93,9 @@ $getBD = getBudgetDetails();
                                     <br> -->
                                     <div class="card border  mb-3">
                                         <div class="card-header"><b>Your Annual Expenses</b>
-                                            <span class="float-end"><i class="fas fa-pen"></i></span>
+                                            <span class="float-end"><a
+                                                    href="<?= base_url('budget-planning/2') ?>"><i
+                                                        class="fas fa-pen"></i></a></span>
                                         </div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Food and Beverages <span
@@ -144,8 +146,9 @@ $getBD = getBudgetDetails();
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="card border  mb-3" style="max-width: 25rem;">
-                                        <div class="card-header"><b>Your Assets</b><span class="float-end"><i
-                                                    class="fas fa-pen"></i></span></div>
+                                        <div class="card-header"><b>Your Assets</b><span class="float-end"><a
+                                                    href="<?= base_url('budget-planning/4') ?>"><i
+                                                        class="fas fa-pen"></i></a></span></div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Checking & Savings <span
                                                     class="float-end"><b>₹<?= isset($getBD->bank_accounts_value) ? $getBD->bank_accounts_value : '' ?></b></span>
@@ -176,8 +179,9 @@ $getBD = getBudgetDetails();
                                     </div>
                                     <br>
                                     <div class="card border  mb-3" style="max-width: 25rem;">
-                                        <div class="card-header"><b>Your Debt</b><span class="float-end"><i
-                                                    class="fas fa-pen"></i></span></div>
+                                        <div class="card-header"><b>Your Debt</b><span class="float-end"><a
+                                                    href="<?= base_url('budget-planning/5') ?>"><i
+                                                        class="fas fa-pen"></i></span></div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Mortgage & Home-Equity Loans<span
                                                     class="float-end"><b>₹<?= isset($getBD->mortgage_loans_value) ? $getBD->mortgage_loans_value : '' ?></b></span>
@@ -185,9 +189,9 @@ $getBD = getBudgetDetails();
                                             <li class="list-group-item">Business Debt<span
                                                     class="float-end"><b>₹<?= isset($getBD->business_debt_value) ? $getBD->business_debt_value : '' ?></b></span>
                                             </li>
-                                            <li class="list-group-item">Vehicle LoansA third item<span
-                                                    class="float-end">₹<?= isset($getBD->vehicle_loans_value) ? $getBD->vehicle_loans_value : '' ?></b></span>
-                                            </li>
+                                            <!-- <li class="list-group-item">Vehicle LoansA third item<span
+                                                    class="float-end">₹< ?= isset($getBD->vehicle_loans_value) ? $getBD->vehicle_loans_value : '' ?></b></span>
+                                            </li> -->
                                             <li class="list-group-item">Credit Card Debt<span
                                                     class="float-end"><b>₹<?= isset($getBD->credit_card_debt_value) ? $getBD->credit_card_debt_value : '' ?></b></span>
                                             </li>

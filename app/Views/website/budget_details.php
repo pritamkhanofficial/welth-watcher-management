@@ -3,6 +3,61 @@
 
 // getPrint(getBudgetDetails()); 
 $getBD = getBudgetDetails();
+
+$total_annual_spending = (
+    (isset($getBD->mortgage_loans_value) ? $getBD->mortgage_loans_value : 0)
+    +
+    (isset($getBD->business_debt_value) ? $getBD->business_debt_value : 0)
+    +
+    (isset($getBD->vehicle_loans_value) ? $getBD->vehicle_loans_value : 0)
+    +
+    (isset($getBD->credit_card_debt_value) ? $getBD->credit_card_debt_value : 0)
+    +
+    (isset($getBD->student_debt_value) ? $getBD->student_debt_value : 0)
+    +
+    (isset($getBD->other_debts_value) ? $getBD->other_debts_value : 0)
+);
+
+$total_annual_spending = number_format($total_annual_spending,2);
+
+$total_assets = (
+    (isset($getBD->bank_accounts_value) ? $getBD->bank_accounts_value : 0)
+    +
+    (isset($getBD->investment_accounts_value) ? $getBD->investment_accounts_value : 0)
+    +
+    (isset($getBD->home_value) ? $getBD->home_value : 0)
+    +
+    (isset($getBD->rental_properties_value) ? $getBD->rental_properties_value : 0)
+    +
+    (isset($getBD->vehicles_value) ? $getBD->vehicles_value : 0)
+    +
+    (isset($getBD->other_assets_value) ? $getBD->other_assets_value : 0)
+    +
+    (isset($getBD->retirement_savings_value) ? $getBD->retirement_savings_value : 0)
+    +
+    (isset($getBD->emergency_assets_value) ? $getBD->emergency_assets_value : 0)
+);
+
+$total_assets = number_format($total_assets,2);
+
+
+$net_worth = ($total_assets - $total_annual_spending);
+$net_worth = abs($net_worth);
+if((int)$total_annual_spending > 0){
+
+    $wealth_score = (($net_worth / $total_annual_spending) * 100) ;
+}else{
+    $wealth_score = 0;
+}
+
+// getPrint($wealth_score);
+
+$annual_expenses = (
+    (isset($getBD->food_and_beverages) ? $getBD->food_and_beverages : 0)
+    +
+    (isset($getBD->other_expenses) ? $getBD->other_expenses : 0)
+);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +72,7 @@ $getBD = getBudgetDetails();
         <div class="slider-sub ">
             <div class="bg-img bg-info  d-flex flex-column">
                 <div id="gauge-chart" class="align-self-center" style="width: 600px;height:400px;"></div>
+                <h1><?=$annual_expenses?></h1>
             </div>
             <div class="container">
                 <div class="heading-nav gap-4 mt-32"><a class="hover-underline caption1 text-white"
@@ -151,7 +207,7 @@ $getBD = getBudgetDetails();
                                                         class="fas fa-pen"></i></a></span></div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Checking & Savings <span
-                                                    class="float-end"><b>₹<?= isset($getBD->bank_accounts_value) ? $getBD->bank_accounts_value : '' ?></b></span>
+                                                    class="float-end"><b>₹ <?= number_format(isset($getBD->bank_accounts_value) ? $getBD->bank_accounts_value : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Non-Retirement Investments<span
                                                     class="float-end"><b>₹<?= isset($getBD->investment_accounts_value) ? $getBD->investment_accounts_value : '' ?></b></span>
@@ -189,9 +245,9 @@ $getBD = getBudgetDetails();
                                             <li class="list-group-item">Business Debt<span
                                                     class="float-end"><b>₹<?= isset($getBD->business_debt_value) ? $getBD->business_debt_value : '' ?></b></span>
                                             </li>
-                                            <!-- <li class="list-group-item">Vehicle LoansA third item<span
-                                                    class="float-end">₹< ?= isset($getBD->vehicle_loans_value) ? $getBD->vehicle_loans_value : '' ?></b></span>
-                                            </li> -->
+                                            <li class="list-group-item">Vehicle Loans<span
+                                                    class="float-end">₹<?= isset($getBD->vehicle_loans_value) ? $getBD->vehicle_loans_value : '' ?></b></span>
+                                            </li>
                                             <li class="list-group-item">Credit Card Debt<span
                                                     class="float-end"><b>₹<?= isset($getBD->credit_card_debt_value) ? $getBD->credit_card_debt_value : '' ?></b></span>
                                             </li>
@@ -211,16 +267,16 @@ $getBD = getBudgetDetails();
                                         <div class="card-header"><b>Totals</b></div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Total Annual Spending
-                                                <span class="float-end"><b>₹ 0</b></span>
+                                                <span class="float-end"><b>₹ <?=$total_annual_spending?></b></span>
                                             </li>
                                             <li class="list-group-item">Total Assets<span class="float-end"><b>₹
-                                                        0</b></span></li>
+                                                        <?=$total_assets?></b></span></li>
                                             <!-- <li class="list-group-item">Unsecured Debt
                                                 <span class="float-end"><b>₹
                                                         0</b></span>
                                             </li> -->
                                             <li class="list-group-item">Net Worth<span class="float-end"><b>₹
-                                                        0</b></span></li>
+                                                        <?=$net_worth?></b></span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -268,7 +324,7 @@ $getBD = getBudgetDetails();
                 },
             },
             data: [{
-                value: <?= rand(10, 100) ?>,
+                value: <?= $wealth_score ?>,
                 name: ""
             }],
         }, ],

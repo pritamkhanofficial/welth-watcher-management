@@ -17,7 +17,8 @@ class WebsiteController extends BaseController
     public function home()
     {
         $result = $this->model->home();
-        return view('website/home', ['data' => $result]);
+        $services = $this->model->about(2);
+        return view('website/home', ['data' => $result, 'services'=>$services]);
     }
     public function contact()
     {
@@ -67,8 +68,8 @@ class WebsiteController extends BaseController
 
     public function about()
     {
-        $result = $this->model->about();
-        return view('website/about', ['data' => $result]);
+        $services = $this->model->about();
+        return view('website/about', ['services' => $services]);
     }
     public function budgetPlanning($steps = "")
     {
@@ -221,6 +222,7 @@ class WebsiteController extends BaseController
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
+                        'steps'=>$this->request->getVar('steps'),
                         'message'=>'Thank you for submitting Your Basic information.',
                     ]);
                 }
@@ -240,6 +242,7 @@ class WebsiteController extends BaseController
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
+                        'steps'=>$this->request->getVar('steps'),
                         'message'=>'Thank you for submitting Your Income information.',
                     ]);
                 }
@@ -269,6 +272,7 @@ class WebsiteController extends BaseController
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
+                        'steps'=>$this->request->getVar('steps'),
                         'message'=>'Thank you for submitting Your Spending information.',
                     ]);
                 }
@@ -287,6 +291,7 @@ class WebsiteController extends BaseController
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
+                        'steps'=>$this->request->getVar('steps'),
                         'message'=>'Thank you for submitting Your Retirement information.',
                     ]);
                 }
@@ -308,6 +313,7 @@ class WebsiteController extends BaseController
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
+                        'steps'=>$this->request->getVar('steps'),
                         'message'=>'Thank you for submitting Your Assets information.',
                     ]);
                 }
@@ -326,10 +332,125 @@ class WebsiteController extends BaseController
                 ];
                 $result = $this->model->budgetPlanningSave($debt,'debt');
                 if($result){
+                    $htmlTable = "<table><tbody>";
+                    $data = [
+                        'user_id' => getFrontUserData()->id,
+                        'area_id' => $this->request->getVar('budget_planning_area'),
+                        'household_size' => $this->request->getVar('household_size'),
+                        'age' => $this->request->getVar('age'),
+                        'offers_promotions' => $this->request->getVar('offers_promotions'),
+                        'income' => $this->request->getVar('income'),
+                        'income_frequency' => $this->request->getVar('income_frequency'),
+                        'income_after_taxes' => $this->request->getVar('income_after_taxes'),
+                        'income_after_taxes_frequency' => $this->request->getVar('income_after_taxes_frequency'),
+                        'social_security_taxes' => $this->request->getVar('social_security_taxes'),
+                        'social_security_taxes_frequency' => $this->request->getVar('social_security_taxes_frequency'),
+                        'food_and_beverages' => $this->request->getVar('food_and_beverages'),
+                        'food_and_beverages_frequency' => $this->request->getVar('food_and_beverages_frequency'),
+                        'clothes' => $this->request->getVar('clothes'),
+                        'clothes_frequency' => $this->request->getVar('clothes_frequency'),
+                        'housing' => $this->request->getVar('housing'),
+                        'housing_frequency' => $this->request->getVar('housing_frequency'),
+                        'transportation' => $this->request->getVar('transportation'),
+                        'transportation_frequency' => $this->request->getVar('transportation_frequency'),
+                        'healthcare_and_personal_care' => $this->request->getVar('healthcare_and_personal_care'),
+                        'healthcare_and_personal_care_frequency' => $this->request->getVar('healthcare_and_personal_care_frequency'),
+                        'entertainment' => $this->request->getVar('entertainment'),
+                        'entertainment_frequency' => $this->request->getVar('entertainment_frequency'),
+                        'education' => $this->request->getVar('education'),
+                        'education_frequency' => $this->request->getVar('education_frequency'),
+                        'other_expenses' => $this->request->getVar('other_expenses'),
+                        'other_expenses_frequency' => $this->request->getVar('other_expenses_frequency'),
+                        'retirement_savings_amount' => $this->request->getVar('retirement_savings_amount'),
+                        'retirement_savings_frequency' => $this->request->getVar('retirement_savings_frequency'),
+                        'employer_contribution' => $this->request->getVar('employer_contribution'),
+                        'employer_contribution_frequency' => $this->request->getVar('employer_contribution_frequency'),
+                        'starting_age_for_saving' => $this->request->getVar('starting_age_for_saving'),
+                        'bank_accounts_value' => $this->request->getVar('bank_accounts_value'),
+                        'investment_accounts_value' => $this->request->getVar('investment_accounts_value'),
+                        'home_value' => $this->request->getVar('home_value'),
+                        'rental_properties_value' => $this->request->getVar('rental_properties_value'),
+                        'vehicles_value' => $this->request->getVar('vehicles_value'),
+                        'other_assets_value' => $this->request->getVar('other_assets_value'),
+                        'retirement_savings_value' => $this->request->getVar('retirement_savings_value'),
+                        'emergency_assets_value' => $this->request->getVar('emergency_assets_value'),
+                        'mortgage_loans_value' => $this->request->getVar('mortgage_loans_value'),
+                        'business_debt_value' => $this->request->getVar('business_debt_value'),
+                        'vehicle_loans_value' => $this->request->getVar('vehicle_loans_value'),
+                        'credit_card_debt_value' => $this->request->getVar('credit_card_debt_value'),
+                        'student_debt_value' => $this->request->getVar('student_debt_value'),
+                        'other_debts_value' => $this->request->getVar('other_debts_value'),
+                        'debt_payment_value' => $this->request->getVar('debt_payment_value'),
+                        'debt_payment_frequency' => $this->request->getVar('debt_payment_frequency'),
+                    ];
+
+                    foreach($data AS $key=>$d){
+                        if($key == 'user_id'){ continue; }
+
+                        if($key == 'area_id'){
+
+                            $htmlTable .= "<tr>";
+                            $htmlTable .= "<th>Area Name</th>";
+                            $htmlTable .= "<td>" . getBudgetDetails()->area_name . "</td>";
+                            $htmlTable .= "</tr>";
+                        }else{
+                            $htmlTable .= "<tr>";
+                            $htmlTable .= "<th>" . str_replace('_',' ', ucwords($key)) . "</th>";
+                            $htmlTable .= "<td>" . $d . "</td>";
+                            $htmlTable .= "</tr>";
+                        }
+                    }
+    
+                    $htmlTable .= "</table></tbody>";
+                    $email = \Config\Services::email();
+                    $email->setTo($email_data);
+                    $email->setSubject('Your Wealth Score');
+                    $html  = "<!DOCTYPE html>
+                                <html lang='en'>
+                                <head>
+                                <meta charset='UTF-8'>
+                                <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                                <title>Your Wealth Score</title>
+                                <style>
+                                    table {
+                                        width: 100%;
+                                        border-collapse: collapse;
+                                    }
+                                    th, td {
+                                        border: 1px solid black;
+                                        padding: 8px;
+                                    }
+                                </style>
+                                </head>
+                                <body>
+                                <p>Dear $full_name,</p>
+                                
+                                <p>We hope this message finds you well.</p>
+                                
+                                <p>Your budget planning data find  below:</p>
+                                
+                                <p style='text-align: center; font-size: 24px; font-weight: bold;'>
+                                $htmlTable
+                                </p>
+                                
+                               
+                                <p>If you have any questions or require further assistance, please feel free to reach out to us. We are here to help.</p>
+                                
+                                <p>Thank you for choosing our services.</p>
+                                
+                                <p>Best regards,<br>
+                                [Wealth Watcher Management]<br>
+                                </p>
+                                </body>
+                                </html>";
+                    $email->setMessage($html);
+                    // $email->attach('https://tourism.gov.in/sites/default/files/2019-04/dummy-pdf_2.pdf');
+                    $email->send();
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
-                        'message'=>'Thank you for submitting Your Debt information.',
+                        'steps'=>$this->request->getVar('steps'),
+                        'message'=>'Thank you for submitting Your information.',
                     ]);
                 }
             }
@@ -663,7 +784,7 @@ class WebsiteController extends BaseController
                     return $this->response->setJSON([
                         'type'=>'success',
                         'title'=>'Success',
-                        'message'=>'Login Successfully',
+                        'message'=>'Logged In Succesfully',
                     ]);
                 }else{
                     return $this->response->setJSON([
@@ -701,7 +822,7 @@ class WebsiteController extends BaseController
     {
         $email_data = $this->request->getPost('email');
         $checkMail = $this->model->checkMail($email_data);
-        $url = "http://localhost/welth-watcher-management/add-new-password";
+        $url = base_url('add-new-password');
         
         // getPrint($checkMail);
         if($checkMail == 1){

@@ -7299,3 +7299,7 @@ span.types {
 .left-datails{
   background-color:#555;
 }
+
+.nav-link{
+  padding:0px !important;
+}

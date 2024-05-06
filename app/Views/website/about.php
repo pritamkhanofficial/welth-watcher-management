@@ -94,15 +94,15 @@
                                 <div class="more-infor mt-24">
                                     <div class="infor flex-item-center gap-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Management and calculation of monthly expenses</div>
+                                        <div class="text-button">Creation of savings and investment plans</div>
                                     </div>
                                     <div class="infor flex-item-center gap-12 mt-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Identification of monthly income</div>
+                                        <div class="text-button">Management and calculation of expenses</div>
                                     </div>
                                     <div class="infor flex-item-center gap-12 mt-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Creation of savings and investment plan</div>
+                                        <div class="text-button">Identification of income paths through smart financial plans</div>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
                                     preferred partner in achieving financial success, diligently guiding our valued
                                     clients toward a
                                     secure and prosperous future.</div>
-                                <div class="more-infor mt-24">
+                                <!-- <div class="more-infor mt-24">
                                     <div class="infor flex-item-center gap-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
                                         <div class="text-button"> We specialize in ethical investing strategies that align with your values, ensuring that your investments contribute positively to society and the environment</div>
@@ -149,6 +149,21 @@
                                     <div class="infor flex-item-center gap-12 mt-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
                                         <div class="text-button">Our history of delivering effective financial advice and achieving results portrays how dedicated we are to continuing this tradition of excellence.</div>
+                                    </div>
+                                </div> -->
+
+                                <div class="more-infor mt-24">
+                                    <div class="infor flex-item-center gap-12"> <i
+                                            class="ph-fill ph-check-circle fs-20 text-blue"></i>
+                                        <div class="text-button">Creation of savings and investment plans</div>
+                                    </div>
+                                    <div class="infor flex-item-center gap-12 mt-12"> <i
+                                            class="ph-fill ph-check-circle fs-20 text-blue"></i>
+                                        <div class="text-button">Management and calculation of expenses</div>
+                                    </div>
+                                    <div class="infor flex-item-center gap-12 mt-12"> <i
+                                            class="ph-fill ph-check-circle fs-20 text-blue"></i>
+                                        <div class="text-button">Identification of income paths through smart financial plans</div>
                                     </div>
                                 </div>
                             </div>
@@ -172,35 +187,35 @@
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 flex-columns-center">
                         <div class="count-block flex-item-center">
                             <div class="counter heading3"><?=getGlobalSetting()?->business_setup_growth?></div><span
-                                class="heading3"></span>
+                                class="heading3">K</span>
                         </div>
                         <div class="body1 text-secondary">Business Setup Growth</div>
                     </div>
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 flex-columns-center">
                         <div class="count-block flex-item-center">
                             <div class="counter heading3"><?=getGlobalSetting()?->business_problem_solving?></div><span
-                                class="heading3"></span>
+                                class="heading3">K</span>
                         </div>
                         <div class="body1 text-secondary">Business Problem Solving</div>
                     </div>
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 flex-columns-center">
                         <div class="count-block flex-item-center">
                             <div class="counter heading3"><?=getGlobalSetting()?->goal_achiever?></div><span
-                                class="heading3"></span>
+                                class="heading3">K</span>
                         </div>
-                        <div class="body1 text-secondary">Goal achiever</div>
+                        <div class="body1 text-secondary">Families Benefited</div>
                     </div>
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 flex-columns-center">
                         <div class="count-block flex-item-center">
                             <div class="counter heading3"><?=getGlobalSetting()?->passive_income_earners?></div><span
-                                class="heading3"></span>
+                                class="heading3">K</span>
                         </div>
                         <div class="body1 text-secondary">Passive income earners</div>
                     </div>
                 </div>
             </div>
         </div>
-        <?php if(!empty($data['services'])){ ?>
+        <?php if(!empty($services)){ ?>
         <div class="service-block mt-100 pt-100 pb-100 bg-surface">
             <div class="container">
                 <div class="heading-block text-center">
@@ -208,7 +223,7 @@
                     <div class="body3 text-secondary mt-12">We provide customized financial services designed to meet your unique needs and drive your financial success</div>
                 </div>
                 <div class="list-service row mt-32 row-gap-24">
-                    <?php  foreach($data['services'] as $row){  ?>
+                    <?php  foreach($services as $row){  ?>
                     <div class="col-12 col-xl-3 col-lg-6 col-md-6 col-sm-6">
                         <div class="service-item hover-box-shadow bora-8 pt-32 pb-32 pl-28 pr-28 bg-white"><a
                                 class="service-item-main flex-column gap-16v2" href="javascript:void(0)">

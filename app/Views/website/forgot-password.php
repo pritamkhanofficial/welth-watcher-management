@@ -36,8 +36,7 @@
                         <div class="form-block  flex-columns-between gap-20">
                             <div class="heading">
                                 <div class="heading5">Reset Your passward</div>
-                                <div class="body3 text-secondary mt-8">We will get back to you within 24 hours, or call
-                                    us everyday
+                                <div class="body3 text-secondary mt-8">We will get back to you within 24 hours
                                 </div>
                             </div>
                             <form action="" class="form-horizontal" id="forgot-password-complete">

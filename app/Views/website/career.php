@@ -31,8 +31,7 @@
                         <div class="form-block flex-columns-between gap-20">
                             <div class="heading">
                                 <div class="heading5">Job Openings</div>
-                                <div class="body3 text-secondary mt-8">We will get back to you within 24 hours, or call
-                                    us everyday</div>
+                                <div class="body3 text-secondary mt-8">We will get back to you within 24 hours </div>
                             </div>
                             <div class="row row-gap-20">
                                 <div class="col-12 col-sm-4">

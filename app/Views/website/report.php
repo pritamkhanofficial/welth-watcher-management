@@ -22,8 +22,7 @@
                     <div class="col-12 col-md-12 col-lg-6">
                         <div class="text-nav">
                             <div class="heading3 text-white">Report Analysis</div>
-                            <div class="sub-heading mt-8 text-white fw-400">We perform a full analysis of the client’s
-                                website .</div>
+                            <div class="sub-heading mt-8 text-white fw-400">Analyzing reports from various sectors aligning with current financial trends</div>
                         </div>
                     </div>
                 </div>

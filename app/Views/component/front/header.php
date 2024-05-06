@@ -1,3 +1,17 @@
+
+<?php 
+$url = 'data-bs-toggle="modal" data-bs-target="#staticBackdrop" tabindex="0"';
+$class = "regBtn";
+if(getFrontUserData()){ 
+    $url = "href=".base_url('budget-planning')."";
+    // getPrint(getBudgetDetails());
+    if(!empty((array)getBudgetDetails())){
+        // echo "fcsddsf"; die;
+        $url = "href=".base_url('budget-details')."";
+    }
+}
+?>
+
 <div id="header">
 
     <div class="style-subpage style-home-two">
@@ -22,22 +36,13 @@
                         <li class="nav-item h-100 flex-center home "><a class="nav-link"
                                 href="<?= base_url('/contact') ?>">Contact
                                 Us</a></li>
+                        <li class="nav-item h-100 flex-center home "><a class="nav-link <?=$class?>" <?=$url?> >Wealth Score Calculator</a></li>
                     </ul>
                 </div>
                 <div class="menu-right-block flex-item-center gap-12">
                     <div class="text-button-small display-none">Follow Us</div>
                     <div class="list-social flex-item-center gap-10 style-two">
-                    <?php if(getFrontUserData()){ 
-                        $url = base_url('budget-planning');
-                        if(getBudgetDetails()){
-                            $url = base_url('budget-details');
-                        }
-                        ?>
-                    <a  class="item bora-50 w-28 h-28 flex-center"
-                            href="<?=$url?>"><img src="<?=base_url('front/images/calculator.png')?>" class="w-28 h-28" alt=""></a>
-                            <?php } ?>
-                            <a
-                            class="item bora-50 w-28 h-28 border-grey-1px flex-center"
+                        <a class="item bora-50 w-28 h-28 border-grey-1px flex-center"
                             href="<?=getGlobalSetting()?->facebook_url?>" target="_blank"><i
                                 class="icon-facebook fs-12 icon-on-surface"></i></a><a
                             class="item bora-50 w-28 h-28 border-grey-1px flex-center"
@@ -45,13 +50,14 @@
                                 class="icon-in fs-12 icon-on-surface ml-2"></i></a><a
                             class="item bora-50 w-28 h-28 border-grey-1px flex-center"
                             href="<?=getGlobalSetting()?->twitter_url?>" target="_blank"><i
-                                class="icon-twitter fs-10 icon-on-surface"></i></a><a
+                                class="fa-brands fa-x-twitter fa-x-twitter fs-10 icon-on-surface"></i></a><a
                             class="item bora-50 w-28 h-28 border-grey-1px flex-center"
                             href="<?=getGlobalSetting()?->instagram_url?>" target="_blank"><i
                                 class="icon-insta fs-10 icon-on-surface"></i></a><a
                             class="item bora-50 w-28 h-28 border-grey-1px flex-center"
                             href="<?=getGlobalSetting()?->youtube_url?>" target="_blank"><i
-                                class="icon-youtube fs-10 icon-on-surface"></i></a></div>
+                                class="icon-youtube fs-10 icon-on-surface"></i></a>
+                    </div>
                     <?php if(getFrontUserData()){ ?>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -102,6 +108,11 @@
                             <li
                                 class="nav-item-mobile h-100 flex-column gap-8 pt-8 pb-8 pl-12 pr-12 pointer home active">
                                 <a class="fs-14 nav-link-mobile" href="<?= base_url('/contact') ?>">Contact Us</a>
+                            </li>
+                            <li
+                                class="nav-item-mobile h-100 flex-column gap-8 pt-8 pb-8 pl-12 pr-12 pointer home active">
+                                <a class="fs-14 nav-link-mobile" href="<?= base_url('/contact') ?>">Wealth Score
+                                    Calculator</a>
                             </li>
                         </ul>
                     </div>

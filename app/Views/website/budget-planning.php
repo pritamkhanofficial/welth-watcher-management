@@ -46,6 +46,7 @@
             <?php //if (is_null($budget)) { // For Add 
             ?>
             <div class="content">
+                <!-- <button type="button" class="mybutton btn btn-success ">click</button> -->
                 <!-- < ?php foreach($data as $key => $value){?> -->
                 <form action="" method="post" id="budget-planning-save-form">
                     <input type="hidden" name="form_submit" value="add">
@@ -1641,6 +1642,8 @@
             headerTag: "h2",
             bodyTag: "section",
             transitionEffect: "slideLeft",
+            // enableAllSteps: true,
+            startIndex: <?=empty($steps)?0:$steps?>,
             onStepChanging: function(e, currentIndex, newIndex) {
                 var valid = $('#budget-planning-save-form').valid();
                 if (valid) {
@@ -1693,12 +1696,13 @@
             }
         }, */
         success: function(response) {
-            // alert(response?.message);
-            if (stepFormIndex == 5) {
+            // alert(stepFormIndex);
+            // if (stepFormIndex == 5) {
+                
+            // }
+            if (response?.type == 'success' && response?.steps == '5') {
                 swAlert(response)
-            }
-            if (response?.type == 'success' && stepFormIndex == 5) {
-                window.location.href = "<?= base_url('/') ?>";
+                window.location.href = "<?= base_url('budget-details') ?>";
             }
             // ₹('#register-form')[0].reset();
             // ₹(".spinner-border").addClass("d-none")

@@ -70,9 +70,10 @@ $annual_expenses = (
     <?php echo view('component/front/header'); ?>
     <div id="content">
         <div class="slider-sub ">
-            <div class="bg-img bg-info  d-flex flex-column">
-                <div id="gauge-chart" class="align-self-center" style="width: 600px;height:400px;"></div>
-                <h1><?=$annual_expenses?></h1>
+            <div class="bg-img text-center d-flex flex-column" style="background-color: #191919 !important;">
+                <div id="gauge-chart" class="align-self-center" style="width: 600px;height:270px;"></div>
+                <h5 class="text-white">Based on the data you have provided, <br>
+                 your estimated annual expenses is <br><span class="heading3 text-blue"><?=$annual_expenses?></span></h5>
             </div>
             <div class="container">
                 <div class="heading-nav gap-4 mt-32"><a class="hover-underline caption1 text-white"
@@ -123,10 +124,10 @@ $annual_expenses = (
                                                     class="float-end"><b><?= isset($getBD->area_name) ? $getBD->area_name : '' ?></b></span>
                                             </li>
                                             <li class="list-group-item">Household Size<span
-                                                    class="float-end"><b><?= isset($getBD->household_size) ? $getBD->household_size : '' ?></b></span>
+                                                    class="float-end"><b><?= number_format(isset($getBD->household_size) ? $getBD->household_size : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Age<span
-                                                    class="float-end"><b><?= isset($getBD->age) ? $getBD->age : '' ?></b></span>
+                                                    class="float-end"><b><?= number_format(isset($getBD->age) ? $getBD->age : 0, 2) ?></b></span>
                                             </li>
                                         </ul>
                                     </div>
@@ -155,28 +156,28 @@ $annual_expenses = (
                                         </div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Food and Beverages <span
-                                                    class="float-end"><b>₹<?= isset($getBD->food_and_beverages) ? $getBD->food_and_beverages : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->food_and_beverages) ? $getBD->food_and_beverages : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Clothes<span
-                                                    class="float-end"><b>₹<?= isset($getBD->clothes) ? $getBD->clothes : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->clothes) ? $getBD->clothes : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Housing<span
-                                                    class="float-end"><b>₹<?= isset($getBD->housing) ? $getBD->housing : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->housing) ? $getBD->housing : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Transportation<span
-                                                    class="float-end"><b>₹<?= isset($getBD->transportation) ? $getBD->transportation : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->transportation) ? $getBD->transportation : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Healthcare & Personal Products<span
-                                                    class="float-end"><b>₹<?= isset($getBD->healthcare_and_personal_care) ? $getBD->healthcare_and_personal_care : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->healthcare_and_personal_care) ? $getBD->healthcare_and_personal_care : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Entertainment<span
-                                                    class="float-end"><b>₹<?= isset($getBD->entertainment) ? $getBD->entertainment : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->entertainment) ? $getBD->entertainment : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Education<span
-                                                    class="float-end"><b>₹<?= isset($getBD->education) ? $getBD->education : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->education) ? $getBD->education : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Miscellaneous<span
-                                                    class="float-end"><b>₹<?= isset($getBD->other_expenses) ? $getBD->other_expenses : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->other_expenses) ? $getBD->other_expenses : 0, 2) ?></b></span>
                                             </li>
                                         </ul>
                                     </div>
@@ -210,26 +211,26 @@ $annual_expenses = (
                                                     class="float-end"><b>₹ <?= number_format(isset($getBD->bank_accounts_value) ? $getBD->bank_accounts_value : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Non-Retirement Investments<span
-                                                    class="float-end"><b>₹<?= isset($getBD->investment_accounts_value) ? $getBD->investment_accounts_value : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->investment_accounts_value) ? $getBD->investment_accounts_value : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Real Estate: Home<span
-                                                    class="float-end"><b>₹<?= isset($getBD->home_value) ? $getBD->home_value : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->home_value) ? $getBD->home_value : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Real Estate: Rental Properties<span
-                                                    class="float-end"><b>₹<?= isset($getBD->rental_properties_value) ? $getBD->rental_properties_value : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->rental_properties_value) ? $getBD->rental_properties_value : 0, 2) ?></b></span>
                                             </li>
                                             <!-- <li class="list-group-item">Real Estate: Other<span class="float-end">₹< ?=isset($getBD->starting_age_for_saving)?$getBD->starting_age_for_saving:''?></li> -->
                                             <li class="list-group-item">Motor Vehicles<span
-                                                    class="float-end"><b>₹<?= isset($getBD->vehicles_value) ? $getBD->vehicles_value : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->vehicles_value) ? $getBD->vehicles_value : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Other Assets<span
-                                                    class="float-end"><b>₹<?= isset($getBD->other_assets_value) ? $getBD->other_assets_value : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->other_assets_value) ? $getBD->other_assets_value : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Retirement Accounts<span
-                                                    class="float-end"><b>₹<?= isset($getBD->retirement_savings_value) ? $getBD->retirement_savings_value : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->retirement_savings_value) ? $getBD->retirement_savings_value : 0, 2)?></b></span>
                                             </li>
                                             <li class="list-group-item">Emergency Nest-Egg<span
-                                                    class="float-end"><b>₹<?= isset($getBD->emergency_assets_value) ? $getBD->emergency_assets_value : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->emergency_assets_value) ? $getBD->emergency_assets_value : 0, 2) ?></b></span>
                                             </li>
                                         </ul>
                                     </div>
@@ -240,22 +241,22 @@ $annual_expenses = (
                                                         class="fas fa-pen"></i></span></div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Mortgage & Home-Equity Loans<span
-                                                    class="float-end"><b>₹<?= isset($getBD->mortgage_loans_value) ? $getBD->mortgage_loans_value : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->mortgage_loans_value) ? $getBD->mortgage_loans_value : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Business Debt<span
-                                                    class="float-end"><b>₹<?= isset($getBD->business_debt_value) ? $getBD->business_debt_value : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->business_debt_value) ? $getBD->business_debt_value : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Vehicle Loans<span
-                                                    class="float-end">₹<?= isset($getBD->vehicle_loans_value) ? $getBD->vehicle_loans_value : '' ?></b></span>
+                                                    class="float-end">₹<?= number_format(isset($getBD->vehicle_loans_value) ? $getBD->vehicle_loans_value : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Credit Card Debt<span
-                                                    class="float-end"><b>₹<?= isset($getBD->credit_card_debt_value) ? $getBD->credit_card_debt_value : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->credit_card_debt_value) ? $getBD->credit_card_debt_value : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Student Loans<span
-                                                    class="float-end"><b>₹<?= isset($getBD->student_debt_value) ? $getBD->student_debt_value : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->student_debt_value) ? $getBD->student_debt_value : 0,2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Other Debt<span
-                                                    class="float-end"><b>₹<?= isset($getBD->other_debts_value) ? $getBD->other_debts_value : '' ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->other_debts_value) ? $getBD->other_debts_value : 0, 2) ?></b></span>
                                             </li>
                                             <!-- <li class="list-group-item">Annual Debt Spending<span
                                                     class="float-end"><b>₹< ?= isset($getBD->debt_payment_value) ? $getBD->debt_payment_value : '' ?></b></span>

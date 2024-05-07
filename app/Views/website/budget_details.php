@@ -73,7 +73,7 @@ $annual_expenses = (
             <div class="bg-img text-center d-flex flex-column" style="background-color: #191919 !important;">
                 <div id="gauge-chart" class="align-self-center" style="width: 600px;height:270px;"></div>
                 <h5 class="text-white">Based on the data you have provided, <br>
-                 your estimated annual expenses is <br><span class="heading3 text-blue"><?=$annual_expenses?></span></h5>
+                 your estimated annual expenses is <br><span class="heading3 text-blue">₹ <?=$annual_expenses?></span></h5>
             </div>
             <div class="container">
                 <div class="heading-nav gap-4 mt-32"><a class="hover-underline caption1 text-white"
@@ -238,7 +238,7 @@ $annual_expenses = (
                                     <div class="card border  mb-3" style="max-width: 25rem;">
                                         <div class="card-header"><b>Your Debt</b><span class="float-end"><a
                                                     href="<?= base_url('budget-planning/5') ?>"><i
-                                                        class="fas fa-pen"></i></span></div>
+                                                        class="fas fa-pen"></i></a></span></div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Mortgage & Home-Equity Loans<span
                                                     class="float-end"><b>₹<?= number_format(isset($getBD->mortgage_loans_value) ? $getBD->mortgage_loans_value : 0, 2) ?></b></span>
@@ -312,7 +312,9 @@ $annual_expenses = (
             name: "Business indicator",
             type: "gauge",
             detail: {
-                formatter: "{value}%"
+                formatter: "{value}%",
+                fontSize: 15,
+                offsetCenter: ['1%', '40%']
             },
             axisLine: {
                 lineStyle: {

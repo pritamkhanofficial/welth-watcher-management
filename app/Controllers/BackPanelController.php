@@ -703,5 +703,29 @@ class BackPanelController extends BaseController
         $output = $crud->render();
         return view('common', (array)$output);
     }
+    public function report()
+    {
+        $crud = new GroceryCrud();
+
+        $crud->displayAs('file', 'Document');
+        $crud->displayAs('is_active', 'Status');
+
+        $crud->columns(['title', 'file','is_active']);
+        $crud->fields(['title', 'file','is_active']);
+
+        $this->setFieldUpload($crud,[
+            'file'=>'document'
+        ]);
+        $crud->unsetDelete();
+
+        $crud->unsetPrint();
+        $crud->unsetExport();
+
+
+        $crud->setTable('report');
+        $crud->setSubject('Report');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
 
 }

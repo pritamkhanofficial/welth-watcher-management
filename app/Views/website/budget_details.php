@@ -316,12 +316,20 @@ $annual_expenses = (
                 fontSize: 15,
                 offsetCenter: ['1%', '40%']
             },
+            pointer: {
+                length: '45%',
+                // width: 20,
+                offsetCenter: [0, '-60%'],
+                itemStyle: {
+                color: 'auto'
+                }
+            },
             axisLine: {
                 lineStyle: {
                     color: [
-                        [0.2, 'rgb(220, 53, 69)'],
-                        [0.8, 'rgb(13, 107, 253)'],
-                        [1, 'rgb(25, 135, 84)'],
+                        [0.2, 'rgb(101, 67, 211)'],
+                        [0.8, 'rgb(24 109 224)'],
+                        [1, 'rgb(255, 170, 0)'],
                     ],
                     width: 20,
                 },

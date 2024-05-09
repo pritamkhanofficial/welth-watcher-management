@@ -142,6 +142,11 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'area/(:segment)/(:segment)', 'BackPanelController::area/$1/$2');
 
 
+        $routes->match(['get', 'post'],'report-category/', 'BackPanelController::reportCategory');
+        $routes->match(['get', 'post'],'report-category/(:segment)', 'BackPanelController::reportCategory/$1');
+        $routes->match(['get', 'post'],'report-category/(:segment)/(:segment)', 'BackPanelController::reportCategory/$1/$2');
+
+
         $routes->match(['get', 'post'],'report/', 'BackPanelController::report');
         $routes->match(['get', 'post'],'report/(:segment)', 'BackPanelController::report/$1');
         $routes->match(['get', 'post'],'report/(:segment)/(:segment)', 'BackPanelController::report/$1/$2');

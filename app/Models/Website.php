@@ -148,6 +148,16 @@ class Website extends Model
         
     }
 
+    public function getReport(){
+        return  $this->db->table('report')
+                ->select('report.*, report_category.label AS report_category')
+                ->join('report_category', 'report_category.id = report.report_category_id', 'left')
+                ->where(['report.is_active'=>1])
+                ->orderBy('report.created_at','DESC')
+                ->limit(4)
+                ->get()->getResult();
+     }
+
     
 }
 

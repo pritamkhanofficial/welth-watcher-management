@@ -807,7 +807,9 @@ class WebsiteController extends BaseController
 
     public function report()
     {
-        return view('website/report');
+
+        $report = $this->model->getReport();
+        return view('website/report', ['report' => $report]);
     }
 
     public function logout()

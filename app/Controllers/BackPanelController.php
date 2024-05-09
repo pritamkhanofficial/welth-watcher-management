@@ -703,19 +703,43 @@ class BackPanelController extends BaseController
         $output = $crud->render();
         return view('common', (array)$output);
     }
+    public function reportCategory()
+    {
+        $crud = new GroceryCrud();
+
+        $crud->displayAs('label', 'Report Category');
+        $crud->displayAs('is_active', 'Status');
+
+        $crud->columns(['label','is_active']);
+        $crud->fields(['label','is_active']);
+        $crud->unsetDelete();
+
+        $crud->unsetPrint();
+        $crud->unsetExport();
+
+
+        $crud->setTable('report_category');
+        $crud->setSubject('Report');
+        $output = $crud->render();
+        return view('common', (array)$output);
+    }
     public function report()
     {
         $crud = new GroceryCrud();
 
         $crud->displayAs('file', 'Document');
         $crud->displayAs('is_active', 'Status');
+        $crud->displayAs('report_category_id', 'Report Category');
+        $crud->displayAs('created_at', 'Added On');
 
-        $crud->columns(['title', 'file','is_active']);
-        $crud->fields(['title', 'file','is_active']);
+        $crud->columns(['report_category_id', 'file','is_active','created_at']);
+        $crud->fields(['report_category_id', 'file','is_active']);
 
         $this->setFieldUpload($crud,[
             'file'=>'document'
         ]);
+
+        $crud->setRelation('report_category_id', 'report_category', 'label', ['is_active' => 1, 'deleted_at' => NULL]);
         $crud->unsetDelete();
 
         $crud->unsetPrint();

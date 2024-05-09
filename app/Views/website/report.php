@@ -22,7 +22,8 @@
                     <div class="col-12 col-md-12 col-lg-6">
                         <div class="text-nav">
                             <div class="heading3 text-white">Report Analysis</div>
-                            <div class="sub-heading mt-8 text-white fw-400">Analyzing reports from various sectors aligning with current financial trends</div>
+                            <div class="sub-heading mt-8 text-white fw-400">Analyzing reports from various sectors
+                                aligning with current financial trends</div>
                         </div>
                     </div>
                 </div>
@@ -33,11 +34,27 @@
             <div class="content">
                 <div class="row">
                     <?php if(getFrontUserData()){ ?>
-                    <div class="col-lg-12 text-center">
-                        <h1 class="display-1">Live Report</h1>
-                        <br>
-                        <!-- <a href="< ?=base_url('budget-planning')?>"
-                            class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Welth Calculator </a> -->
+                    <div class="col-lg-12 text-center ">                            
+                        <table class="table table-bordered border-primary ">
+                                <thead>
+                                    <tr>
+                                        <th>Sl. No.</th>
+                                        <th>Report</th>
+                                        <th>Documet</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                    foreach($report as $key=>$row):
+                                ?>
+                                    <tr>
+                                        <td><?=++$key?></td>
+                                        <td><?=$row->report_category?></td>
+                                        <td><a href="<?=base_url('get-file/' . $row->file)?>"  target="_blank">Show</a></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                        </table>
                     </div>
                     <?php }else{ ?>
                     <div class="col-lg-12 text-center ">

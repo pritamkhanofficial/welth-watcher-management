@@ -152,7 +152,7 @@ $routes->group('back-panel', static function ($routes) {
         $routes->match(['get', 'post'],'report/(:segment)/(:segment)', 'BackPanelController::report/$1/$2');
 
 
-        $routes->match(['get', 'post'],'database-backup', 'BackPanelController::databaseBackup');
+        $routes->match(['get', 'post'],'database-backup', 'BackPanelController::databaseBackupNew');
        
     });
 });

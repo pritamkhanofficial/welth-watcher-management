@@ -5,47 +5,48 @@
 $getBD = getBudgetDetails();
 
 $total_annual_spending = (
-    (isset($getBD->mortgage_loans_value) ? $getBD->mortgage_loans_value : 0)
+    (isset($getBD->mortgage_loans_value) && is_numeric(isset($getBD->mortgage_loans_value)) ? $getBD->mortgage_loans_value : 0)
     +
-    (isset($getBD->business_debt_value) ? $getBD->business_debt_value : 0)
+    (isset($getBD->business_debt_value) && is_numeric($getBD->business_debt_value) ? $getBD->business_debt_value : 0)
     +
-    (isset($getBD->vehicle_loans_value) ? $getBD->vehicle_loans_value : 0)
+    (isset($getBD->vehicle_loans_value) && is_numeric($getBD->vehicle_loans_value) ? $getBD->vehicle_loans_value : 0)
     +
-    (isset($getBD->credit_card_debt_value) ? $getBD->credit_card_debt_value : 0)
+    (isset($getBD->credit_card_debt_value) && is_numeric($getBD->credit_card_debt_value) ? $getBD->credit_card_debt_value : 0)
     +
-    (isset($getBD->student_debt_value) ? $getBD->student_debt_value : 0)
+    (isset($getBD->student_debt_value) && is_numeric($getBD->student_debt_value) ? $getBD->student_debt_value : 0)
     +
-    (isset($getBD->other_debts_value) ? $getBD->other_debts_value : 0)
+    (isset($getBD->other_debts_value) && is_numeric($getBD->other_debts_value) ? $getBD->other_debts_value : 0)
 );
 
 $total_annual_spending = number_format($total_annual_spending,2);
 
 $total_assets = (
-    (isset($getBD->bank_accounts_value) ? $getBD->bank_accounts_value : 0)
+    (isset($getBD->bank_accounts_value) && is_numeric($getBD->bank_accounts_value) ? $getBD->bank_accounts_value : 0)
     +
-    (isset($getBD->investment_accounts_value) ? $getBD->investment_accounts_value : 0)
+    (isset($getBD->investment_accounts_value) && is_numeric($getBD->investment_accounts_value) ? $getBD->investment_accounts_value : 0)
     +
-    (isset($getBD->home_value) ? $getBD->home_value : 0)
+    (isset($getBD->home_value) && is_numeric($getBD->home_value) ? $getBD->home_value : 0)
     +
-    (isset($getBD->rental_properties_value) ? $getBD->rental_properties_value : 0)
+    (isset($getBD->rental_properties_value) && is_numeric($getBD->rental_properties_value) ? $getBD->rental_properties_value : 0)
     +
-    (isset($getBD->vehicles_value) ? $getBD->vehicles_value : 0)
+    (isset($getBD->vehicles_value) && is_numeric($getBD->vehicles_value) ? $getBD->vehicles_value : 0)
     +
-    (isset($getBD->other_assets_value) ? $getBD->other_assets_value : 0)
+    (isset($getBD->other_assets_value) && is_numeric($getBD->other_assets_value) ? $getBD->other_assets_value : 0)
     +
-    (isset($getBD->retirement_savings_value) ? $getBD->retirement_savings_value : 0)
+    (isset($getBD->retirement_savings_value) && is_numeric($getBD->retirement_savings_value) ? $getBD->retirement_savings_value : 0)
     +
-    (isset($getBD->emergency_assets_value) ? $getBD->emergency_assets_value : 0)
+    (isset($getBD->emergency_assets_value) && is_numeric($getBD->emergency_assets_value) ? $getBD->emergency_assets_value : 0)
 );
 
 $total_assets = number_format($total_assets,2);
 
-
-$net_worth = ($total_assets - $total_annual_spending);
+// getPrint($total_assets);
+$net_worth = ((int)$total_assets - (int)$total_annual_spending);
 $net_worth = abs($net_worth);
+// getPrint($net_worth);
 if((int)$total_annual_spending > 0){
 
-    $wealth_score = (($net_worth / $total_annual_spending) * 100) ;
+    $wealth_score = (($net_worth / (int)$total_annual_spending) * 100) ;
 }else{
     $wealth_score = 0;
 }

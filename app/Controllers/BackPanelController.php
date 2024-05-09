@@ -682,6 +682,32 @@ class BackPanelController extends BaseController
         $dbutil->backup();
     }
 
+    public function databaseBackupNew()
+    {
+        // Load the database utilities
+        $utils = new \CodeIgniter\Database\Backup();
+        
+        // Set backup preferences
+        $config = [
+            'tables'      => [],    // Array of tables to backup, leave empty to backup all tables
+            'ignore'      => [],    // Array of tables to ignore
+            'format'      => 'zip', // Format - zip, gzip, txt
+            'filename'    => 'backup.sql', // File name - only needed with txt format
+            'add_drop'    => true,  // Add DROP TABLE statements
+            'add_insert'  => true,  // Add INSERT data statements
+            'newline'     => "\n"   // Newline character used in backup file
+        ];
+        
+        // Backup the database
+        $backup = $utils->backup($config);
+
+        // Save the backup file to writable directory
+        helper('filesystem');
+        write_file(WRITEPATH . 'backups/' . 'backup_' . date('Y-m-d-H-i-s') . '.zip', $backup);
+
+        echo 'Backup created successfully!';
+    }
+
     public function area()
     {
         $crud = new GroceryCrud();
@@ -733,16 +759,18 @@ class BackPanelController extends BaseController
         $crud->displayAs('created_at', 'Added On');
 
         $crud->columns(['report_category_id', 'file','is_active','created_at']);
-        $crud->fields(['report_category_id', 'file','is_active']);
-
+        $crud->fields(['report_category_id', 'file','is_active','created_at','created_by']);
+        $crud->fieldType('created_at', 'hidden');
+        $crud->fieldType('created_by', 'hidden', getUserData()->id);
+        $crud->requiredFields(['report_category_id']);
         $this->setFieldUpload($crud,[
             'file'=>'document'
-        ]);
-
+        ]);        
         $crud->setRelation('report_category_id', 'report_category', 'label', ['is_active' => 1, 'deleted_at' => NULL]);
         $crud->unsetDelete();
 
         $crud->unsetPrint();
+        $crud->unsetEdit();
         $crud->unsetExport();
 
 

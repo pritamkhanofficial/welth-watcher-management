@@ -51,7 +51,7 @@
                                         class="icon-in icon-on-surface"></i></a><a
                                     class="item bora-50 w-48 h-48 flex-center bg-surface"
                                     href="<?=getGlobalSetting()?->twitter_url?>" target="_blank"><i
-                                        class="icon-twitter fs-14 icon-on-surface ml-1"></i></a><a
+                                        class="fa-brands fa-x-twitter fa-x-twitter fs-14 icon-on-surface"></i></a><a
                                     class="item bora-50 w-48 h-48 flex-center bg-surface"
                                     href="<?=getGlobalSetting()?->instagram_url?>" target="_blank"><i
                                         class="icon-insta fs-14 icon-on-surface"></i></a><a

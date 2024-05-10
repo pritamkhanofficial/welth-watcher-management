@@ -1112,5 +1112,10 @@ class WebsiteController extends BaseController
         return $html;
     }
 
+    public function privacyPolicy()
+    {
+        return view('website/privacy-policy');
+    }
+
     
 }

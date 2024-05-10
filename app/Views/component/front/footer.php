@@ -257,7 +257,7 @@
                     </div>
                     <div class="nav-link flex-item-center gap-10"><a class="text-line caption1 hover-underline" target="_blank"
                             href="<?=base_url('get-file/terms-of-service.pdf')?>">Terms Of Services</a><span class="text-line caption1">|</span><a
-                            class="text-line caption1 hover-underline" target="_blank" href="<?=base_url('get-file/privacy-policy.pdf')?>">Privacy Policy</a>
+                            class="text-line caption1 hover-underline" target="_blank" href="<?=base_url('privacy-policy.php')?>">Privacy Policy</a>
                         <!-- <span
                             class="text-line caption1">|</span><a class="text-line caption1 hover-underline"
                             href="#!">Cookie Policy</a> -->

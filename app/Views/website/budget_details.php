@@ -18,7 +18,7 @@ $total_annual_spending = (
     (isset($getBD->other_debts_value) && is_numeric($getBD->other_debts_value) ? $getBD->other_debts_value : 0)
 );
 
-$total_annual_spending = number_format($total_annual_spending,2);
+
 
 $total_assets = (
     (isset($getBD->bank_accounts_value) && is_numeric($getBD->bank_accounts_value) ? $getBD->bank_accounts_value : 0)
@@ -38,27 +38,35 @@ $total_assets = (
     (isset($getBD->emergency_assets_value) && is_numeric($getBD->emergency_assets_value) ? $getBD->emergency_assets_value : 0)
 );
 
-$total_assets = number_format($total_assets,2);
 
-// getPrint($total_assets);
-$net_worth = ((int)$total_assets - (int)$total_annual_spending);
+
+// getPrint($total_annual_spending);
+$net_worth = ($total_assets - $total_annual_spending);
 $net_worth = abs($net_worth);
 // getPrint($net_worth);
 if((int)$total_annual_spending > 0){
 
-    $wealth_score = (($net_worth / (int)$total_annual_spending) * 100) ;
+    $wealth_score = (($net_worth / $total_annual_spending) * 100) ;
+    if($wealth_score >= 100){
+        $wealth_score = 100;
+    }
 }else{
     $wealth_score = 0;
 }
+// $wealth_score = number_format($wealth_score,2);
 
 // getPrint($wealth_score);
+
 
 $annual_expenses = (
     (isset($getBD->food_and_beverages) ? $getBD->food_and_beverages : 0)
     +
     (isset($getBD->other_expenses) ? $getBD->other_expenses : 0)
 );
-
+$total_annual_spending = number_format($total_annual_spending,2);
+$total_assets = number_format($total_assets,2);
+$net_worth = number_format($net_worth,2);
+$wealth_score = number_format($wealth_score,2);
 ?>
 <!DOCTYPE html>
 <html lang="en">

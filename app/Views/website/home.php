@@ -118,10 +118,11 @@
                         </div>
                         <div class="button-block mt-5">
                             <a href=""><button
-                                    class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Investing</button></a>
+                                    class="c-btn"><span class="c-btn__label">Investing</span>
+                                     </button></a>
                             <a href="">
-                                <button
-                                    class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Trading</button>
+                            <button
+                                    class="c-btn"><span class="c-btn__label">Trading</span></button>
                             </a>
                         </div>
                     </div>

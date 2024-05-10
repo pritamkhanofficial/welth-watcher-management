@@ -23,10 +23,10 @@
             <div class="container">
                 <div class="heading-nav gap-4 mt-32"><a class="hover-underline caption1 text-white"
                         href="<?= base_url('/') ?>">Home</a><i class="ph ph-caret-double-right text-white"></i>
-                    <div class="caption1 text-white">Privacy Policy</div>
+                    <div class="caption1 text-white">Terms Of Service</div>
                 </div>
                 <div class="text-nav">
-                    <div class="heading3 text-white">Privacy Policy</div>
+                    <div class="heading3 text-white">Terms Of Service</div>
                     <!-- <div class="sub-heading mt-8 text-white fw-400">Explore our Contact Us page for prompt assistance
                         from our
                         dedicated team.</div> -->
@@ -37,7 +37,7 @@
             <div class="container">
                 <div class="row flex-center row-gap-32">
                     <div class="col-12 col-xl-10 col-lg-12">
-                        <?=getGlobalSetting()?->privacy_policy?>
+                        <?=getGlobalSetting()?->terms_of_service?>
                     </div>
 
                 </div>

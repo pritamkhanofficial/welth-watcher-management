@@ -1116,6 +1116,10 @@ class WebsiteController extends BaseController
     {
         return view('website/privacy-policy');
     }
+    public function termsOfService()
+    {
+        return view('website/terms-of-service');
+    }
 
     
 }

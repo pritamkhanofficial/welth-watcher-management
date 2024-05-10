@@ -569,8 +569,8 @@ class BackPanelController extends BaseController
         $crud->displayAs('is_active','Status');
         $crud->where("deleted_at", NULL); */
         $crud->columns(['facebook_url','twitter_url','linkedin_url','youtube_url','mobile_no']);
-        $crud->fields(['facebook_url','twitter_url','linkedin_url','instagram_url','youtube_url','mobile_no','address','email','business_setup_growth','business_problem_solving','goal_achiever','passive_income_earners','footer_text']);
-        $crud->setTexteditor(['address']);
+        $crud->fields(['facebook_url','twitter_url','linkedin_url','instagram_url','youtube_url','mobile_no','address','email','business_setup_growth','business_problem_solving','goal_achiever','passive_income_earners','footer_text','privacy_policy','terms_of_service']);
+        $crud->setTexteditor(['address','privacy_policy','terms_of_service']);
         $crud->unsetAdd();
 
 

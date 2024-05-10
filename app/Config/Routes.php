@@ -30,6 +30,8 @@ $routes->group('', ['filter'=>'authFrontFilter','namespace' => 'App\Controllers'
     $routes->match(['get', 'post'],'get-all-job', 'WebsiteController::getAllJob');
     $routes->match(['get', 'post'],'career-form/(:any)', 'WebsiteController::career_form/$1');
     $routes->match(['get','post'],'apply-job', 'WebsiteController::apply_job');
+    $routes->match(['get','post'],'privacy-policy', 'WebsiteController::privacyPolicy');
+    $routes->match(['get','post'],'terms-of-service', 'WebsiteController::termsOfService');
 });
 $routes->get('get-file/(:any)', 'FileController::getFile/$1');
 

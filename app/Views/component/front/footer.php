@@ -255,9 +255,9 @@
                         <div class="copy-right text-line caption1">©2024 ALL IT SOLUTIONS LLC. All Rights Reserved.
                         </div>
                     </div>
-                    <div class="nav-link flex-item-center gap-10"><a class="text-line caption1 hover-underline" target="_blank"
-                            href="<?=base_url('get-file/terms-of-service.pdf')?>">Terms Of Services</a><span class="text-line caption1">|</span><a
-                            class="text-line caption1 hover-underline" target="_blank" href="<?=base_url('privacy-policy.php')?>">Privacy Policy</a>
+                    <div class="nav-link flex-item-center gap-10"><a class="text-line caption1 hover-underline"
+                            href="<?=base_url('terms-of-service')?>">Terms Of Services</a><span class="text-line caption1">|</span><a
+                            class="text-line caption1 hover-underline" href="<?=base_url('privacy-policy.php')?>">Privacy Policy</a>
                         <!-- <span
                             class="text-line caption1">|</span><a class="text-line caption1 hover-underline"
                             href="#!">Cookie Policy</a> -->

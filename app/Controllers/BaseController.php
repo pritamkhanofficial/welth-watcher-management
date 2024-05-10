@@ -108,6 +108,7 @@ abstract class BaseController extends Controller
                 $cbData->data[$field] = $file_name;
             }
           }
+          $cbData->data['created_at'] = date('Y-m-d H:i:s');          
           return $cbData;
         }
       );

@@ -807,7 +807,9 @@ class WebsiteController extends BaseController
 
     public function report()
     {
-        return view('website/report');
+
+        $report = $this->model->getReport();
+        return view('website/report', ['report' => $report]);
     }
 
     public function logout()
@@ -1108,6 +1110,15 @@ class WebsiteController extends BaseController
         }
 
         return $html;
+    }
+
+    public function privacyPolicy()
+    {
+        return view('website/privacy-policy');
+    }
+    public function termsOfService()
+    {
+        return view('website/terms-of-service');
     }
 
     

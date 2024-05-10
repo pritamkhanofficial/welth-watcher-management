@@ -45,6 +45,12 @@
                      </a>
                  </li>
                  <li>
+                     <a href="<?=base_url('back-panel/report')?>" class="waves-effect">
+                         <i class="fas fa-flag-checkered"></i>
+                         <span>Report</span>
+                     </a>
+                 </li>
+                 <li>
                      <a href="<?=base_url('back-panel/contact')?>" class="waves-effect">
                          <i class="fa fa-address-book"></i>
                          <span>Contact</span>

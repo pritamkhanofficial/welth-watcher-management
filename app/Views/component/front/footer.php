@@ -160,18 +160,18 @@
                                 providing comprehensive financial solutions for individuals and businesses.</div> -->
                             <div class="list-social flex-item-center gap-10 style-one"><a
                                     class="item bora-50 w-28 h-28 border-grey-2px flex-center"
-                                    href="https://www.facebook.com/" target="_blank"><i
+                                    href="<?=getGlobalSetting()?->facebook_url?>" target="_blank"><i
                                         class="icon-facebook fs-12"></i></a><a
                                     class="item bora-50 w-28 h-28 border-grey-2px flex-center"
-                                    href="https://www.linkedin.com/" target="_blank"><i class="icon-in fs-12"></i></a><a
+                                    href="<?=getGlobalSetting()?->linkedin_url?>" target="_blank"><i class="icon-in fs-12"></i></a><a
                                     class="item bora-50 w-28 h-28 border-grey-2px flex-center"
-                                    href="https://www.twitter.com/" target="_blank"><i
-                                        class="icon-twitter fs-10"></i></a><a
+                                    href="<?=getGlobalSetting()?->twitter_url?>" target="_blank"><i
+                                        class="fa-brands fa-x-twitter fa-x-twitter text-white  fs-12"></i></a><a
                                     class="item bora-50 w-28 h-28 border-grey-2px flex-center"
-                                    href="https://www.instagram.com/" target="_blank"><i
+                                    href="<?=getGlobalSetting()?->instagram_url?>" target="_blank"><i
                                         class="icon-insta fs-10"></i></a><a
                                     class="item bora-50 w-28 h-28 border-grey-2px flex-center"
-                                    href="https://www.youtube.com/" target="_blank"><i
+                                    href="<?=getGlobalSetting()?->youtube_url?>" target="_blank"><i
                                         class="icon-youtube fs-10"></i></a></div>
                         </div>
                     </div>
@@ -256,8 +256,8 @@
                         </div>
                     </div>
                     <div class="nav-link flex-item-center gap-10"><a class="text-line caption1 hover-underline"
-                            href="#!">Terms Of Services</a><span class="text-line caption1">|</span><a
-                            class="text-line caption1 hover-underline" href="#!">Privacy Policy</a>
+                            href="<?=base_url('terms-of-service')?>">Terms Of Services</a><span class="text-line caption1">|</span><a
+                            class="text-line caption1 hover-underline" href="<?=base_url('privacy-policy.php')?>">Privacy Policy</a>
                         <!-- <span
                             class="text-line caption1">|</span><a class="text-line caption1 hover-underline"
                             href="#!">Cookie Policy</a> -->

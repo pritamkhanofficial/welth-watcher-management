@@ -22,22 +22,51 @@
                     <div class="col-12 col-md-12 col-lg-6">
                         <div class="text-nav">
                             <div class="heading3 text-white">Report Analysis</div>
-                            <div class="sub-heading mt-8 text-white fw-400">Analyzing reports from various sectors aligning with current financial trends</div>
+                            <div class="sub-heading mt-8 text-white fw-400">Analyzing reports from various sectors
+                                aligning with current financial trends</div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="container pt-5 pb-5">
+        <?php if(getFrontUserData()){ ?>
+        <div class="container pt-5 pb-2">
+            <div class="heading3 text-center">Live Report</div>
+            <!-- <div class="body3 text-secondary text-center mt-20">Our years of experience has indicated that people
+                have different needs when they come to the markets. So to offer services focused on different needs
+                we have different plans that one can refer to and avail of unique services.</div> -->
+        </div>
+        <?php } ?>
+        <div class="container pt-2 pb-5">
             <div class="content">
                 <div class="row">
                     <?php if(getFrontUserData()){ ?>
-                    <div class="col-lg-12 text-center">
-                        <h1 class="display-1">Live Report</h1>
-                        <br>
-                        <!-- <a href="< ?=base_url('budget-planning')?>"
-                            class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48">Welth Calculator </a> -->
+                    <div class="col-lg-12 ">
+                        <div class="list-service row mt-32 row-gap-32">
+                            <?php
+                            foreach($report as $key=>$row):
+                                $placehover = str_pad(++$key, 2, "0", STR_PAD_LEFT);
+                        ?>
+                            <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px">
+                                    <a class="service-item-main flex-column gap-16" target="_blank"
+                                        href="<?=base_url('get-file/' . $row->file)?>">
+                                        <div class="heading flex-between">
+                                            <!-- <i class="< ?= $row->icon_text?> text-blue fs-60"></i> -->
+                                            <div class="number heading3 text-placehover"><?= $placehover ?></div>
+                                        </div>
+                                        <div class="desc">
+                                            <div class="heading7 hover-text-blue"><?=$row->report_category?></div>
+                                            <!-- <div class="body3 text-secondary mt-4">< ?= $row->description?></div> -->
+                                        </div>
+                                        <!-- <div class="read-block flex-item-center gap-4 hover-text-blue"><span
+                                        class="fs-14 fw-700 text-blue">Read More</span><i
+                                        class="ph-bold ph-caret-double-right fs-12 text-blue"></i></div> -->
+                                    </a>
+                                </div>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                     <?php }else{ ?>
                     <div class="col-lg-12 text-center ">

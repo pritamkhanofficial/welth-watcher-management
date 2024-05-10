@@ -7303,3 +7303,69 @@ span.types {
 .nav-link{
   padding:0px !important;
 }
+
+.c-btn {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding: 0.85rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 0.03rem;
+  line-height: 1;
+  background-color: #2868d8;
+  border-radius: 100vmax;
+  -webkit-mask-image: radial-gradient(white, black);
+          mask-image: radial-gradient(white, black);
+  transition: color 0.3s cubic-bezier(0.4, 0, 0, 1);
+}
+.c-btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: -1px;
+  top: -1em;
+  height: calc(100% + 1.5em);
+  width: calc(100% + 1rem);
+  pointer-events: none;
+  border-radius: 100vmax;
+  background-color: #fb9900;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0, 1);
+  transform: translateX(-100%);
+}
+.c-btn__label {
+  font-size: var(--fz-0);
+  font-weight: 400;
+  line-height: 1;
+}
+.c-btn:hover {
+  color: #000;
+}
+.c-btn:hover span {
+  -webkit-animation: pulse 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+          animation: pulse 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.c-btn:hover::before {
+  transform: translateX(0%);
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    scale: 0.95;
+  }
+  50% {
+    scale: 1.02;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    scale: 0.95;
+  }
+  50% {
+    scale: 1.02;
+  }
+}

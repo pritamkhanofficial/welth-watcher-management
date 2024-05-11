@@ -2503,7 +2503,7 @@ Section Slider Homepage Main: Start
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  padding-right: 15px;
+  padding-right: 97px;
 }
 @media (max-width: 500.99px) {
   .slider-block .slider-main .slider-item .text-content br {
@@ -2654,7 +2654,7 @@ Section Slider Homepage Main: Start
   position: relative;
   top: unset;
   transform: unset;
-  left: 20px;
+  left: 0px;
 }
 .slider-block.style-two .slider-main .slider-item .container .text-content .button-block {
   height: 64px;

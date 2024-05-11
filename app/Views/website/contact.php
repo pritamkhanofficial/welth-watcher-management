@@ -103,7 +103,7 @@
                                     <div class="col-12 col-sm-6">
                                         <input
                                             class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                            type="text" id="phone_no" name="phone_no" placeholder="contact no" />
+                                            type="text" id="phone_no" name="phone_no" placeholder="Contact No" />
                                     </div>
                                     <div class="col-12 col-sm-6">
                                         <select

@@ -196,8 +196,7 @@
                                             </div>
                                             <div class="body3 text-secondary"><i>The current rate is 6.2% for corporate
                                                     employees and 12.4% for
-                                                    the self-employed on earnings up to ₹147,000. It’s in W-2 box No.
-                                                    3.</i>
+                                                    the self-employed on earnings up to ₹147,000. </i>
                                             </div>
                                         </div>
                                     </div>

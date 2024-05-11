@@ -103,7 +103,7 @@
                             </button>
                             <button type="submit"
                                 class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48 submit_otp d-none "
-                                name="submit_otp" value="submit_otp">Submit Otp
+                                name="submit_otp" value="submit_otp">Submit OTP
                                 <div class="spinner-border d-none" role="status">
                                     <span class="visually-hidden">Loading...</span>
                                 </div>

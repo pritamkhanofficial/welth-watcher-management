@@ -124,11 +124,11 @@
                                 </div>
                             </div>
                             <div class="description item-filter hide" data-name="why-choose-us">
-                                <div class="title body3 text-secondary mt-16">Our unwavering vision is to be the most
+                                <!-- <div class="title body3 text-secondary mt-16">Our unwavering vision is to be the most
                                     trusted and
                                     preferred partner in achieving financial success, diligently guiding our valued
                                     clients toward a
-                                    secure and prosperous future.</div>
+                                    secure and prosperous future.</div> -->
                                 <!-- <div class="more-infor mt-24">
                                     <div class="infor flex-item-center gap-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
@@ -155,15 +155,23 @@
                                 <div class="more-infor mt-24">
                                     <div class="infor flex-item-center gap-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Creation of savings and investment plans</div>
+                                        <div class="text-button">We specialize in ethical investing strategies that align with your values, ensuring that your investments contribute positively to society and the environment.</div>
                                     </div>
                                     <div class="infor flex-item-center gap-12 mt-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Management and calculation of expenses</div>
+                                        <div class="text-button">Our personalized approach creates a financial plan that fits your lifestyle and goals, helping you to manage your finances more effectively.</div>
                                     </div>
                                     <div class="infor flex-item-center gap-12 mt-12"> <i
                                             class="ph-fill ph-check-circle fs-20 text-blue"></i>
-                                        <div class="text-button">Identification of income paths through smart financial plans</div>
+                                        <div class="text-button">Our team of experts utilizes cutting-edge techniques to provide you with insights that can help inform and influence your investment decisions.</div>
+                                    </div>
+                                    <div class="infor flex-item-center gap-12 mt-12"> <i
+                                            class="ph-fill ph-check-circle fs-20 text-blue"></i>
+                                        <div class="text-button">Our customer-centric approach provides clear and concise information so you can confidently make financial choices.</div>
+                                    </div>
+                                    <div class="infor flex-item-center gap-12 mt-12"> <i
+                                            class="ph-fill ph-check-circle fs-20 text-blue"></i>
+                                        <div class="text-button">Our history of delivering effective financial advice and achieving results portrays how dedicated we are to continuing this tradition of excellence.</div>
                                     </div>
                                 </div>
                             </div>

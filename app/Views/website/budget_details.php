@@ -289,6 +289,10 @@ $wealth_score = number_format($wealth_score,2);
                                                         <?=$net_worth?></b></span></li>
                                         </ul>
                                     </div>
+
+                                    <div class="card border  mb-3" style="max-width: 25rem;">
+                                        <div class="card-header"><b>YOUR WEALTH SCORE IS  <?=$wealth_score?>%</b></div>
+                                    </div>
                                 </div>
 
 

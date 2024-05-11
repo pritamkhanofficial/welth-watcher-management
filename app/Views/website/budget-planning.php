@@ -82,7 +82,7 @@
                                         <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
                                             name="age" value="<?= (isset($budget->age) == '') ? '' : $budget->age; ?>" type="number" required placeholder="Your age" />
                                         <div class="body3 text-secondary mt-2"><i>In years</i></div>
-                                        <div class="form-check mt-5">
+                                        <div class="form-check mt-5 d-none">
                                             <input class="form-check-input" type="checkbox" value="<?= (isset($budget->advertisement_interest) == '') ? '' : $budget->advertisement_interest; ?>"
                                                 id="flexCheckDefault" name="advertisement_interest">
                                             <label class="form-check-label" for="flexCheckDefault">
@@ -93,7 +93,7 @@
                                                 still receive online advertising)
                                             </label>
                                         </div>
-                                        <div class="form-check mt-3">
+                                        <div class="form-check mt-3 d-none">
                                             <input class="form-check-input" type="checkbox" value="<?= (isset($budget->offers_promotions) == '') ? '' : $budget->offers_promotions; ?>"
                                                 id="flexCheckChecked" name="offers_promotions" checked>
                                             <label class="form-check-label" for="flexCheckChecked">

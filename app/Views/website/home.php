@@ -42,7 +42,9 @@
                         <div class="text-content my-top-text flex-columns-between row-gap-40">
                             <div class="title">
                                 <div class="heading2 animate__animated animate__fadeInUp animate__delay-0-2s"> Start
-                                    <span class="casualabout">Small</span> Save Big
+                                    <span class="casualabout">Small</span> 
+                                    <br>
+                                    <h1 class="heading3">Save Big</h1>
                                     <!-- Start Small, Save Big -->
                                 </div>
                                 <!-- <div

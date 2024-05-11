@@ -212,7 +212,7 @@ class WebsiteController extends BaseController
             if($this->request->getVar('steps') == 0){
                 $basics = [
                     'user_id' => getFrontUserData()->id,
-                    'area_id' => $this->request->getVar('budget_planning_area'),
+                    'area' => $this->request->getVar('budget_planning_area'),
                     'household_size' => $this->request->getVar('household_size'),
                     'age' => $this->request->getVar('age'),
                     'offers_promotions' => $this->request->getVar('offers_promotions')
@@ -335,7 +335,7 @@ class WebsiteController extends BaseController
                     $htmlTable = "<table><tbody>";
                     $data = [
                         'user_id' => getFrontUserData()->id,
-                        'area_id' => $this->request->getVar('budget_planning_area'),
+                        'area' => $this->request->getVar('budget_planning_area'),
                         'household_size' => $this->request->getVar('household_size'),
                         'age' => $this->request->getVar('age'),
                         'offers_promotions' => $this->request->getVar('offers_promotions'),
@@ -387,18 +387,20 @@ class WebsiteController extends BaseController
                     foreach($data AS $key=>$d){
                         if($key == 'user_id'){ continue; }
 
-                        if($key == 'area_id'){
+                        /* if($key == 'area_id'){
 
                             $htmlTable .= "<tr>";
                             $htmlTable .= "<th>Area Name</th>";
                             $htmlTable .= "<td>" . getBudgetDetails()->area_name . "</td>";
                             $htmlTable .= "</tr>";
                         }else{
-                            $htmlTable .= "<tr>";
-                            $htmlTable .= "<th>" . str_replace('_',' ', ucwords($key)) . "</th>";
-                            $htmlTable .= "<td>" . $d . "</td>";
-                            $htmlTable .= "</tr>";
-                        }
+                            
+                        } */
+
+                        $htmlTable .= "<tr>";
+                        $htmlTable .= "<th>" . str_replace('_',' ', ucwords($key)) . "</th>";
+                        $htmlTable .= "<td>" . $d . "</td>";
+                        $htmlTable .= "</tr>";
                     }
     
                     $htmlTable .= "</table></tbody>";

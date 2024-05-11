@@ -11,9 +11,9 @@
     
     ?>
     <style>
-        .wizard > .content > .body label.error{
-            margin-left:0 !important;
-        }
+    .wizard>.content>.body label.error {
+        margin-left: 0 !important;
+    }
     </style>
 </head>
 
@@ -60,13 +60,20 @@
                                 <div class="row">
                                     <div class="col-md-12 col-lg-6 col-12">
                                         <div class="heading7 hover-text-blue mb-3">Where do you live?</div>
-                                            <select required class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    name="budget_planning_area">
-                                                    <option value="">-- Select Your city or metro area --</option>
-                                                    <?php foreach ($getBPA as $key => $row) { ?>
-                                                    <option value="<?=$row->id?>" <?= (isset($budget->area_id) == $row->id) ? 'selected' : '' ?>><?=$row->label?></option>
-                                                    <?php } ?>
-                                                </select>
+                                        <select required
+                                            class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8 d-none "
+                                            name="budget_planning_area">
+                                            <option value="">-- Select Your city or metro area --</option>
+                                            <?php foreach ($getBPA as $key => $row) { ?>
+                                            <option value="<?=$row->id?>"
+                                                <?= (isset($budget->area_id) == $row->id) ? 'selected' : '' ?>>
+                                                <?=$row->label?></option>
+                                            <?php } ?>
+                                        </select>
+                                        <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
+                                            name="budget_planning_area"
+                                            value="<?= (isset($budget->area_id) == '') ? '' : $budget->area_id; ?>"
+                                            type="text" required placeholder="Start typing" />
                                         <div class="body3 text-secondary mt-2">
                                             <i>Select your city or metro area.</i>
                                         </div>
@@ -74,16 +81,20 @@
                                         <div class="heading7 hover-text-blue mb-3 mt-3">How many people are in your
                                             household?</div>
                                         <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                            name="household_size" value="<?= (isset($budget->household_size) == '') ? '' : $budget->household_size; ?>" type="number" required placeholder="Number of people" />
+                                            name="household_size"
+                                            value="<?= (isset($budget->household_size) == '') ? '' : $budget->household_size; ?>"
+                                            type="number" required placeholder="Number of people" />
                                         <div class="body3 text-secondary mt-2"><i>Enter 1 if you live alone; otherwise,
                                                 include yourself, your partner and any dependents.</i></div>
 
                                         <div class="heading7 hover-text-blue mb-3 mt-3">How old are you?</div>
                                         <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                            name="age" value="<?= (isset($budget->age) == '') ? '' : $budget->age; ?>" type="number" required placeholder="Your age" />
+                                            name="age" value="<?= (isset($budget->age) == '') ? '' : $budget->age; ?>"
+                                            type="number" required placeholder="Your age" />
                                         <div class="body3 text-secondary mt-2"><i>In years</i></div>
                                         <div class="form-check mt-5 d-none">
-                                            <input class="form-check-input" type="checkbox" value="<?= (isset($budget->advertisement_interest) == '') ? '' : $budget->advertisement_interest; ?>"
+                                            <input class="form-check-input" type="checkbox"
+                                                value="<?= (isset($budget->advertisement_interest) == '') ? '' : $budget->advertisement_interest; ?>"
                                                 id="flexCheckDefault" name="advertisement_interest">
                                             <label class="form-check-label" for="flexCheckDefault">
                                                 Bloomberg may use my information to provide me with advertisements that
@@ -94,7 +105,8 @@
                                             </label>
                                         </div>
                                         <div class="form-check mt-3 d-none">
-                                            <input class="form-check-input" type="checkbox" value="<?= (isset($budget->offers_promotions) == '') ? '' : $budget->offers_promotions; ?>"
+                                            <input class="form-check-input" type="checkbox"
+                                                value="<?= (isset($budget->offers_promotions) == '') ? '' : $budget->offers_promotions; ?>"
                                                 id="flexCheckChecked" name="offers_promotions" checked>
                                             <label class="form-check-label" for="flexCheckChecked">
                                                 Bloomberg may send me offers and promotions
@@ -140,15 +152,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->income) == '') ? '' : $budget->income; ?>" required placeholder="₹" name="income" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->income) == '') ? '' : $budget->income; ?>"
+                                                    required placeholder="₹" name="income" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="income_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->income_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->income_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->income_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->income_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->income_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->income_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Annualize a paycheck’s gross (Medicare
@@ -161,15 +181,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->income_after_taxes) == '') ? '' : $budget->income_after_taxes; ?>" required placeholder="₹" name="income_after_taxes" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->income_after_taxes) == '') ? '' : $budget->income_after_taxes; ?>"
+                                                    required placeholder="₹" name="income_after_taxes" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="income_after_taxes_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->income_after_taxes_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->income_after_taxes_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->income_after_taxes_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->income_after_taxes_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->income_after_taxes_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->income_after_taxes_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Subtract all federal, state and local
@@ -181,15 +209,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->social_security_taxes) == '') ? '' : $budget->social_security_taxes; ?>" required placeholder="₹" name="social_security_taxes" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->social_security_taxes) == '') ? '' : $budget->social_security_taxes; ?>"
+                                                    required placeholder="₹" name="social_security_taxes" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="social_security_taxes_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->social_security_taxes_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->social_security_taxes_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->social_security_taxes_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->social_security_taxes_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->social_security_taxes_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->social_security_taxes_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>The current rate is 6.2% for corporate
@@ -236,15 +272,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->food_and_beverages) == '') ? '' : $budget->food_and_beverages; ?>" required placeholder="₹" name="food_and_beverages" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->food_and_beverages) == '') ? '' : $budget->food_and_beverages; ?>"
+                                                    required placeholder="₹" name="food_and_beverages" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="food_and_beverages_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->food_and_beverages_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->food_and_beverages_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->food_and_beverages_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->food_and_beverages_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->food_and_beverages_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->food_and_beverages_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Consumed at home or elsewhere,
@@ -256,15 +300,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->clothes) == '') ? '' : $budget->clothes; ?>" required placeholder="₹" name="clothes" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->clothes) == '') ? '' : $budget->clothes; ?>"
+                                                    required placeholder="₹" name="clothes" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="clothes_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->clothes_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->clothes_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->clothes_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->clothes_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->clothes_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->clothes_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Include related services, footwear,
@@ -274,15 +326,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->housing) == '') ? '' : $budget->housing; ?>" required placeholder="₹" name="housing" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->housing) == '') ? '' : $budget->housing; ?>"
+                                                    required placeholder="₹" name="housing" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="housing_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->housing_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->housing_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->housing_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->housing_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->housing_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->housing_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Rent or mortgage, taxes, insurance,
@@ -295,15 +355,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->transportation) == '') ? '' : $budget->transportation; ?>" required placeholder="₹" name="transportation" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->transportation) == '') ? '' : $budget->transportation; ?>"
+                                                    required placeholder="₹" name="transportation" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="transportation_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->transportation_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->transportation_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->transportation_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->transportation_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->transportation_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->transportation_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Vehicle purchases, rentals, leases,
@@ -315,15 +383,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->healthcare_and_personal_care) == '') ? '' : $budget->healthcare_and_personal_care; ?>" required placeholder="₹" name="healthcare_and_personal_care" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->healthcare_and_personal_care) == '') ? '' : $budget->healthcare_and_personal_care; ?>"
+                                                    required placeholder="₹" name="healthcare_and_personal_care" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="healthcare_and_personal_care_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->healthcare_and_personal_care_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->healthcare_and_personal_care_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->healthcare_and_personal_care_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->healthcare_and_personal_care_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->healthcare_and_personal_care_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->healthcare_and_personal_care_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Medical insurance, uncovered cost of
@@ -335,15 +411,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->entertainment) == '') ? '' : $budget->entertainment; ?>" required placeholder="₹" name="entertainment" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->entertainment) == '') ? '' : $budget->entertainment; ?>"
+                                                    required placeholder="₹" name="entertainment" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="entertainment_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->entertainment_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->entertainment_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->entertainment_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->entertainment_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->entertainment_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->entertainment_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Admission fees, audio visual equipment
@@ -355,15 +439,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->education) == '') ? '' : $budget->education; ?>" required placeholder="₹" name="education" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->education) == '') ? '' : $budget->education; ?>"
+                                                    required placeholder="₹" name="education" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="education_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->education_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->education_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->education_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->education_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->education_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->education_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Tuition, fees, textbooks, supplies and
@@ -375,15 +467,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->other_expenses) == '') ? '' : $budget->other_expenses; ?>" required placeholder="₹" name="other_expenses" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->other_expenses) == '') ? '' : $budget->other_expenses; ?>"
+                                                    required placeholder="₹" name="other_expenses" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="other_expenses_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->other_expenses_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->other_expenses_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->other_expenses_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->other_expenses_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->other_expenses_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->other_expenses_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Premiums for insurance not covered
@@ -441,15 +541,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->retirement_savings_amount) == '') ? '' : $budget->retirement_savings_amount; ?>" required placeholder="₹" name="retirement_savings_amount" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->retirement_savings_amount) == '') ? '' : $budget->retirement_savings_amount; ?>"
+                                                    required placeholder="₹" name="retirement_savings_amount" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="retirement_savings_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->retirement_savings_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->retirement_savings_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->retirement_savings_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->retirement_savings_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->retirement_savings_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->retirement_savings_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Contributions to retirement plans, such
@@ -463,15 +571,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->employer_contribution) == '') ? '' : $budget->employer_contribution; ?>" required placeholder="₹" name="employer_contribution" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->employer_contribution) == '') ? '' : $budget->employer_contribution; ?>"
+                                                    required placeholder="₹" name="employer_contribution" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="employer_contribution_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->employer_contribution_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->employer_contribution_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->employer_contribution_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->employer_contribution_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->employer_contribution_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->employer_contribution_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>Such as matching 401(k) and IRA
@@ -485,7 +601,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->starting_age_for_saving) == '') ? '' : $budget->starting_age_for_saving; ?>" required placeholder="₹" name="starting_age_for_saving" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->starting_age_for_saving) == '') ? '' : $budget->starting_age_for_saving; ?>"
+                                                    required placeholder="₹" name="starting_age_for_saving" />
                                             </div>
                                             <div class="body3 text-secondary"><i>We need this to estimate your
                                                     retirement-savings goals.</i>
@@ -526,7 +644,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?=(isset($budget->bank_accounts_value) == '') ? '' : $budget->bank_accounts_value; ?>" required placeholder="₹" name="bank_accounts_value" />
+                                                    type="text"
+                                                    value="<?=(isset($budget->bank_accounts_value) == '') ? '' : $budget->bank_accounts_value; ?>"
+                                                    required placeholder="₹" name="bank_accounts_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include money from all checking and
                                                     savings
@@ -539,7 +659,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->investment_accounts_value) == '') ? '' : $budget->investment_accounts_value; ?>" required placeholder="₹" name="investment_accounts_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->investment_accounts_value) == '') ? '' : $budget->investment_accounts_value; ?>"
+                                                    required placeholder="₹" name="investment_accounts_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Stocks, bonds, certificates of deposit,
                                                     etc</i></div>
@@ -549,7 +671,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->home_value) == '') ? '' : $budget->home_value; ?>" required placeholder="₹" name="home_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->home_value) == '') ? '' : $budget->home_value; ?>"
+                                                    required placeholder="₹" name="home_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>How much it would sell for now, minus
                                                     the
@@ -563,7 +687,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->rental_properties_value) == '') ? '' : $budget->rental_properties_value; ?>" required placeholder="₹" name="rental_properties_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->rental_properties_value) == '') ? '' : $budget->rental_properties_value; ?>"
+                                                    required placeholder="₹" name="rental_properties_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>How much they would sell for now, minus
                                                     the
@@ -578,7 +704,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->vehicles_value) == '') ? '' : $budget->vehicles_value; ?>" required placeholder="₹" name="vehicles_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->vehicles_value) == '') ? '' : $budget->vehicles_value; ?>"
+                                                    required placeholder="₹" name="vehicles_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>How much they would sell for now, minus
                                                     any
@@ -591,7 +719,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->other_assets_value) == '') ? '' : $budget->other_assets_value; ?>" required placeholder="₹" name="other_assets_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->other_assets_value) == '') ? '' : $budget->other_assets_value; ?>"
+                                                    required placeholder="₹" name="other_assets_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include equity in businesses, annuities
                                                     and
@@ -607,7 +737,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->retirement_savings_value) == '') ? '' : $budget->retirement_savings_value; ?>" required placeholder="₹" name="retirement_savings_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->retirement_savings_value) == '') ? '' : $budget->retirement_savings_value; ?>"
+                                                    required placeholder="₹" name="retirement_savings_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include 401(k)s, 403bs, IRAs, annuities
                                                     and
@@ -621,7 +753,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->emergency_assets_value) == '') ? '' : $budget->emergency_assets_value; ?>" required placeholder="₹" name="emergency_assets_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->emergency_assets_value) == '') ? '' : $budget->emergency_assets_value; ?>"
+                                                    required placeholder="₹" name="emergency_assets_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>How much they would sell for now, minus
                                                     the
@@ -665,7 +799,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->mortgage_loans_value) == '') ? '' : $budget->mortgage_loans_value; ?>" required placeholder="₹" name="mortgage_loans_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->mortgage_loans_value) == '') ? '' : $budget->mortgage_loans_value; ?>"
+                                                    required placeholder="₹" name="mortgage_loans_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Do not include unused lines of
                                                     credit.</i>
@@ -677,7 +813,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->business_debt_value) == '') ? '' : $budget->business_debt_value; ?>" required placeholder="₹" name="business_debt_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->business_debt_value) == '') ? '' : $budget->business_debt_value; ?>"
+                                                    required placeholder="₹" name="business_debt_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include loans for businesses you own
                                                     for
@@ -689,7 +827,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->vehicle_loans_value) == '') ? '' : $budget->vehicle_loans_value; ?>" required placeholder="₹" name="vehicle_loans_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->vehicle_loans_value) == '') ? '' : $budget->vehicle_loans_value; ?>"
+                                                    required placeholder="₹" name="vehicle_loans_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include debt on motorcycles and
                                                     recreational vehicles.</i>
@@ -700,7 +840,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->credit_card_debt_value) == '') ? '' : $budget->credit_card_debt_value; ?>" required placeholder="₹" name="credit_card_debt_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->credit_card_debt_value) == '') ? '' : $budget->credit_card_debt_value; ?>"
+                                                    required placeholder="₹" name="credit_card_debt_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include only balances that are or will
                                                     be
@@ -712,7 +854,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->student_debt_value) == '') ? '' : $budget->student_debt_value; ?>" required placeholder="₹" name="student_debt_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->student_debt_value) == '') ? '' : $budget->student_debt_value; ?>"
+                                                    required placeholder="₹" name="student_debt_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include loans for any educational
                                                     related
@@ -724,7 +868,9 @@
                                             <div class="col-12 col-sm-12">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->other_debts_value) == '') ? '' : $budget->other_debts_value; ?>" required placeholder="₹" name="other_debts_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->other_debts_value) == '') ? '' : $budget->other_debts_value; ?>"
+                                                    required placeholder="₹" name="other_debts_value" />
                                             </div>
                                             <div class="body3 text-secondary"><i>Include any other unsecured debt,
                                                     including
@@ -740,15 +886,23 @@
                                             <div class="col-6 col-sm-7">
                                                 <input
                                                     class="w-100 bg-surface text-secondary caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
-                                                    type="text" value="<?= (isset($budget->debt_payment_value) == '') ? '' : $budget->debt_payment_value; ?>" required placeholder="₹" name="debt_payment_value" />
+                                                    type="text"
+                                                    value="<?= (isset($budget->debt_payment_value) == '') ? '' : $budget->debt_payment_value; ?>"
+                                                    required placeholder="₹" name="debt_payment_value" />
                                             </div>
                                             <div class="col-6 col-sm-5">
                                                 <select
                                                     class="w-100 bg-surface text-secondary caption1 pl-12 pt-12 pb-12 bora-8"
                                                     name="debt_payment_frequency">
-                                                    <option value="PERYEAR" <?= (isset($budget->debt_payment_frequency) == 'PERYEAR') ? 'selected' : '' ?>>Per Year</option>
-                                                    <option value="PERMONTH" <?= (isset($budget->debt_payment_frequency) == 'PERMONTH') ? 'selected' : '' ?>>Per Month</option>
-                                                    <option value="PERWEEK" <?= (isset($budget->debt_payment_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
+                                                    <option value="PERYEAR"
+                                                        <?= (isset($budget->debt_payment_frequency) == 'PERYEAR') ? 'selected' : '' ?>>
+                                                        Per Year</option>
+                                                    <option value="PERMONTH"
+                                                        <?= (isset($budget->debt_payment_frequency) == 'PERMONTH') ? 'selected' : '' ?>>
+                                                        Per Month</option>
+                                                    <option value="PERWEEK"
+                                                        <?= (isset($budget->debt_payment_frequency) == 'PERWEEK') ? 'selected' : '' ?>>
+                                                        Per Week</option>
                                                 </select>
                                             </div>
                                             <div class="body3 text-secondary"><i>For credit cards, only include sums
@@ -1695,7 +1849,7 @@
         success: function(response) {
             // alert(stepFormIndex);
             // if (stepFormIndex == 5) {
-                
+
             // }
             if (response?.type == 'success' && response?.steps == '5') {
                 swAlert(response)

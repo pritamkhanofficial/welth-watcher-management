@@ -130,7 +130,7 @@ $wealth_score = number_format($wealth_score,2);
                                                         class="fas fa-pen"></i></a></span></div>
                                         <ul class="list-group list-group-flush">
                                             <li class="list-group-item">Hometown <span
-                                                    class="float-end"><b><?= isset($getBD->area_name) ? $getBD->area_name : '' ?></b></span>
+                                                    class="float-end"><b><?= isset($getBD->area) ? $getBD->area : '' ?></b></span>
                                             </li>
                                             <li class="list-group-item">Household Size<span
                                                     class="float-end"><b><?= number_format(isset($getBD->household_size) ? $getBD->household_size : 0, 2) ?></b></span>
@@ -340,9 +340,10 @@ $wealth_score = number_format($wealth_score,2);
             axisLine: {
                 lineStyle: {
                     color: [
-                        [0.2, 'rgb(101, 67, 211)'],
-                        [0.8, 'rgb(24 109 224)'],
-                        [1, 'rgb(255, 170, 0)'],
+                        [0.2, 'rgb(255,0,0)'],
+                        [0.5, 'rgb(255,127,80)'],
+                        [0.8, 'rgb(255,255,0)'],
+                        [1, 'rgb(0,128,0)'],
                     ],
                     width: 20,
                 },

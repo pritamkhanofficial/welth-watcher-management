@@ -190,13 +190,13 @@
                                     </div>
                                 </div>
                                 <?php } ?>
-                                <div class="col-xl-12">
-                                    <h4>
-                                        Check your Wealth Score for FREE! Register TODAY!
-                                    </h4>
-                                </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <h4 class="heading3 text-center">
+                            Check your Wealth Score for FREE! Register TODAY!
+                        </h4>
                     </div>
                 </div>
             </div>

@@ -16,13 +16,11 @@ class Website extends Model
         } */
         return $data;
     }
-    public function about($limit = 4){
+    public function about($limit = NULL){
         $data = [];
         $query =   $this->db->table('services');
         $query->where(['deleted_at'=>NULL,'is_active'=>1]);
         if($limit == 2){
-            $query->limit($limit);
-        }else{
             $query->limit($limit);
         }
         $query->orderBy('created_at','DESC');

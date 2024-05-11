@@ -291,7 +291,7 @@ $wealth_score = number_format($wealth_score,2);
                                     </div>
 
                                     <div class="card border  mb-3" style="max-width: 25rem;">
-                                        <div class="card-header"><b>YOUR WEALTH SCORE IS  <?=$wealth_score?>%</b></div>
+                                        <div class="card-header text-center"><b>YOUR WEALTH SCORE IS  <?=$wealth_score?>%</b></div>
                                     </div>
                                 </div>
 

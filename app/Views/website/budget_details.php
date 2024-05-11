@@ -93,8 +93,8 @@ $wealth_score = number_format($wealth_score,2);
                     <div class="col-12 col-md-12 col-lg-6">
                         <div class="text-nav">
                             <div class="heading3 text-white">Wealth Score <br> Calculator</div>
-                            <div class="sub-heading mt-8 text-white fw-400">We perform a full analysis of the client’s
-                                website .</div>
+                            <!-- <div class="sub-heading mt-8 text-white fw-400">We perform a full analysis of the client’s
+                                website .</div> -->
                         </div>
                     </div>
                 </div>

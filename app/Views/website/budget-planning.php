@@ -151,9 +151,7 @@
                                                     <option value="PERWEEK" <?= (isset($budget->income_frequency) == 'PERWEEK') ? 'selected' : '' ?>>Per Week</option>
                                                 </select>
                                             </div>
-                                            <div class="body3 text-secondary"><i>Annualize a paycheck’s gross or use W-2
-                                                    box
-                                                    No. 5 (Medicare
+                                            <div class="body3 text-secondary"><i>Annualize a paycheck’s gross (Medicare
                                                     wages and tips), and add to any other taxable income for all working
                                                     household members.</i>
                                             </div>

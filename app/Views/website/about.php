@@ -204,7 +204,7 @@
                             <div class="counter heading3"><?=getGlobalSetting()?->business_problem_solving?></div><span
                                 class="heading3">K</span>
                         </div>
-                        <div class="body1 text-secondary">Business Problem Solving</div>
+                        <div class="body1 text-secondary">Business Progression Planning</div>
                     </div>
                     <div class="col-12 col-xl-3 col-lg-3 col-md-6 col-sm-6 flex-columns-center">
                         <div class="count-block flex-item-center">
@@ -218,7 +218,7 @@
                             <div class="counter heading3"><?=getGlobalSetting()?->passive_income_earners?></div><span
                                 class="heading3">K</span>
                         </div>
-                        <div class="body1 text-secondary">Passive income earners</div>
+                        <div class="body1 text-secondary">Passive Incomes Earrned</div>
                     </div>
                 </div>
             </div>

@@ -40,7 +40,7 @@
         <div class="container pt-2 pb-5">
             <div class="content">
                 <div class="row">
-                    <?php if(getFrontUserData()){ ?>
+                    <!-- < ?php if(getFrontUserData()){ ?> -->
                     <div class="col-lg-12 ">
                         <div class="list-service row mt-32 row-gap-32">
                             <?php
@@ -68,18 +68,18 @@
                             <?php endforeach; ?>
                         </div>
                     </div>
-                    <?php }else{ ?>
-                    <div class="col-lg-12 text-center ">
+                    <!-- < ?php }else{ ?> -->
+                    <!-- <div class="col-lg-12 text-center ">
                         <h1 class="display-4">Demo Report</h1>
                         <div class="button-block">
-                            <?php if(!getFrontUserData()){ ?>
+                            < ?php if(!getFrontUserData()){ ?>
                             <button
                                 class="button-share hover-button-black bg-blue text-white text-button pl-36 pr-36 pt-12 pb-12 bora-48 regBtn"
                                 data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</button>
-                            <?php } ?>
+                            < ?php } ?>
                         </div>
-                    </div>
-                    <?php } ?>
+                    </div> -->
+                    <!-- < ?php } ?> -->
 
                 </div>
             </div>

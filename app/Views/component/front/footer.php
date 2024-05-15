@@ -185,7 +185,7 @@
                                     <li class="mt-12"><a class="caption1 text-line hover-underline regBtn"
                                             href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Register</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
-                                            href="<?= base_url('report') ?>">Case Studies</a></li>
+                                            href="<?= base_url('get-file/All_about_IPOs.pdf') ?>">Case Studies</a></li>
                                     <li class="mt-12"><a class="caption1 text-line hover-underline"
                                             href="<?=base_url('/contact')?>">Contact Us</a></li>
                                 </ul>

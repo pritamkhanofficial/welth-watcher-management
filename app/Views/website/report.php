@@ -29,14 +29,14 @@
                 </div>
             </div>
         </div>
-        <?php if(getFrontUserData()){ ?>
+        <!-- < ?php if(getFrontUserData()){ ?> -->
         <div class="container pt-5 pb-2">
             <div class="heading3 text-center">Live Report</div>
             <!-- <div class="body3 text-secondary text-center mt-20">Our years of experience has indicated that people
                 have different needs when they come to the markets. So to offer services focused on different needs
                 we have different plans that one can refer to and avail of unique services.</div> -->
         </div>
-        <?php } ?>
+        <!-- < ?php } ?> -->
         <div class="container pt-2 pb-5">
             <div class="content">
                 <div class="row">

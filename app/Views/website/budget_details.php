@@ -256,7 +256,7 @@ $wealth_score = number_format($wealth_score,2);
                                                     class="float-end"><b>₹<?= number_format(isset($getBD->business_debt_value) ? $getBD->business_debt_value : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Vehicle Loans<span
-                                                    class="float-end">₹<?= number_format(isset($getBD->vehicle_loans_value) ? $getBD->vehicle_loans_value : 0, 2) ?></b></span>
+                                                    class="float-end"><b>₹<?= number_format(isset($getBD->vehicle_loans_value) ? $getBD->vehicle_loans_value : 0, 2) ?></b></span>
                                             </li>
                                             <li class="list-group-item">Credit Card Debt<span
                                                     class="float-end"><b>₹<?= number_format(isset($getBD->credit_card_debt_value) ? $getBD->credit_card_debt_value : 0, 2) ?></b></span>

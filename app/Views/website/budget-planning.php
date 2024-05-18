@@ -60,22 +60,22 @@
                                 <div class="row">
                                     <div class="col-md-12 col-lg-6 col-12">
                                         <div class="heading7 hover-text-blue mb-3">Where do you live?</div>
-                                        <select required
+                                        <!-- <select required
                                             class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8 d-none "
                                             name="budget_planning_area">
                                             <option value="">-- Select Your city or metro area --</option>
-                                            <?php foreach ($getBPA as $key => $row) { ?>
-                                            <option value="<?=$row->id?>"
-                                                <?= (isset($budget->area_id) == $row->id) ? 'selected' : '' ?>>
-                                                <?=$row->label?></option>
-                                            <?php } ?>
-                                        </select>
+                                            < ?php foreach ($getBPA as $key => $row) { ?>
+                                            <option value="< ?=$row->id?>"
+                                                < ?= (isset($budget->area_id) == $row->id) ? 'selected' : '' ?>>
+                                                < ?=$row->label?></option>
+                                            < ?php } ?>
+                                        </select> -->
                                         <input class="w-100 bg-surface caption1 pl-16 pr-16 pt-12 pb-12 bora-8"
                                             name="budget_planning_area"
-                                            value="<?= (isset($budget->area_id) == '') ? '' : $budget->area_id; ?>"
+                                            value="<?= (isset($budget->area) == '') ? '' : $budget->area; ?>"
                                             type="text" required placeholder="Start typing" />
                                         <div class="body3 text-secondary mt-2">
-                                            <i>Select your city or metro area.</i>
+                                            <i>Mention the name of your city or metro area</i>
                                         </div>
 
                                         <div class="heading7 hover-text-blue mb-3 mt-3">How many people are in your

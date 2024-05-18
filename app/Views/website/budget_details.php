@@ -122,7 +122,7 @@ $wealth_score = number_format($wealth_score,2);
                             <div class="row">
                                 <div class="col-lg-4">
                                     <p>Here you can find a summary of the responses you provided, along with a few
-                                        totals that were calculated when determining your WealthScore.</p>
+                                        totals that were calculated when determining your Wealth Score.</p>
                                     <br>
                                     <div class="card border  mb-3">
                                         <div class="card-header"><b>Basics</b><span class="float-end"><a

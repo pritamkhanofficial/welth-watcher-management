@@ -396,7 +396,21 @@ class WebsiteController extends BaseController
                         }else{
                             
                         } */
-
+                        switch ($d) {
+                            case 'PERYEAR':
+                                $d = 'per year';
+                                break;
+                            case 'PERWEEK':
+                                $d = 'per week';
+                                break;
+                            case 'PERMONTH':
+                                $d = 'per month';
+                                break;
+                            
+                            default:
+                                $d = $d;
+                                break;
+                        }
                         $htmlTable .= "<tr>";
                         $htmlTable .= "<th>" . str_replace('_',' ', ucwords($key)) . "</th>";
                         $htmlTable .= "<td>" . $d . "</td>";
@@ -441,7 +455,7 @@ class WebsiteController extends BaseController
                                 <p>Thank you for choosing our services.</p>
                                 
                                 <p>Best regards,<br>
-                                [Wealth Watcher Management]<br>
+                                [Wealth Watcher Management Consultant]<br>
                                 </p>
                                 </body>
                                 </html>";

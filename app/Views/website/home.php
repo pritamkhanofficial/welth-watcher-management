@@ -219,7 +219,7 @@
                       // getPrint($data);
                         foreach($data['core_need'] as $key=>$row):
                           $placehover = str_pad(++$key, 2, "0", STR_PAD_LEFT);
-                          $description = word_limiter(strip_tags($row->description), 4);
+                          $description = word_limiter(strip_tags($row->description), 20);
                       ?>
                         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6">
                             <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px">

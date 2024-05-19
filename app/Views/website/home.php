@@ -219,6 +219,7 @@
                       // getPrint($data);
                         foreach($data['core_need'] as $key=>$row):
                           $placehover = str_pad(++$key, 2, "0", STR_PAD_LEFT);
+                          $description = word_limiter($row->description, 4);
                       ?>
                         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6">
                             <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px">
@@ -229,7 +230,7 @@
                                     </div>
                                     <div class="desc">
                                         <div class="heading7 hover-text-blue"><?= $row->title?></div>
-                                        <div class="body3 text-secondary mt-4"></div>
+                                        <div class="body3 text-secondary mt-4"><?=$description?></div>
                                         <!-- < ?= word_limiter($row->description, 4) ?> -->
                                     </div>
                                     <!-- <div class="read-block flex-item-center gap-4 hover-text-blue"><span

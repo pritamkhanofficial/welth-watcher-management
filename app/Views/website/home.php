@@ -230,7 +230,7 @@
                                     </div>
                                     <div class="desc">
                                         <div class="heading7 hover-text-blue"><?= $row->title?></div>
-                                        <div class="body3 text-secondary mt-4"><?=$description?></div>
+                                        <div class="body3 text-secondary mt-4"><?=$row->description?></div>
                                         <!-- < ?= word_limiter($row->description, 4) ?> -->
                                     </div>
                                     <!-- <div class="read-block flex-item-center gap-4 hover-text-blue"><span

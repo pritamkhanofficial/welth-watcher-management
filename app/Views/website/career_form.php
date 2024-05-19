@@ -7,6 +7,13 @@
 <head>
     <?php echo view('component/front/head'); ?>
 
+    <style>
+        
+        .text-button{
+            word-break: normal !important;
+        }
+    </style>
+
 </head>
 
 <body>

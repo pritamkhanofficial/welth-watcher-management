@@ -758,8 +758,8 @@ class BackPanelController extends BaseController
         $crud->displayAs('report_category_id', 'Report Category');
         $crud->displayAs('created_at', 'Added On');
 
-        $crud->columns(['report_category_id', 'file','is_active','created_at']);
-        $crud->fields(['report_category_id', 'file','is_active','created_at','created_by']);
+        $crud->columns(['report_category_id','icon', 'file','is_active','created_at']);
+        $crud->fields(['report_category_id','icon', 'file','is_active','created_at','created_by']);
         $crud->fieldType('created_at', 'hidden');
         $crud->fieldType('created_by', 'hidden', getUserData()->id);
         $crud->requiredFields(['report_category_id']);

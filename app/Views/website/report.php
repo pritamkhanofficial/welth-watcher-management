@@ -53,7 +53,7 @@
                                         href="<?=base_url('get-file/' . $row->file)?>">
                                         <div class="heading flex-between">
                                             <!-- <i class="< ?= $row->icon_text?> text-blue fs-60"></i> -->
-                                            <div class="number heading3 text-placehover"><?= $placehover ?></div>
+                                            <div class="number heading3 text-placehover"><i class="<?= $row->icon?> text-blue fs-60"></i></div>
                                         </div>
                                         <div class="desc">
                                             <div class="heading7 hover-text-blue"><?=$row->report_category?></div>

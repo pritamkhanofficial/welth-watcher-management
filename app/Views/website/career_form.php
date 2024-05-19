@@ -30,7 +30,7 @@
             <div class="container">
 
                 <div class="row flex-center row-gap-32">
-                    <div class="col-12 col-xl-5">
+                    <div class="col-12 col-xl-6">
 
                         <div class="infor bg-blue bora-12 p-40">
                             <div class="heading5 text-white"><?= $result->title; ?></div>

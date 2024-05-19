@@ -46,22 +46,22 @@
                             <div class="list-more-infor mt-40">
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-fill ph-check-circle fs-20 text-blue bg-white p-8 bora-50"></i>
-                                    <div class="line-y"> </div>
+                                    <!-- <div class="line-y"> </div> -->
                                     <div class="text-button text-white">Job Category : <?= $result->label;?></div>
                                 </div>
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-fill ph-check-circle fs-20 text-blue bg-white p-8 bora-50"></i>
-                                    <div class="line-y"> </div>
+                                    <!-- <div class="line-y"> </div> -->
                                     <div class="text-button text-white">Job Type: <?= $result->job_type;?></div>
                                 </div>
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-fill ph-check-circle fs-20 text-blue bg-white p-8 bora-50"></i>
-                                    <div class="line-y"> </div>
+                                    <!-- <div class="line-y"> </div> -->
                                     <div class="text-button text-white">Experience: <?= $result->experience;?></div>
                                 </div>
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-fill ph-check-circle fs-20 text-blue bg-white p-8 bora-50"></i>
-                                    <div class="line-y"> </div>
+                                    <!-- <div class="line-y"> </div> -->
                                     <div class="text-button text-white">Job Location: <?= $result->location;?></div>
                                 </div>
                             </div>

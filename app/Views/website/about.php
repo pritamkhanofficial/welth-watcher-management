@@ -231,10 +231,15 @@
                     <div class="body3 text-secondary mt-12">We provide customized financial services designed to meet your unique needs and drive your financial success</div>
                 </div>
                 <div class="list-service row mt-32 row-gap-24">
-                    <?php  foreach($services as $row){  ?>
+                    <?php  
+                        foreach($services as $key=>$row){
+                            // $description = word_limiter(strip_tags($row->containt), 20);
+
+                    ?>
                     <div class="col-12 col-xl-3 col-lg-6 col-md-6 col-sm-6">
                         <div class="service-item hover-box-shadow bora-8 pt-32 pb-32 pl-28 pr-28 bg-white"><a
-                                class="service-item-main flex-column gap-16v2" href="javascript:void(0)">
+                                class="service-item-main flex-column gap-16v2" href="javascript:void(0)" onclick='showDesc("service_desc_id_<?=$key?>")'>
+                                <input type="hidden" id="service_desc_id_<?=$key?>" value="<?=strip_tags($row->containt)?>"/> 
                                 <div class="heading flex-item-center gap-16v2"><i
                                         class="<?=$row->icon_text?> text-blue fs-42"></i>
                                     <div class="heading6 hover-text-blue"><?=$row->title?></div>
@@ -262,6 +267,24 @@
             </div>
         </div>
         <?php } ?>
+
+        <!-- Modal -->
+        <div class="modal fade" id="service" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Core Need Content</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="serviceBody">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+                </div>
+            </div>
+            </div>
     </div>
     <?php echo view('component/front/footer'); ?>
     <!--build:js assets/js/main.min.js-->
@@ -374,6 +397,13 @@
             $(".spinner-border").addClass("d-none")
         }
     });
+    </script>
+
+    <script>
+        function showDesc(id) {
+            $('#serviceBody').html($("#" + id).val());
+            $('#service').modal('show');
+        }
     </script>
 </body>
 

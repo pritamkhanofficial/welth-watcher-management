@@ -39,7 +39,7 @@
                                 ID - <?= $result->job_code;?>
                             </div>
                             <div class="text-button text-white">
-                                <?=$result->description;?>
+                                <?=strip_tags($result->description);?>
                             </div>
 
                             <div class="mt-40"></div>

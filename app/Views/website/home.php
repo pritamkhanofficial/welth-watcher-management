@@ -346,8 +346,8 @@
 
     <script>
 
-        function showDesc(data) {
-            alert(data);
+        function showDesc(id) {
+            alert($("#" + id).val());
         }
     </script>
 

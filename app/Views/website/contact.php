@@ -12,7 +12,11 @@
         width: 1rem;
         height: 1rem;
     }
+    .text-button{
+            word-break: normal !important;
+        }
     </style>
+    
 </head>
 
 <body>
@@ -65,17 +69,17 @@
                   </div> -->
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-fill ph-phone text-blue bg-white p-8 bora-50"></i>
-                                    <div class="line-y"> </div>
+                                    <!-- <div class="line-y"> </div> -->
                                     <div class="text-button text-white"><?=getGlobalSetting()?->mobile_no?></div>
                                 </div>
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-bold ph-envelope-simple text-blue bg-white p-8 bora-50"></i>
-                                    <div class="line-y"> </div>
+                                    <!-- <div class="line-y"> </div> -->
                                     <div class="text-button text-white"><?=getGlobalSetting()?->email?></div>
                                 </div>
                                 <div class="item flex-item-center gap-12 mt-20"><i
                                         class="ph-bold ph-map-pin text-blue bg-white p-8 bora-50"></i>
-                                    <div class="line-y"> </div>
+                                    <!-- <div class="line-y"> </div> -->
                                     <div class="text-button text-white"><?=getGlobalSetting()?->address?></div>
                                 </div>
                             </div>

@@ -223,7 +223,7 @@
                       ?>
                         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-6">
                             <div class="service-item hover-box-shadow bora-8 p-32 bg-white border-line-1px">
-                                <a class="service-item-main flex-column gap-16" href="javascript:void(0);" onclick="showDesc(<?=strip_tags($row->description)?>)">
+                                <a class="service-item-main flex-column gap-16" href="javascript:void(0);" onclick='showDesc("<?=strip_tags($row->description)?>")'>
                                     <div class="heading flex-between"><i
                                             class="<?= $row->icon_text?> text-blue fs-60"></i>
                                         <div class="number heading3 text-placehover"><?= $placehover ?></div>

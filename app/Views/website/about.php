@@ -12,6 +12,9 @@
         width: 1rem;
         height: 1rem;
     }
+    .text-button{
+            word-break: normal !important;
+    }
     </style>
 </head>
 

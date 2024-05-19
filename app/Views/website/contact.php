@@ -14,7 +14,7 @@
     }
     .text-button{
             word-break: normal !important;
-        }
+    }
     </style>
     
 </head>

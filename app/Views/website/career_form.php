@@ -38,7 +38,7 @@
                             <div class="text-button text-white">
                                 ID - <?= $result->job_code;?>
                             </div>
-                            <div class="text-button text-white">
+                            <div class=" text-white">
                                 <?=($result->description);?>
                             </div>
 
